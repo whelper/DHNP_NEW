@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+
+.logo { width:100%; height: 44px; border-bottom: 1px solid #a5a5a5;  background:url(../../common/images/logo.png) no-repeat 50% 12px;  background-size:140px; }
+
+.title_p strong {color:#04b25a;}
+
+.right_text>:nth-child(5) {text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;word-wrap: break-word;overflow: hidden;}
+.arrow_list li {position:relative}
+.arrow_list li span {display:block; position:absolute; top:0; left:0;}
+.arrow_list li {padding-left:15px;}
+nav.fnb ul li:first-child {display:none;} 
+nav.fnb ul li {width:100%;} 
+
+p.location {overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}

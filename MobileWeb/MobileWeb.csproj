@@ -1,0 +1,1229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A9A61A8B-4462-493A-909E-157389CC4B06}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MobileWeb</RootNamespace>
+    <AssemblyName>MobileWeb</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\CommonLib\Libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="common\css\common.css" />
+    <Content Include="common\css\common_01.css" />
+    <Content Include="common\css\common_02.css" />
+    <Content Include="common\css\default.css" />
+    <Content Include="common\css\images\arrow_down.png" />
+    <Content Include="common\css\images\arrow_left.png" />
+    <Content Include="common\css\images\arrow_right.png" />
+    <Content Include="common\css\images\arrow_right_list.png" />
+    <Content Include="common\css\images\back.png" />
+    <Content Include="common\css\images\btn_icons.png" />
+    <Content Include="common\css\images\btn_more.png" />
+    <Content Include="common\css\images\btn_next.png" />
+    <Content Include="common\css\images\btn_off.png" />
+    <Content Include="common\css\images\btn_on.png" />
+    <Content Include="common\css\images\btn_prev.jpg" />
+    <Content Include="common\css\images\btn_prev.png" />
+    <Content Include="common\css\images\bx_loader.gif" />
+    <Content Include="common\css\images\controls.png" />
+    <Content Include="common\css\images\gnb_arrow_down.png" />
+    <Content Include="common\css\images\gnb_icon.png" />
+    <Content Include="common\css\images\indexCus_icon_01.png" />
+    <Content Include="common\css\images\indexCus_icon_02.png" />
+    <Content Include="common\css\images\indexNew_img01.jpg" />
+    <Content Include="common\css\images\indexNew_img02.jpg" />
+    <Content Include="common\css\images\indexNew_img03.jpg" />
+    <Content Include="common\css\images\indexPr_icon_01.png" />
+    <Content Include="common\css\images\indexPr_icon_02.png" />
+    <Content Include="common\css\images\indexPr_icon_03.png" />
+    <Content Include="common\css\images\index_visual_01.jpg" />
+    <Content Include="common\css\images\index_visual_01.png" />
+    <Content Include="common\css\images\index_visual_011.jpg" />
+    <Content Include="common\css\images\index_visual_02.jpg" />
+    <Content Include="common\css\images\index_visual_022.jpg" />
+    <Content Include="common\css\images\index_visual_03.jpg" />
+    <Content Include="common\css\images\index_visual_33.jpg" />
+    <Content Include="common\css\images\inquire_icon.png" />
+    <Content Include="common\css\images\inquire_title.png" />
+    <Content Include="common\css\images\i_con.png" />
+    <Content Include="common\css\images\i_down.png" />
+    <Content Include="common\css\images\i_new.png" />
+    <Content Include="common\css\images\i_serach_01.png" />
+    <Content Include="common\css\images\i_serach_02.png" />
+    <Content Include="common\css\images\i_up.png" />
+    <Content Include="common\css\images\logo.png" />
+    <Content Include="common\css\images\main_bg.jpg" />
+    <Content Include="common\css\images\nav_btn.png" />
+    <Content Include="common\css\images\pdt_banner_01.png" />
+    <Content Include="common\css\images\pdt_banner_02.png" />
+    <Content Include="common\css\images\pdt_banner_03.png" />
+    <Content Include="common\css\images\pr_new_view_01.jpg" />
+    <Content Include="common\css\images\pr_title_global.png" />
+    <Content Include="common\css\images\pr_title_news.png" />
+    <Content Include="common\css\images\pr_title_notice.png" />
+    <Content Include="common\css\images\test_01.png" />
+    <Content Include="common\css\images\with_title.png" />
+    <Content Include="common\css\jquery.bxslider.css" />
+    <Content Include="common\css\jquery.remodal.css" />
+    <Content Include="common\css\normalize.css" />
+    <Content Include="common\css\products\human_new_01.jpg" />
+    <Content Include="common\css\products\human_new_view_01.jpg" />
+    <Content Include="common\css\products\human_new_view_02.jpg" />
+    <Content Include="common\css\products\human_new_view_03.jpg" />
+    <Content Include="common\css\products\human_new_view_04.jpg" />
+    <Content Include="common\css\products\human_new_view_05.jpg" />
+    <Content Include="common\css\products\i_arrow_top.png" />
+    <Content Include="common\css\products\i_new.png" />
+    <Content Include="common\css\products\i_plus.png" />
+    <Content Include="common\css\products\sns_c.png" />
+    <Content Include="common\css\products\sns_f.png" />
+    <Content Include="common\css\products\sns_t.png" />
+    <Content Include="common\css\sub.css" />
+    <Content Include="common\images\arrow_down.png" />
+    <Content Include="common\images\arrow_left.png" />
+    <Content Include="common\images\arrow_right.png" />
+    <Content Include="common\images\arrow_right_list.png" />
+    <Content Include="common\images\back.png" />
+    <Content Include="common\images\btn_icons.png" />
+    <Content Include="common\images\btn_more.png" />
+    <Content Include="common\images\btn_next.png" />
+    <Content Include="common\images\btn_off.png" />
+    <Content Include="common\images\btn_on.png" />
+    <Content Include="common\images\btn_prev.jpg" />
+    <Content Include="common\images\btn_prev.png" />
+    <Content Include="common\images\gnb_arrow_down.png" />
+    <Content Include="common\images\gnb_icon.png" />
+    <Content Include="common\images\group_01.png" />
+    <Content Include="common\images\indexCus_icon_01.png" />
+    <Content Include="common\images\indexCus_icon_02.png" />
+    <Content Include="common\images\indexNew_img01.jpg" />
+    <Content Include="common\images\indexNew_img02.jpg" />
+    <Content Include="common\images\indexNew_img03.jpg" />
+    <Content Include="common\images\indexPr_icon_01.png" />
+    <Content Include="common\images\indexPr_icon_02.png" />
+    <Content Include="common\images\indexPr_icon_03.png" />
+    <Content Include="common\images\index_visual_01.jpg" />
+    <Content Include="common\images\index_visual_01.png" />
+    <Content Include="common\images\index_visual_011.jpg" />
+    <Content Include="common\images\index_visual_02.jpg" />
+    <Content Include="common\images\index_visual_022.jpg" />
+    <Content Include="common\images\index_visual_03.jpg" />
+    <Content Include="common\images\index_visual_33.jpg" />
+    <Content Include="common\images\inquire_icon.png" />
+    <Content Include="common\images\inquire_title.png" />
+    <Content Include="common\images\i_arrow.png" />
+    <Content Include="common\images\i_con.png" />
+    <Content Include="common\images\i_down.png" />
+    <Content Include="common\images\i_new.png" />
+    <Content Include="common\images\i_serach_01.png" />
+    <Content Include="common\images\i_serach_02.png" />
+    <Content Include="common\images\i_up.png" />
+    <Content Include="common\images\list_dot.png" />
+    <Content Include="common\images\logo.png" />
+    <Content Include="common\images\main_bg.jpg" />
+    <Content Include="common\images\nav_btn.png" />
+    <Content Include="common\images\pdt_banner_01.png" />
+    <Content Include="common\images\pdt_banner_02.png" />
+    <Content Include="common\images\pdt_banner_03.png" />
+    <Content Include="common\images\products\human_new_01.jpg" />
+    <Content Include="common\images\products\human_new_view_01.jpg" />
+    <Content Include="common\images\products\human_new_view_02.jpg" />
+    <Content Include="common\images\products\human_new_view_03.jpg" />
+    <Content Include="common\images\products\human_new_view_04.jpg" />
+    <Content Include="common\images\products\human_new_view_05.jpg" />
+    <Content Include="common\images\products\i_arrow_top.png" />
+    <Content Include="common\images\products\i_new.png" />
+    <Content Include="common\images\products\i_plus.png" />
+    <Content Include="common\images\products\new_no.jpg" />
+    <Content Include="common\images\products\no_big.jpg" />
+    <Content Include="common\images\products\no_small.jpg" />
+    <Content Include="common\images\products\sns_c.png" />
+    <Content Include="common\images\products\sns_f.png" />
+    <Content Include="common\images\products\sns_t.png" />
+    <Content Include="common\images\pr_new_view_01.jpg" />
+    <Content Include="common\images\pr_title_global.png" />
+    <Content Include="common\images\pr_title_news.png" />
+    <Content Include="common\images\pr_title_notice.png" />
+    <Content Include="common\images\test_01.png" />
+    <Content Include="common\images\vision_ad.png" />
+    <Content Include="common\images\vision_graph.png" />
+    <Content Include="common\images\vision_icon_big.png" />
+    <Content Include="common\images\vision_icon_big_01.png" />
+    <Content Include="common\images\vision_icon_big_02.png" />
+    <Content Include="common\images\vision_icon_big_03.png" />
+    <Content Include="common\images\vision_icon_big_04.png" />
+    <Content Include="common\images\vision_icon_big_05.png" />
+    <Content Include="common\images\with_title.png" />
+    <Content Include="common\include\footer.js" />
+    <Content Include="common\include\gnb.js" />
+    <Content Include="common\include\header.js" />
+    <Content Include="common\include\title.js" />
+    <Content Include="common\js\common.js" />
+    <Content Include="common\js\jquery-1.9.1.min.js" />
+    <Content Include="common\js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="common\js\jquery.bxslider.js" />
+    <Content Include="common\js\jquery.bxslider.min.js" />
+    <Content Include="common\js\jquery.remodal.js" />
+    <Content Include="common\js\spin.min.js" />
+    <Content Include="cust\inquire_list.aspx" />
+    <Content Include="cust\with_list.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="en\common\css\common.css" />
+    <Content Include="en\common\css\common_01.css" />
+    <Content Include="en\common\css\common_02.css" />
+    <Content Include="en\common\css\default.css" />
+    <Content Include="en\common\css\eng.css" />
+    <Content Include="en\common\css\images\arrow_down.png" />
+    <Content Include="en\common\css\images\arrow_left.png" />
+    <Content Include="en\common\css\images\arrow_right.png" />
+    <Content Include="en\common\css\images\arrow_right_list.png" />
+    <Content Include="en\common\css\images\back.png" />
+    <Content Include="en\common\css\images\btn_icons.png" />
+    <Content Include="en\common\css\images\btn_more.png" />
+    <Content Include="en\common\css\images\btn_next.png" />
+    <Content Include="en\common\css\images\btn_off.png" />
+    <Content Include="en\common\css\images\btn_on.png" />
+    <Content Include="en\common\css\images\btn_prev.jpg" />
+    <Content Include="en\common\css\images\btn_prev.png" />
+    <Content Include="en\common\css\images\bx_loader.gif" />
+    <Content Include="en\common\css\images\controls.png" />
+    <Content Include="en\common\css\images\gnb_arrow_down.png" />
+    <Content Include="en\common\css\images\gnb_icon.png" />
+    <Content Include="en\common\css\images\indexCus_icon_01.png" />
+    <Content Include="en\common\css\images\indexCus_icon_02.png" />
+    <Content Include="en\common\css\images\indexNew_img01.jpg" />
+    <Content Include="en\common\css\images\indexNew_img02.jpg" />
+    <Content Include="en\common\css\images\indexNew_img03.jpg" />
+    <Content Include="en\common\css\images\indexPr_icon_01.png" />
+    <Content Include="en\common\css\images\indexPr_icon_02.png" />
+    <Content Include="en\common\css\images\indexPr_icon_03.png" />
+    <Content Include="en\common\css\images\index_visual_01.jpg" />
+    <Content Include="en\common\css\images\index_visual_01.png" />
+    <Content Include="en\common\css\images\index_visual_011.jpg" />
+    <Content Include="en\common\css\images\index_visual_02.jpg" />
+    <Content Include="en\common\css\images\index_visual_022.jpg" />
+    <Content Include="en\common\css\images\index_visual_03.jpg" />
+    <Content Include="en\common\css\images\index_visual_33.jpg" />
+    <Content Include="en\common\css\images\inquire_icon.png" />
+    <Content Include="en\common\css\images\inquire_title.png" />
+    <Content Include="en\common\css\images\i_con.png" />
+    <Content Include="en\common\css\images\i_down.png" />
+    <Content Include="en\common\css\images\i_new.png" />
+    <Content Include="en\common\css\images\i_serach_01.png" />
+    <Content Include="en\common\css\images\i_serach_02.png" />
+    <Content Include="en\common\css\images\i_up.png" />
+    <Content Include="en\common\css\images\logo.png" />
+    <Content Include="en\common\css\images\main_bg.jpg" />
+    <Content Include="en\common\css\images\nav_btn.png" />
+    <Content Include="en\common\css\images\pdt_banner_01.png" />
+    <Content Include="en\common\css\images\pdt_banner_02.png" />
+    <Content Include="en\common\css\images\pdt_banner_03.png" />
+    <Content Include="en\common\css\images\pr_new_view_01.jpg" />
+    <Content Include="en\common\css\images\pr_title_global.png" />
+    <Content Include="en\common\css\images\pr_title_news.png" />
+    <Content Include="en\common\css\images\pr_title_notice.png" />
+    <Content Include="en\common\css\images\test_01.png" />
+    <Content Include="en\common\css\images\with_title.png" />
+    <Content Include="en\common\css\jquery.bxslider.css" />
+    <Content Include="en\common\css\jquery.remodal.css" />
+    <Content Include="en\common\css\normalize.css" />
+    <Content Include="en\common\css\products\human_new_01.jpg" />
+    <Content Include="en\common\css\products\human_new_view_01.jpg" />
+    <Content Include="en\common\css\products\human_new_view_02.jpg" />
+    <Content Include="en\common\css\products\human_new_view_03.jpg" />
+    <Content Include="en\common\css\products\human_new_view_04.jpg" />
+    <Content Include="en\common\css\products\human_new_view_05.jpg" />
+    <Content Include="en\common\css\products\i_arrow_top.png" />
+    <Content Include="en\common\css\products\i_new.png" />
+    <Content Include="en\common\css\products\i_plus.png" />
+    <Content Include="en\common\css\products\sns_c.png" />
+    <Content Include="en\common\css\products\sns_f.png" />
+    <Content Include="en\common\css\products\sns_t.png" />
+    <Content Include="en\common\css\sub.css" />
+    <Content Include="en\common\css\sub.js" />
+    <Content Include="en\common\css\_sub.js" />
+    <Content Include="en\common\images\arrow_down.png" />
+    <Content Include="en\common\images\arrow_left.png" />
+    <Content Include="en\common\images\arrow_right.png" />
+    <Content Include="en\common\images\arrow_right_list.png" />
+    <Content Include="en\common\images\back.png" />
+    <Content Include="en\common\images\btn_icons.png" />
+    <Content Include="en\common\images\btn_more.png" />
+    <Content Include="en\common\images\btn_next.png" />
+    <Content Include="en\common\images\btn_off.png" />
+    <Content Include="en\common\images\btn_on.png" />
+    <Content Include="en\common\images\btn_prev.jpg" />
+    <Content Include="en\common\images\btn_prev.png" />
+    <Content Include="en\common\images\gnb_arrow_down.png" />
+    <Content Include="en\common\images\gnb_icon.png" />
+    <Content Include="en\common\images\group_01.png" />
+    <Content Include="en\common\images\indexCus_icon_01.png" />
+    <Content Include="en\common\images\indexCus_icon_02.png" />
+    <Content Include="en\common\images\indexNew_img01.jpg" />
+    <Content Include="en\common\images\indexNew_img02.jpg" />
+    <Content Include="en\common\images\indexNew_img03.jpg" />
+    <Content Include="en\common\images\indexPr_icon_01.png" />
+    <Content Include="en\common\images\indexPr_icon_02.png" />
+    <Content Include="en\common\images\indexPr_icon_03.png" />
+    <Content Include="en\common\images\index_visual_01.jpg" />
+    <Content Include="en\common\images\index_visual_01.png" />
+    <Content Include="en\common\images\index_visual_011.jpg" />
+    <Content Include="en\common\images\index_visual_02.jpg" />
+    <Content Include="en\common\images\index_visual_022.jpg" />
+    <Content Include="en\common\images\index_visual_03.jpg" />
+    <Content Include="en\common\images\index_visual_33.jpg" />
+    <Content Include="en\common\images\inquire_icon.png" />
+    <Content Include="en\common\images\inquire_title.png" />
+    <Content Include="en\common\images\i_arrow.png" />
+    <Content Include="en\common\images\i_con.png" />
+    <Content Include="en\common\images\i_down.png" />
+    <Content Include="en\common\images\i_new.png" />
+    <Content Include="en\common\images\i_serach_01.png" />
+    <Content Include="en\common\images\i_serach_02.png" />
+    <Content Include="en\common\images\i_up.png" />
+    <Content Include="en\common\images\list_dot.png" />
+    <Content Include="en\common\images\logo.png" />
+    <Content Include="en\common\images\main_bg.jpg" />
+    <Content Include="en\common\images\nav_btn.png" />
+    <Content Include="en\common\images\pdt_banner_01.png" />
+    <Content Include="en\common\images\pdt_banner_02.png" />
+    <Content Include="en\common\images\pdt_banner_03.png" />
+    <Content Include="en\common\images\products\human_new_01.jpg" />
+    <Content Include="en\common\images\products\human_new_view_01.jpg" />
+    <Content Include="en\common\images\products\human_new_view_02.jpg" />
+    <Content Include="en\common\images\products\human_new_view_03.jpg" />
+    <Content Include="en\common\images\products\human_new_view_04.jpg" />
+    <Content Include="en\common\images\products\human_new_view_05.jpg" />
+    <Content Include="en\common\images\products\i_arrow_top.png" />
+    <Content Include="en\common\images\products\i_new.png" />
+    <Content Include="en\common\images\products\i_plus.png" />
+    <Content Include="en\common\images\products\new_no.jpg" />
+    <Content Include="en\common\images\products\no_big.jpg" />
+    <Content Include="en\common\images\products\no_small.jpg" />
+    <Content Include="en\common\images\products\sns_c.png" />
+    <Content Include="en\common\images\products\sns_f.png" />
+    <Content Include="en\common\images\products\sns_t.png" />
+    <Content Include="en\common\images\pr_new_view_01.jpg" />
+    <Content Include="en\common\images\pr_title_global.png" />
+    <Content Include="en\common\images\pr_title_news.png" />
+    <Content Include="en\common\images\pr_title_notice.png" />
+    <Content Include="en\common\images\test_01.png" />
+    <Content Include="en\common\images\vision_ad.png" />
+    <Content Include="en\common\images\vision_graph.png" />
+    <Content Include="en\common\images\vision_icon_big.png" />
+    <Content Include="en\common\images\vision_icon_big_01.png" />
+    <Content Include="en\common\images\vision_icon_big_02.png" />
+    <Content Include="en\common\images\vision_icon_big_03.png" />
+    <Content Include="en\common\images\vision_icon_big_04.png" />
+    <Content Include="en\common\images\vision_icon_big_05.png" />
+    <Content Include="en\common\images\with_title.png" />
+    <Content Include="en\common\include\footer.js" />
+    <Content Include="en\common\include\gnb.js" />
+    <Content Include="en\common\include\header.js" />
+    <Content Include="en\common\include\title.js" />
+    <Content Include="en\common\js\common.js" />
+    <Content Include="en\common\js\jquery-1.9.1.min.js" />
+    <Content Include="en\common\js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="en\common\js\jquery.bxslider.js" />
+    <Content Include="en\common\js\jquery.bxslider.min.js" />
+    <Content Include="en\common\js\jquery.remodal.js" />
+    <Content Include="en\common\js\spin.min.js" />
+    <Content Include="en\cust\inquire_list.aspx" />
+    <Content Include="en\cust\with_list.aspx" />
+    <Content Include="en\index.aspx" />
+    <Content Include="en\intro\business.aspx" />
+    <Content Include="en\intro\group.aspx" />
+    <Content Include="en\intro\leave.aspx" />
+    <Content Include="en\intro\location.aspx" />
+    <Content Include="en\intro\moral.aspx" />
+    <Content Include="en\intro\vision.aspx" />
+    <Content Include="en\intro\world.aspx" />
+    <Content Include="en\inv\invest_ir_list.aspx" />
+    <Content Include="en\inv\invest_ir_view.aspx" />
+    <Content Include="en\inv\invest_money_bill.aspx" />
+    <Content Include="en\inv\invest_money_mark.aspx" />
+    <Content Include="en\inv\invest_notice_list.aspx" />
+    <Content Include="en\inv\invest_notice_view.aspx" />
+    <Content Include="en\inv\stockholder.aspx" />
+    <Content Include="en\inv\stock_info.aspx" />
+    <Content Include="en\inv\treasury_stock.aspx" />
+    <Content Include="en\pdt\pdt_animal_new_list.aspx" />
+    <Content Include="en\pdt\pdt_animal_new_view.aspx" />
+    <Content Include="en\pdt\pdt_animal_products_list.aspx" />
+    <Content Include="en\pdt\pdt_animal_products_view.aspx" />
+    <Content Include="en\pdt\pdt_bio_badge_list.aspx" />
+    <Content Include="en\pdt\pdt_bio_badge_view.aspx" />
+    <Content Include="en\pdt\pdt_bio_catalog_list.aspx" />
+    <Content Include="en\pdt\pdt_bio_catalog_view.aspx" />
+    <Content Include="en\pdt\pdt_bio_resin_list.aspx" />
+    <Content Include="en\pdt\pdt_bio_resin_view.aspx" />
+    <Content Include="en\pdt\pdt_global_animal_list.aspx" />
+    <Content Include="en\pdt\pdt_global_animal_view.aspx" />
+    <Content Include="en\pdt\pdt_global_human_list.aspx" />
+    <Content Include="en\pdt\pdt_global_human_view.aspx" />
+    <Content Include="en\pdt\pdt_health_list.aspx" />
+    <Content Include="en\pdt\pdt_health_view.aspx" />
+    <Content Include="en\pdt\pdt_human_new_list.aspx" />
+    <Content Include="en\pdt\pdt_human_new_view.aspx" />
+    <Content Include="en\pdt\pdt_human_products_list.aspx" />
+    <Content Include="en\pdt\pdt_human_products_view.aspx" />
+    <Content Include="en\pdt\pdt_medical_list.aspx" />
+    <Content Include="en\pdt\pdt_medical_view.aspx" />
+    <Content Include="en\search.aspx" />
+    <Content Include="en\terms.htm" />
+    <Content Include="favicon.png" />
+    <Content Include="Global.asax" />
+    <Content Include="index.aspx" />
+    <Content Include="intro\business.aspx" />
+    <Content Include="intro\group.aspx" />
+    <Content Include="intro\leave.aspx" />
+    <Content Include="intro\location.aspx" />
+    <Content Include="intro\moral.aspx" />
+    <Content Include="intro\vision.aspx" />
+    <Content Include="intro\world.aspx" />
+    <Content Include="inv\invest_ir_list.aspx" />
+    <Content Include="inv\invest_ir_view.aspx" />
+    <Content Include="inv\invest_money_bill.aspx" />
+    <Content Include="inv\invest_money_mark.aspx" />
+    <Content Include="inv\invest_notice_list.aspx" />
+    <Content Include="inv\invest_notice_view.aspx" />
+    <Content Include="inv\stockholder.aspx" />
+    <Content Include="inv\stock_info.aspx" />
+    <Content Include="inv\treasury_stock.aspx" />
+    <Content Include="m_master\PageBase.aspx" />
+    <Content Include="pdt\pdt_animal_delivery_list.aspx" />
+    <Content Include="pdt\pdt_animal_delivery_view.aspx" />
+    <Content Include="pdt\pdt_animal_new_list.aspx" />
+    <Content Include="pdt\pdt_animal_new_view.aspx" />
+    <Content Include="pdt\pdt_animal_products_list.aspx" />
+    <Content Include="pdt\pdt_animal_products_view.aspx" />
+    <Content Include="pdt\pdt_bio_badge_list.aspx" />
+    <Content Include="pdt\pdt_bio_badge_view.aspx" />
+    <Content Include="pdt\pdt_bio_catalog_list.aspx" />
+    <Content Include="pdt\pdt_bio_catalog_view.aspx" />
+    <Content Include="pdt\pdt_bio_resin_list.aspx" />
+    <Content Include="pdt\pdt_bio_resin_view.aspx" />
+    <Content Include="pdt\pdt_global_animal_list.aspx" />
+    <Content Include="pdt\pdt_global_animal_view.aspx" />
+    <Content Include="pdt\pdt_global_human_list.aspx" />
+    <Content Include="pdt\pdt_global_human_view.aspx" />
+    <Content Include="pdt\pdt_health_list.aspx" />
+    <Content Include="pdt\pdt_health_view.aspx" />
+    <Content Include="pdt\pdt_human_new_list.aspx" />
+    <Content Include="pdt\pdt_human_new_view.aspx" />
+    <Content Include="pdt\pdt_human_products_list.aspx" />
+    <Content Include="pdt\pdt_human_products_view.aspx" />
+    <Content Include="pdt\pdt_medical_list.aspx" />
+    <Content Include="pdt\pdt_medical_view.aspx" />
+    <Content Include="pr\pr_global_list.aspx" />
+    <Content Include="pr\pr_global_view.aspx" />
+    <Content Include="pr\pr_new_list.aspx" />
+    <Content Include="pr\pr_new_view.aspx" />
+    <Content Include="search.aspx" />
+    <Content Include="terms.htm" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="ws\investment.asmx" />
+    <Content Include="ws\product.asmx" />
+    <Content Include="ws\promotion.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cust\inquire_list.aspx.cs">
+      <DependentUpon>inquire_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust\inquire_list.aspx.designer.cs">
+      <DependentUpon>inquire_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust\with_list.aspx.cs">
+      <DependentUpon>with_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust\with_list.aspx.designer.cs">
+      <DependentUpon>with_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\cust\inquire_list.aspx.cs">
+      <DependentUpon>inquire_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\cust\inquire_list.aspx.designer.cs">
+      <DependentUpon>inquire_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\cust\with_list.aspx.cs">
+      <DependentUpon>with_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\cust\with_list.aspx.designer.cs">
+      <DependentUpon>with_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\EnSite.Master.cs">
+      <DependentUpon>EnSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\EnSite.Master.designer.cs">
+      <DependentUpon>EnSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="en\EnSiteSub.Master.cs">
+      <DependentUpon>EnSiteSub.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\EnSiteSub.Master.designer.cs">
+      <DependentUpon>EnSiteSub.Master</DependentUpon>
+    </Compile>
+    <Compile Include="en\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\intro\business.aspx.cs">
+      <DependentUpon>business.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\intro\business.aspx.designer.cs">
+      <DependentUpon>business.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\intro\group.aspx.cs">
+      <DependentUpon>group.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\intro\group.aspx.designer.cs">
+      <DependentUpon>group.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\intro\leave.aspx.cs">
+      <DependentUpon>leave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\intro\leave.aspx.designer.cs">
+      <DependentUpon>leave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\intro\location.aspx.cs">
+      <DependentUpon>location.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\intro\location.aspx.designer.cs">
+      <DependentUpon>location.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\intro\moral.aspx.cs">
+      <DependentUpon>moral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\intro\moral.aspx.designer.cs">
+      <DependentUpon>moral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\intro\vision.aspx.cs">
+      <DependentUpon>vision.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\intro\vision.aspx.designer.cs">
+      <DependentUpon>vision.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\intro\world.aspx.cs">
+      <DependentUpon>world.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\intro\world.aspx.designer.cs">
+      <DependentUpon>world.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\inv\invest_ir_list.aspx.cs">
+      <DependentUpon>invest_ir_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\inv\invest_ir_list.aspx.designer.cs">
+      <DependentUpon>invest_ir_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\inv\invest_ir_view.aspx.cs">
+      <DependentUpon>invest_ir_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\inv\invest_ir_view.aspx.designer.cs">
+      <DependentUpon>invest_ir_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\inv\invest_money_bill.aspx.cs">
+      <DependentUpon>invest_money_bill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\inv\invest_money_bill.aspx.designer.cs">
+      <DependentUpon>invest_money_bill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\inv\invest_money_mark.aspx.cs">
+      <DependentUpon>invest_money_mark.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\inv\invest_money_mark.aspx.designer.cs">
+      <DependentUpon>invest_money_mark.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\inv\invest_notice_list.aspx.cs">
+      <DependentUpon>invest_notice_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\inv\invest_notice_list.aspx.designer.cs">
+      <DependentUpon>invest_notice_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\inv\invest_notice_view.aspx.cs">
+      <DependentUpon>invest_notice_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\inv\invest_notice_view.aspx.designer.cs">
+      <DependentUpon>invest_notice_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\inv\stockholder.aspx.cs">
+      <DependentUpon>stockholder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\inv\stockholder.aspx.designer.cs">
+      <DependentUpon>stockholder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\inv\stock_info.aspx.cs">
+      <DependentUpon>stock_info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\inv\stock_info.aspx.designer.cs">
+      <DependentUpon>stock_info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\inv\treasury_stock.aspx.cs">
+      <DependentUpon>treasury_stock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\inv\treasury_stock.aspx.designer.cs">
+      <DependentUpon>treasury_stock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_animal_new_list.aspx.cs">
+      <DependentUpon>pdt_animal_new_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_animal_new_list.aspx.designer.cs">
+      <DependentUpon>pdt_animal_new_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_animal_new_view.aspx.cs">
+      <DependentUpon>pdt_animal_new_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_animal_new_view.aspx.designer.cs">
+      <DependentUpon>pdt_animal_new_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_animal_products_list.aspx.cs">
+      <DependentUpon>pdt_animal_products_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_animal_products_list.aspx.designer.cs">
+      <DependentUpon>pdt_animal_products_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_animal_products_view.aspx.cs">
+      <DependentUpon>pdt_animal_products_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_animal_products_view.aspx.designer.cs">
+      <DependentUpon>pdt_animal_products_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_bio_badge_list.aspx.cs">
+      <DependentUpon>pdt_bio_badge_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_bio_badge_list.aspx.designer.cs">
+      <DependentUpon>pdt_bio_badge_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_bio_badge_view.aspx.cs">
+      <DependentUpon>pdt_bio_badge_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_bio_badge_view.aspx.designer.cs">
+      <DependentUpon>pdt_bio_badge_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_bio_catalog_list.aspx.cs">
+      <DependentUpon>pdt_bio_catalog_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_bio_catalog_list.aspx.designer.cs">
+      <DependentUpon>pdt_bio_catalog_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_bio_catalog_view.aspx.cs">
+      <DependentUpon>pdt_bio_catalog_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_bio_catalog_view.aspx.designer.cs">
+      <DependentUpon>pdt_bio_catalog_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_bio_resin_list.aspx.cs">
+      <DependentUpon>pdt_bio_resin_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_bio_resin_list.aspx.designer.cs">
+      <DependentUpon>pdt_bio_resin_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_bio_resin_view.aspx.cs">
+      <DependentUpon>pdt_bio_resin_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_bio_resin_view.aspx.designer.cs">
+      <DependentUpon>pdt_bio_resin_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_global_animal_list.aspx.cs">
+      <DependentUpon>pdt_global_animal_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_global_animal_list.aspx.designer.cs">
+      <DependentUpon>pdt_global_animal_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_global_animal_view.aspx.cs">
+      <DependentUpon>pdt_global_animal_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_global_animal_view.aspx.designer.cs">
+      <DependentUpon>pdt_global_animal_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_global_human_list.aspx.cs">
+      <DependentUpon>pdt_global_human_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_global_human_list.aspx.designer.cs">
+      <DependentUpon>pdt_global_human_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_global_human_view.aspx.cs">
+      <DependentUpon>pdt_global_human_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_global_human_view.aspx.designer.cs">
+      <DependentUpon>pdt_global_human_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_health_list.aspx.cs">
+      <DependentUpon>pdt_health_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_health_list.aspx.designer.cs">
+      <DependentUpon>pdt_health_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_health_view.aspx.cs">
+      <DependentUpon>pdt_health_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_health_view.aspx.designer.cs">
+      <DependentUpon>pdt_health_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_human_new_list.aspx.cs">
+      <DependentUpon>pdt_human_new_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_human_new_list.aspx.designer.cs">
+      <DependentUpon>pdt_human_new_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_human_new_view.aspx.cs">
+      <DependentUpon>pdt_human_new_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_human_new_view.aspx.designer.cs">
+      <DependentUpon>pdt_human_new_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_human_products_list.aspx.cs">
+      <DependentUpon>pdt_human_products_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_human_products_list.aspx.designer.cs">
+      <DependentUpon>pdt_human_products_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_human_products_view.aspx.cs">
+      <DependentUpon>pdt_human_products_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_human_products_view.aspx.designer.cs">
+      <DependentUpon>pdt_human_products_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_medical_list.aspx.cs">
+      <DependentUpon>pdt_medical_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_medical_list.aspx.designer.cs">
+      <DependentUpon>pdt_medical_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\pdt\pdt_medical_view.aspx.cs">
+      <DependentUpon>pdt_medical_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\pdt\pdt_medical_view.aspx.designer.cs">
+      <DependentUpon>pdt_medical_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="intro\business.aspx.cs">
+      <DependentUpon>business.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="intro\business.aspx.designer.cs">
+      <DependentUpon>business.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="intro\group.aspx.cs">
+      <DependentUpon>group.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="intro\group.aspx.designer.cs">
+      <DependentUpon>group.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="intro\leave.aspx.cs">
+      <DependentUpon>leave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="intro\leave.aspx.designer.cs">
+      <DependentUpon>leave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="intro\location.aspx.cs">
+      <DependentUpon>location.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="intro\location.aspx.designer.cs">
+      <DependentUpon>location.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="intro\moral.aspx.cs">
+      <DependentUpon>moral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="intro\moral.aspx.designer.cs">
+      <DependentUpon>moral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="intro\vision.aspx.cs">
+      <DependentUpon>vision.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="intro\vision.aspx.designer.cs">
+      <DependentUpon>vision.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="intro\world.aspx.cs">
+      <DependentUpon>world.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="intro\world.aspx.designer.cs">
+      <DependentUpon>world.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inv\invest_ir_list.aspx.cs">
+      <DependentUpon>invest_ir_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inv\invest_ir_list.aspx.designer.cs">
+      <DependentUpon>invest_ir_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inv\invest_ir_view.aspx.cs">
+      <DependentUpon>invest_ir_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inv\invest_ir_view.aspx.designer.cs">
+      <DependentUpon>invest_ir_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inv\invest_money_bill.aspx.cs">
+      <DependentUpon>invest_money_bill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inv\invest_money_bill.aspx.designer.cs">
+      <DependentUpon>invest_money_bill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inv\invest_money_mark.aspx.cs">
+      <DependentUpon>invest_money_mark.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inv\invest_money_mark.aspx.designer.cs">
+      <DependentUpon>invest_money_mark.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inv\invest_notice_list.aspx.cs">
+      <DependentUpon>invest_notice_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inv\invest_notice_list.aspx.designer.cs">
+      <DependentUpon>invest_notice_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inv\invest_notice_view.aspx.cs">
+      <DependentUpon>invest_notice_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inv\invest_notice_view.aspx.designer.cs">
+      <DependentUpon>invest_notice_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inv\stockholder.aspx.cs">
+      <DependentUpon>stockholder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inv\stockholder.aspx.designer.cs">
+      <DependentUpon>stockholder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inv\stock_info.aspx.cs">
+      <DependentUpon>stock_info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inv\stock_info.aspx.designer.cs">
+      <DependentUpon>stock_info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inv\treasury_stock.aspx.cs">
+      <DependentUpon>treasury_stock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inv\treasury_stock.aspx.designer.cs">
+      <DependentUpon>treasury_stock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m_master\PageBase.aspx.cs">
+      <DependentUpon>PageBase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m_master\PageBase.aspx.designer.cs">
+      <DependentUpon>PageBase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_animal_delivery_list.aspx.cs">
+      <DependentUpon>pdt_animal_delivery_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_animal_delivery_list.aspx.designer.cs">
+      <DependentUpon>pdt_animal_delivery_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_animal_delivery_view.aspx.cs">
+      <DependentUpon>pdt_animal_delivery_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_animal_delivery_view.aspx.designer.cs">
+      <DependentUpon>pdt_animal_delivery_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_animal_new_list.aspx.cs">
+      <DependentUpon>pdt_animal_new_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_animal_new_list.aspx.designer.cs">
+      <DependentUpon>pdt_animal_new_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_animal_new_view.aspx.cs">
+      <DependentUpon>pdt_animal_new_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_animal_new_view.aspx.designer.cs">
+      <DependentUpon>pdt_animal_new_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_animal_products_list.aspx.cs">
+      <DependentUpon>pdt_animal_products_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_animal_products_list.aspx.designer.cs">
+      <DependentUpon>pdt_animal_products_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_animal_products_view.aspx.cs">
+      <DependentUpon>pdt_animal_products_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_animal_products_view.aspx.designer.cs">
+      <DependentUpon>pdt_animal_products_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_bio_badge_list.aspx.cs">
+      <DependentUpon>pdt_bio_badge_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_bio_badge_list.aspx.designer.cs">
+      <DependentUpon>pdt_bio_badge_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_bio_badge_view.aspx.cs">
+      <DependentUpon>pdt_bio_badge_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_bio_badge_view.aspx.designer.cs">
+      <DependentUpon>pdt_bio_badge_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_bio_catalog_list.aspx.cs">
+      <DependentUpon>pdt_bio_catalog_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_bio_catalog_list.aspx.designer.cs">
+      <DependentUpon>pdt_bio_catalog_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_bio_catalog_view.aspx.cs">
+      <DependentUpon>pdt_bio_catalog_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_bio_catalog_view.aspx.designer.cs">
+      <DependentUpon>pdt_bio_catalog_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_bio_resin_list.aspx.cs">
+      <DependentUpon>pdt_bio_resin_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_bio_resin_list.aspx.designer.cs">
+      <DependentUpon>pdt_bio_resin_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_bio_resin_view.aspx.cs">
+      <DependentUpon>pdt_bio_resin_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_bio_resin_view.aspx.designer.cs">
+      <DependentUpon>pdt_bio_resin_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_global_animal_list.aspx.cs">
+      <DependentUpon>pdt_global_animal_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_global_animal_list.aspx.designer.cs">
+      <DependentUpon>pdt_global_animal_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_global_animal_view.aspx.cs">
+      <DependentUpon>pdt_global_animal_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_global_animal_view.aspx.designer.cs">
+      <DependentUpon>pdt_global_animal_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_global_human_list.aspx.cs">
+      <DependentUpon>pdt_global_human_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_global_human_list.aspx.designer.cs">
+      <DependentUpon>pdt_global_human_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_global_human_view.aspx.cs">
+      <DependentUpon>pdt_global_human_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_global_human_view.aspx.designer.cs">
+      <DependentUpon>pdt_global_human_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_health_list.aspx.cs">
+      <DependentUpon>pdt_health_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_health_list.aspx.designer.cs">
+      <DependentUpon>pdt_health_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_health_view.aspx.cs">
+      <DependentUpon>pdt_health_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_health_view.aspx.designer.cs">
+      <DependentUpon>pdt_health_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_human_new_list.aspx.cs">
+      <DependentUpon>pdt_human_new_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_human_new_list.aspx.designer.cs">
+      <DependentUpon>pdt_human_new_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_human_new_view.aspx.cs">
+      <DependentUpon>pdt_human_new_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_human_new_view.aspx.designer.cs">
+      <DependentUpon>pdt_human_new_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_human_products_list.aspx.cs">
+      <DependentUpon>pdt_human_products_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_human_products_list.aspx.designer.cs">
+      <DependentUpon>pdt_human_products_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_human_products_view.aspx.cs">
+      <DependentUpon>pdt_human_products_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_human_products_view.aspx.designer.cs">
+      <DependentUpon>pdt_human_products_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_medical_list.aspx.cs">
+      <DependentUpon>pdt_medical_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_medical_list.aspx.designer.cs">
+      <DependentUpon>pdt_medical_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_medical_view.aspx.cs">
+      <DependentUpon>pdt_medical_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_medical_view.aspx.designer.cs">
+      <DependentUpon>pdt_medical_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="pr\pr_global_list.aspx.cs">
+      <DependentUpon>pr_global_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pr\pr_global_list.aspx.designer.cs">
+      <DependentUpon>pr_global_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pr\pr_global_view.aspx.cs">
+      <DependentUpon>pr_global_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pr\pr_global_view.aspx.designer.cs">
+      <DependentUpon>pr_global_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pr\pr_new_list.aspx.cs">
+      <DependentUpon>pr_new_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pr\pr_new_list.aspx.designer.cs">
+      <DependentUpon>pr_new_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pr\pr_new_view.aspx.cs">
+      <DependentUpon>pr_new_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pr\pr_new_view.aspx.designer.cs">
+      <DependentUpon>pr_new_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteSub.Master.cs">
+      <DependentUpon>SiteSub.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteSub.Master.designer.cs">
+      <DependentUpon>SiteSub.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ws\investment.asmx.cs">
+      <DependentUpon>investment.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ws\product.asmx.cs">
+      <DependentUpon>product.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ws\promotion.asmx.cs">
+      <DependentUpon>promotion.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SiteSub.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonLib\CommonLib.csproj">
+      <Project>{0D172DB9-B45E-441F-821F-E1D0A827A488}</Project>
+      <Name>CommonLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="en\EnSite.Master" />
+    <Content Include="en\EnSiteSub.Master" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3743</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

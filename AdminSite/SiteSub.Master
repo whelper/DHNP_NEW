@@ -1,0 +1,261 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteSub.master.cs" Inherits="AdminSite.SiteSub" %>
+
+<!DOCTYPE HTML>
+<html  xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<title>Admin Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=1024" />
+<link rel="icon" type="image/x-icon" rel="icon" href="./favicon.ico" />
+<link type="text/css" rel="stylesheet" href="<%=GetRoot()%>/common/css/jquery-ui-1.10.3.custom.css" />
+<link type="text/css" rel="stylesheet" href="<%=GetRoot()%>/common/css/bootstrap.css"  />
+<link type="text/css" rel="stylesheet" href="<%=GetRoot()%>/common/css/style.css" />
+<link type="text/css" rel="stylesheet" href="<%=GetRoot()%>/common/css/print.css" media="print" />
+<!-- jQuery + JS -->
+<script type="text/javascript" src="<%=GetRoot()%>/common/js/jquery.min.js"></script>
+<script type="text/javascript" src="<%=GetRoot()%>/common/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript" src="<%=GetRoot()%>/common/js/bootstrap.js"></script> 
+<script type="text/javascript" src="<%=GetRoot()%>/common/js/function.js"></script>
+<script type="text/javascript" src="<%=GetRoot()%>/common/js/html5shiv-printshiv.js"></script>
+<script type="text/javascript">
+    var check_all = function () {
+        var obj_all = document.getElementById("chk_all");
+        var obj = document.getElementsByName("chk");
+
+        for (var i = 0; i < obj.length; i++) {
+            if (obj_all.checked == true) {
+                obj[i].checked = true;
+            } else {
+                obj[i].checked = false;
+            }
+        }
+    }
+
+    var check_value = function () {
+        var obj = document.getElementsByName("chk");
+        for (var i = 0; i < obj.length; i++) {
+            if (obj[i].checked == true) {
+                return true;
+            }
+        }
+        alert('체크된 값이 없습니다.');
+        return false;
+    }
+
+    var check_logout = function () {
+        if (confirm("로그아웃 하시겠습니까?")) {
+            return true;
+        }
+
+        return false;
+    }
+
+    var try_cnt = 0;
+    var open_popup = function (image_nm) {
+        /*
+        var obj_img = new Image();
+        obj_img.src = image_nm;
+
+        if (obj_img.width != 0 && obj_img.height != 0) {
+            try_cnt = 0;
+            view_image(obj_img);
+        } else {
+            try_cnt++;
+            if (try_cnt > 10) {
+                alert("이미지가 존재하지 않거나 일시적으로 로딩을 하지 못했습니다. 다시 시도해 주세요.");
+                try_cnt = 0;
+            } else {
+                // 이미지 사이즈가 정확히 안잡히는 케이스가 있어서 재 호출한다. (보통 첫로딩)
+                funzione = "open_popup('" + image_nm + "')";
+                intervallo = setTimeout(funzione, 1000);
+            }
+        }
+        */
+        // 임시 처리
+        var imgWin = window.open("", "gImgWin", "width=800px,height=600px, top=100,left=100,menubar=no,status=no,toolbar=no,scrollbars=no,resizable=no");
+        imgWin.document.write("<html>");
+        imgWin.document.write("<body topmargin=0 leftmargin=0 marginheight=0 marginwidth=0>");
+        imgWin.document.write("<a href='javascript:self.close();'><img src='" + image_nm + "' width=790px height=590 border=0></a>");
+        imgWin.document.write("</body></html>");
+    }
+
+    var view_image = function (obj_img) {
+        var win_width = obj_img.width + 20;
+        var win_height = obj_img.height + 20;
+        var cw = screen.availWidth;     //화면 넓이
+        var ch = screen.availHeight;    //화면 높이
+
+        var ml = (cw - win_width) / 2;        //가운데 띄우기위한 창의 x위치
+        var mt = (ch - win_height) / 2;         //가운데 띄우기위한 창의 y위치
+
+        var imgWin = window.open("", "gImgWin", "width=" + win_width + ",height=" + win_height + ", top=" + mt + ",left=" + ml + ",menubar=no,status=no,toolbar=no,scrollbars=no,resizable=no");
+        imgWin.document.write("<html>");
+        imgWin.document.write("<body topmargin=0 leftmargin=0 marginheight=0 marginwidth=0>");
+        imgWin.document.write("<a href='javascript:self.close();'><img src='" + obj_img.src + "' width=" + obj_img.width + " height=" + obj_img.height + " border=0></a>");
+        imgWin.document.write("</body></html>");
+    };
+</script> 
+
+</head>
+<body> 
+<form ID="frm" runat="server">
+<!--  HEADER -->
+<div id="page-top-outer">    
+  <div id="page-top">
+    <div id="logo"><a href="<%=GetRoot()%>/main/main_list.aspx">대한뉴팜 Admin</a></div>
+    <div id="page-right">
+        <div class="showhide-account b1"><a href="#"><%=GetUserName()%></a></div>
+        <div class="showhide-account b2"><asp:LinkButton ID="btnLogout" runat="server" OnClientClick="return check_logout();" onclick="btnLogout_Click" Text="Logout" alt="로그아웃"/></div>
+    </div>
+  </div>
+</div>
+<!--//  HEADER -->
+
+<!--  GNB -->
+<div class="nav-outer-repeat"> 
+	<div class="nav-outer">     
+	<!--  nav -->  
+	<div class="gnb">
+		<ul>
+            <% 
+                if (IsGetMenuAccess("1"))
+                {
+            %>
+			<li><a href="<%=GetRoot()%>/main/main_list.aspx"<%=GetGnbIndicatorSelected("main")%>> 메인관리 </a>
+				<ul<%=GetGnbIndicator("main")%>>
+					<li<%=GetLnbIndicator("main")%>><a href="<%=GetRoot()%>/main/main_list.aspx"> 메인관리 </a></li>
+				</ul>
+			</li>
+            <% 
+                }
+                
+                if (IsGetMenuAccess("2"))
+                {
+            %>
+			<li><a href="<%=GetRoot()%>/pdt/pdt_human_list.aspx"<%=GetGnbIndicatorSelected("pdt")%>>제품관리</a> 
+				 <ul<%=GetGnbIndicator("pdt")%>>
+					<li<%=GetLnbIndicator("pdt1_1")%>><a href="<%=GetRoot()%>/pdt/pdt_human_list.aspx">인체 의약품</a></li>
+					<li<%=GetLnbIndicator("pdt1_2")%>><a href="<%=GetRoot()%>/pdt/pdt_ani_list.aspx">동물 의약품</a></li>
+					<li<%=GetLnbIndicator("pdt1_3")%>><a href="<%=GetRoot()%>/pdt/pdt_bio_list.aspx">바이오 공정소재</a></li>
+					<li<%=GetLnbIndicator("pdt1_4")%>><a href="<%=GetRoot()%>/pdt/pdt_ex_human_list.aspx">수출 의약품(인체)</a></li>
+					<li<%=GetLnbIndicator("pdt1_5")%>><a href="<%=GetRoot()%>/pdt/pdt_ex_ani_list.aspx">수출 의약품(동물)</a></li>
+					<li<%=GetLnbIndicator("pdt1_8")%>><a href="<%=GetRoot()%>/pdt/pdt_ex_etc_list.aspx">수출 의약품(기타)</a></li>
+                    <li<%=GetLnbIndicator("pdt1_6")%>><a href="<%=GetRoot()%>/pdt/pdt_health_list.aspx">건강기능식품</a></li>
+					<li<%=GetLnbIndicator("pdt1_7")%>><a href="<%=GetRoot()%>/pdt/pdt_device_list.aspx">의료기기</a></li>
+				 </ul>
+			</li>
+            <% 
+                }
+                
+                if (IsGetMenuAccess("3"))
+                {
+            %>
+			<li><a href="<%=GetRoot()%>/pr/new_list.aspx"<%=GetGnbIndicatorSelected("pr")%>>홍보관리</a>
+				 <ul<%=GetGnbIndicator("pr")%>>
+					<li<%=GetLnbIndicator("pr1_1")%>><a href="<%=GetRoot()%>/pr/new_list.aspx">새소식</a></li>
+					<li<%=GetLnbIndicator("pr1_2")%>><a href="<%=GetRoot()%>/pr/global_list.aspx"> 해외자원투자 </a></li>
+				 </ul>
+			</li>
+            <% 
+                }
+                
+                if (IsGetMenuAccess("4"))
+                {
+            %>
+			<li><a href="<%=GetRoot()%>/inv/ir_info_list.aspx"<%=GetGnbIndicatorSelected("inv")%>>투자관리</a>
+				 <ul<%=GetGnbIndicator("inv")%>>
+					<li<%=GetLnbIndicator("inv1_1")%>><a href="<%=GetRoot()%>/inv/ir_info_list.aspx">IR자료</a></li>
+					<li<%=GetLnbIndicator("inv1_2")%>><a href="<%=GetRoot()%>/inv/money_mark_list.aspx">재무상태표</a></li>
+					<li<%=GetLnbIndicator("inv1_3")%>><a href="<%=GetRoot()%>/inv/money_bill_list.aspx">손익계산서</a></li>
+					<li<%=GetLnbIndicator("inv1_4")%>><a href="<%=GetRoot()%>/inv/ju_info_list.aspx">주식발행</a></li>
+					<li<%=GetLnbIndicator("inv1_5")%>><a href="<%=GetRoot()%>/inv/ju_juju_list.aspx">주주구성</a></li>
+					<li<%=GetLnbIndicator("inv1_6")%>><a href="<%=GetRoot()%>/inv/ju_my_list.aspx">자기주식</a></li>
+					<li<%=GetLnbIndicator("inv1_7")%>><a href="<%=GetRoot()%>/inv/notice_list.aspx">공지/공고</a></li>
+				 </ul>
+			</li>
+            <% 
+                }
+                
+                if (IsGetMenuAccess("5"))
+                {
+            %>
+			<li><a href="<%=GetRoot()%>/rcm/job_notify_list.aspx"<%=GetGnbIndicatorSelected("rcm")%>>채용관리</a>
+				 <ul<%=GetGnbIndicator("rcm")%>>
+					<li<%=GetLnbIndicator("rcm1_1")%>><a href="<%=GetRoot()%>/rcm/job_notify_list.aspx">채용공고</a></li>
+					<li<%=GetLnbIndicator("rcm1_2")%>><a href="<%=GetRoot()%>/rcm/job_guide_list.aspx">입사지원 현황</a></li>
+					<li<%=GetLnbIndicator("rcm1_3")%>><a href="<%=GetRoot()%>/rcm/job_faq_list.aspx">FAQ</a></li>
+				 </ul>
+			</li>
+            <% 
+                }
+                
+                if (IsGetMenuAccess("6"))
+                {
+            %>
+			<li><a href="<%=GetRoot()%>/cust/inquire_list.aspx"<%=GetGnbIndicatorSelected("cust")%>>고객관리</a>
+				 <ul<%=GetGnbIndicator("cust")%>>
+					<li<%=GetLnbIndicator("cust1_1")%>><a href="<%=GetRoot()%>/cust/inquire_list.aspx">제품문의</a></li>
+					<li<%=GetLnbIndicator("cust1_2")%>><a href="<%=GetRoot()%>/cust/with_list.aspx">제휴제안</a></li>
+				 </ul>
+			</li>
+            <% 
+                }
+                
+                if (IsGetMenuAccess("7"))
+                {
+            %>			
+			<li><a href="<%=GetRoot()%>/code/code_human_list.aspx"<%=GetGnbIndicatorSelected("code")%>>코드관리</a>
+				<ul<%=GetGnbIndicator("code")%>>
+					<li<%=GetLnbIndicator("code_human_list.aspx")%>><a href="<%=GetRoot()%>/code/code_human_list.aspx">인체 의약품</a></li>
+					<li<%=GetLnbIndicator("code_ani_list.aspx")%>><a href="<%=GetRoot()%>/code/code_ani_list.aspx">동물 의약품</a></li>
+					<li<%=GetLnbIndicator("code_bio_list.aspx")%>><a href="<%=GetRoot()%>/code/code_bio_list.aspx">바이오 공정소재</a></li>
+					<li<%=GetLnbIndicator("code_ex_human_list.aspx")%>><a href="<%=GetRoot()%>/code/code_ex_human_list.aspx">수출 의약품(인체)</a></li>
+					<li<%=GetLnbIndicator("code_ex_ani_list.aspx")%>><a href="<%=GetRoot()%>/code/code_ex_ani_list.aspx">수출 의약품(동물)</a></li>
+                    <li<%=GetLnbIndicator("code_ex_etc_list.aspx")%>><a href="<%=GetRoot()%>/code/code_ex_etc_list.aspx">수출 의약품(기타)</a></li>
+					<li<%=GetLnbIndicator("code_health_list.aspx")%>><a href="<%=GetRoot()%>/code/code_health_list.aspx">건강기능식품</a></li>
+					<li<%=GetLnbIndicator("code_device_list.aspx")%>><a href="<%=GetRoot()%>/code/code_device_list.aspx">의료기기</a></li>
+				</ul>
+			</li>
+            <% 
+                }
+
+                if (IsGetMenuAccess("8"))
+                {
+            %>
+			<li><a href="<%=GetRoot()%>/account/order_list.aspx"<%=GetGnbIndicatorSelected("account")%>>계정관리</a>
+				<ul<%=GetGnbIndicator("account")%>>
+					<li<%=GetLnbIndicator("order_list.aspx")%>><a href="<%=GetRoot()%>/account/order_list.aspx" >계정관리</a></li>
+                    <li<%=GetLnbIndicator("account_2")%>><a href="<%=GetRoot()%>/account/duty_list.aspx">직무-부서관리</a></li>
+				</ul>
+			</li>
+            <% 
+                }
+                if (IsGetMenuAccess("9"))
+                {
+            %>
+			<li><a href="<%=GetRoot()%>/event/event_list.aspx"<%=GetGnbIndicatorSelected("event")%>>이벤트관리</a>
+				<ul<%=GetGnbIndicator("event")%>>
+					<li<%=GetLnbIndicator("event_list.aspx")%>><a href="<%=GetRoot()%>/event/event_list.aspx" >이벤트관리</a></li>                    
+				</ul>
+			</li>
+            <% 
+                }
+            %>
+		</ul>
+	</div>
+	<!--//  nav -->
+	</div>
+</div>
+<!--//  GNB-->
+        <asp:ContentPlaceHolder ID="ContentPlaceSubLayer" runat="server">
+        
+        </asp:ContentPlaceHolder>
+<!-- FOOTER -->
+<div id="footer">	
+	<div id="footer-left">Copyright © Deahan New Pharm Corp. All Rights Reserved.</div>
+</div>
+<!--// FOOTER -->
+</form>
+</body>
+</html>

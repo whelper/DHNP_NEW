@@ -1,0 +1,149 @@
+@charset "utf-8";
+
+/*********************************************
+* list
+*********************************************/
+/** 리스트 **/
+.table_list {width:100%; table-layout:fixed; font-size:12px;  text-align:center; border-top:1px solid #dbdbdb; margin-bottom:20px; }
+.table_list th { min-height:34px; line-height: 34px; color:#5b5a5f;border-bottom:2px solid #04b25a; }
+.table_list th:first-child { text-align:center;  padding:0; }
+.table_list tr.new { background:#f6f6f6; }
+.table_list td {  min-height:37px;  line-height: 37px;  color:#686a71; border-bottom:1px solid #dbdbdb; }
+.table_list td:first-child {text-align:center;  padding:0;  }
+.table_list td.no_data {width:100%; text-align:center; padding:10px 0; }
+.table_list td a { width:355px; text-align:left; text-indent: 10px;  display:block; font-size:12px; color:#686a71;overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.table_list td a:hover { color:#04b25a; }
+
+.table_list.lineheight td { line-height: 150%; text-align: left; padding:5px 0; } 
+.table_list.lineheight .button { margin-left:23px; }
+.table_list.lineheight .no_data { height: 100px; text-align: center;}
+/** 리스트  th에 bg  전형결과확인**/
+.table_list_01 {width:100%; table-layout:fixed; font-size:12px;  text-align:center; border-top:1px solid #dbdbdb; margin-bottom:20px;border-top:2px solid #04b25a;  }
+.table_list_01 th { min-height:34px; line-height: 34px; background:#f9faf9; color:#5b5a5f;border-left:1px solid #dbdbdb; border-bottom:1px solid #dbdbdb; }
+.table_list_01 th:first-child { text-align:center;  padding:0; border-left:none; }
+.table_list_01 td {  min-height:37px;  line-height: 37px;  color:#686a71; border-left:1px solid #dbdbdb;  border-bottom:1px solid #dbdbdb; }
+.table_list_01 td:first-child {text-align:center;  padding:0; border-left:none; }
+.table_list_01 td.no_data {width:100%; text-align:center; padding:10px 0; }
+.table_list_01 td a { width:355px; text-align:left; text-indent: 10px;  display:block; font-size:12px; color:#686a71; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+.table_list_01 td a:hover { color:#04b25a; }
+.table_list_01 th label { font-weight: bold;}
+/** 고객  제품문의 **/
+.td_input { text-align:left; line-height: 0 !important; padding-left:0;  padding-right: 3%;   }
+.table_list_01 .input100 { width:100%; *width:96%;  margin:3px 1%;}
+.table_list_01 .textarea100 { width:99.5%; *width:95.5%;  margin:3px 1%; line-height: 160%;}
+/** 리스트  -- 입사지원 **/
+.wCut  { width:230px; text-align:left; text-indent: 10px;  display:block; font-size:12px; color:#686a71; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; } 
+.wCut.w300{ width:300px;}
+.table_list tr.onhover { background-color:#f0f0f0; }
+.content_view { display:none; }
+.job_edit_view { text-align: left; line-height:150%;  padding: 5px 10px; }
+/** 상세보기 **/
+.table_view {width:100%;  table-layout:fixed; font-size:12px;  text-align:center; border-top:1px solid #dbdbdb; margin-bottom:20px; }
+.table_view thead th  { border-color:#f9faf9; line-height:34px; text-align: left;  font-size:14px;  color:#686a71;  }
+.table_view thead td { border-bottom:2px solid #04b25a; }
+.table_view thead th { border-bottom:1px solid #ccc6ba; }
+.table_view thead td { border-bottom:1px solid #ccc6ba; }
+.table_view thead th span { min-width:70px;  line-height:34px; text-align: center; display:inline-block; *zoom:1; *display:inline;  background:url(../../common/images/common/line.png) no-repeat 100%  8px;  }
+.table_view td {  text-align: left; font-size:14px; color:#a9a8a8; border-bottom:1px solid #ccc6ba; }
+.table_view tbody tr:first-child {  border-top:2px solid #04b25a;}
+.view_adit {  width:650px; table-layout:fixed;  min-height:390px; display:block; color:#686a71; line-height:170%;  padding:25px 20px 30px 20px;  }
+.view_adit img {  max-width:100%; margin:auto; }
+/** table 안에 아이콘들  **/
+table .icolor { line-height:20px; padding:0 5px;  color:#fff; font-size:12px; display:inline-block; *display:inline; *zoom:1; text-align:center; text-indent: 0;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;  }
+.icolor.orange { background:#ff1d00; }
+.icolor.green { background:#84c718; }
+.icolor.blue { background:#009ace; }
+.icolor.purple { background:#ac85ea; }
+.icolor.red { background:#c82c18; line-height:15px; margin-right: 5px; }
+.icolor.gray { background:#989b9f; line-height:15px; margin-right: 5px; }
+table .i_file {  padding-left:20px; margin-right: 10px; background:url(../../common/images/common/i_file.png) no-repeat 0 0; }
+table td .new { background:#ff6000;  line-height:16px; padding:0 5px; margin-right:5px;   color:#fff; font-size:10px; display:inline-block; *display:inline; *zoom:1; text-align:center; text-indent: 0;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px; 
+  }
+  /** 재무상태표 **/
+.money_tit { overflow: hidden; font-size: 11px;  color: #686a71; margin-bottom: 6px;}
+.money_tit .left { float: left; }
+.money_tit .right { float: right; }
+.table_style_01 {width:100%;  font-size:12px; min-height:34px; text-align:center; border-top:2px solid #04b25a; margin-bottom:20px; border-bottom: 1px solid #c5c5c5; }
+.table_style_01 thead th {  padding:6px 0;  background:#f9faf9; color:#6c6c6c; font-weight:600; border-left:1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb;  }
+.table_style_01 thead tr th:first-child { min-height:23px; height:23px;  }
+.table_style_01 tbody th { color:#686a71;font-weight:normal;  border-left:1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb; }
+.table_style_01 tbody tr th:first-child {  border-left:none; }
+.table_style_01 tbody .first { text-align:left; padding-left:5px; font-weight:bold; color:#3498ff; font-size: 13px;  }
+.table_style_01 tbody td {  padding:10px 0; text-align: right; padding-right:10px; color:#6c6c6c; border-left:1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb;  }
+.table_style_01 tfoot {  background-color:#b7dafe; border-left: 1px solid #dbdbdb;  }
+.table_style_01 tfoot th { padding:6px 0; font-size:13px; font-weight:bold; color: #5d5d5d; border-right: 1px solid #dbdbdb;}
+.table_style_01 .total  { font-size:13px;   color: #5d5d5d; background-color:#e7e7e7; border-left:transparent;   }
+.table_style_01 .total  th,
+.table_style_01 .total_01  th  { font-weight: bold;  }
+.table_style_01 tfoot td,
+.table_style_01 .total td,
+.table_style_01 .total_01 td { text-align: right;line-height:34px;  padding-right: 9px; font-weight:bold; border-left: 1px solid #dbdbdb; border-bottom:1px solid #c5c5c5; }
+.table_style_01 .total_01  { font-size:13px;   color: #5d5d5d; background-color:#e0efff;   }
+.table_style_01 .left { text-align: left; padding-left:9px; }
+.table_style_01 .fb { font-weight: 600; }
+.table_style_01 .left_borNo { border-left: none;}
+/** 주식발행   **/
+.table_style_01.th36 thead tr th { line-height: 34px;} 
+/**  주주구성   **/
+.table_style_01.juju .total td { font-size:12px; font-weight:600;  }
+/**  입사지원  - th 가로    **/
+.top_ling2 {  border-top:2px solid #04b25a; margin-bottom: 40px; }
+
+.table_style_row  {width:100%;  font-size:12px; min-height:34px; text-align:center;  margin-bottom:20px; }
+.table_style_row th { background:#f9faf9; color:#6c6c6c; font-weight:bold; border-left:1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb;  }
+.table_style_row th label { color:#6c6c6c; font-weight:bold; }
+.table_style_row td { text-align:left; vertical-align: middle; padding:0 0 0 5px; color:#6c6c6c; border-left:1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb;  }
+.table_style_row.left_lineNo th { height: 36px; text-align: left; padding-left: 10px; border-left:transparent;  }
+.table_style_row.center_lineNo  th  { height: 36px;  border-left:transparent;  }
+.table_style_row .left_lineNo  {border-left:transparent;  }
+.table_style_row  input[type="text"] { margin:4px 0; padding:3px; }
+.table_style_row  textarea { margin:4px 0;  }
+.table_style_row .bottom_lineNo  {border-bottom:0px solid #fff  }
+.table_style_row .bottom_line { border-bottom: 1px solid #dbdbdb; } 
+.table_style_row .photo_th  { text-align: left; vertical-align:top;   border-left:transparent; border-right:1px solid #dbdbdb;  }  
+
+/**  학력사항  -th 가료    **/
+.line_top2_bott1 {  border-top:2px solid #04b25a; border-bottom: 1px solid #dbdbdb; margin-bottom: 40px; }
+.table_style_row01.lineheight th,
+.table_style_row01.lineheight td  { line-height: 150%;}
+.table_style_row01.lineheight_no th  { line-height: 150%;}
+.table_style_row01.lineheight_no td  { line-height: 100%;}
+.table_style_row01  {width:100%;  font-size:12px; min-height:35px; text-align:center;}
+.table_style_row01 th {padding:7px 0;  background:#f9faf9; color:#6c6c6c; font-weight:bold; border-left:1px solid #dbdbdb;   }
+.table_style_row01 th label { color:#6c6c6c; font-weight:bold; }
+.table_style_row01 td { line-height:35px; text-align:left; vertical-align: middle; padding:0 0 0 5px; color:#6c6c6c; border-left:1px solid #dbdbdb; border-top: 1px solid #dbdbdb;   }
+.table_style_row01 select  { min-width:95%; height: 29px;font-size:12px;  margin:4px 0; }
+.table_style_row01 input {  width:90%;  font-size:12px;  text-indent: -1px;   margin:4px 0;   }
+.table_style_row01 textarea { width:100%; *width:97%; display:block; margin:3px 0; } 
+.table_style_row01 .left_lineNo  {border-left:transparent;  }
+.table_style_row01 .bottom_lineNo  {border-bottom:transparent;  }
+.table_style_row01 .icon { border-bottom:transparent; background:#fff;    }
+.table_style_row01 .td100 { padding:0 17px 0 4px; *padding-right:4px;   }
+.table_style_row01 .td100 select  { width:99%; *width:97.5%;}
+.table_style_row01 .td100 input { width:100%; *width:97.5%;}
+.btn_basket { width:20px; height: 20px;  color:transparent; font-size: 1px;  background:url(../images/common/i_basket.png) no-repeat 0 0;  }
+/**  우편번호   **/
+.table_scroll_box { width:90%; height:218px; margin:auto; border:1px solid #dbdbdb;  }
+.table_scroll_box thead { background:#f9faf9;  }
+.table_scroll_box thead  th {  height:35px;  background:#f9faf9; color:#6c6c6c; font-weight:bold; border-left:1px solid #dbdbdb;  }
+.table_scroll_box thead  th:first-child  {  border-left:transparent; }
+.table_scroll_box td {  text-align:left; padding:7px;vertical-align: middle; color:#6c6c6c; border-left:1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb;  }
+.table_scroll_box td:first-child {  text-align:center;  border-left:transparent; }
+/***********************************************
+    게시판 페이지  ( 이전 1 2 3 4 5 다음 ) 
+ ************************************************/
+.page_Num { margin:auto; text-align:center; margin-bottom:30px; }
+.page_Num a { padding:0 4px; line-height:14px; font-size:12px; color:#a9acb3 }
+.page_Num a:hover, .page_Num a.onhover { color:#04b25a; font-weight:bold; }
+.page_Num strong {width:14px; height:14px; display:inline-block; *display:inline; *zoom:1; background:url(../images/common/page_arrow.png) no-repeat 0 0; } 
+.page_Num strong a { width:14px; height:14px; text-indent:-99999px;display:block; }
+.page_Num strong.first { margin-right:3px; background-position:0 2px; }   
+.page_Num strong.prev { margin-right:10px;  background-position: -20px 2px; }   
+.page_Num strong.next { margin-left:8px; background-position:-40px 2px; }   
+.page_Num strong.last { margin-left:4px; background-position:-60px 2px; }   

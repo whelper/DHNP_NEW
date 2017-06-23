@@ -1,0 +1,321 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="EnProducts_Sub.master.cs" Inherits="HomePage.en.EnProducts_Sub" %>
+
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=1024" />
+	<title>"따뜻함을 함께하는 대한뉴팜"</title>
+	<!-- SEO: 검색 엔진 최적화 -->
+	<meta name="description" content="대한뉴팜의 소개와 제품소개입니다. ">
+	<meta name="keywords" content="대한뉴팜, 의약품 ">
+
+	<link rel="stylesheet" href="/en/common/css/default.css" />
+	<link rel="stylesheet" href="/en/common/css/common.css" />
+	<link rel="stylesheet" href="/en/common/css/sub.css" />
+	<link rel="stylesheet" href="/en/common/css/table.css" />
+    <link rel="stylesheet" href="/common/css/magnific-popup.css" />
+	<link rel="stylesheet" href="/en/common/css/print.css"  media="print" />
+    
+    <link type="text/css" rel="stylesheet" href="/en/common/css/jquery-ui-1.10.3.custom.css" />
+    <link type="text/css" rel="stylesheet" href="/en/common/css/bootstrap.css"  />
+    <link type="text/css" rel="stylesheet" href="/en/common/css/eng.css"  />
+
+	<!-- Html5 및 css3 미지원 브라우저를 위한 설정 js-->
+	<!--[if IE ]>
+		<script type="text/javascript" src="/common/js/html5shiv.js"></script>
+        <script type="text/javascript" src="/common/js/html5shiv-printshiv.js"></script>
+		<script type="text/javascript" src="/common/js/respond.min.js"></script>
+	<![endif]-->
+	<!--[if lt IE 7]>
+		<script src="/common/js/IE7.js"></script>
+        <script type="text/javascript" src="/common/js/html5shiv-printshiv.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="/en/common/js/jquery-1.9.1.min.js" ></script> 
+	<script type="text/javascript" src="/en/common/js/jquery-ui.min.js" ></script> 
+    <script type="text/javascript" src="/common/js/modernizr.custom.js" ></script> 
+    <script type="text/javascript" src="/common/js/jquery.magnific-popup.min.js" ></script> 
+    <script type="text/javascript" src="/en/common/js/bootstrap.js"></script> 
+	<script type="text/javascript" src="/en/common/js/common.js" ></script> 
+</head>
+<body>
+<form id="form1" runat="server">
+<div class="wrap" >
+	<nav id="skip">
+		<h1 class="acc-hidden"> 바로가기 네비게이션 </h1>
+		<a href="#content"> 본문내용 바로가기 </a>
+	</nav>
+	<header class="header">
+		<div class="header_bg"> </div>
+		<div class="header_content">
+			<h1 class="logo"> <a href="/en/index.aspx"> 대한뉴팜 </a></h1>
+			<nav class="lnb">
+				<h1 class="acc-hidden"> 로컬 네비게이션 </h1>
+				<ul class="lnb_ul">
+					<li><a href="/en/customer/inquire.aspx"><span class="lnb_contact"> customer</span>  </a></li>
+					<li><a href="/en/sitemap.aspx"><span class="lnb_sitemap"> sitemap</span>  </a></li>
+					<li><a href="/index.aspx"><span class="lnb_english"> english </span> </a></li>
+					<li><a href="javascript:window.print()" ><span class="lnb_print"> 인쇄하기 </span> </a></li>
+				</ul>
+			</nav>  <!-- // lnb -->
+			<nav class="gnb">
+				<h1 class="acc-hidden"> 글로벌 네비게이션 </h1>
+				<ul class="gnb_ul">
+					<li> <a href="/en/intro/vision.aspx"   class="gnb_01<%=GetGnbIndicator("intro")%>"> Company </a>
+						<ul  class="ly" style="display:none;">
+							<li><a href="/en/intro/vision.aspx" > Vision </a></li>
+							<li><a href="/en/intro/group.aspx">Organization Structure</a></li>
+							<li><a href="/en/intro/leave.aspx"> History </a></li>
+							<li><a href="/en/intro/location.aspx"> Contact Us </a></li>
+						</ul>
+					</li>
+					<li><a href="/en/products/human_new_list.aspx" class="gnb_02<%=GetGnbIndicator("products")%>">Products</a>
+						<ul  class="ly" style="display:none;">
+							<li><a href="/en/products/human_new_list.aspx">Pharmaceutical</a></li>
+							<li><a href="/en/products/animal_new_list.aspx">Animal Health & Nutrition</a></li>
+							<li><a href="/en/products/bio_badge_list.aspx">Bioprocess</a></li>
+							<li><a href="/en/products/global_human_list.aspx">International Sales</a></li>
+							<li><a href="/en/products/health_products_list.aspx">Health Suppliments</a></li>
+	                        <li><a href="/en/products/medical_list.aspx">Medical Devices</a></li>
+						</ul>
+					</li>
+					<%--<li><a href="/en/pr/news_list.aspx" class="gnb_03<%=GetGnbIndicator("pr")%>">홍보</a>
+						<ul  class="ly" style="display:none;">
+							<li><a href="/en/pr/news_list.aspx" >새소식</a></li>
+							<li><a href="/en/pr/global_list.aspx">해외자원투자</a></li>
+						</ul>
+					</li>--%>
+					<li><a href="/en/invest/business.aspx" class="gnb_04<%=GetGnbIndicator("invest")%>">Investors</a>
+						<ul  class="ly" style="display:none;">
+							<li><a href="/en/invest/business.aspx">Prospective Investros</a></li>
+							<li><a href="/en/invest/money_mark.aspx">Financial Reports</a></li>
+							<li><a href="/en/invest/stock_info.aspx">Shareholder Services</a></li>
+                            <!--
+                            <li><a href="/en/invest/pub_announce.aspx">공시자료</a></li>
+                            -->
+							<%--<li><a href="/en/invest/notice_list.aspx">공지/공고</a></li>--%>
+						</ul>
+					</li>
+					<%--<li><a href="../recruit/new_person.aspx" class="gnb_05<%=GetGnbIndicator("recruit")%>"> 채용   </a>
+						<ul  class="ly" style="display:none;">
+							<li><a href="/en/recruit/new_person.aspx">대한뉴팜인</a></li>
+							<li><a href="/en/recruit/job_notify_list.aspx">상시채용</a></li>
+							<li><a href="/en/recruit/job_guide_list.aspx">입사지원</a></li>
+							<li><a href="/en/recruit/faq_list.aspx"> FAQ </a></li>
+						</ul>
+					</li>--%>
+				</ul>
+			</nav>  <!-- // gnb -->
+		</div> <!-- // header_content --> 		
+	</header>
+	<hr>
+
+    <div  class="container clear">
+		<nav class="snb">
+            <% 
+                switch (GetGnbIndex())
+                { 
+            %>
+                <% case 0:%>
+
+            <h1 class="snb_title t01"> 대한 뉴팜  </h1>
+			<ul>
+				<li><a href="/en/intro/vision.aspx"<%=GetLnbIndicator("vision.aspx")%>>Vision</a></li>
+				<li><a href="/en/intro/leave.aspx"<%=GetLnbIndicator("leave.aspx")%>>History</a></li>
+				<li><a href="/en/intro/group.aspx" <%=GetLnbIndicator("group.aspx")%>>Organization Structure</a></li>
+				<li><a href="/en/intro/location.aspx"<%=GetLnbIndicator("location.aspx")%>>Contact Us</a></li>
+			</ul> 
+                <% break; %>
+                <% case 1:%>
+
+			<h1 class="snb_title t02">  제품 </h1>      
+			<ul>
+				<li> <a href="/en/products/human_new_list.aspx"<%=GetLnbIndicatorGroup("prod_group_1")%>>Pharmaceutical</a> 
+					<ul class="sy"<%=GetLnbIndicatorDisplay("prod_group_1")%>>
+						<li><a href="/en/products/human_new_list.aspx"<%=GetLnbIndicator("prod_1")%>>New Products</a> </li>
+						<li><a href="/en/products/human_products_list.aspx"<%=GetLnbIndicator("prod_2")%>>Products</a></li>
+						<%--<li><a href="/en/products/human_change_list.aspx"<%=GetLnbIndicator("prod_3")%>>제품변경정보</a></li>--%>
+					</ul> 
+				</li>
+				<li> <a href="/en/products/animal_new_list.aspx"<%=GetLnbIndicatorGroup("prod_group_2")%>>Animal Health & Nutrition</a>
+					<ul class="sy"<%=GetLnbIndicatorDisplay("prod_group_2")%>>
+						<li><a href="/en/products/animal_new_list.aspx"<%=GetLnbIndicator("prod_4")%>>New Products</a></li>
+						<li><a href="/en/products/animal_products_list.aspx"<%=GetLnbIndicator("prod_5")%>>Products</a></li>
+						<%--<li><a href="/en/products/animal_delivery_list.aspx"<%=GetLnbIndicator("prod_6")%>>관납제품</a></li>--%>
+					</ul> 
+				</li>
+				<li> <a href="/en/products/bio_badge_list.aspx"<%=GetLnbIndicatorGroup("prod_group_3")%>>Bioprocess</a> 
+					<ul class="sy"<%=GetLnbIndicatorDisplay("prod_group_3")%>>
+					    <li><a href="/en/products/bio_badge_list.aspx"<%=GetLnbIndicator("prod_7")%>>Cell Culture Media</a></li>
+					    <li><a href="/en/products/bio_resin_list.aspx"<%=GetLnbIndicator("prod_8")%>>Chromatography Resins</a></li>
+					    <li><a href="/en/products/bio_catalog_list.aspx"<%=GetLnbIndicator("prod_9")%>> Catalog Products  </a></li>
+					</ul> 
+			      </li>
+				<li> <a href="/en/products/global_human_list.aspx"<%=GetLnbIndicatorGroup("prod_group_4")%>>International Sales</a> 
+			            <ul class="sy"<%=GetLnbIndicatorDisplay("prod_group_4")%>>
+			                <li><a href="/en/products/global_human_list.aspx"<%=GetLnbIndicator("prod_10")%>> Pharmaceutical</a></li>
+			                <li><a href="/en/products/global_animal_list.aspx"<%=GetLnbIndicator("prod_11")%>> Animal Health & Nutrition</a></li>
+                            <li><a href="/en/products/global_animal_list.aspx"<%=GetLnbIndicator("prod_15")%>> ETC</a></li>
+			            </ul> 
+				</li>
+				<li> <a href="/en/products/health_products_list.aspx"<%=GetLnbIndicatorGroup("prod_group_5")%>>Health Suppliments</a> 
+					<ul class="sy"<%=GetLnbIndicatorDisplay("prod_group_5")%>>
+						<li><a href="/en/products/health_products_list.aspx"<%=GetLnbIndicator("prod_12")%>>Products</a></li>
+					</ul> 
+				</li>
+				<li> <a href="/en/products/medical_list.aspx"<%=GetLnbIndicatorGroup("prod_group_6")%>>Medical Devices</a> 
+					<ul class="sy"<%=GetLnbIndicatorDisplay("prod_group_6")%>>
+						<li><a href="/en/products/medical_list.aspx"<%=GetLnbIndicator("prod_13")%>>Medical Devices</a></li>
+					</ul> 
+				</li>
+			</ul>
+            <% break; %>
+<%--            <% case 2:%>
+            <h1 class="snb_title t03"> 홍보 </h1>   
+			<ul>
+				<li> <a href="/en/pr/news_list.aspx"<%=GetLnbIndicator("pr_1")%>> 새소식   </a> </li>
+				<li> <a href="/en/pr/global_list.aspx"<%=GetLnbIndicator("pr_2")%>>해외자원투자</a> </li>
+			</ul>
+            <% break; %>--%>
+
+            <% case 3:%>
+            <h1 class="snb_title t04">Investors</h1>   
+			<ul>
+                <li>
+                    <a href="/en/invest/business.aspx" <%=GetLnbIndicatorGroup("invest_group_1")%>>Prospective Investors</a>
+                    <ul class="sy"<%=GetLnbIndicatorDisplay("invest_group_1")%>>
+                        <li><a href="/en/invest/business.aspx"<%=GetLnbIndicator("business.aspx")%>>Business Strategy</a></li>
+                        <li><a href="/en/invest/ir_info_list.aspx"<%=GetLnbIndicator("invest_2")%>>IR Report</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/en/invest/money_mark.aspx" <%=GetLnbIndicatorGroup("invest_group_2")%>>Financial Reports</a>
+                    <ul class="sy"<%=GetLnbIndicatorDisplay("invest_group_2")%>>
+                        <li><a href="/en/invest/money_mark.aspx"<%=GetLnbIndicator("money_mark.aspx")%>>Balanced Sheet</a></li>
+				        <li><a href="/en/invest/money_bill.aspx"<%=GetLnbIndicator("money_bill.aspx")%>>Income Statement</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/en/invest/stock_info.aspx" <%=GetLnbIndicatorGroup("invest_group_3")%>>Shareholder Services</a>
+                    <ul class="sy"<%=GetLnbIndicatorDisplay("invest_group_3")%>>
+                        <li><a href="/en/invest/stock_info.aspx"<%=GetLnbIndicator("stock_info.aspx")%>>Number of Issued Shares</a></li>
+                        <li><a href="/en/invest/treasury_stock.aspx"<%=GetLnbIndicator("treasury_stock.aspx")%>>Treasury Shares</a></li>
+                    </ul>
+                </li>
+                <!--
+                <li>
+                    <a href="/en/invest/pub_announce.aspx" <%//=GetLnbIndicator("pub_announce.aspx")%>>공시자료</a>
+                </li>
+                -->
+<%--                <li>
+                    <a href="/en/invest/notice_list.aspx" <%=GetLnbIndicator("invest_8")%>>공지/공고</a>
+                </li>--%>
+			</ul>
+            <% break; %>
+
+<%--            <% case 4:%>
+            <h1 class="snb_title t05"> 채용 </h1>
+            <ul>
+                <li>
+                    <a href="/en/recruit/new_person.aspx" <%=GetLnbIndicatorGroup("recruit_group_1")%>>대한뉴팜인</a>
+                    <ul class="sy"<%=GetLnbIndicatorDisplay("recruit_group_1")%>>
+                        <li><a href="/en/recruit/new_person.aspx"<%=GetLnbIndicator("new_person.aspx")%>>인재상</a></li>
+                        <li><a href="/en/recruit/new_evaluation.aspx"<%=GetLnbIndicator("new_evaluation.aspx")%>>평가보상</a></li>
+                        <li><a href="/en/recruit/new_interest.aspx"<%=GetLnbIndicator("new_interest.aspx")%>>복리후생</a></li>
+                        <li><a href="/en/recruit/new_edu.aspx"<%=GetLnbIndicator("new_edu.aspx")%>>교육제도</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/en/recruit/job_notify_list.aspx" <%=GetLnbIndicatorGroup("recruit_group_2")%>>상시채용</a>
+                    <ul class="sy"<%=GetLnbIndicatorDisplay("recruit_group_2")%>>
+                        <li><a href="/en/recruit/job_notify_list.aspx"<%=GetLnbIndicator("recruit_6")%>>채용공고</a></li>
+				        <li><a href="/en/recruit/job_guide.aspx"<%=GetLnbIndicator("recruit_7")%>>채용절차</a></li>
+                        <li><a href="/en/recruit/result_list.aspx"<%=GetLnbIndicator("recruit_8")%>>전형결과확인</a></li>
+                    </ul>
+                </li>
+                <li><a href="/en/recruit/job_guide_list.aspx" <%=GetLnbIndicatorGroup("job_guide_list.aspx")%>>입사지원</a></li>
+                <li><a href="/en/recruit/faq_list.aspx" <%=GetLnbIndicatorGroup("recruit_group_4")%>>FAQ</a></li>
+			</ul>
+            <% break; %>--%>
+
+            <% case 5:%>
+            <h1 class="snb_title t06">고객</h1>      
+			<ul>
+				<li> <a href="/en/customer/inquire.aspx"<%=GetLnbIndicatorGroup("customer_1")%>>Product Q&A</a></li>
+				<li> <a href="/en/customer/with.aspx"<%=GetLnbIndicatorGroup("customer_2")%>>Business Proposal</a> </li>
+			</ul> 
+            <% break; %>
+
+            <% 
+                }
+            %>       
+  
+
+        <asp:ContentPlaceHolder ID="ContentPlaceSubLayer" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+            </div> <!--// container -->
+
+    <aside id="quick_menu">
+		<h1><span>Quick Menu</span></h1>
+		<ul>
+			<li class="qu_01"><a href="/en/index.aspx">home</a></li>
+			<li class="qu_02"><a href="/en/products/human_new_list.aspx">Quick menu</a></li>
+			<li class="qu_03"><a href="/en/products/animal_new_list.aspx"> Animal Health & Nutrition</a></li>
+			<li class="qu_04"><a href="/en/products/bio_badge_list.aspx"> Bioprocess</a></li>
+			<%--<li class="qu_05"><a href="/en/recruit/new_person.aspx">채용안내</a></li>--%>
+		</ul>
+        <a href="#top" class="btn_top"><span>맨위로 </span></a>
+    </aside>  <!-- //  quick_menu -->
+	<hr>
+	<footer class="footer">
+		<article class="footer_content">
+			<h1 class="logo_footer"><img src="/en/common/images/common/logo_footer.png" alt="주) 대한뉴팜" ></h1>
+			<nav class="fnb clear"> 
+				<h1 class="acc-hidden"> 하단 메뉴 </h1>
+				<ul class="fnb_ul ">
+					<li> <a href="/en/main/terms.aspx" title="이용약관" target="_blank" onclick="window.open(this.href,'popup', 'width=600, height=700'); return false;">TOS</a> <em>&nbsp;</em> </li>
+				    <li> <a href="/en/main/agreement.aspx" title="개인정보취급방침" target="_blank" onclick="window.open(this.href, '_blank', 'toolbar=no, scrollbars=no, resizable=no, top=100, left=200, width=600, height=700'); return false;"  class="line">Privacy Policy</a></li>
+				</ul>
+			</nav>
+			<address class="address clear">
+				<span class="addr">66 Jeyakgongdan 1-gil Hyangnameup, Hwasung, Gyeonggi, Korea 445-937</span><br />
+				<span class="ceo">Registration Number: 229-81-10729  </span>
+				<span class="tel">Tel: +82 2 3415-7808(English)</span>
+				<span class="fax">Fax: +82 2 581-1644</span>
+				<p class="copyright">Copyright &copy; Daehan New Pharm Co.,Ltd &nbsp;All right reserved. Copyright     </p>
+			</address>
+   		</article> 
+	</footer> <!-- // footer -->
+</div><!--// wrap-->
+</form>
+
+<script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-52745434-1', 'auto');
+    ga('send', 'pageview');
+
+    $(document).ready(function () {
+
+        $('.image-popup-vertical-fit').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            mainClass: 'mfp-img-mobile',
+            image: {
+                verticalFit: true
+            }
+
+        });
+    });
+</script>
+
+</body>
+</html>

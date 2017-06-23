@@ -1,0 +1,1969 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{148B81BC-F54B-4084-BF0F-D350229CA7CC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HomePage</RootNamespace>
+    <AssemblyName>HomePage</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\CommonLib\Libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="common\css\bootstrap.css" />
+    <Content Include="common\css\common.css" />
+    <Content Include="common\css\default.css" />
+    <Content Include="common\css\jquery-ui-1.10.3.custom.min.css" />
+    <Content Include="common\css\magnific-popup.css" />
+    <Content Include="common\css\print.css" />
+    <Content Include="common\css\sub.css" />
+    <Content Include="common\css\table.css" />
+    <Content Include="common\images\arrow_down.png" />
+    <Content Include="common\images\arrow_left.png" />
+    <Content Include="common\images\arrow_right.png" />
+    <Content Include="common\images\arrow_right_list.png" />
+    <Content Include="common\images\back.png" />
+    <Content Include="common\images\btn_more.png" />
+    <Content Include="common\images\btn_next.png" />
+    <Content Include="common\images\btn_off.png" />
+    <Content Include="common\images\btn_on.png" />
+    <Content Include="common\images\btn_prev.jpg" />
+    <Content Include="common\images\btn_prev.png" />
+    <Content Include="common\images\common\ar_green.png" />
+    <Content Include="common\images\common\btn_arrow_left.png" />
+    <Content Include="common\images\common\btn_arrow_right.png" />
+    <Content Include="common\images\common\btn_imgfile.png" />
+    <Content Include="common\images\common\btn_pdf.png" />
+    <Content Include="common\images\common\btn_pdf_01.png" />
+    <Content Include="common\images\common\btn_pdf_02.png" />
+    <Content Include="common\images\common\btn_pdf_03.png" />
+    <Content Include="common\images\common\btn_pdf_04.png" />
+    <Content Include="common\images\common\btn_pdf_05.png" />
+    <Content Include="common\images\common\btn_pdf_06.png" />
+    <Content Include="common\images\common\btn_pdf_07.png" />
+    <Content Include="common\images\common\btn_top.png" />
+    <Content Include="common\images\common\check.png" />
+    <Content Include="common\images\common\chkbox_sp.png" />
+    <Content Include="common\images\common\copy_line.png" />
+    <Content Include="common\images\common\customer_01.png" />
+    <Content Include="common\images\common\customer_02.png" />
+    <Content Include="common\images\common\customer_03.png" />
+    <Content Include="common\images\common\customer_04.png" />
+    <Content Include="common\images\common\dot.gif" />
+    <Content Include="common\images\common\favicon.png" />
+    <Content Include="common\images\common\gnb_shadow.png" />
+    <Content Include="common\images\common\ibtn_x_delete.png" />
+    <Content Include="common\images\common\i_basket.png" />
+    <Content Include="common\images\common\i_copy.png" />
+    <Content Include="common\images\common\i_copy_01.png" />
+    <Content Include="common\images\common\i_facebook.png" />
+    <Content Include="common\images\common\i_file.png" />
+    <Content Include="common\images\common\i_home.png" />
+    <Content Include="common\images\common\i_list.png" />
+    <Content Include="common\images\common\i_search.png" />
+    <Content Include="common\images\common\i_twitter.png" />
+    <Content Include="common\images\common\line.png" />
+    <Content Include="common\images\common\logo.png" />
+    <Content Include="common\images\common\logo_footer.png" />
+    <Content Include="common\images\common\page_arrow.png" />
+    <Content Include="common\images\common\popup_bg_icon.gif" />
+    <Content Include="common\images\common\pop_i_head.png" />
+    <Content Include="common\images\common\products_01.jpg" />
+    <Content Include="common\images\common\products_02.jpg" />
+    <Content Include="common\images\common\products_03.jpg" />
+    <Content Include="common\images\common\quick_ad.jpg" />
+    <Content Include="common\images\common\quick_link.png" />
+    <Content Include="common\images\common\slide_lnb.png" />
+    <Content Include="common\images\common\snb_arrow.png" />
+    <Content Include="common\images\common\snb_title.png" />
+    <Content Include="common\images\common\_i_s.htm" />
+    <Content Include="common\images\common\_i_s_files\btn_pdf.png" />
+    <Content Include="common\images\common\_i_s_files\common.js" />
+    <Content Include="common\images\common\_i_s_files\i_home.png" />
+    <Content Include="common\images\common\_i_s_files\jquery-1.9.1.min.js" />
+    <Content Include="common\images\common\_i_s_files\jquery-ui.min.js" />
+    <Content Include="common\images\common\_i_s_files\logo_footer.png" />
+    <Content Include="common\images\event_complete.png" />
+    <Content Include="common\images\gnb_arrow_down.png" />
+    <Content Include="common\images\gnb_icon.png" />
+    <Content Include="common\images\ico-calendar.jpg" />
+    <Content Include="common\images\indexCus_icon_01.png" />
+    <Content Include="common\images\indexCus_icon_02.png" />
+    <Content Include="common\images\indexNew_img01.jpg" />
+    <Content Include="common\images\indexNew_img02.jpg" />
+    <Content Include="common\images\indexNew_img03.jpg" />
+    <Content Include="common\images\indexPr_icon_01.png" />
+    <Content Include="common\images\indexPr_icon_02.png" />
+    <Content Include="common\images\indexPr_icon_03.png" />
+    <Content Include="common\images\index_visual_01.jpg" />
+    <Content Include="common\images\index_visual_01.png" />
+    <Content Include="common\images\index_visual_011.jpg" />
+    <Content Include="common\images\index_visual_02.jpg" />
+    <Content Include="common\images\index_visual_022.jpg" />
+    <Content Include="common\images\index_visual_03.jpg" />
+    <Content Include="common\images\index_visual_33.jpg" />
+    <Content Include="common\images\inquire_icon.png" />
+    <Content Include="common\images\inquire_title.png" />
+    <Content Include="common\images\i_con.png" />
+    <Content Include="common\images\i_down.png" />
+    <Content Include="common\images\i_new.png" />
+    <Content Include="common\images\i_serach_01.png" />
+    <Content Include="common\images\i_serach_02.png" />
+    <Content Include="common\images\i_up.png" />
+    <Content Include="common\images\logo.png" />
+    <Content Include="common\images\main\btn_close.png" />
+    <Content Include="common\images\main\button.jpg" />
+    <Content Include="common\images\main\button.png" />
+    <Content Include="common\images\main\button_active.png" />
+    <Content Include="common\images\main\customer_03.png" />
+    <Content Include="common\images\main\customer_04.png" />
+    <Content Include="common\images\main\i_memu_01.png" />
+    <Content Include="common\images\main\i_memu_02.png" />
+    <Content Include="common\images\main\i_memu_03.png" />
+    <Content Include="common\images\main\i_memu_04.jpg" />
+    <Content Include="common\images\main\i_memu_04.png" />
+    <Content Include="common\images\main\i_memu_none.jpg" />
+    <Content Include="common\images\main\pop.png" />
+    <Content Include="common\images\main\popup_01.jpg" />
+    <Content Include="common\images\main\popup_02.jpg" />
+    <Content Include="common\images\main\products_01.jpg" />
+    <Content Include="common\images\main\products_02.jpg" />
+    <Content Include="common\images\main\products_03.jpg" />
+    <Content Include="common\images\main\products_none.jpg" />
+    <Content Include="common\images\main\slide_main.png" />
+    <Content Include="common\images\main\visual_01.jpg" />
+    <Content Include="common\images\main\visual_01.png" />
+    <Content Include="common\images\main\visual_02.jpg" />
+    <Content Include="common\images\main\visual_03.jpg" />
+    <Content Include="common\images\main\visual_none.jpg" />
+    <Content Include="common\images\main_bg.jpg" />
+    <Content Include="common\images\nav_btn.png" />
+    <Content Include="common\images\pdt_banner_01.png" />
+    <Content Include="common\images\pdt_banner_02.png" />
+    <Content Include="common\images\pdt_banner_03.png" />
+    <Content Include="common\images\products\about_01.jpg" />
+    <Content Include="common\images\products\about_02.jpg" />
+    <Content Include="common\images\products\about_03.jpg" />
+    <Content Include="common\images\products\about_04.jpg" />
+    <Content Include="common\images\products\about_05.jpg" />
+    <Content Include="common\images\products\about_06.jpg" />
+    <Content Include="common\images\products\about_07.jpg" />
+    <Content Include="common\images\products\about_08.jpg" />
+    <Content Include="common\images\products\animal_delivery_big01.jpg" />
+    <Content Include="common\images\products\animal_delivery_big02.jpg" />
+    <Content Include="common\images\products\animal_delivery_big03.jpg" />
+    <Content Include="common\images\products\animal_delivery_big04.jpg" />
+    <Content Include="common\images\products\animal_delivery_big05.jpg" />
+    <Content Include="common\images\products\animal_delivery_big06.jpg" />
+    <Content Include="common\images\products\animal_delivery_big07.jpg" />
+    <Content Include="common\images\products\animal_delivery_big08.jpg" />
+    <Content Include="common\images\products\animal_delivery_small01.jpg" />
+    <Content Include="common\images\products\animal_delivery_small02.jpg" />
+    <Content Include="common\images\products\animal_delivery_small03.jpg" />
+    <Content Include="common\images\products\animal_delivery_small04.jpg" />
+    <Content Include="common\images\products\animal_new_big01.jpg" />
+    <Content Include="common\images\products\animal_new_big02.jpg" />
+    <Content Include="common\images\products\animal_new_big03.jpg" />
+    <Content Include="common\images\products\animal_new_big04.jpg" />
+    <Content Include="common\images\products\animal_new_big05.jpg" />
+    <Content Include="common\images\products\animal_new_big06.jpg" />
+    <Content Include="common\images\products\animal_new_big07.jpg" />
+    <Content Include="common\images\products\animal_new_big08.jpg" />
+    <Content Include="common\images\products\animal_new_small01.jpg" />
+    <Content Include="common\images\products\animal_new_small02.jpg" />
+    <Content Include="common\images\products\animal_new_small03.jpg" />
+    <Content Include="common\images\products\animal_new_small04.jpg" />
+    <Content Include="common\images\products\animal_products_big01.jpg" />
+    <Content Include="common\images\products\animal_products_big02.jpg" />
+    <Content Include="common\images\products\animal_products_big03.jpg" />
+    <Content Include="common\images\products\animal_products_big04.jpg" />
+    <Content Include="common\images\products\animal_products_big05.jpg" />
+    <Content Include="common\images\products\animal_products_big06.jpg" />
+    <Content Include="common\images\products\animal_products_big07.jpg" />
+    <Content Include="common\images\products\animal_products_big08.jpg" />
+    <Content Include="common\images\products\animal_products_small01.jpg" />
+    <Content Include="common\images\products\animal_products_small02.jpg" />
+    <Content Include="common\images\products\animal_products_small03.jpg" />
+    <Content Include="common\images\products\animal_products_small04.jpg" />
+    <Content Include="common\images\products\bio_badge_ex.gif" />
+    <Content Include="common\images\products\bio_catalog_ex.gif" />
+    <Content Include="common\images\products\bio_logo_01.gif" />
+    <Content Include="common\images\products\bio_logo_02.gif" />
+    <Content Include="common\images\products\bio_logo_03.gif" />
+    <Content Include="common\images\products\bio_resin_ex.gif" />
+    <Content Include="common\images\products\global_animal_big01.jpg" />
+    <Content Include="common\images\products\global_animal_big02.jpg" />
+    <Content Include="common\images\products\global_animal_big03.jpg" />
+    <Content Include="common\images\products\global_animal_big04.jpg" />
+    <Content Include="common\images\products\global_animal_big05.jpg" />
+    <Content Include="common\images\products\global_animal_big06.jpg" />
+    <Content Include="common\images\products\global_animal_big07.jpg" />
+    <Content Include="common\images\products\global_animal_big08.jpg" />
+    <Content Include="common\images\products\global_human_big01.jpg" />
+    <Content Include="common\images\products\global_human_big02.jpg" />
+    <Content Include="common\images\products\global_human_big03.jpg" />
+    <Content Include="common\images\products\global_human_big04.jpg" />
+    <Content Include="common\images\products\global_human_big05.jpg" />
+    <Content Include="common\images\products\global_human_big06.jpg" />
+    <Content Include="common\images\products\global_human_big07.jpg" />
+    <Content Include="common\images\products\global_human_big08.jpg" />
+    <Content Include="common\images\products\global_human_small01.jpg" />
+    <Content Include="common\images\products\global_human_small02.jpg" />
+    <Content Include="common\images\products\global_human_small03.jpg" />
+    <Content Include="common\images\products\global_human_small04.jpg" />
+    <Content Include="common\images\products\human_new_01.jpg" />
+    <Content Include="common\images\products\human_new_big01.jpg" />
+    <Content Include="common\images\products\human_new_big02.jpg" />
+    <Content Include="common\images\products\human_new_big03.jpg" />
+    <Content Include="common\images\products\human_new_big04.jpg" />
+    <Content Include="common\images\products\human_new_small01.jpg" />
+    <Content Include="common\images\products\human_new_small02.jpg" />
+    <Content Include="common\images\products\human_new_small03.jpg" />
+    <Content Include="common\images\products\human_new_small04.jpg" />
+    <Content Include="common\images\products\human_new_view_01.jpg" />
+    <Content Include="common\images\products\human_new_view_02.jpg" />
+    <Content Include="common\images\products\human_new_view_03.jpg" />
+    <Content Include="common\images\products\human_new_view_04.jpg" />
+    <Content Include="common\images\products\human_new_view_05.jpg" />
+    <Content Include="common\images\products\human_products_big01.jpg" />
+    <Content Include="common\images\products\human_products_big02.jpg" />
+    <Content Include="common\images\products\human_products_big03.jpg" />
+    <Content Include="common\images\products\human_products_big04.jpg" />
+    <Content Include="common\images\products\human_products_big05.jpg" />
+    <Content Include="common\images\products\human_products_big06.jpg" />
+    <Content Include="common\images\products\human_products_big07.jpg" />
+    <Content Include="common\images\products\human_products_big08.jpg" />
+    <Content Include="common\images\products\human_products_small01.jpg" />
+    <Content Include="common\images\products\human_products_small02.jpg" />
+    <Content Include="common\images\products\human_products_small03.jpg" />
+    <Content Include="common\images\products\human_products_small04.jpg" />
+    <Content Include="common\images\products\i_ani.png" />
+    <Content Include="common\images\products\i_animal.png" />
+    <Content Include="common\images\products\i_arrow_top.png" />
+    <Content Include="common\images\products\i_hum.png" />
+    <Content Include="common\images\products\i_human.png" />
+    <Content Include="common\images\products\i_new.png" />
+    <Content Include="common\images\products\i_plus.png" />
+    <Content Include="common\images\products\i_products.png" />
+    <Content Include="common\images\products\i_sns.jpg" />
+    <Content Include="common\images\products\i_sns.png" />
+    <Content Include="common\images\products\new_01.jpg" />
+    <Content Include="common\images\products\new_02.jpg" />
+    <Content Include="common\images\products\new_03.jpg" />
+    <Content Include="common\images\products\new_04.jpg" />
+    <Content Include="common\images\products\new_no.jpg" />
+    <Content Include="common\images\products\new_small_01.jpg" />
+    <Content Include="common\images\products\new_small_02.jpg" />
+    <Content Include="common\images\products\new_small_03.jpg" />
+    <Content Include="common\images\products\new_small_04.jpg" />
+    <Content Include="common\images\products\new_small_no.jpg" />
+    <Content Include="common\images\products\new_view_01.jpg" />
+    <Content Include="common\images\products\new_view_02.jpg" />
+    <Content Include="common\images\products\new_view_03.jpg" />
+    <Content Include="common\images\products\new_view_04.jpg" />
+    <Content Include="common\images\products\new_view_no.jpg" />
+    <Content Include="common\images\products\no_big.jpg" />
+    <Content Include="common\images\products\no_small.jpg" />
+    <Content Include="common\images\products\search_01.jpg" />
+    <Content Include="common\images\products\sns_c.png" />
+    <Content Include="common\images\products\sns_f.png" />
+    <Content Include="common\images\products\sns_t.png" />
+    <Content Include="common\images\pr_new_view_01.jpg" />
+    <Content Include="common\images\pr_title_global.png" />
+    <Content Include="common\images\pr_title_news.png" />
+    <Content Include="common\images\pr_title_notice.png" />
+    <Content Include="common\images\sian.png" />
+    <Content Include="common\images\sub\arrow.png" />
+    <Content Include="common\images\sub\cust_inq_title01.png" />
+    <Content Include="common\images\sub\cust_inq_title02.png" />
+    <Content Include="common\images\sub\group.png" />
+    <Content Include="common\images\sub\invest_bisiness_01.png" />
+    <Content Include="common\images\sub\invest_bisiness_02.png" />
+    <Content Include="common\images\sub\invest_bisiness_03.png" />
+    <Content Include="common\images\sub\invest_bisiness_04.png" />
+    <Content Include="common\images\sub\invest_bisiness_05.png" />
+    <Content Include="common\images\sub\invest_notice_title.jpg" />
+    <Content Include="common\images\sub\job_guide.gif" />
+    <Content Include="common\images\sub\job_guide.jpg" />
+    <Content Include="common\images\sub\job_join_txt01.gif" />
+    <Content Include="common\images\sub\job_notify_title.jpg" />
+    <Content Include="common\images\sub\leave_bottom_line.gif" />
+    <Content Include="common\images\sub\leave_check.gif" />
+    <Content Include="common\images\sub\leave_green.gif" />
+    <Content Include="common\images\sub\leave_line.gif" />
+    <Content Include="common\images\sub\leave_orange.gif" />
+    <Content Include="common\images\sub\leave_top_line.gif" />
+    <Content Include="common\images\sub\list_blue.png" />
+    <Content Include="common\images\sub\map_01.png" />
+    <Content Include="common\images\sub\map_02.png" />
+    <Content Include="common\images\sub\new_edu_01.jpg" />
+    <Content Include="common\images\sub\new_interest_01.jpg" />
+    <Content Include="common\images\sub\new_person_con.jpg" />
+    <Content Include="common\images\sub\new_title.png" />
+    <Content Include="common\images\sub\new_value_con_01.jpg" />
+    <Content Include="common\images\sub\new_value_con_02.jpg" />
+    <Content Include="common\images\sub\photo_user.jpg" />
+    <Content Include="common\images\sub\recruit_new_01.png" />
+    <Content Include="common\images\sub\search_img.jpg" />
+    <Content Include="common\images\sub\search_title_01.gif" />
+    <Content Include="common\images\sub\sitemap_bg.jpg" />
+    <Content Include="common\images\sub\sitemap_title.jpg" />
+    <Content Include="common\images\sub\tap.png" />
+    <Content Include="common\images\sub\tap_2000.png" />
+    <Content Include="common\images\sub\tap_bg.gif" />
+    <Content Include="common\images\sub\tap_bg.png" />
+    <Content Include="common\images\sub\title_1980.gif" />
+    <Content Include="common\images\sub\title_1990.gif" />
+    <Content Include="common\images\sub\title_2000.gif" />
+    <Content Include="common\images\sub\title_2010.gif" />
+    <Content Include="common\images\sub\vision_ad.png" />
+    <Content Include="common\images\sub\vision_ad_01.png" />
+    <Content Include="common\images\sub\vision_ad_02.png" />
+    <Content Include="common\images\sub\vision_ad_03.png" />
+    <Content Include="common\images\sub\vision_ad_04.png" />
+    <Content Include="common\images\sub\vision_ad_05.png" />
+    <Content Include="common\images\sub\vision_ad_06.png" />
+    <Content Include="common\images\sub\vision_ad_07.png" />
+    <Content Include="common\images\sub\vision_ad_08.png" />
+    <Content Include="common\images\sub\vision_graph.png" />
+    <Content Include="common\images\sub\vision_icon_big.png" />
+    <Content Include="common\images\sub\vision_icon_big_01.png" />
+    <Content Include="common\images\sub\vision_icon_big_02.png" />
+    <Content Include="common\images\sub\vision_icon_big_03.png" />
+    <Content Include="common\images\sub\vision_icon_big_04.png" />
+    <Content Include="common\images\sub\vision_icon_big_05.png" />
+    <Content Include="common\images\test_01.png" />
+    <Content Include="common\js\bootstrap.js" />
+    <Content Include="common\js\common.js" />
+    <Content Include="common\js\function.js" />
+    <Content Include="common\js\html5shiv-printshiv.js" />
+    <Content Include="common\js\html5shiv.js" />
+    <Content Include="common\js\IE7.js" />
+    <Content Include="common\js\jquery-1.9.1.min.js" />
+    <Content Include="common\js\jquery-latest.js" />
+    <Content Include="common\js\jquery-migrate-1.2.1.min.js" />
+    <Content Include="common\js\jquery-ui.min.js" />
+    <Content Include="common\js\jquery.bxslider2.min.js" />
+    <Content Include="common\js\jquery.magnific-popup.min.js" />
+    <Content Include="common\js\jquery.nivo.slider.pack.js" />
+    <Content Include="common\js\jquery.scrolltable.js" />
+    <Content Include="common\js\modernizr.custom.js" />
+    <Content Include="common\js\respond.min.js" />
+    <Content Include="common\js\upclick-min.js" />
+    <Content Include="customer\inquire.aspx" />
+    <Content Include="customer\with.aspx" />
+    <Content Include="en\common\css\bootstrap.css" />
+    <Content Include="en\common\css\common.css" />
+    <Content Include="en\common\css\default.css" />
+    <Content Include="en\common\css\eng.css" />
+    <Content Include="en\common\css\jquery-ui-1.10.3.custom.min.css" />
+    <Content Include="en\common\css\print.css" />
+    <Content Include="en\common\css\sub.css" />
+    <Content Include="en\common\css\table.css" />
+    <Content Include="en\common\images\arrow_down.png" />
+    <Content Include="en\common\images\arrow_left.png" />
+    <Content Include="en\common\images\arrow_right.png" />
+    <Content Include="en\common\images\arrow_right_list.png" />
+    <Content Include="en\common\images\back.png" />
+    <Content Include="en\common\images\btn_more.png" />
+    <Content Include="en\common\images\btn_next.png" />
+    <Content Include="en\common\images\btn_off.png" />
+    <Content Include="en\common\images\btn_on.png" />
+    <Content Include="en\common\images\btn_prev.jpg" />
+    <Content Include="en\common\images\btn_prev.png" />
+    <Content Include="en\common\images\common\ar_green.png" />
+    <Content Include="en\common\images\common\btn_arrow_left.png" />
+    <Content Include="en\common\images\common\btn_arrow_right.png" />
+    <Content Include="en\common\images\common\btn_imgfile.png" />
+    <Content Include="en\common\images\common\btn_pdf.png" />
+    <Content Include="en\common\images\common\btn_pdf_01.png" />
+    <Content Include="en\common\images\common\btn_pdf_02.png" />
+    <Content Include="en\common\images\common\btn_pdf_03.png" />
+    <Content Include="en\common\images\common\btn_pdf_04.png" />
+    <Content Include="en\common\images\common\btn_pdf_05.png" />
+    <Content Include="en\common\images\common\btn_pdf_06.png" />
+    <Content Include="en\common\images\common\btn_pdf_07.png" />
+    <Content Include="en\common\images\common\btn_top.png" />
+    <Content Include="en\common\images\common\check.png" />
+    <Content Include="en\common\images\common\chkbox_sp.png" />
+    <Content Include="en\common\images\common\copy_line.png" />
+    <Content Include="en\common\images\common\customer_01.png" />
+    <Content Include="en\common\images\common\customer_02.png" />
+    <Content Include="en\common\images\common\customer_03.png" />
+    <Content Include="en\common\images\common\customer_04.png" />
+    <Content Include="en\common\images\common\favicon.png" />
+    <Content Include="en\common\images\common\gnb_shadow.png" />
+    <Content Include="en\common\images\common\ibtn_x_delete.png" />
+    <Content Include="en\common\images\common\i_basket.png" />
+    <Content Include="en\common\images\common\i_copy.png" />
+    <Content Include="en\common\images\common\i_copy_01.png" />
+    <Content Include="en\common\images\common\i_facebook.png" />
+    <Content Include="en\common\images\common\i_file.png" />
+    <Content Include="en\common\images\common\i_home.png" />
+    <Content Include="en\common\images\common\i_list.png" />
+    <Content Include="en\common\images\common\i_search.png" />
+    <Content Include="en\common\images\common\i_twitter.png" />
+    <Content Include="en\common\images\common\line.png" />
+    <Content Include="en\common\images\common\logo.png" />
+    <Content Include="en\common\images\common\logo_footer.png" />
+    <Content Include="en\common\images\common\page_arrow.png" />
+    <Content Include="en\common\images\common\popup_bg_icon.gif" />
+    <Content Include="en\common\images\common\pop_i_head.png" />
+    <Content Include="en\common\images\common\products_01.jpg" />
+    <Content Include="en\common\images\common\products_02.jpg" />
+    <Content Include="en\common\images\common\products_03.jpg" />
+    <Content Include="en\common\images\common\quick_ad.jpg" />
+    <Content Include="en\common\images\common\quick_link.png" />
+    <Content Include="en\common\images\common\slide_lnb.png" />
+    <Content Include="en\common\images\common\snb_arrow.png" />
+    <Content Include="en\common\images\common\snb_title.png" />
+    <Content Include="en\common\images\common\_i_s.htm" />
+    <Content Include="en\common\images\common\_i_s_files\btn_pdf.png" />
+    <Content Include="en\common\images\common\_i_s_files\common.js" />
+    <Content Include="en\common\images\common\_i_s_files\i_home.png" />
+    <Content Include="en\common\images\common\_i_s_files\jquery-1.9.1.min.js" />
+    <Content Include="en\common\images\common\_i_s_files\jquery-ui.min.js" />
+    <Content Include="en\common\images\common\_i_s_files\logo_footer.png" />
+    <Content Include="en\common\images\gnb_arrow_down.png" />
+    <Content Include="en\common\images\gnb_icon.png" />
+    <Content Include="en\common\images\ico-calendar.jpg" />
+    <Content Include="en\common\images\indexCus_icon_01.png" />
+    <Content Include="en\common\images\indexCus_icon_02.png" />
+    <Content Include="en\common\images\indexNew_img01.jpg" />
+    <Content Include="en\common\images\indexNew_img02.jpg" />
+    <Content Include="en\common\images\indexNew_img03.jpg" />
+    <Content Include="en\common\images\indexPr_icon_01.png" />
+    <Content Include="en\common\images\indexPr_icon_02.png" />
+    <Content Include="en\common\images\indexPr_icon_03.png" />
+    <Content Include="en\common\images\index_visual_01.jpg" />
+    <Content Include="en\common\images\index_visual_01.png" />
+    <Content Include="en\common\images\index_visual_011.jpg" />
+    <Content Include="en\common\images\index_visual_02.jpg" />
+    <Content Include="en\common\images\index_visual_022.jpg" />
+    <Content Include="en\common\images\index_visual_03.jpg" />
+    <Content Include="en\common\images\index_visual_33.jpg" />
+    <Content Include="en\common\images\inquire_icon.png" />
+    <Content Include="en\common\images\inquire_title.png" />
+    <Content Include="en\common\images\i_con.png" />
+    <Content Include="en\common\images\i_down.png" />
+    <Content Include="en\common\images\i_new.png" />
+    <Content Include="en\common\images\i_serach_01.png" />
+    <Content Include="en\common\images\i_serach_02.png" />
+    <Content Include="en\common\images\i_up.png" />
+    <Content Include="en\common\images\logo.png" />
+    <Content Include="en\common\images\main\btn_close.png" />
+    <Content Include="en\common\images\main\button.jpg" />
+    <Content Include="en\common\images\main\button.png" />
+    <Content Include="en\common\images\main\button_active.png" />
+    <Content Include="en\common\images\main\customer_03.png" />
+    <Content Include="en\common\images\main\customer_04.png" />
+    <Content Include="en\common\images\main\i_memu_01.png" />
+    <Content Include="en\common\images\main\i_memu_02.png" />
+    <Content Include="en\common\images\main\i_memu_03.png" />
+    <Content Include="en\common\images\main\i_memu_04.jpg" />
+    <Content Include="en\common\images\main\i_memu_04.png" />
+    <Content Include="en\common\images\main\i_memu_none.jpg" />
+    <Content Include="en\common\images\main\pop.png" />
+    <Content Include="en\common\images\main\popup_01.jpg" />
+    <Content Include="en\common\images\main\popup_02.jpg" />
+    <Content Include="en\common\images\main\products_01.jpg" />
+    <Content Include="en\common\images\main\products_02.jpg" />
+    <Content Include="en\common\images\main\products_03.jpg" />
+    <Content Include="en\common\images\main\products_none.jpg" />
+    <Content Include="en\common\images\main\slide_main.png" />
+    <Content Include="en\common\images\main\visual_01.jpg" />
+    <Content Include="en\common\images\main\visual_01.png" />
+    <Content Include="en\common\images\main\visual_02.jpg" />
+    <Content Include="en\common\images\main\visual_03.jpg" />
+    <Content Include="en\common\images\main\visual_none.jpg" />
+    <Content Include="en\common\images\main_bg.jpg" />
+    <Content Include="en\common\images\nav_btn.png" />
+    <Content Include="en\common\images\pdt_banner_01.png" />
+    <Content Include="en\common\images\pdt_banner_02.png" />
+    <Content Include="en\common\images\pdt_banner_03.png" />
+    <Content Include="en\common\images\products\about_01.jpg" />
+    <Content Include="en\common\images\products\about_02.jpg" />
+    <Content Include="en\common\images\products\about_03.jpg" />
+    <Content Include="en\common\images\products\about_04.jpg" />
+    <Content Include="en\common\images\products\about_05.jpg" />
+    <Content Include="en\common\images\products\about_06.jpg" />
+    <Content Include="en\common\images\products\about_07.jpg" />
+    <Content Include="en\common\images\products\about_08.jpg" />
+    <Content Include="en\common\images\products\animal_delivery_big01.jpg" />
+    <Content Include="en\common\images\products\animal_delivery_big02.jpg" />
+    <Content Include="en\common\images\products\animal_delivery_big03.jpg" />
+    <Content Include="en\common\images\products\animal_delivery_big04.jpg" />
+    <Content Include="en\common\images\products\animal_delivery_big05.jpg" />
+    <Content Include="en\common\images\products\animal_delivery_big06.jpg" />
+    <Content Include="en\common\images\products\animal_delivery_big07.jpg" />
+    <Content Include="en\common\images\products\animal_delivery_big08.jpg" />
+    <Content Include="en\common\images\products\animal_delivery_small01.jpg" />
+    <Content Include="en\common\images\products\animal_delivery_small02.jpg" />
+    <Content Include="en\common\images\products\animal_delivery_small03.jpg" />
+    <Content Include="en\common\images\products\animal_delivery_small04.jpg" />
+    <Content Include="en\common\images\products\animal_new_big01.jpg" />
+    <Content Include="en\common\images\products\animal_new_big02.jpg" />
+    <Content Include="en\common\images\products\animal_new_big03.jpg" />
+    <Content Include="en\common\images\products\animal_new_big04.jpg" />
+    <Content Include="en\common\images\products\animal_new_big05.jpg" />
+    <Content Include="en\common\images\products\animal_new_big06.jpg" />
+    <Content Include="en\common\images\products\animal_new_big07.jpg" />
+    <Content Include="en\common\images\products\animal_new_big08.jpg" />
+    <Content Include="en\common\images\products\animal_new_small01.jpg" />
+    <Content Include="en\common\images\products\animal_new_small02.jpg" />
+    <Content Include="en\common\images\products\animal_new_small03.jpg" />
+    <Content Include="en\common\images\products\animal_new_small04.jpg" />
+    <Content Include="en\common\images\products\animal_products_big01.jpg" />
+    <Content Include="en\common\images\products\animal_products_big02.jpg" />
+    <Content Include="en\common\images\products\animal_products_big03.jpg" />
+    <Content Include="en\common\images\products\animal_products_big04.jpg" />
+    <Content Include="en\common\images\products\animal_products_big05.jpg" />
+    <Content Include="en\common\images\products\animal_products_big06.jpg" />
+    <Content Include="en\common\images\products\animal_products_big07.jpg" />
+    <Content Include="en\common\images\products\animal_products_big08.jpg" />
+    <Content Include="en\common\images\products\animal_products_small01.jpg" />
+    <Content Include="en\common\images\products\animal_products_small02.jpg" />
+    <Content Include="en\common\images\products\animal_products_small03.jpg" />
+    <Content Include="en\common\images\products\animal_products_small04.jpg" />
+    <Content Include="en\common\images\products\bio_badge_ex.gif" />
+    <Content Include="en\common\images\products\bio_catalog_ex.gif" />
+    <Content Include="en\common\images\products\bio_logo_01.gif" />
+    <Content Include="en\common\images\products\bio_logo_02.gif" />
+    <Content Include="en\common\images\products\bio_logo_03.gif" />
+    <Content Include="en\common\images\products\bio_resin_ex.gif" />
+    <Content Include="en\common\images\products\global_animal_big01.jpg" />
+    <Content Include="en\common\images\products\global_animal_big02.jpg" />
+    <Content Include="en\common\images\products\global_animal_big03.jpg" />
+    <Content Include="en\common\images\products\global_animal_big04.jpg" />
+    <Content Include="en\common\images\products\global_animal_big05.jpg" />
+    <Content Include="en\common\images\products\global_animal_big06.jpg" />
+    <Content Include="en\common\images\products\global_animal_big07.jpg" />
+    <Content Include="en\common\images\products\global_animal_big08.jpg" />
+    <Content Include="en\common\images\products\global_human_big01.jpg" />
+    <Content Include="en\common\images\products\global_human_big02.jpg" />
+    <Content Include="en\common\images\products\global_human_big03.jpg" />
+    <Content Include="en\common\images\products\global_human_big04.jpg" />
+    <Content Include="en\common\images\products\global_human_big05.jpg" />
+    <Content Include="en\common\images\products\global_human_big06.jpg" />
+    <Content Include="en\common\images\products\global_human_big07.jpg" />
+    <Content Include="en\common\images\products\global_human_big08.jpg" />
+    <Content Include="en\common\images\products\global_human_small01.jpg" />
+    <Content Include="en\common\images\products\global_human_small02.jpg" />
+    <Content Include="en\common\images\products\global_human_small03.jpg" />
+    <Content Include="en\common\images\products\global_human_small04.jpg" />
+    <Content Include="en\common\images\products\human_new_01.jpg" />
+    <Content Include="en\common\images\products\human_new_big01.jpg" />
+    <Content Include="en\common\images\products\human_new_big02.jpg" />
+    <Content Include="en\common\images\products\human_new_big03.jpg" />
+    <Content Include="en\common\images\products\human_new_big04.jpg" />
+    <Content Include="en\common\images\products\human_new_small01.jpg" />
+    <Content Include="en\common\images\products\human_new_small02.jpg" />
+    <Content Include="en\common\images\products\human_new_small03.jpg" />
+    <Content Include="en\common\images\products\human_new_small04.jpg" />
+    <Content Include="en\common\images\products\human_new_view_01.jpg" />
+    <Content Include="en\common\images\products\human_new_view_02.jpg" />
+    <Content Include="en\common\images\products\human_new_view_03.jpg" />
+    <Content Include="en\common\images\products\human_new_view_04.jpg" />
+    <Content Include="en\common\images\products\human_new_view_05.jpg" />
+    <Content Include="en\common\images\products\human_products_big01.jpg" />
+    <Content Include="en\common\images\products\human_products_big02.jpg" />
+    <Content Include="en\common\images\products\human_products_big03.jpg" />
+    <Content Include="en\common\images\products\human_products_big04.jpg" />
+    <Content Include="en\common\images\products\human_products_big05.jpg" />
+    <Content Include="en\common\images\products\human_products_big06.jpg" />
+    <Content Include="en\common\images\products\human_products_big07.jpg" />
+    <Content Include="en\common\images\products\human_products_big08.jpg" />
+    <Content Include="en\common\images\products\human_products_small01.jpg" />
+    <Content Include="en\common\images\products\human_products_small02.jpg" />
+    <Content Include="en\common\images\products\human_products_small03.jpg" />
+    <Content Include="en\common\images\products\human_products_small04.jpg" />
+    <Content Include="en\common\images\products\i_ani.png" />
+    <Content Include="en\common\images\products\i_animal.png" />
+    <Content Include="en\common\images\products\i_arrow_top.png" />
+    <Content Include="en\common\images\products\i_hum.png" />
+    <Content Include="en\common\images\products\i_human.png" />
+    <Content Include="en\common\images\products\i_new.png" />
+    <Content Include="en\common\images\products\i_plus.png" />
+    <Content Include="en\common\images\products\i_products.png" />
+    <Content Include="en\common\images\products\i_sns.jpg" />
+    <Content Include="en\common\images\products\i_sns.png" />
+    <Content Include="en\common\images\products\new_01.jpg" />
+    <Content Include="en\common\images\products\new_02.jpg" />
+    <Content Include="en\common\images\products\new_03.jpg" />
+    <Content Include="en\common\images\products\new_04.jpg" />
+    <Content Include="en\common\images\products\new_no.jpg" />
+    <Content Include="en\common\images\products\new_small_01.jpg" />
+    <Content Include="en\common\images\products\new_small_02.jpg" />
+    <Content Include="en\common\images\products\new_small_03.jpg" />
+    <Content Include="en\common\images\products\new_small_04.jpg" />
+    <Content Include="en\common\images\products\new_small_no.jpg" />
+    <Content Include="en\common\images\products\new_view_01.jpg" />
+    <Content Include="en\common\images\products\new_view_02.jpg" />
+    <Content Include="en\common\images\products\new_view_03.jpg" />
+    <Content Include="en\common\images\products\new_view_04.jpg" />
+    <Content Include="en\common\images\products\new_view_no.jpg" />
+    <Content Include="en\common\images\products\no_big.jpg" />
+    <Content Include="en\common\images\products\no_small.jpg" />
+    <Content Include="en\common\images\products\search_01.jpg" />
+    <Content Include="en\common\images\products\sns_c.png" />
+    <Content Include="en\common\images\products\sns_f.png" />
+    <Content Include="en\common\images\products\sns_t.png" />
+    <Content Include="en\common\images\pr_new_view_01.jpg" />
+    <Content Include="en\common\images\pr_title_global.png" />
+    <Content Include="en\common\images\pr_title_news.png" />
+    <Content Include="en\common\images\pr_title_notice.png" />
+    <Content Include="en\common\images\sian.png" />
+    <Content Include="en\common\images\sub\arrow.png" />
+    <Content Include="en\common\images\sub\cust_inq_title01.png" />
+    <Content Include="en\common\images\sub\cust_inq_title02.png" />
+    <Content Include="en\common\images\sub\group.png" />
+    <Content Include="en\common\images\sub\invest_bisiness_01.png" />
+    <Content Include="en\common\images\sub\invest_bisiness_02.png" />
+    <Content Include="en\common\images\sub\invest_bisiness_03.png" />
+    <Content Include="en\common\images\sub\invest_bisiness_04.png" />
+    <Content Include="en\common\images\sub\invest_bisiness_05.png" />
+    <Content Include="en\common\images\sub\invest_notice_title.jpg" />
+    <Content Include="en\common\images\sub\job_guide.gif" />
+    <Content Include="en\common\images\sub\job_guide.jpg" />
+    <Content Include="en\common\images\sub\job_join_txt01.gif" />
+    <Content Include="en\common\images\sub\job_notify_title.jpg" />
+    <Content Include="en\common\images\sub\leave_bottom_line.gif" />
+    <Content Include="en\common\images\sub\leave_check.gif" />
+    <Content Include="en\common\images\sub\leave_green.gif" />
+    <Content Include="en\common\images\sub\leave_line.gif" />
+    <Content Include="en\common\images\sub\leave_orange.gif" />
+    <Content Include="en\common\images\sub\leave_top_line.gif" />
+    <Content Include="en\common\images\sub\list_blue.png" />
+    <Content Include="en\common\images\sub\map_01.png" />
+    <Content Include="en\common\images\sub\map_02.png" />
+    <Content Include="en\common\images\sub\new_edu_01.jpg" />
+    <Content Include="en\common\images\sub\new_interest_01.jpg" />
+    <Content Include="en\common\images\sub\new_person_con.jpg" />
+    <Content Include="en\common\images\sub\new_title.png" />
+    <Content Include="en\common\images\sub\new_value_con_01.jpg" />
+    <Content Include="en\common\images\sub\new_value_con_02.jpg" />
+    <Content Include="en\common\images\sub\photo_user.jpg" />
+    <Content Include="en\common\images\sub\recruit_new_01.png" />
+    <Content Include="en\common\images\sub\search_img.jpg" />
+    <Content Include="en\common\images\sub\search_title_01.gif" />
+    <Content Include="en\common\images\sub\sitemap_bg.jpg" />
+    <Content Include="en\common\images\sub\sitemap_title.jpg" />
+    <Content Include="en\common\images\sub\tap.png" />
+    <Content Include="en\common\images\sub\tap_2000.png" />
+    <Content Include="en\common\images\sub\tap_bg.gif" />
+    <Content Include="en\common\images\sub\tap_bg.png" />
+    <Content Include="en\common\images\sub\title_1980.gif" />
+    <Content Include="en\common\images\sub\title_1990.gif" />
+    <Content Include="en\common\images\sub\title_2000.gif" />
+    <Content Include="en\common\images\sub\title_2010.gif" />
+    <Content Include="en\common\images\sub\vision_ad.png" />
+    <Content Include="en\common\images\sub\vision_ad_01.png" />
+    <Content Include="en\common\images\sub\vision_ad_02.png" />
+    <Content Include="en\common\images\sub\vision_ad_03.png" />
+    <Content Include="en\common\images\sub\vision_ad_04.png" />
+    <Content Include="en\common\images\sub\vision_ad_05.png" />
+    <Content Include="en\common\images\sub\vision_ad_06.png" />
+    <Content Include="en\common\images\sub\vision_ad_07.png" />
+    <Content Include="en\common\images\sub\vision_ad_08.png" />
+    <Content Include="en\common\images\sub\vision_graph.png" />
+    <Content Include="en\common\images\sub\vision_icon_big.png" />
+    <Content Include="en\common\images\sub\vision_icon_big_01.png" />
+    <Content Include="en\common\images\sub\vision_icon_big_02.png" />
+    <Content Include="en\common\images\sub\vision_icon_big_03.png" />
+    <Content Include="en\common\images\sub\vision_icon_big_04.png" />
+    <Content Include="en\common\images\sub\vision_icon_big_05.png" />
+    <Content Include="en\common\images\test_01.png" />
+    <Content Include="en\common\js\bootstrap.js" />
+    <Content Include="en\common\js\common.js" />
+    <Content Include="en\common\js\function.js" />
+    <Content Include="en\common\js\html5shiv-printshiv.js" />
+    <Content Include="en\common\js\html5shiv.js" />
+    <Content Include="en\common\js\IE7.js" />
+    <Content Include="en\common\js\jquery-1.9.1.min.js" />
+    <Content Include="en\common\js\jquery-latest.js" />
+    <Content Include="en\common\js\jquery-migrate-1.2.1.min.js" />
+    <Content Include="en\common\js\jquery-ui.min.js" />
+    <Content Include="en\common\js\jquery.bxslider2.min.js" />
+    <Content Include="en\common\js\jquery.nivo.slider.pack.js" />
+    <Content Include="en\common\js\jquery.scrolltable.js" />
+    <Content Include="en\common\js\modernizr.custom.js" />
+    <Content Include="en\common\js\respond.min.js" />
+    <Content Include="en\common\js\upclick-min.js" />
+    <Content Include="en\customer\inquire.aspx" />
+    <Content Include="en\customer\with.aspx" />
+    <Content Include="en\index.aspx" />
+    <Content Include="en\intro\business.aspx" />
+    <Content Include="en\intro\group.aspx" />
+    <Content Include="en\intro\leave.aspx" />
+    <Content Include="en\intro\location.aspx" />
+    <Content Include="en\intro\moral.aspx" />
+    <Content Include="en\intro\vision.aspx" />
+    <Content Include="en\intro\world.aspx" />
+    <Content Include="en\invest\business.aspx" />
+    <Content Include="en\invest\ir_info_list.aspx" />
+    <Content Include="en\invest\ir_info_view.aspx" />
+    <Content Include="en\invest\money_bill.aspx" />
+    <Content Include="en\invest\money_mark.aspx" />
+    <Content Include="en\invest\pub_announce.aspx" />
+    <Content Include="en\invest\stockholder.aspx" />
+    <Content Include="en\invest\stock_info.aspx" />
+    <Content Include="en\invest\treasury_stock.aspx" />
+    <Content Include="en\main\agreement.aspx" />
+    <Content Include="en\main\search.aspx" />
+    <Content Include="en\main\terms.aspx" />
+    <Content Include="en\products\animal_new_list.aspx" />
+    <Content Include="en\products\animal_new_view.aspx" />
+    <Content Include="en\products\animal_products_list.aspx" />
+    <Content Include="en\products\animal_products_view.aspx" />
+    <Content Include="en\products\bio_badge_list.aspx" />
+    <Content Include="en\products\bio_badge_view.aspx" />
+    <Content Include="en\products\bio_catalog_list.aspx" />
+    <Content Include="en\products\bio_catalog_view.aspx" />
+    <Content Include="en\products\bio_resin_list.aspx" />
+    <Content Include="en\products\bio_resin_view.aspx" />
+    <Content Include="en\products\global_animal_list.aspx" />
+    <Content Include="en\products\global_animal_view.aspx" />
+    <Content Include="en\products\global_human_list.aspx" />
+    <Content Include="en\products\global_human_view.aspx" />
+    <Content Include="en\products\health_products_list.aspx" />
+    <Content Include="en\products\health_products_view.aspx" />
+    <Content Include="en\products\human_new_list.aspx" />
+    <Content Include="en\products\human_new_view.aspx" />
+    <Content Include="en\products\human_products_list.aspx" />
+    <Content Include="en\products\human_products_view.aspx" />
+    <Content Include="en\products\medical_list.aspx" />
+    <Content Include="en\products\medical_view.aspx" />
+    <Content Include="en\sitemap.aspx" />
+    <Content Include="event\event_complete.aspx" />
+    <Content Include="event\event_view.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="index.aspx" />
+    <Content Include="intro\business.aspx" />
+    <Content Include="intro\group.aspx" />
+    <Content Include="intro\leave.aspx" />
+    <Content Include="intro\location.aspx" />
+    <Content Include="intro\moral.aspx" />
+    <Content Include="intro\vision.aspx" />
+    <Content Include="intro\world.aspx" />
+    <Content Include="invest\business.aspx" />
+    <Content Include="invest\ir_info_list.aspx" />
+    <Content Include="invest\ir_info_view.aspx" />
+    <Content Include="invest\money_bill.aspx" />
+    <Content Include="invest\money_mark.aspx" />
+    <Content Include="invest\notice_list.aspx" />
+    <Content Include="invest\notice_view.aspx" />
+    <Content Include="invest\pub_announce.aspx" />
+    <Content Include="invest\stockholder.aspx" />
+    <Content Include="invest\stock_info.aspx" />
+    <Content Include="invest\treasury_stock.aspx" />
+    <Content Include="main\agreement.aspx" />
+    <Content Include="main\terms.aspx" />
+    <Content Include="micro\css\bootstrap.css" />
+    <Content Include="micro\css\flexslider.css" />
+    <Content Include="micro\css\font-awesome.min.css" />
+    <Content Include="micro\css\magnific-popup.css" />
+    <Content Include="micro\css\responsive.css" />
+    <Content Include="micro\css\style.css" />
+    <Content Include="micro\fonts\fontawesome-webfont.svg" />
+    <Content Include="micro\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="micro\img\icons\appstore.png" />
+    <Content Include="micro\img\icons\back-to-top.png" />
+    <Content Include="micro\img\icons\dot.gif" />
+    <Content Include="micro\img\icons\favicon.ico" />
+    <Content Include="micro\img\icons\google.png" />
+    <Content Include="micro\img\icons\loader.gif" />
+    <Content Include="micro\img\icons\loader22.gif" />
+    <Content Include="micro\img\icons\loader44.gif" />
+    <Content Include="micro\img\icons\windows.png" />
+    <Content Include="micro\img\icons\zoom-ico.png" />
+    <Content Include="micro\img\logo.png" />
+    <Content Include="micro\img\parallax_bg\newsletter_bkg.jpg" />
+    <Content Include="micro\img\parallax_bg\testimonials_bkg.jpg" />
+    <Content Include="micro\img\thumbs\1.png" />
+    <Content Include="micro\img\thumbs\2.png" />
+    <Content Include="micro\img\thumbs\6.png" />
+    <Content Include="micro\img\thumbs\contact_bkg.jpg" />
+    <Content Include="micro\img\thumbs\gallery1.jpg" />
+    <Content Include="micro\img\thumbs\gallery2.jpg" />
+    <Content Include="micro\img\thumbs\gallery3.jpg" />
+    <Content Include="micro\img\thumbs\gallery4.jpg" />
+    <Content Include="micro\img\thumbs\gallery5.jpg" />
+    <Content Include="micro\img\thumbs\gallery6.jpg" />
+    <Content Include="micro\img\thumbs\gallery7.jpg" />
+    <Content Include="micro\img\thumbs\gallery8.jpg" />
+    <Content Include="micro\img\thumbs\gallery_2x\gallery1.jpg" />
+    <Content Include="micro\img\thumbs\gallery_2x\gallery2.jpg" />
+    <Content Include="micro\img\thumbs\gallery_2x\gallery3.jpg" />
+    <Content Include="micro\img\thumbs\gallery_2x\gallery3.png" />
+    <Content Include="micro\img\thumbs\gallery_2x\gallery4.jpg" />
+    <Content Include="micro\img\thumbs\gallery_2x\gallery5.jpg" />
+    <Content Include="micro\img\thumbs\gallery_2x\gallery6.jpg" />
+    <Content Include="micro\img\thumbs\gallery_2x\gallery7.jpg" />
+    <Content Include="micro\img\thumbs\gallery_2x\gallery8.jpg" />
+    <Content Include="micro\img\thumbs\img_about.jpg" />
+    <Content Include="micro\img\thumbs\intro_slide_1.jpg" />
+    <Content Include="micro\img\thumbs\intro_slide_2.jpg" />
+    <Content Include="micro\img\thumbs\intro_slide_3.jpg" />
+    <Content Include="micro\img\thumbs\kazahstan.jpg" />
+    <Content Include="micro\img\thumbs\mail_sent.png" />
+    <Content Include="micro\img\thumbs\op_bg.jpg" />
+    <Content Include="micro\img\thumbs\tst_author_1.jpg" />
+    <Content Include="micro\img\thumbs\tst_author_2.jpg" />
+    <Content Include="micro\img\thumbs\tst_author_3.jpg" />
+    <Content Include="micro\img\thumbs\tst_author_4.jpg" />
+    <Content Include="micro\index.html" />
+    <Content Include="micro\js\bootstrap.min.js" />
+    <Content Include="micro\js\custom.js" />
+    <Content Include="micro\js\html5shiv.js" />
+    <Content Include="micro\js\IE7.js" />
+    <Content Include="micro\js\IE8.js" />
+    <Content Include="micro\js\jquery-2.1.0.min.js" />
+    <Content Include="micro\js\jquery.flexslider.js" />
+    <Content Include="micro\js\jquery.magnific-popup.min.js" />
+    <Content Include="micro\js\jquery.parallax-1.1.3.js" />
+    <Content Include="micro\js\jquery.stellar.min.js" />
+    <Content Include="micro\js\jquery.superslides.js" />
+    <Content Include="micro\js\jquery.validate.min.js" />
+    <Content Include="micro\js\modernizr.custom.js" />
+    <Content Include="micro\js\respond.min.js" />
+    <Content Include="micro\js\retina.js" />
+    <Content Include="micro\js\tabs.js" />
+    <Content Include="m_master\PageBase.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="products\animal_delivery_list.aspx" />
+    <Content Include="products\animal_delivery_view.aspx" />
+    <Content Include="products\animal_new_list.aspx" />
+    <Content Include="products\animal_new_view.aspx" />
+    <Content Include="products\animal_products_list.aspx" />
+    <Content Include="products\animal_products_view.aspx" />
+    <Content Include="products\bio_badge_list.aspx" />
+    <Content Include="products\bio_badge_view.aspx" />
+    <Content Include="products\bio_catalog_list.aspx" />
+    <Content Include="products\bio_catalog_view.aspx" />
+    <Content Include="products\bio_resin_list.aspx" />
+    <Content Include="products\bio_resin_view.aspx" />
+    <Content Include="products\bio_rnd.aspx" />
+    <Content Include="products\global_animal_list.aspx" />
+    <Content Include="products\global_animal_view.aspx" />
+    <Content Include="products\global_etc_list.aspx" />
+    <Content Include="products\global_etc_view.aspx" />
+    <Content Include="products\global_human_list.aspx" />
+    <Content Include="products\global_human_view.aspx" />
+    <Content Include="products\health_products_list.aspx" />
+    <Content Include="products\health_products_view.aspx" />
+    <Content Include="products\human_change_list.aspx" />
+    <Content Include="products\human_change_view.aspx" />
+    <Content Include="products\human_new_list.aspx" />
+    <Content Include="products\human_new_view.aspx" />
+    <Content Include="products\human_products_list.aspx" />
+    <Content Include="products\human_products_view.aspx" />
+    <Content Include="products\medical_list.aspx" />
+    <Content Include="products\medical_view.aspx" />
+    <Content Include="pr\global_list.aspx" />
+    <Content Include="pr\global_view.aspx" />
+    <Content Include="pr\news_list.aspx" />
+    <Content Include="pr\news_view.aspx" />
+    <Content Include="pr\notice_list.aspx" />
+    <Content Include="pr\product_list.aspx" />
+    <Content Include="pr\product_view.aspx" />
+    <Content Include="recruit\faq_list.aspx" />
+    <Content Include="recruit\faq_view.aspx" />
+    <Content Include="recruit\job_guide.aspx" />
+    <Content Include="recruit\job_guide_join.aspx" />
+    <Content Include="recruit\job_guide_join_sub.aspx" />
+    <Content Include="recruit\job_guide_join_sub_edit.aspx" />
+    <Content Include="recruit\job_guide_list.aspx" />
+    <Content Include="recruit\job_notify_list.aspx" />
+    <Content Include="recruit\job_notify_view.aspx" />
+    <Content Include="recruit\new_culture.aspx" />
+    <Content Include="recruit\new_edu.aspx" />
+    <Content Include="recruit\new_evaluation.aspx" />
+    <Content Include="recruit\new_interest.aspx" />
+    <Content Include="recruit\new_person.aspx" />
+    <Content Include="recruit\popup_jobOk.aspx" />
+    <Content Include="recruit\popup_zone.aspx" />
+    <Content Include="recruit\result_list.aspx" />
+    <Content Include="main\search.aspx" />
+    <Content Include="sitemap.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="ws\common.asmx" />
+    <Content Include="ws\recruit.asmx" />
+    <Content Include="ws\user_file_upload.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="customer\inquire.aspx.cs">
+      <DependentUpon>inquire.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\inquire.aspx.designer.cs">
+      <DependentUpon>inquire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\with.aspx.cs">
+      <DependentUpon>with.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\with.aspx.designer.cs">
+      <DependentUpon>with.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\customer\inquire.aspx.cs">
+      <DependentUpon>inquire.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\customer\inquire.aspx.designer.cs">
+      <DependentUpon>inquire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\customer\with.aspx.cs">
+      <DependentUpon>with.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\customer\with.aspx.designer.cs">
+      <DependentUpon>with.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\EnProducts_Sub.Master.cs">
+      <DependentUpon>EnProducts_Sub.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\EnProducts_Sub.Master.designer.cs">
+      <DependentUpon>EnProducts_Sub.Master</DependentUpon>
+    </Compile>
+    <Compile Include="en\EnSite.Master.cs">
+      <DependentUpon>EnSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\EnSite.Master.designer.cs">
+      <DependentUpon>EnSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="en\EnSiteSub.Master.cs">
+      <DependentUpon>EnSiteSub.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\EnSiteSub.Master.designer.cs">
+      <DependentUpon>EnSiteSub.Master</DependentUpon>
+    </Compile>
+    <Compile Include="en\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\intro\business.aspx.cs">
+      <DependentUpon>business.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\intro\business.aspx.designer.cs">
+      <DependentUpon>business.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\intro\group.aspx.cs">
+      <DependentUpon>group.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\intro\group.aspx.designer.cs">
+      <DependentUpon>group.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\intro\leave.aspx.cs">
+      <DependentUpon>leave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\intro\leave.aspx.designer.cs">
+      <DependentUpon>leave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\intro\location.aspx.cs">
+      <DependentUpon>location.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\intro\location.aspx.designer.cs">
+      <DependentUpon>location.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\intro\moral.aspx.cs">
+      <DependentUpon>moral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\intro\moral.aspx.designer.cs">
+      <DependentUpon>moral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\intro\vision.aspx.cs">
+      <DependentUpon>vision.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\intro\vision.aspx.designer.cs">
+      <DependentUpon>vision.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\intro\world.aspx.cs">
+      <DependentUpon>world.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\intro\world.aspx.designer.cs">
+      <DependentUpon>world.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\invest\business.aspx.cs">
+      <DependentUpon>business.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\invest\business.aspx.designer.cs">
+      <DependentUpon>business.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\invest\ir_info_list.aspx.cs">
+      <DependentUpon>ir_info_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\invest\ir_info_list.aspx.designer.cs">
+      <DependentUpon>ir_info_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\invest\ir_info_view.aspx.cs">
+      <DependentUpon>ir_info_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\invest\ir_info_view.aspx.designer.cs">
+      <DependentUpon>ir_info_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\invest\money_bill.aspx.cs">
+      <DependentUpon>money_bill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\invest\money_bill.aspx.designer.cs">
+      <DependentUpon>money_bill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\invest\money_mark.aspx.cs">
+      <DependentUpon>money_mark.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\invest\money_mark.aspx.designer.cs">
+      <DependentUpon>money_mark.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\invest\pub_announce.aspx.cs">
+      <DependentUpon>pub_announce.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\invest\pub_announce.aspx.designer.cs">
+      <DependentUpon>pub_announce.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\invest\stockholder.aspx.cs">
+      <DependentUpon>stockholder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\invest\stockholder.aspx.designer.cs">
+      <DependentUpon>stockholder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\invest\stock_info.aspx.cs">
+      <DependentUpon>stock_info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\invest\stock_info.aspx.designer.cs">
+      <DependentUpon>stock_info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\invest\treasury_stock.aspx.cs">
+      <DependentUpon>treasury_stock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\invest\treasury_stock.aspx.designer.cs">
+      <DependentUpon>treasury_stock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\main\agreement.aspx.cs">
+      <DependentUpon>agreement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\main\agreement.aspx.designer.cs">
+      <DependentUpon>agreement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\main\search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\main\search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\main\terms.aspx.cs">
+      <DependentUpon>terms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\main\terms.aspx.designer.cs">
+      <DependentUpon>terms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\animal_new_list.aspx.cs">
+      <DependentUpon>animal_new_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\animal_new_list.aspx.designer.cs">
+      <DependentUpon>animal_new_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\animal_new_view.aspx.cs">
+      <DependentUpon>animal_new_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\animal_new_view.aspx.designer.cs">
+      <DependentUpon>animal_new_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\animal_products_list.aspx.cs">
+      <DependentUpon>animal_products_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\animal_products_list.aspx.designer.cs">
+      <DependentUpon>animal_products_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\animal_products_view.aspx.cs">
+      <DependentUpon>animal_products_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\animal_products_view.aspx.designer.cs">
+      <DependentUpon>animal_products_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\bio_badge_list.aspx.cs">
+      <DependentUpon>bio_badge_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\bio_badge_list.aspx.designer.cs">
+      <DependentUpon>bio_badge_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\bio_badge_view.aspx.cs">
+      <DependentUpon>bio_badge_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\bio_badge_view.aspx.designer.cs">
+      <DependentUpon>bio_badge_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\bio_catalog_list.aspx.cs">
+      <DependentUpon>bio_catalog_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\bio_catalog_list.aspx.designer.cs">
+      <DependentUpon>bio_catalog_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\bio_catalog_view.aspx.cs">
+      <DependentUpon>bio_catalog_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\bio_catalog_view.aspx.designer.cs">
+      <DependentUpon>bio_catalog_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\bio_resin_list.aspx.cs">
+      <DependentUpon>bio_resin_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\bio_resin_list.aspx.designer.cs">
+      <DependentUpon>bio_resin_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\bio_resin_view.aspx.cs">
+      <DependentUpon>bio_resin_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\bio_resin_view.aspx.designer.cs">
+      <DependentUpon>bio_resin_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\global_animal_list.aspx.cs">
+      <DependentUpon>global_animal_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\global_animal_list.aspx.designer.cs">
+      <DependentUpon>global_animal_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\global_animal_view.aspx.cs">
+      <DependentUpon>global_animal_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\global_animal_view.aspx.designer.cs">
+      <DependentUpon>global_animal_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\global_human_list.aspx.cs">
+      <DependentUpon>global_human_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\global_human_list.aspx.designer.cs">
+      <DependentUpon>global_human_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\global_human_view.aspx.cs">
+      <DependentUpon>global_human_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\global_human_view.aspx.designer.cs">
+      <DependentUpon>global_human_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\health_products_list.aspx.cs">
+      <DependentUpon>health_products_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\health_products_list.aspx.designer.cs">
+      <DependentUpon>health_products_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\health_products_view.aspx.cs">
+      <DependentUpon>health_products_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\health_products_view.aspx.designer.cs">
+      <DependentUpon>health_products_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\human_new_list.aspx.cs">
+      <DependentUpon>human_new_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\human_new_list.aspx.designer.cs">
+      <DependentUpon>human_new_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\human_new_view.aspx.cs">
+      <DependentUpon>human_new_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\human_new_view.aspx.designer.cs">
+      <DependentUpon>human_new_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\human_products_list.aspx.cs">
+      <DependentUpon>human_products_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\human_products_list.aspx.designer.cs">
+      <DependentUpon>human_products_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\human_products_view.aspx.cs">
+      <DependentUpon>human_products_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\human_products_view.aspx.designer.cs">
+      <DependentUpon>human_products_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\medical_list.aspx.cs">
+      <DependentUpon>medical_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\medical_list.aspx.designer.cs">
+      <DependentUpon>medical_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\medical_view.aspx.cs">
+      <DependentUpon>medical_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\medical_view.aspx.designer.cs">
+      <DependentUpon>medical_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\sitemap.aspx.cs">
+      <DependentUpon>sitemap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\sitemap.aspx.designer.cs">
+      <DependentUpon>sitemap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="event\event_complete.aspx.cs">
+      <DependentUpon>event_complete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="event\event_complete.aspx.designer.cs">
+      <DependentUpon>event_complete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="event\event_view.aspx.cs">
+      <DependentUpon>event_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="event\event_view.aspx.designer.cs">
+      <DependentUpon>event_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="intro\business.aspx.cs">
+      <DependentUpon>business.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="intro\business.aspx.designer.cs">
+      <DependentUpon>business.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="intro\group.aspx.cs">
+      <DependentUpon>group.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="intro\group.aspx.designer.cs">
+      <DependentUpon>group.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="intro\leave.aspx.cs">
+      <DependentUpon>leave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="intro\leave.aspx.designer.cs">
+      <DependentUpon>leave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="intro\location.aspx.cs">
+      <DependentUpon>location.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="intro\location.aspx.designer.cs">
+      <DependentUpon>location.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="intro\moral.aspx.cs">
+      <DependentUpon>moral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="intro\moral.aspx.designer.cs">
+      <DependentUpon>moral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="intro\vision.aspx.cs">
+      <DependentUpon>vision.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="intro\vision.aspx.designer.cs">
+      <DependentUpon>vision.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="intro\world.aspx.cs">
+      <DependentUpon>world.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="intro\world.aspx.designer.cs">
+      <DependentUpon>world.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="invest\business.aspx.cs">
+      <DependentUpon>business.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="invest\business.aspx.designer.cs">
+      <DependentUpon>business.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="invest\ir_info_list.aspx.cs">
+      <DependentUpon>ir_info_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="invest\ir_info_list.aspx.designer.cs">
+      <DependentUpon>ir_info_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="invest\ir_info_view.aspx.cs">
+      <DependentUpon>ir_info_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="invest\ir_info_view.aspx.designer.cs">
+      <DependentUpon>ir_info_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="invest\money_bill.aspx.cs">
+      <DependentUpon>money_bill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="invest\money_bill.aspx.designer.cs">
+      <DependentUpon>money_bill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="invest\money_mark.aspx.cs">
+      <DependentUpon>money_mark.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="invest\money_mark.aspx.designer.cs">
+      <DependentUpon>money_mark.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="invest\notice_list.aspx.cs">
+      <DependentUpon>notice_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="invest\notice_list.aspx.designer.cs">
+      <DependentUpon>notice_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="invest\notice_view.aspx.cs">
+      <DependentUpon>notice_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="invest\notice_view.aspx.designer.cs">
+      <DependentUpon>notice_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="invest\pub_announce.aspx.cs">
+      <DependentUpon>pub_announce.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="invest\pub_announce.aspx.designer.cs">
+      <DependentUpon>pub_announce.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="invest\stockholder.aspx.cs">
+      <DependentUpon>stockholder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="invest\stockholder.aspx.designer.cs">
+      <DependentUpon>stockholder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="invest\stock_info.aspx.cs">
+      <DependentUpon>stock_info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="invest\stock_info.aspx.designer.cs">
+      <DependentUpon>stock_info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="invest\treasury_stock.aspx.cs">
+      <DependentUpon>treasury_stock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="invest\treasury_stock.aspx.designer.cs">
+      <DependentUpon>treasury_stock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main\agreement.aspx.cs">
+      <DependentUpon>agreement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\agreement.aspx.designer.cs">
+      <DependentUpon>agreement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main\terms.aspx.cs">
+      <DependentUpon>terms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\terms.aspx.designer.cs">
+      <DependentUpon>terms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="m_master\PageBase.aspx.cs">
+      <DependentUpon>PageBase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="m_master\PageBase.aspx.designer.cs">
+      <DependentUpon>PageBase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="page\paging.cs" />
+    <Compile Include="products\animal_delivery_list.aspx.cs">
+      <DependentUpon>animal_delivery_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\animal_delivery_list.aspx.designer.cs">
+      <DependentUpon>animal_delivery_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\animal_delivery_view.aspx.cs">
+      <DependentUpon>animal_delivery_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\animal_delivery_view.aspx.designer.cs">
+      <DependentUpon>animal_delivery_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\animal_new_list.aspx.cs">
+      <DependentUpon>animal_new_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\animal_new_list.aspx.designer.cs">
+      <DependentUpon>animal_new_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\animal_new_view.aspx.cs">
+      <DependentUpon>animal_new_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\animal_new_view.aspx.designer.cs">
+      <DependentUpon>animal_new_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\animal_products_list.aspx.cs">
+      <DependentUpon>animal_products_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\animal_products_list.aspx.designer.cs">
+      <DependentUpon>animal_products_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\animal_products_view.aspx.cs">
+      <DependentUpon>animal_products_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\animal_products_view.aspx.designer.cs">
+      <DependentUpon>animal_products_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\bio_badge_list.aspx.cs">
+      <DependentUpon>bio_badge_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\bio_badge_list.aspx.designer.cs">
+      <DependentUpon>bio_badge_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\bio_badge_view.aspx.cs">
+      <DependentUpon>bio_badge_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\bio_badge_view.aspx.designer.cs">
+      <DependentUpon>bio_badge_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\bio_catalog_list.aspx.cs">
+      <DependentUpon>bio_catalog_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\bio_catalog_list.aspx.designer.cs">
+      <DependentUpon>bio_catalog_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\bio_catalog_view.aspx.cs">
+      <DependentUpon>bio_catalog_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\bio_catalog_view.aspx.designer.cs">
+      <DependentUpon>bio_catalog_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\bio_resin_list.aspx.cs">
+      <DependentUpon>bio_resin_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\bio_resin_list.aspx.designer.cs">
+      <DependentUpon>bio_resin_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\bio_resin_view.aspx.cs">
+      <DependentUpon>bio_resin_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\bio_resin_view.aspx.designer.cs">
+      <DependentUpon>bio_resin_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\bio_rnd.aspx.cs">
+      <DependentUpon>bio_rnd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\bio_rnd.aspx.designer.cs">
+      <DependentUpon>bio_rnd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\global_animal_list.aspx.cs">
+      <DependentUpon>global_animal_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\global_animal_list.aspx.designer.cs">
+      <DependentUpon>global_animal_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\global_animal_view.aspx.cs">
+      <DependentUpon>global_animal_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\global_animal_view.aspx.designer.cs">
+      <DependentUpon>global_animal_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\global_etc_list.aspx.cs">
+      <DependentUpon>global_etc_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\global_etc_list.aspx.designer.cs">
+      <DependentUpon>global_etc_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\global_etc_view.aspx.cs">
+      <DependentUpon>global_etc_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\global_etc_view.aspx.designer.cs">
+      <DependentUpon>global_etc_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\global_human_list.aspx.cs">
+      <DependentUpon>global_human_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\global_human_list.aspx.designer.cs">
+      <DependentUpon>global_human_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\global_human_view.aspx.cs">
+      <DependentUpon>global_human_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\global_human_view.aspx.designer.cs">
+      <DependentUpon>global_human_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\health_products_list.aspx.cs">
+      <DependentUpon>health_products_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\health_products_list.aspx.designer.cs">
+      <DependentUpon>health_products_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\health_products_view.aspx.cs">
+      <DependentUpon>health_products_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\health_products_view.aspx.designer.cs">
+      <DependentUpon>health_products_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\human_change_list.aspx.cs">
+      <DependentUpon>human_change_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\human_change_list.aspx.designer.cs">
+      <DependentUpon>human_change_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\human_change_view.aspx.cs">
+      <DependentUpon>human_change_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\human_change_view.aspx.designer.cs">
+      <DependentUpon>human_change_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\human_new_list.aspx.cs">
+      <DependentUpon>human_new_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\human_new_list.aspx.designer.cs">
+      <DependentUpon>human_new_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\human_new_view.aspx.cs">
+      <DependentUpon>human_new_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\human_new_view.aspx.designer.cs">
+      <DependentUpon>human_new_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\human_products_list.aspx.cs">
+      <DependentUpon>human_products_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\human_products_list.aspx.designer.cs">
+      <DependentUpon>human_products_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\human_products_view.aspx.cs">
+      <DependentUpon>human_products_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\human_products_view.aspx.designer.cs">
+      <DependentUpon>human_products_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\medical_list.aspx.cs">
+      <DependentUpon>medical_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\medical_list.aspx.designer.cs">
+      <DependentUpon>medical_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\medical_view.aspx.cs">
+      <DependentUpon>medical_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\medical_view.aspx.designer.cs">
+      <DependentUpon>medical_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products_Sub.Master.cs">
+      <DependentUpon>Products_Sub.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products_Sub.Master.designer.cs">
+      <DependentUpon>Products_Sub.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="pr\global_list.aspx.cs">
+      <DependentUpon>global_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pr\global_list.aspx.designer.cs">
+      <DependentUpon>global_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pr\global_view.aspx.cs">
+      <DependentUpon>global_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pr\global_view.aspx.designer.cs">
+      <DependentUpon>global_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pr\news_list.aspx.cs">
+      <DependentUpon>news_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pr\news_list.aspx.designer.cs">
+      <DependentUpon>news_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pr\news_view.aspx.cs">
+      <DependentUpon>news_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pr\news_view.aspx.designer.cs">
+      <DependentUpon>news_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pr\notice_list.aspx.cs">
+      <DependentUpon>notice_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pr\notice_list.aspx.designer.cs">
+      <DependentUpon>notice_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pr\product_list.aspx.cs">
+      <DependentUpon>product_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pr\product_list.aspx.designer.cs">
+      <DependentUpon>product_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pr\product_view.aspx.cs">
+      <DependentUpon>product_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pr\product_view.aspx.designer.cs">
+      <DependentUpon>product_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recruit\faq_list.aspx.cs">
+      <DependentUpon>faq_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recruit\faq_list.aspx.designer.cs">
+      <DependentUpon>faq_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recruit\faq_view.aspx.cs">
+      <DependentUpon>faq_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recruit\faq_view.aspx.designer.cs">
+      <DependentUpon>faq_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recruit\job_guide.aspx.cs">
+      <DependentUpon>job_guide.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recruit\job_guide.aspx.designer.cs">
+      <DependentUpon>job_guide.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recruit\job_guide_join.aspx.cs">
+      <DependentUpon>job_guide_join.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recruit\job_guide_join.aspx.designer.cs">
+      <DependentUpon>job_guide_join.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recruit\job_guide_join_sub.aspx.cs">
+      <DependentUpon>job_guide_join_sub.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recruit\job_guide_join_sub.aspx.designer.cs">
+      <DependentUpon>job_guide_join_sub.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recruit\job_guide_join_sub_edit.aspx.cs">
+      <DependentUpon>job_guide_join_sub_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recruit\job_guide_join_sub_edit.aspx.designer.cs">
+      <DependentUpon>job_guide_join_sub_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recruit\job_guide_list.aspx.cs">
+      <DependentUpon>job_guide_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recruit\job_guide_list.aspx.designer.cs">
+      <DependentUpon>job_guide_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recruit\job_notify_list.aspx.cs">
+      <DependentUpon>job_notify_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recruit\job_notify_list.aspx.designer.cs">
+      <DependentUpon>job_notify_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recruit\job_notify_view.aspx.cs">
+      <DependentUpon>job_notify_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recruit\job_notify_view.aspx.designer.cs">
+      <DependentUpon>job_notify_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recruit\new_culture.aspx.cs">
+      <DependentUpon>new_culture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recruit\new_culture.aspx.designer.cs">
+      <DependentUpon>new_culture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recruit\new_edu.aspx.cs">
+      <DependentUpon>new_edu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recruit\new_edu.aspx.designer.cs">
+      <DependentUpon>new_edu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recruit\new_evaluation.aspx.cs">
+      <DependentUpon>new_evaluation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recruit\new_evaluation.aspx.designer.cs">
+      <DependentUpon>new_evaluation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recruit\new_interest.aspx.cs">
+      <DependentUpon>new_interest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recruit\new_interest.aspx.designer.cs">
+      <DependentUpon>new_interest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recruit\new_person.aspx.cs">
+      <DependentUpon>new_person.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recruit\new_person.aspx.designer.cs">
+      <DependentUpon>new_person.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recruit\popup_jobOk.aspx.cs">
+      <DependentUpon>popup_jobOk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recruit\popup_jobOk.aspx.designer.cs">
+      <DependentUpon>popup_jobOk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recruit\popup_zone.aspx.cs">
+      <DependentUpon>popup_zone.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recruit\popup_zone.aspx.designer.cs">
+      <DependentUpon>popup_zone.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recruit\result_list.aspx.cs">
+      <DependentUpon>result_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recruit\result_list.aspx.designer.cs">
+      <DependentUpon>result_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main\search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="sitemap.aspx.cs">
+      <DependentUpon>sitemap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sitemap.aspx.designer.cs">
+      <DependentUpon>sitemap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SiteSub.Master.cs">
+      <DependentUpon>SiteSub.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteSub.Master.designer.cs">
+      <DependentUpon>SiteSub.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ws\common.asmx.cs">
+      <DependentUpon>common.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ws\recruit.asmx.cs">
+      <DependentUpon>recruit.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ws\user_file_upload.aspx.cs">
+      <DependentUpon>user_file_upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ws\user_file_upload.aspx.designer.cs">
+      <DependentUpon>user_file_upload.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonLib\CommonLib.csproj">
+      <Project>{0D172DB9-B45E-441F-821F-E1D0A827A488}</Project>
+      <Name>CommonLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SiteSub.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Products_Sub.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="en\EnProducts_Sub.Master" />
+    <Content Include="en\EnSite.Master" />
+    <Content Include="en\EnSiteSub.Master" />
+    <None Include="micro\fonts\fontawesome-webfont.eot" />
+    <None Include="micro\fonts\fontawesome-webfont.ttf" />
+    <None Include="micro\fonts\fontawesome-webfont.woff" />
+    <None Include="micro\fonts\FontAwesome.otf" />
+    <None Include="micro\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="micro\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="micro\fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3738</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

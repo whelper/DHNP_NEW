@@ -1,0 +1,26 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="EnSiteSub.Master.cs" Inherits="MobileWeb.en.SiteSub" %>
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <script language="javascript">
+        var root = '<%=GetRoot()%>';
+
+        function go_search() {
+            location.href = "/en/search.aspx?search_text=" + encodeURIComponent($("#f_gnbSearch").val());
+        }
+    </script>
+    <script src="<%=GetRoot() %>/en/common/include/title.js"></script>
+</head>
+<body>
+<form id="form1" runat="server">
+    <div  class="wrap" >
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+
+    <!-- #include file = "/terms.htm" -->
+</form>
+</body>
+</html>

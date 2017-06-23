@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="EnSite.master.cs" Inherits="MobileWeb.en.EnSite" %>
+
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title> 대한뉴팜 모바일 </title>
+	<!-- SEO: 검색 엔진 최적화 -->
+	<meta name="description" content="대한뉴팜의 소개와 제품소개입니다. ">
+	<meta name="keywords" content="대한뉴팜, 의약품 ">
+	<link rel="shortcut icon" href="favicon.png">
+	<link rel="apple-touch-icon" href="favicon.png">
+	<link rel="stylesheet" href="<%=GetRoot() %>/en/common/css/default.css">
+	<link rel="stylesheet" href="<%=GetRoot() %>/en/common/css/common.css">
+	<link rel="stylesheet" href="<%=GetRoot() %>/en/common/css/jquery.bxslider.css">
+    <link rel="stylesheet" href="<%=GetRoot() %>/en/common/css/eng.css">
+    <link rel="stylesheet" href="<%=GetRoot() %>/en/common/css/jquery.remodal.css">
+
+	<script src="<%=GetRoot() %>/en/common/js/jquery-1.9.1.min.js" ></script> 
+	<script src="<%=GetRoot() %>/en/common/js/jquery-ui-1.9.2.custom.min.js" ></script> 
+	<script src="<%=GetRoot() %>/en/common/js/common.js" ></script> 
+	<script src="<%=GetRoot() %>/en/common/js/jquery.bxslider.min.js" ></script>
+    <script src="<%=GetRoot() %>/en/common/js/jquery.remodal.js" ></script>
+    <script language="javascript">
+        var root = '<%=GetRoot()%>';
+
+        function go_search() {
+            location.href = "/en/search.aspx?search_text=" + encodeURIComponent($("#f_gnbSearch").val());
+        }
+    </script>
+</head>
+
+<body>
+
+<form id="form1" runat="server">
+<div  class="wrap" >
+
+<asp:ContentPlaceHolder ID="HeadContent" runat="server">
+</asp:ContentPlaceHolder>
+
+</div>
+
+<!-- #include file = "/terms.htm" -->
+</form>
+
+</body>
+</html>
