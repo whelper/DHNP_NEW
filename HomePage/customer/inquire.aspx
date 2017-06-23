@@ -19,14 +19,10 @@
 			<col>
 		</colgroup>		
 		<tr>
-			<th><label for="">구 분</label></th>
+			<th><label for="<%=gubun.ClientID %>">구 분</label></th>
 			<td class="td_input">
-				<%
-				  for (int i = 0; i < InqueryCode.GetLength(0); i++)
-					{
-						Response.Write("<input type=\"radio\" name=\"rdo_gubun\">"+InqueryCode[i, 0]);
-					}
-				%>
+				<asp:DropDownList ID="gubun" runat="server" style="margin:3px 1%">
+				</asp:DropDownList>
 			</td>
 		</tr>
 		<tr>
@@ -104,7 +100,7 @@
     };
 
     function CheckValid() {
-
+		textfd.chk('<%= gubun.ClientID %>', "구분 선택하세요");
         textfd.chk('<%= ttl.ClientID %>', "제목을 입력하세요!");
         textfd.chk('<%= writer_nm.ClientID %>', "이름을 입력하세요!");
         textfd.chk('<%= tel.ClientID %>', "연락처를 입력하세요!");

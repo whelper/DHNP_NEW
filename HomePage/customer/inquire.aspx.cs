@@ -14,16 +14,24 @@ namespace HomePage.customer
 {
     public partial class inquire : PageBase
     {
-		private string[,] gubun = null;
+		private string[,] InqueryCode = null;
 		protected void Page_Load(object sender, EventArgs e)
         {
-			gubun = new string[6, 2]  { { "동물의약품(국내)", "1" }
+			InqueryCode = new string[6, 2]  { { "동물의약품(국내)", "1" }
 									  , { "동물의약품(해외)", "2" }
 									  , { "인체의약품(국내)", "3" }
 									  , { "인체의약품(해외)", "4" }
 									  , { "바이오의약품", "5" }
 									  , { "기타문의", "6" }
 								  };
+
+			List<ListItem> items = new List<ListItem>();
+			items.Add(new ListItem("선택하세요", ""));
+			for (int i = 0; i < InqueryCode.GetLength(0); i++)
+			{
+				items.Add(new ListItem(InqueryCode[i, 0], InqueryCode[i, 1]));
+			}
+			gubun.Items.AddRange(items.ToArray());
 		}
 
         /// <summary>
@@ -65,15 +73,7 @@ namespace HomePage.customer
 
             
         }
-		#region GET-SET
-		public string[,] InqueryCode
-		{
-			get
-			{
-				return gubun;
-			}
-		}
-		#endregion
+
 		#region 이벤트 메소드
 
 		protected void btnSave_Click(object sender, EventArgs e)

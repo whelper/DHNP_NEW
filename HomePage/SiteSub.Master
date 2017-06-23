@@ -259,7 +259,7 @@
             <h1 class="snb_title t06">고객</h1>      
 			<ul>
 				<li> <a href="/customer/inquire.aspx"<%=GetLnbIndicatorGroup("inquire.aspx")%>> 제품문의</a></li>
-				<li> <a href="/customer/with.aspx"<%=GetLnbIndicatorGroup("with.aspx")%>>제휴제안</a> </li>
+				<!--<li> <a href="/customer/with.aspx"<%=GetLnbIndicatorGroup("with.aspx")%>>제휴제안</a> </li>-->
 			</ul> 
             <% break; %>
 
