@@ -100,7 +100,7 @@
     };
 
     function CheckValid() {
-		textfd.chk('<%= gubun.ClientID %>', "구분1 선택하세요");
+		textfd.chk('<%= gubun.ClientID %>', "구분 선택하세요");
         textfd.chk('<%= ttl.ClientID %>', "제목을 입력하세요!");
         textfd.chk('<%= writer_nm.ClientID %>', "이름을 입력하세요!");
         textfd.chk('<%= tel.ClientID %>', "연락처를 입력하세요!");

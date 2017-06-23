@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text;
+using System.Net.Mail;
 
 using CommonLib.Utils;
 using HomePage.m_master;
@@ -71,14 +72,29 @@ namespace HomePage.customer
                 cont.Value = "";
             }
 
-            
-        }
+			MailMessage mail = new MailMessage();
+			mail.From = new MailAddress("cinebuddy@daum.net");
+			mail.To.Add("cinebuddy@gmail.com");
+			mail.Subject = "제목";
+			mail.Body = "내용";
+			mail.IsBodyHtml = true;
+			SmtpClient client = new SmtpClient("127.0.0.1");
+			try
+			{
+				client.Send(mail);
+			}
+			catch (SmtpException ex)
+			{
+				throw new Exception(ex.Message, ex);
+			}
+		}
 
 		#region 이벤트 메소드
 
 		protected void btnSave_Click(object sender, EventArgs e)
         {
             SaveData();
+
             
         }
 
