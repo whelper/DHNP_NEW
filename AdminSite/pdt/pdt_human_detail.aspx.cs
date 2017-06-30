@@ -97,8 +97,9 @@ namespace AdminSite.pdt
             upload_04.Attributes.Add("onchange", "document.getElementById('" + upload_path_04.ClientID + "').value=document.getElementById('" + upload_04.ClientID + "').value;");
             upload_05.Attributes.Add("onchange", "document.getElementById('" + upload_path_05.ClientID + "').value=document.getElementById('" + upload_05.ClientID + "').value;");
             upload_file.Attributes.Add("onchange", "document.getElementById('" + upload_path_file.ClientID + "').value=document.getElementById('" + upload_file.ClientID + "').value;");
+			open_yn1.Checked = true;
 
-            if (GetDataTableCount(0) > 0)
+			if (GetDataTableCount(0) > 0)
             {
                 // 신제품여부
                 new_yn.Checked = (GetData(0, 0, "NEW_YN").Equals("Y")) ? true : false;

@@ -96,41 +96,43 @@
 
 	<section class="new_list clear">
 		<h1 class="acc-hidden"> 제품소개 리스트  </h1>
-        <% 
-            if (GetDataCount() > 0)
-            {
-                for (int i = 0; i < GetDataCount(); i++)
-                {
+			
+		<% 
+			if (GetDataCount() > 0)
+			{
+
+				for (int i = 0; i < GetDataCount(); i++)
+				{
+					if(i == 0 || i %2 == 0) Response.Write("<div class=\"row\">");
         %>
-                 <% if(i % 3 == 0){ %>
-                    <div class="row">
-                 <% } %>
+                 
 
 		<article class="list_Item about">
+			
 			<a href="/products/human_products_view.aspx?prod_cd=<%=GetData(i, "PROD_CD") %>">
 			    <% 
                     if (GetData(i, "PROD_IMG1").Equals("") == false)
                     {
                 %>
-                <img src="<%=GetData(i, "PROD_IMG1") %>" width="210" height="160" alt="" onerror="this.src='/common/images/products/new_no.jpg'" />
+                <img src="<%=GetData(i, "PROD_IMG1") %>" width="330" height="240" alt="" onerror="this.src='/common/images/products/new_no.jpg'" />
                 <% 
                     }
                     else
                     {
                 %>
-                <img src="/common/images/products/new_no.jpg" width="210" height="160" alt="" />
+                <img src="/common/images/products/new_no.jpg" width="330" height="240" alt="" />
                 <% 
                     }
                 %>
             </a>
-            <h1><%=GetData(i, "PROD_NM") %></h1>
+            <h1><%=GetData(i, "PROD_NM") %><%=i%></h1>
 			<p></p>
 		</article>
-                    <% if (i % 3 == 2 || i == GetDataCount()){ %>
+                    <% if ((i+1) % 2 == 0 || i == GetDataCount()){ %>
                          </div>
                     <% } %>
         <% 
-                }
+                } // end of for
             }
             else
             {

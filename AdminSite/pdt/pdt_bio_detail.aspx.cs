@@ -82,10 +82,20 @@ namespace AdminSite.pdt
             upload_05.Attributes.Add("onchange", "document.getElementById('" + upload_path_05.ClientID + "').value=document.getElementById('" + upload_05.ClientID + "').value;");
             upload_file.Attributes.Add("onchange", "document.getElementById('" + upload_path_file.ClientID + "').value=document.getElementById('" + upload_file.ClientID + "').value;");
             pdt_bae.Checked = true;
+			open_yn1.Checked = true;
 
-            if (GetDataTableCount(0) > 0)
+			if (GetDataTableCount(0) > 0)
             {
-                string prodType = GetData(0, 0, "PROD_TYPE");
+				if (GetData(0, 0, "OPEN_YN").Equals("Y"))
+				{
+					open_yn1.Checked = true;
+				}
+				else
+				{
+					open_yn2.Checked = true;
+				}
+
+				string prodType = GetData(0, 0, "PROD_TYPE");
                 pdt_re.Checked = prodType.Equals("PROD_REGIN") ? true : false;
                 pdt_bae.Checked = (prodType.Equals("") || prodType.Equals("PROD_BADG")) ? true : false;
 
@@ -143,8 +153,9 @@ namespace AdminSite.pdt
             string img4 = CStringUtil.IsNullOrEmpty(upload_path_04.Value) == false ? UploadFile(upload_04, "DIR_PROMOTION") : "";
             string img5 = CStringUtil.IsNullOrEmpty(upload_path_05.Value) == false ? UploadFile(upload_05, "DIR_PROMOTION") : "";
             string menual = CStringUtil.IsNullOrEmpty(upload_path_file.Value) == false ? UploadFile(upload_file, "DIR_PROMOTION") : "";
+			string open_yn = (open_yn1.Checked) ? "Y" : "N";
 
-            StringBuilder param = new StringBuilder();
+			StringBuilder param = new StringBuilder();
             param.Append(LANG_CD); // 언어코드
             param.Append(CConst.DB_PARAM_DELIMITER).Append(prod_cd.Value); // 제품코드
             string catgNo = catg_no.Value.Equals("") ? "0" : catg_no.Value;
@@ -184,8 +195,13 @@ namespace AdminSite.pdt
             param.Append(CConst.DB_PARAM_DELIMITER).Append(""); // 구성 - 동물 의약품 입력 안함
             param.Append(CConst.DB_PARAM_DELIMITER).Append(""); // 정보 - 동물 의약품 입력 안함
             param.Append(CConst.DB_PARAM_DELIMITER).Append(""); // 구분
+			param.Append(CConst.DB_PARAM_DELIMITER).Append(""); // 신제품 START
+			param.Append(CConst.DB_PARAM_DELIMITER).Append(""); // 신제품 END
+			param.Append(CConst.DB_PARAM_DELIMITER).Append(open_yn); // 노출여부
+			param.Append(CConst.DB_PARAM_DELIMITER).Append(""); // 신제품 여부
+			param.Append(CConst.DB_PARAM_DELIMITER).Append(""); // 동의카테고리
 
-            string[] result = null;
+			string[] result = null;
 
             if (CStringUtil.IsNullOrEmpty(ProdCd) == false)
             {

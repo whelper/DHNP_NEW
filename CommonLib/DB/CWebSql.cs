@@ -1029,8 +1029,9 @@ namespace CommonLib.DB
                     variable[34] = "@NEW_END_DT";
                     variable[35] = "@OPEN_YN";
                     variable[36] = "@NEW_YN";
+					variable[37] = "@ANI_CATE";
 
-                    sqldbtype[0] = SqlDbType.VarChar;
+					sqldbtype[0] = SqlDbType.VarChar;
                     sqldbtype[1] = SqlDbType.VarChar;
                     sqldbtype[2] = SqlDbType.Int;
                     sqldbtype[3] = SqlDbType.Int;
@@ -1067,9 +1068,10 @@ namespace CommonLib.DB
                     sqldbtype[34] = SqlDbType.VarChar;
                     sqldbtype[35] = SqlDbType.VarChar;
                     sqldbtype[36] = SqlDbType.VarChar;
+					sqldbtype[37] = SqlDbType.VarChar;
 
-                    // 마지막 인자값 항상 확인(파라미터 총수 임)
-                    ds = command.ExecuteDataSetSecure("USP_ADMIN_3204_PROD_DETAIL_I", variable, m_value, sqldbtype, 37);
+					// 마지막 인자값 항상 확인(파라미터 총수 임)
+					ds = command.ExecuteDataSetSecure("USP_ADMIN_3204_PROD_DETAIL_I", variable, m_value, sqldbtype, 38);
                     break;
 
                 case 3205:// 제품관리 수정

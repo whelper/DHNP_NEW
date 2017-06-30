@@ -347,6 +347,16 @@
 					<span class="side_span">* 현재 파일 : <a href="<%=GetData(0, 0, "MANUAL") %>" title="<%=GetData(0, 0, "MANUAL") %>"><%=GetFileName(GetData(0, 0, "MANUAL"), 65)%></a></span>
 				</td>
 			</tr>
+			<tr>
+				<th scope="row" > 
+					<label for="">제품 노출 여부</label>   
+				</th>
+				<td class="alignleft" colspan="2">   
+                    <label for="open_yn1"> <asp:RadioButton runat="server"  ID="open_yn1" GroupName="open_yn" value="Y"  Text=" 노출" /></label>
+                    <label for="open_yn2"> <asp:RadioButton runat="server"  ID="open_yn2" GroupName="open_yn" value="N" Text="노출안함" style="margin-left:5px" /> </label>
+
+				</td>
+			</tr>
 		</tbody>
 	</table>
 

@@ -82,8 +82,9 @@ namespace AdminSite.pdt
             upload_file.Attributes.Add("onchange", "document.getElementById('" + upload_path_file.ClientID + "').value=document.getElementById('" + upload_file.ClientID + "').value;");
 
             pdt_org.Checked = true;
+			open_yn1.Checked = true;
 
-            if (GetDataTableCount(0) > 0)
+			if (GetDataTableCount(0) > 0)
             {
 
 				// 신제품여부
