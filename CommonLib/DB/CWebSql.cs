@@ -786,15 +786,17 @@ namespace CommonLib.DB
                         variable[2] = "@TEL";
                         variable[3] = "@EMAIL";
                         variable[4] = "@CONT";
+						variable[5] = "@GUBUN";
 
-                        sqldbtype[0] = SqlDbType.VarChar;
+						sqldbtype[0] = SqlDbType.VarChar;
                         sqldbtype[1] = SqlDbType.VarChar;
                         sqldbtype[2] = SqlDbType.VarChar;
                         sqldbtype[3] = SqlDbType.VarChar;
                         sqldbtype[4] = SqlDbType.VarChar;
+						sqldbtype[5] = SqlDbType.VarChar;
 
-                        // 마지막 인자값 항상 확인(파라미터 총수 임)
-                        ds = command.ExecuteDataSetSecure("USP_HOMEPAGE_1501_CUST_PROD_INQ_I", variable, m_value, sqldbtype, 5);
+					// 마지막 인자값 항상 확인(파라미터 총수 임)
+					ds = command.ExecuteDataSetSecure("USP_HOMEPAGE_1501_CUST_PROD_INQ_I", variable, m_value, sqldbtype, 6);
                         break;
 
                      case 1511:// 제휴제안 등록

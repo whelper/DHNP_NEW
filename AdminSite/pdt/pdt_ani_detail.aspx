@@ -27,9 +27,16 @@
 					<td class="alignleft" colspan="2">
                         <input type="text" runat="server" id="prod_cd"  value="" class="span6 text mR10" />
                         <label for="pdt_new"><input type="radio" runat="server" id="pdt_org"  name="pdt_style" class="inline" value="PROD_ORG" />기존 제품</label>&nbsp;
-						<label for="pdt_new"><input type="radio" runat="server" id="pdt_new"  name="pdt_style" class="inline" value="PROD_NEW" />신제품</label>&nbsp;
+						
 						<label for="pdt_kwan"><input type="radio" runat="server" id="pdt_godl"  name="pdt_style" class="inline" value="PROD_GODL" />관납제품</label>&nbsp;	
-					    
+					    <label for="new_yn" style="margin-left:10px;">
+							<input type="checkbox" runat="server" id="new_yn"  name="new_yn" value="Y" class="inline">신제품 여부 
+							</label> 
+                        <span class="wrap-period">   
+                         <input id="new_start_dt" runat="server" type="text" value="" style="width:70px" class="datepicker mL10"  />
+                            ~
+                            <input id="new_end_dt" runat="server" type="text"  value="" style="width:70px" class="datepicker"  />
+					    </span>
 					</td>
 				</tr>
 				<tr>
@@ -344,6 +351,16 @@
 						<span class="side_span">* 현재 파일 : <a href="<%=GetData(0, 0, "MANUAL") %>" title="<%=GetData(0, 0, "MANUAL") %>"><%=GetFileName(GetData(0, 0, "MANUAL"), 65)%></a></span>
 					</td>
 				</tr>
+				<tr>
+					<th scope="row" > 
+						<label for="">제품 노출 여부</label>   
+					</th>
+					<td class="alignleft" colspan="2">   
+                        <label for="open_yn1"> <asp:RadioButton runat="server"  ID="open_yn1" GroupName="open_yn" value="Y"  Text=" 노출" /></label>
+                        <label for="open_yn2"> <asp:RadioButton runat="server"  ID="open_yn2" GroupName="open_yn" value="N" Text="노출안함" style="margin-left:5px" /> </label>
+
+					</td>
+				</tr>
 			</tbody>
 		</table>
 
@@ -496,7 +513,26 @@
         }
 
         return false;
-    }
+	}
+
+	$(function () {
+		$("#ctl00_ContentPlaceSubLayer_new_yn").click(function () {
+			if ($(this).prop("checked")) {
+				$(".wrap-period").show();
+			} else {
+				$("#ctl00_ContentPlaceSubLayer_new_start_dt").val('');
+				$("#ctl00_ContentPlaceSubLayer_new_end_dt").val('');
+				$(".wrap-period").hide();
+			}
+		});
+
+		if (!$("#ctl00_ContentPlaceSubLayer_new_yn").prop("checked")) {
+			$(".wrap-period").hide();
+		}
+
+		//calendar
+		$(".datepicker").datepicker({ dateFormat: "yy-mm-dd" });
+	});
 
 </script>
 

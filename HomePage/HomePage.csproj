@@ -1932,6 +1932,8 @@
     <None Include="micro\fonts\glyphicons-halflings-regular.eot" />
     <None Include="micro\fonts\glyphicons-halflings-regular.ttf" />
     <None Include="micro\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

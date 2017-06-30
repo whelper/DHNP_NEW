@@ -42,12 +42,27 @@ namespace CommonLib.Utils
         /// 기본 데이터 없음 메시지
         /// </summary>
         public const string CODE_EMPTY_MSG = "데이터가 없습니다.";
+		
+		
+		/// <summary>
+		/// 제문문의 구분값
+		/// </summary>
+		public static readonly Dictionary<string, string> CODE_INQUIRY = new Dictionary<string, string>()
+		{
+			{  "1","동물의약품(국내)" }
+			, { "2","동물의약품(해외)"}
+			, { "3","인체의약품(국내)"}
+			, { "4","인체의약품(해외)"}
+			, { "5","바이오의약품" }
+			, { "6","기타문의"}
+		};
 
-        /// <summary>
-        /// 디렉토리 유형 - 대 매뉴 기준으로만 구분
-        /// 물리적인 디렉토리 탐색 부하에 따라 더 세분화 예정
-        /// </summary>
-        public enum DIR_TYPE {
+
+		/// <summary>
+		/// 디렉토리 유형 - 대 매뉴 기준으로만 구분
+		/// 물리적인 디렉토리 탐색 부하에 따라 더 세분화 예정
+		/// </summary>
+	public enum DIR_TYPE {
             DIR_MAIN                        // 메인관리
             , DIR_PRODUCT                   // 제품관리
             , DIR_PROMOTION                 // 홍보관리

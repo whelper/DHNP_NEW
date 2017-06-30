@@ -80,11 +80,11 @@
 							<li><a href="/intro/location.aspx"> 오시는길 </a></li>
 						</ul>
 					</li>
-					<li><a href="/products/human_new_list.aspx" class="gnb_02<%=GetGnbIndicator("products")%>">제품</a>
+					<li><a href="/products/human_products_list.aspx" class="gnb_02<%=GetGnbIndicator("products")%>">제품</a>
 						<ul  class="ly" style="display:none;">
-							<li><a href="/products/human_new_list.aspx">인체 의약품</a></li>
-							<li><a href="/products/animal_new_list.aspx">동물 의약품</a></li>
-							<li><a href="/products/bio_badge_list.aspx">바이오 공정소재</a></li>
+							<li><a href="/products/human_products_list.aspx">인체 의약품</a></li>
+							<li><a href="/products/animal_products_list.aspx">동물 의약품</a></li>
+							<li><a href="/products/bio_badge_list.aspx">바이오 의약품</a></li>
 							<li><a href="/products/global_human_list.aspx">수출 의약품</a></li>
 							<li><a href="/products/health_products_list.aspx">건강기능식품</a></li>
 	                        <li><a href="/products/medical_list.aspx">의료기기</a></li>
@@ -130,8 +130,8 @@
 		    <h1><span>Quick Menu</span></h1>
 		    <ul>
 			    <li class="qu_01"><a href="/index.aspx">home</a></li>
-			    <li class="qu_02"><a href="/products/human_new_list.aspx">인체의 약품</a></li>
-			    <li class="qu_03"><a href="/products/animal_new_list.aspx"> 동물의 약품</a></li>
+			    <li class="qu_02"><a href="/products/human_products_list.aspx">인체의 약품</a></li>
+			    <li class="qu_03"><a href="/products/animal_products_list.aspx"> 동물의 약품</a></li>
 			    <li class="qu_04"><a href="/products/bio_badge_list.aspx"> 바이오공정소재</a></li>
 			    <li class="qu_05"><a href="/recruit/new_person.aspx">채용안내</a></li>
 		    </ul>

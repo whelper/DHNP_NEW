@@ -92,7 +92,7 @@
                     if (GetData(i, "PROD_IMG1").Equals("") == false)
                     {
             %>
-                <img src="<%=GetData(i, "PROD_IMG1") %>" width="210" height="160" alt="">
+                <img src="<%=GetData(i, "PROD_IMG1") %>" width="210" height="160" alt=""  onerror="this.src='/common/images/products/new_no.jpg'">
             <% 
                     }
                     else

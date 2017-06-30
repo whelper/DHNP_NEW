@@ -31,15 +31,6 @@ namespace AdminSite.pdt {
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton pdt_org;
         
         /// <summary>
-        /// pdt_new 컨트롤입니다.
-        /// </summary>
-        /// <remarks>
-        /// 자동 생성 필드입니다.
-        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton pdt_new;
-        
-        /// <summary>
         /// pdt_godl 컨트롤입니다.
         /// </summary>
         /// <remarks>
@@ -47,6 +38,33 @@ namespace AdminSite.pdt {
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton pdt_godl;
+        
+        /// <summary>
+        /// new_yn 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox new_yn;
+        
+        /// <summary>
+        /// new_start_dt 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText new_start_dt;
+        
+        /// <summary>
+        /// new_end_dt 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText new_end_dt;
         
         /// <summary>
         /// prod_nm 컨트롤입니다.
@@ -389,6 +407,24 @@ namespace AdminSite.pdt {
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnProdMenual;
+        
+        /// <summary>
+        /// open_yn1 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton open_yn1;
+        
+        /// <summary>
+        /// open_yn2 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton open_yn2;
         
         /// <summary>
         /// hdnContent 컨트롤입니다.

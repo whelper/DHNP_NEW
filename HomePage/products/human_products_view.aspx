@@ -43,17 +43,26 @@
                 string img3 = GetData(0, "PROD_IMG3").Equals("") ? "/common/images/products/no_small.jpg" : GetData(0, "PROD_IMG3");
                 string img4 = GetData(0, "PROD_IMG4").Equals("") ? "/common/images/products/no_small.jpg" : GetData(0, "PROD_IMG4");
                 string img5 = GetData(0, "PROD_IMG5").Equals("") ? "/common/images/products/no_small.jpg" : GetData(0, "PROD_IMG5");
-            %>
+				string[] thumb = { img1,img2,img3,img4,img5 };
+			%>
 
             <a class= "image-popup-vertical-fit" href="<%=img1Big %>">
 	 		<img id="largeImage" src="<%=img1Big %>" width="300" height="220" alt="" > 
             </a>
 	 		<div  id="thumbs" class="small" >
-		 		<span><img src="<%=img1%>" width="56" height="56" alt="" ></span>
+				 <%
+					foreach (string s in thumb) {
+						if (s == "/common/images/products/no_small.jpg") continue;
+				%>
+				<span><img src="<%=s%>" width="56" height="56" alt="" onerror="this.src='/common/images/products/new_no.jpg'"></span>
+				<%
+					}
+				%>	
+		 		<!--<span><img src="<%=img1%>" width="56" height="56" alt="" ></span>
 		 		<span><img src="<%=img2%>" width="56" height="56" alt="" ></span>
 		 		<span><img src="<%=img3%>" width="56" height="56" alt="" ></span>
 		 		<span><img src="<%=img4%>" width="56" height="56" alt="" ></span>
-		 		<span><img src="<%=img5%>"  width="56" height="56" alt=""></span> 
+		 		<span><img src="<%=img5%>"  width="56" height="56" alt=""></span> -->
 		 	</div>
 	 	</figure>
 

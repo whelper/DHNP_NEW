@@ -73,7 +73,9 @@
                  <%if (!GetData(0, "CATG_NO").Equals("0")){ %>
 				<li><strong>분류번호</strong><em><%=GetData(0, "CATG_NO")%></em></li>
 	  			<%} %>
+				<%if (!GetData(0, "INGREDI").Equals("")){ %>
 				<li><strong>주요성분</strong><em><%=GetData(0, "INGREDI")%></em></li>
+	  			<%} %>
 	  			<%if (!GetData(0, "INSU_CD").Equals("")){ %>
 				<li><strong>보험코드</strong><em><%=GetData(0, "INSU_CD")%></em></li>
                 <%} %>
