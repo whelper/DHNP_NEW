@@ -129,6 +129,7 @@
                             <span class="side_span">* 현재 파일 : <a href="<%=GetData(0, 0, "CATALOG") %>" title="<%=GetData(0, 0, "CATALOG") %>"><%=GetFileName(GetData(0, 0, "CATALOG"), 65)%></a></span>
 					    </td>
 				    </tr>
+					
 				</tbody>
 			</table>
 		<div class="btn_area clearfix">
