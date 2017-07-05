@@ -81,8 +81,8 @@ namespace AdminSite.pdt
             upload_05.Attributes.Add("onchange", "document.getElementById('" + upload_path_05.ClientID + "').value=document.getElementById('" + upload_05.ClientID + "').value;");
             upload_file.Attributes.Add("onchange", "document.getElementById('" + upload_path_file.ClientID + "').value=document.getElementById('" + upload_file.ClientID + "').value;");
             pdt_human.Checked = true;
-
-            if (GetDataTableCount(0) > 0)
+			reg_dt.Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+			if (GetDataTableCount(0) > 0)
             {
 
 				if(GetData(0, 0, "OPEN_YN").Equals("Y"))
@@ -93,6 +93,7 @@ namespace AdminSite.pdt
 				{
 					open_yn2.Checked = true;
 				}
+				reg_dt.Value = Convert.ToDateTime(GetData(0, 0, "REG_DT")).ToString("yyyy-MM-dd hh:mm");
 				catg_no.Value = GetData(0, 0, "CATG_NO");
 
                 string prodType = GetData(0, 0, "PROD_TYPE");
@@ -201,6 +202,7 @@ namespace AdminSite.pdt
 			param.Append(CConst.DB_PARAM_DELIMITER).Append(open_yn); // 노출여부
 			param.Append(CConst.DB_PARAM_DELIMITER).Append(""); // 신제품 여부
 			param.Append(CConst.DB_PARAM_DELIMITER).Append(""); // 동의카테고리
+			param.Append(CConst.DB_PARAM_DELIMITER).Append(reg_dt.Value); // 등록일
 
 			string[] result = null;
 

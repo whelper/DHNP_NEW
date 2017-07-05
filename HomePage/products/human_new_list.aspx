@@ -80,6 +80,7 @@
                 for (int i = 0; i < GetDataCount(); i++)
                 {
         %>
+
 		<article class="list_Item">
 			<i class="i_new"><em>new</em></i>
 			<a href="/products/human_new_view.aspx?prod_cd=<%=GetData(i, "PROD_CD") %>">
@@ -87,13 +88,13 @@
                     if (GetData(i, "PROD_IMG1").Equals("") == false)
                     {
                 %>
-                <img src="<%=GetData(i, "PROD_IMG1") %>" width="330" height="230" alt="" onerror="this.src='/common/images/products/new_no.jpg'" />
+                <img src="<%=GetData(i, "PROD_IMG1") %>" width="330" height="240" alt="" onerror="this.src='/common/images/products/new_no.jpg'" />
                 <% 
                     }
                     else
                     {
                 %>
-                <img src="/common/images/products/new_no.jpg" width="330" height="230" alt="" />
+                <img src="/common/images/products/new_no.jpg" width="330" height="240" alt="" />
                 <% 
                     }
                 %>

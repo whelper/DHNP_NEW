@@ -32,9 +32,9 @@ $(function () {
 
     /******* 제품  사진 ************/
     //  제품 리스트 2개일때  
-    $('.list_Item:even').css("margin-right", "33px");
+    //$('.list_Item:even').css("margin-right", "33px");
     //  제품 리스트 3개일때 
-    $('.list_Item.about').css("margin-right", "30px");
+    //$('.list_Item.about').css("margin-right", "30px");
     $('.list_Item.about:nth-child(3n+3)').css("margin-right", "0");
     //  제품 리스트 4개일때 
     $('.list_Item.total').css("margin-right", "14px");

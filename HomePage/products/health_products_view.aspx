@@ -48,7 +48,7 @@
 			%>
 
             <a class= "image-popup-vertical-fit" href="<%=img1Big %>">
-	 		<img id="largeImage" src="<%=img1Big %>" width="300" height="220" alt="" > 
+	 		<img id="largeImage" src="<%=img1Big %>" width="300" height="218" alt="" > 
             </a>
 	 		<div  id="thumbs" class="small" >
 		 		<%
@@ -73,19 +73,19 @@
                 <%if (!GetData(0, "CATG_NO").Equals("0")){ %>
 				<li><strong>분류번호</strong><em><%=GetData(0, "CATG_NO")%></em></li>
 	  			<%} %>
-				<%if (!GetData(0, "CATG_NO").Equals("")){ %>
+				<%if (!GetData(0, "INGREDI").Equals("")){ %>
 				<li><strong>주요성분</strong><em><%=GetData(0, "INGREDI")%></em></li>
 				<%} %>
-				<%if (!GetData(0, "CATG_NO").Equals("")){ %>
+				<%if (!GetData(0, "TEMPER").Equals("")){ %>
 	  			<li><strong>성상</strong><em><%=GetData(0, "TEMPER")%></em></li>
 				<%} %>
-				<%if (!GetData(0, "CATG_NO").Equals("")){ %>
+				<%if (!GetData(0, "INSU_CD").Equals("")){ %>
 	  			<li><strong>보험코드</strong><em><%=GetData(0, "INSU_CD")%></em></li>
 				<%} %>
-				<%if (!GetData(0, "CATG_NO").Equals("")){ %>
+				<%if (!GetData(0, "PMEDI").Equals("")){ %>
                 <li><strong>약가</strong><em><%=GetData(0, "PMEDI")%></em></li>
                 <%} %>
-				<%if (!GetData(0, "CATG_NO").Equals("")){ %>
+				<%if (!GetData(0, "PACK_MEA").Equals("")){ %>
 				<li><strong>포장단위</strong><em><%=GetData(0, "PACK_MEA")%></em></li>
 	  			<%} %>
 			 </ul>

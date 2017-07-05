@@ -83,7 +83,7 @@ namespace AdminSite.pdt
 
             pdt_org.Checked = true;
 			open_yn1.Checked = true;
-
+			reg_dt.Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
 			if (GetDataTableCount(0) > 0)
             {
 
@@ -97,7 +97,7 @@ namespace AdminSite.pdt
 				{
 					open_yn2.Checked = true;
 				}
-
+				reg_dt.Value = Convert.ToDateTime(GetData(0, 0, "REG_DT")).ToString("yyyy-MM-dd hh:mm");
 
 				new_start_dt.Value = GetData(0, 0, "NEW_START_DT");
 				new_end_dt.Value = GetData(0, 0, "NEW_END_DT");
@@ -226,6 +226,7 @@ namespace AdminSite.pdt
 			param.Append(CConst.DB_PARAM_DELIMITER).Append(open_yn); // 노출여부
 			param.Append(CConst.DB_PARAM_DELIMITER).Append(db_new_yn); // 신제품 여부
 			param.Append(CConst.DB_PARAM_DELIMITER).Append(""); // 동의카테고리
+			param.Append(CConst.DB_PARAM_DELIMITER).Append(reg_dt.Value); // 등록일
 
 			string[] result = null;
 

@@ -47,7 +47,7 @@
 			%>
 
             <a class= "image-popup-vertical-fit" href="<%=img1Big %>">
-	 		<img id="largeImage" src="<%=img1Big %>" width="300" height="220" alt="" > 
+	 		<img id="largeImage" src="<%=img1Big %>" width="300" height="218" alt="" > 
             </a>
 	 		<div  id="thumbs" class="small" >
 				 <%
@@ -79,7 +79,8 @@
                 <li><strong>포장단위</strong><em><%=GetData(0, "PACK_MEA")%></em></li>
                 <%} %>
 				<%if (!GetData(0, "PROD_INFO").Equals("")){ %>
-				<li><strong>정보</strong><em><%=GetData(0, "PROD_INFO")%></em></li>  
+				<li><strong>정보</strong><em><%=GetData(0, "PROD_INFO")%></em></li>
+				<%} %>
 	  		</ul>
 	  		<p class="btn_target"> 
                 <% 

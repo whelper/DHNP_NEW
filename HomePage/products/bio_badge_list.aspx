@@ -72,6 +72,27 @@
 		</asp:DropDownList>
 	</div>
 	<!--정렬 End-->
+
+	<nav class="tap_nav">
+		<h1 class="acc-hidden"> 제품소개 메뉴 </h1>
+		<ul class="clear">
+            <% 
+                string catgCss = "";
+                
+                if (CatgDs != null)
+                {
+                    for (int i = 0; i < CatgDs.Tables[0].Rows.Count; i++)
+                    {
+                        catgCss = (CatgDs.Tables[0].Rows[i]["CATG_NO"].ToString().Equals(CatgNo2) ? " class='onhover'" : "");
+            %>
+			<li><a href="?prod_initial=<%=ProdInitial%>&catg_no2=<%=CatgDs.Tables[0].Rows[i]["CATG_NO"]%>"<%=catgCss%>><%=CatgDs.Tables[0].Rows[i]["PROD_CATG_NM"]%> (<%=CatgDs.Tables[0].Rows[i]["PROD_CATG_CNT"]%>) </a></li>
+            <% 
+                    }
+                }
+            %>
+		</ul>	
+	</nav> <!--  tap_nav -->
+
 	<!--  내용  ***************** -->
 	<!--<img src="/common/images/products/bio_badge_ex.gif" alt="혈청을 사용하여 배양한 세포의 경우 , 알레르기와 같은 부작용, 바이러스, 마이코플라즈마와 같은 
 병원성 미생물 감염의 위험이 있어, 무혈청 배지를 이용하여 세포배양 의약품을 개발하는 추세입니다. 
@@ -86,19 +107,20 @@
                 for (int i = 0; i < GetDataCount(); i++)
                 {
         %>
+
 		<article class="list_Item about">
 			<a href="/products/bio_badge_view.aspx?prod_cd=<%=GetData(i, "PROD_CD") %>">
             <% 
                     if (GetData(i, "PROD_IMG1").Equals("") == false)
                     {
             %>
-                <img src="<%=GetData(i, "PROD_IMG1") %>" width="210" height="160" alt=""  onerror="this.src='/common/images/products/new_no.jpg'">
+                <img src="<%=GetData(i, "PROD_IMG1") %>" width="330" height="240" alt=""  onerror="this.src='/common/images/products/new_no.jpg'">
             <% 
                     }
                     else
                     {
             %>
-                <img src="/common/images/products/new_no.jpg" width="210" height="160" alt="" />
+                <img src="/common/images/products/new_no.jpg" width="330" height="240" alt="" />
             <% 
                     }
             %>

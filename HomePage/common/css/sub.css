@@ -151,11 +151,13 @@
 .list_Item.about { width:330px; float: left; position:relative;}   /* common.js 에 1> 홀수 번째마다 마진 27   2>  3번째마다 마진 0 */
 .list_Item.about h1 { line-height:26px; font-size:15px; color:#686a71; font-weight: 600; vertical-align:middle; }
 .list_Item.about p { width:100%;  min-height:10px; color:#939393;line-height:160%; margin-top: 5px; margin-bottom: 20px; overflow:hidden;}
-article.list_Item {
+/*추가*/
+/*/article.list_Item {
 	margin-right: 0 !important;
-}
-.list_Item.about:nth-child(2n) {
-	margin-left: 30px !important;
+}*/
+
+.list_Item:nth-child(2n) {
+		margin-left: 30px !important;
 }
 
 

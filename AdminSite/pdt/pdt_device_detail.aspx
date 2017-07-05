@@ -23,6 +23,14 @@
 					<tbody>
 					<tr>
 						<th scope="row"> 
+							<label for="pdt_name">등록일</label>     
+						</th>
+						<td class="alignleft" colspan="2">     
+							<input type="text" runat="server" id="reg_dt" value="" class="span2 text" onkeyup="assist();" onblur="assist();" />
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"> 
 							<label for="pdt_code"> 제품코드 </label> 
 						</th>
 						<td class="alignleft" colspan="2">     
@@ -438,6 +446,7 @@
     function CheckValid() {
         var content = document.getElementById("<%= hdnContent.ClientID %>");
         content.value = oEditors.getById["<%= usage.ClientID %>"].getIR();
+		if (!isValidDatetime($("#<%=reg_dt.ClientID%>").val())) return false;
 
         textfd.chk('<%= prod_cd.ClientID %>', "제품코드를 입력하세요!");
         textfd.chk('<%= prod_nm.ClientID %>', "제품명을 입력하세요!");

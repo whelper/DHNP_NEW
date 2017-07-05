@@ -19,40 +19,132 @@
 <script type="text/javascript" src="<%=GetRoot()%>/common/js/function.js"></script>
 <script type="text/javascript" src="<%=GetRoot()%>/common/js/html5shiv-printshiv.js"></script>
 <script type="text/javascript">
-    var check_all = function () {
-        var obj_all = document.getElementById("chk_all");
-        var obj = document.getElementsByName("chk");
+	function isValidDatetime(dt) {
 
-        for (var i = 0; i < obj.length; i++) {
-            if (obj_all.checked == true) {
-                obj[i].checked = true;
-            } else {
-                obj[i].checked = false;
-            }
-        }
-    }
+		//형식 : 0000-00-00 00:00
+		if (dt.length != 16) {
+			alert('0000-00-00 00:00 형식으로 입력해 주세요');
+			return false;
+		}
+		dt = dt.replace(" ", "");
+		arrDt = dt.split("-");
+		yy = arrDt[0];
+		mm = arrDt[1];
+		dd = arrDt[2].substr(0, 2);
+		tm = arrDt[2].substr(-5);
+		hr = parseInt(tm.substr(0, 2));
+		min = parseInt(tm.substr(-2));
 
-    var check_value = function () {
-        var obj = document.getElementsByName("chk");
-        for (var i = 0; i < obj.length; i++) {
-            if (obj[i].checked == true) {
-                return true;
-            }
-        }
-        alert('체크된 값이 없습니다.');
-        return false;
-    }
+		var dateVar = new Date(yy, mm, dd);
+		if (dateVar.getFullYear() !== parseInt(yy) || dateVar.getMonth() != parseInt(mm) || dateVar.getDate() != parseInt(dd)) {
+			alert('날짜 형식을 확인해 주세요');
+			return false;
+		}
 
-    var check_logout = function () {
-        if (confirm("로그아웃 하시겠습니까?")) {
-            return true;
-        }
+		if (hr > 23) {
+			alert('시간 형식을 확인해 주세요');
+			return false;
+		}
 
-        return false;
-    }
+		if (min > 59) {
+			alert('분 형식을 확인해 주세요');
+			return false;
+		}
 
-    var try_cnt = 0;
-    var open_popup = function (image_nm) {
+		return true;
+	}
+	function assist(event) { //날짜 입력
+		var time = new Date()
+			, y = String(time.getFullYear())
+			, m = time.getMonth()
+			, d = time.getDate()
+			, h = '-'
+			, lists = {
+				keyup: [
+					// 숫자, - 외 제거 
+					[/[^\d\s\-:]/, '']
+					// 0000 > 00-00 
+					, [/^(\d\d)(\d\d)$/, '$1-$2']
+					// 00-000 > 00-00-0 
+					, [/^(\d\d\-\d\d)(\d+)$/, '$1-$2']
+					// 00-00-000 > 0000-00-0 
+					, [/^(\d\d)-(\d\d)-(\d\d)(\d+)$/, '$1$2-$3-$4']
+					// 00-00-0-0 > 0000-0-0 
+					, [/^(\d\d)-(\d\d)-(\d\d?)(-\d+)$/, '$1$2-$3$4']
+					// 0000-0000 > 0000-00-00 
+					//, [/^(\d{4}-\d\d)(\d\d)$/, '$1-$2']
+					// 000000000 > 0000-00-00 0
+					//, [/^(\d{4})(\d\d)(\d\d)(\d\d)$/, '$1-$2-$3-$4']
+					// 0000000000 > 0000-00-00 00 
+					, [/^(\d{4})-(\d\d)-(\d\d)(\d+)$/, '$1-$2-$3 $4']
+					// 000000000000 > 0000-00-00 00:00
+					, [/^(\d{4})-(\d\d)-(\d\d)\s(\d\d)(\d+)$/, '$1-$2-$3 $4:$5']
+					// 이탈 제거 
+					, [/(\d{4}-\d\d?-\d\d?\s?\d\d?:\d\d).+/, '$1']
+				]
+				, blur: [
+					// 날짜만 있을 때 월 붙이기 
+					[/^(0?[1-9]|[1-2][0-9]|3[0-1])$/, m + '-$1', 1]
+					// 월-날짜 만 있을 때 연도 붙이기 
+					, [/^(0?[1-9]|1[0-2])\-?(0[1-9]|[1-2][0-9]|3[01])$/, y + '-$1-$2']
+					, [/^((?:0m?[1-9]|1[0-2])\-[1-9])$/, y + '-$1']
+					// 연도 4 자리로 
+					, [/^(\d\-\d\d?\-\d\d?)$/, y.substr(0, 3) + '$1', 1]
+					, [/^(\d\d\-\d\d?\-\d\d?)$/, y.substr(0, 2) + '$1', 1]
+					// 0 자리 붙이기 
+					, [/(\d{4}-)(\d-\d\d?)$/, '$10$2', 1]
+					, [/(\d{4}-\d\d-)(\d)$/, '$10$2']
+				]
+			}
+		event = event || window.event;
+		var input = event.target || event.srcElement
+			, value = input.value
+			, list = lists[event.type]
+			;
+		for (var i = 0, c = list.length, match; i < c; i++) {
+			match = list[i];
+			if (match[0].test(value)) {
+				input.value = value.replace(match[0], match[1]);
+				if (!match[2])
+					break;
+			}
+		}
+	}
+
+	var check_all = function () {
+		var obj_all = document.getElementById("chk_all");
+		var obj = document.getElementsByName("chk");
+
+		for (var i = 0; i < obj.length; i++) {
+			if (obj_all.checked == true) {
+				obj[i].checked = true;
+			} else {
+				obj[i].checked = false;
+			}
+		}
+	}
+
+	var check_value = function () {
+		var obj = document.getElementsByName("chk");
+		for (var i = 0; i < obj.length; i++) {
+			if (obj[i].checked == true) {
+				return true;
+			}
+		}
+		alert('체크된 값이 없습니다.');
+		return false;
+	}
+
+	var check_logout = function () {
+		if (confirm("로그아웃 하시겠습니까?")) {
+			return true;
+		}
+
+		return false;
+	}
+
+	var try_cnt = 0;
+	var open_popup = function (image_nm) {
         /*
         var obj_img = new Image();
         obj_img.src = image_nm;
@@ -72,29 +164,29 @@
             }
         }
         */
-        // 임시 처리
-        var imgWin = window.open("", "gImgWin", "width=800px,height=600px, top=100,left=100,menubar=no,status=no,toolbar=no,scrollbars=no,resizable=no");
-        imgWin.document.write("<html>");
-        imgWin.document.write("<body topmargin=0 leftmargin=0 marginheight=0 marginwidth=0>");
-        imgWin.document.write("<a href='javascript:self.close();'><img src='" + image_nm + "' width=790px height=590 border=0></a>");
-        imgWin.document.write("</body></html>");
-    }
+		// 임시 처리
+		var imgWin = window.open("", "gImgWin", "width=800px,height=600px, top=100,left=100,menubar=no,status=no,toolbar=no,scrollbars=no,resizable=no");
+		imgWin.document.write("<html>");
+		imgWin.document.write("<body topmargin=0 leftmargin=0 marginheight=0 marginwidth=0>");
+		imgWin.document.write("<a href='javascript:self.close();'><img src='" + image_nm + "' width=790px height=590 border=0></a>");
+		imgWin.document.write("</body></html>");
+	}
 
-    var view_image = function (obj_img) {
-        var win_width = obj_img.width + 20;
-        var win_height = obj_img.height + 20;
-        var cw = screen.availWidth;     //화면 넓이
-        var ch = screen.availHeight;    //화면 높이
+	var view_image = function (obj_img) {
+		var win_width = obj_img.width + 20;
+		var win_height = obj_img.height + 20;
+		var cw = screen.availWidth;     //화면 넓이
+		var ch = screen.availHeight;    //화면 높이
 
-        var ml = (cw - win_width) / 2;        //가운데 띄우기위한 창의 x위치
-        var mt = (ch - win_height) / 2;         //가운데 띄우기위한 창의 y위치
+		var ml = (cw - win_width) / 2;        //가운데 띄우기위한 창의 x위치
+		var mt = (ch - win_height) / 2;         //가운데 띄우기위한 창의 y위치
 
-        var imgWin = window.open("", "gImgWin", "width=" + win_width + ",height=" + win_height + ", top=" + mt + ",left=" + ml + ",menubar=no,status=no,toolbar=no,scrollbars=no,resizable=no");
-        imgWin.document.write("<html>");
-        imgWin.document.write("<body topmargin=0 leftmargin=0 marginheight=0 marginwidth=0>");
-        imgWin.document.write("<a href='javascript:self.close();'><img src='" + obj_img.src + "' width=" + obj_img.width + " height=" + obj_img.height + " border=0></a>");
-        imgWin.document.write("</body></html>");
-    };
+		var imgWin = window.open("", "gImgWin", "width=" + win_width + ",height=" + win_height + ", top=" + mt + ",left=" + ml + ",menubar=no,status=no,toolbar=no,scrollbars=no,resizable=no");
+		imgWin.document.write("<html>");
+		imgWin.document.write("<body topmargin=0 leftmargin=0 marginheight=0 marginwidth=0>");
+		imgWin.document.write("<a href='javascript:self.close();'><img src='" + obj_img.src + "' width=" + obj_img.width + " height=" + obj_img.height + " border=0></a>");
+		imgWin.document.write("</body></html>");
+	};
 </script> 
 
 </head>

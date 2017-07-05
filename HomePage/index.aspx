@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="HomePage.index" %>
+﻿
+<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="HomePage.index" %>
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceLayer" runat="server">
 
  <script>
@@ -211,24 +212,29 @@
    				</article> <!-- // customer -->
    				<article class="products_manu clear">
    					<h1 class="acc-hidden">제품메뉴로 바로가기</h1>
-   					<a href="/products/human_new_list.aspx" class="line_Lno"><img src="/common/images/main/i_memu_01.png" alt="인체의 약품 "></a>
-   					<a href="/products/animal_new_list.aspx"><img src="/common/images/main/i_memu_02.png" alt="동물의 약품 "></a>
-   					<a href="/products/bio_badge_list.aspx"><img src="/common/images/main/i_memu_03.png" alt="바이오공정소개 "></a>
+   						<a class="line_Lno" href="/products/human_new_list.aspx"><IMG alt="인체의 약품 " src="/common/images/main/i_memu_01.png" onmouseover="this.src='/common/images/main/i_memu_01_on.png'" onmouseout="this.src='/common/images/main/i_memu_01.png'"></a>    
+						<a href="/products/animal_new_list.aspx"><IMG alt="동물의 약품 " src="/common/images/main/i_memu_02.png" onmouseover="this.src='/common/images/main/i_memu_02_on.png'" onmouseout="this.src='/common/images/main/i_memu_02.png'"></a>      
+						<a href="/products/bio_badge_list.aspx"><IMG alt="바이오의 약품 " src="/common/images/main/i_memu_03.png" onmouseover="this.src='/common/images/main/i_memu_03_on.png'" onmouseout="this.src='/common/images/main/i_memu_03.png'"></a>      
+						<a href="/products/global_human_list.aspx"><IMG alt="수출의 약품 " src="/common/images/main/i_memu_04.png" onmouseover="this.src='/common/images/main/i_memu_04_on.png'" onmouseout="this.src='/common/images/main/i_memu_04.png'"></a>      
+						<a href="/products/health_products_list.aspx"><IMG alt="건강기능식품 " src="/common/images/main/i_memu_05.png" onmouseover="this.src='/common/images/main/i_memu_05_on.png'" onmouseout="this.src='/common/images/main/i_memu_05.png'"></a>      
+						<a href="/products/medical_list.aspx"><IMG alt="의료기기 " src="/common/images/main/i_memu_06.png" onmouseover="this.src='/common/images/main/i_memu_06_on.png'" onmouseout="this.src='/common/images/main/i_memu_06.png'"></a>     
                     <% 
                         if (GetDataTableCount(4) > 0)
                         {
                             for (int i = 0; i < GetDataTableCount(4); i++)
                             {
                     %>
-                    <% 
+                   
+					 <% 
                         string bottom_target = "Y".Equals(GetData(4, 0, "TARGET_YN")) ? "_blank" : "_self";   
                     %>
                     
-   					<a href="<%=GetData(4, i, "LINK_URL") %>" class="cf" target="<%=bottom_target%>"><img src="<%=GetData(4, i, "FILE_PATH") %>" alt="하단배너" style="width:420px;height:67px"></a>	
+   					<!--<a href="<%=GetData(4, i, "LINK_URL") %>" class="cf" target="<%=bottom_target%>"><img src="<%=GetData(4, i, "FILE_PATH") %>" alt="하단배너" style="width:420px;height:67px"></a>	-->
                     <% 
                             }
                         }
                     %>
+					
    				</article> <!-- // customer -->
 
    			</section>	<!--// main_content -->

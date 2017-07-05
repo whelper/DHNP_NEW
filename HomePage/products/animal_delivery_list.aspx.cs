@@ -17,7 +17,7 @@ namespace HomePage.products
         private const string LANG_CD = "KOR";
         private const string CATG_NO1 = "2";
         private const string PROD_TYPE_CD = "PROD_GODL"; // 제품유형 코드 - 관납제품
-        private const int PAGE_SIZE = 9;
+        private const int PAGE_SIZE = 10;
 
         private DataSet catgDs = null;
 

@@ -43,17 +43,26 @@
                 string img3 = GetData(0, "PROD_IMG3").Equals("") ? "/common/images/products/no_small.jpg" : GetData(0, "PROD_IMG3");
                 string img4 = GetData(0, "PROD_IMG4").Equals("") ? "/common/images/products/no_small.jpg" : GetData(0, "PROD_IMG4");
                 string img5 = GetData(0, "PROD_IMG5").Equals("") ? "/common/images/products/no_small.jpg" : GetData(0, "PROD_IMG5");
+				string[] thumb = { img1,img2,img3,img4,img5 };
             %>
 
             <a class= "image-popup-vertical-fit" href="<%=img1Big %>">
-	 		<img id="largeImage" src="<%=img1Big %>" width="300" height="220" alt="" > 
+	 		<img id="largeImage" src="<%=img1Big %>" width="300" height="218" alt="" > 
             </a>
 	 		<div  id="thumbs" class="small" >
-		 		<span><img src="<%=img1%>" width="56" height="56" alt="" onerror="this.src='/common/images/products/new_no.jpg'"></span>
+				<%
+					foreach (string s in thumb) {
+						if (s == "/common/images/products/no_small.jpg") continue;
+				%>
+				<span><img src="<%=s%>" width="56" height="56" alt="" onerror="this.src='/common/images/products/new_no.jpg'"></span>
+				<%
+					}
+				%>	
+		 		<!--<span><img src="<%=img1%>" width="56" height="56" alt="" onerror="this.src='/common/images/products/new_no.jpg'"></span>
 		 		<span><img src="<%=img2%>" width="56" height="56" alt="" onerror="this.src='/common/images/products/new_no.jpg'"></span>
 		 		<span><img src="<%=img3%>" width="56" height="56" alt="" onerror="this.src='/common/images/products/new_no.jpg'"></span>
 		 		<span><img src="<%=img4%>" width="56" height="56" alt="" onerror="this.src='/common/images/products/new_no.jpg'"></span>
-		 		<span><img src="<%=img5%>" width="56" height="56" alt="" onerror="this.src='/common/images/products/new_no.jpg'"></span> 
+		 		<span><img src="<%=img5%>" width="56" height="56" alt="" onerror="this.src='/common/images/products/new_no.jpg'"></span> -->
 		 	</div>
 	 	</figure>
 
@@ -61,10 +70,18 @@
 	  		<h1><%=GetData(0, "PROD_NM") %></h1>
 		  	<ul class="view_text_ul">
 	  			<li><strong>분류</strong><em><%=GetData(0, "CATG_NM2")%></em></li>
-                <li><strong>분류번호</strong><em><%=GetData(0, "CATG_NO")%></em></li>
+                <%if (!GetData(0, "CATG_NO").Equals("0")){ %>
+				<li><strong>분류번호</strong><em><%=GetData(0, "CATG_NO")%></em></li>
+	  			<%} %>
+                <%if (!GetData(0, "COMPT").Equals("")){ %>
                 <li><strong>구성</strong><em><%=GetData(0, "COMPT")%></em></li>
-                <li><strong>포장단위</strong><em><%=GetData(0, "PACK_MEA")%></em></li>
-                <li><strong>정보</strong><em><%=GetData(0, "PROD_INFO")%></em></li>                
+                <%} %>
+				<%if (!GetData(0, "PACK_MEA").Equals("")){ %>
+				<li><strong>포장단위</strong><em><%=GetData(0, "PACK_MEA")%></em></li>
+                <%} %>
+				<%if (!GetData(0, "PROD_INFO").Equals("")){ %>
+				<li><strong>정보</strong><em><%=GetData(0, "PROD_INFO")%></em></li>
+				<%} %>
 	  		</ul>
 	  		<p class="btn_target"> 
                 <% 

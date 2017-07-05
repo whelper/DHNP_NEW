@@ -1030,6 +1030,7 @@ namespace CommonLib.DB
                     variable[35] = "@OPEN_YN";
                     variable[36] = "@NEW_YN";
 					variable[37] = "@ANI_CATE";
+					variable[38] = "@REG_DT";
 
 					sqldbtype[0] = SqlDbType.VarChar;
                     sqldbtype[1] = SqlDbType.VarChar;
@@ -1069,9 +1070,10 @@ namespace CommonLib.DB
                     sqldbtype[35] = SqlDbType.VarChar;
                     sqldbtype[36] = SqlDbType.VarChar;
 					sqldbtype[37] = SqlDbType.VarChar;
+					sqldbtype[38] = SqlDbType.VarChar;
 
 					// 마지막 인자값 항상 확인(파라미터 총수 임)
-					ds = command.ExecuteDataSetSecure("USP_ADMIN_3204_PROD_DETAIL_I", variable, m_value, sqldbtype, 38);
+					ds = command.ExecuteDataSetSecure("USP_ADMIN_3204_PROD_DETAIL_I", variable, m_value, sqldbtype, 39);
                     break;
 
                 case 3205:// 제품관리 수정
@@ -1115,9 +1117,10 @@ namespace CommonLib.DB
                     variable[35] = "@OPEN_YN";
                     variable[36] = "@NEW_YN";
                     variable[37] = "@ANI_CATE";
+					variable[38] = "@REG_DT";
 
 
-                    sqldbtype[0] = SqlDbType.VarChar;
+					sqldbtype[0] = SqlDbType.VarChar;
                     sqldbtype[1] = SqlDbType.VarChar;
                     sqldbtype[2] = SqlDbType.Int;
                     sqldbtype[3] = SqlDbType.Int;
@@ -1155,9 +1158,10 @@ namespace CommonLib.DB
                     sqldbtype[35] = SqlDbType.VarChar;
                     sqldbtype[36] = SqlDbType.VarChar;
                     sqldbtype[37] = SqlDbType.VarChar;
+					sqldbtype[38] = SqlDbType.VarChar;
 
-                    // 마지막 인자값 항상 확인(파라미터 총수 임)
-                    ds = command.ExecuteDataSetSecure("USP_ADMIN_3205_PROD_DETAIL_U", variable, m_value, sqldbtype, 38);
+					// 마지막 인자값 항상 확인(파라미터 총수 임)
+					ds = command.ExecuteDataSetSecure("USP_ADMIN_3205_PROD_DETAIL_U", variable, m_value, sqldbtype, 39);
                     break;
 
                 case 3206:// 제품관리 삭제

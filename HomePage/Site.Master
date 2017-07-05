@@ -129,11 +129,12 @@
         <aside id="quick_menu">
 		    <h1><span>Quick Menu</span></h1>
 		    <ul>
-			    <li class="qu_01"><a href="/index.aspx">home</a></li>
-			    <li class="qu_02"><a href="/products/human_products_list.aspx">인체의 약품</a></li>
-			    <li class="qu_03"><a href="/products/animal_products_list.aspx"> 동물의 약품</a></li>
-			    <li class="qu_04"><a href="/products/bio_badge_list.aspx"> 바이오공정소재</a></li>
-			    <li class="qu_05"><a href="/recruit/new_person.aspx">채용안내</a></li>
+			    <li class="qu_01"><a href="/products/human_products_list.aspx"></a></li>
+				<li class="qu_02"><a href="/products/animal_products_list.aspx"></a></li>
+				<li class="qu_03"><a href="/products/bio_badge_list.aspx"></a></li>
+				<li class="qu_04"><a href="/products/global_human_list.aspx"></a></li>
+				<li class="qu_05"><a href="/products/health_products_list.aspx"></a></li>
+				<li class="qu_06"><a href="/products/medical_list.aspx"></a></li></ul>
 		    </ul>
             <% 
                 if (MDS != null && MDS.Tables.Count > 0 && MDS.Tables[0].Rows.Count > 0)
@@ -165,7 +166,8 @@
             <% 
                 }
             %>
-		    <a href="#top" class="btn_top"><span>맨위로 </span></a>
+			<div><a href="#top"><img alt="" src="/common/images/common/img_top.jpg"></a></div>
+		    <!--<a href="#top" class="btn_top"><span>맨위로 </span></a>-->
         </aside>  <!-- //  quick_menu -->
 	    <hr>
         <footer class="footer">

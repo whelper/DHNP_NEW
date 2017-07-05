@@ -95,25 +95,27 @@
 
 	<section class="new_list clear">
 		<h1 class="acc-hidden"> 제품소개 리스트  </h1>    
-        <% 
+		<div class="row">
+		<% 
             if (GetDataCount() > 0)
             {
                 for (int i = 0; i < GetDataCount(); i++)
                 {
         %>
+
 		<article class="list_Item about">
 			<a href="/products/medical_view.aspx?prod_cd=<%=GetData(i, "PROD_CD") %>">
 			    <% 
                     if (GetData(i, "PROD_IMG1").Equals("") == false)
                     {
                 %>
-                <img src="<%=GetData(i, "PROD_IMG1") %>" width="210" height="160" alt="" onerror="this.src='/common/images/products/new_no.jpg'" />
+                <img src="<%=GetData(i, "PROD_IMG1") %>" width="330" height="240" alt="" onerror="this.src='/common/images/products/new_no.jpg'" />
                 <% 
                     }
                     else
                     {
                 %>
-                <img src="/common/images/products/new_no.jpg" width="210" height="160" alt="" />
+                <img src="/common/images/products/new_no.jpg" width="330" height="240" alt="" />
                 <% 
                     }
                 %>
@@ -130,6 +132,7 @@
         <% 
             }
         %>
+		 </div>
 	</section> <!-- // new_list -->
 
 	<asp:HiddenField ID="nowPageNo" runat="server"  Value="1" onvaluechanged="nowPageNo_ValueChanged"/>

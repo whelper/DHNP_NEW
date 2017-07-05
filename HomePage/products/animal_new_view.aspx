@@ -49,7 +49,7 @@
 			%>
 
             <a class= "image-popup-vertical-fit" href="<%=img1Big %>">
-	 		<img id="largeImage" src="<%=img1Big %>" width="300" height="220" alt="" > 
+	 		<img id="largeImage" src="<%=img1Big %>" width="300" height="218" alt="" > 
             </a>
 	 		<div  id="thumbs" class="small" >
 				 <%

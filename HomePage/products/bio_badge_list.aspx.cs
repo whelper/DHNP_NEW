@@ -17,21 +17,19 @@ namespace HomePage.products
         private const string LANG_CD = "KOR";
         private const string CATG_NO1 = "3";
         private const string PROD_TYPE_CD = "PROD_BADG";
-        private const int PAGE_SIZE = 9;
+        private const int PAGE_SIZE = 10;
 
         private DataSet catgDs = null;
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            if (!IsPostBack)
-            {
-                SearchData();
+		protected void Page_Load(object sender, EventArgs e)
+		{
+			SearchData();
 
-                InitControls();
+			InitControls();
 
-                SetControls();
-            }
-        }
+			SetControls();
+
+		}
 
         /// <summary>
         /// 데이터 조회
@@ -42,7 +40,7 @@ namespace HomePage.products
             param.Append(nowPageNo.Value);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(LANG_CD);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(CATG_NO1);
-            param.Append(CConst.DB_PARAM_DELIMITER).Append("");
+            param.Append(CConst.DB_PARAM_DELIMITER).Append(CatgNo2);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(PROD_TYPE_CD);
             param.Append(CConst.DB_PARAM_DELIMITER).Append("");
             param.Append(CConst.DB_PARAM_DELIMITER).Append("");

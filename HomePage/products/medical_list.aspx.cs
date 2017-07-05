@@ -17,7 +17,7 @@ namespace HomePage.products
         private const string LANG_CD = "KOR";
         private const string CATG_NO1 = "7";
         private const string PROD_TYPE_CD = "";
-        private const int PAGE_SIZE = 9;
+        private const int PAGE_SIZE = 10;
 
         private DataSet catgDs = null;
 

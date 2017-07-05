@@ -16,10 +16,7 @@
 	<!--  내용  ***************** -->
 	<div class="view_box clear">  
 		
-
-	 	<article class="view_text">
-	  		
-	 	</article>	
+<img src="/common/images/sub/bio01.jpg" />
 	</div> <!--// view_box -->
 	<!-- // 내용 ***************** -->         
 </section>  <!--// sub_content -->

@@ -32,18 +32,18 @@ namespace AdminSite.pdt
         /// </summary>
         private void SearchData()
         {
-            StringBuilder param = new StringBuilder();
+			string prodType = string.Empty; // 전체
+			prodType = pdt_new.Checked ? pdt_new.Value : prodType;
+			prodType = pdt_old.Checked ? pdt_old.Value : prodType;
+		
+	
+			StringBuilder param = new StringBuilder();
             param.Append(nowPageNo.Value);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(LANG_CD);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(UPR_CATG_NO);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(catg_no2.SelectedValue);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(prod_nm.Value);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(prod_cd.Value);
-
-            string prodType = string.Empty;
-            prodType = pdt_new.Checked ? pdt_new.Value : prodType;
-            prodType = pdt_old.Checked ? pdt_old.Value : prodType;
-
             param.Append(CConst.DB_PARAM_DELIMITER).Append(prodType);
 
             // 데이터 카운트 조회
