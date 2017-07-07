@@ -1433,10 +1433,12 @@ namespace CommonLib.DB
 
                 case 3231:
                     variable[0] = "@CATG_NO";
+					variable[1] = "@LANG_CD";
 
-                    sqldbtype[0] = SqlDbType.Int;
+					sqldbtype[0] = SqlDbType.Int;
+					sqldbtype[1] = SqlDbType.VarChar;
 
-                    ds = command.ExecuteDataSetSecure("USP_ADMIN_3231_PROD_REP_CATAL_S", variable, m_value, sqldbtype, 1);
+					ds = command.ExecuteDataSetSecure("USP_ADMIN_3231_PROD_REP_CATAL_S", variable, m_value, sqldbtype, 2);
                     break;
 
                 case 3232:

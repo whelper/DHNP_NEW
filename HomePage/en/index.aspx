@@ -124,22 +124,12 @@
 
 				<article class="kosdaq">
 					<h1><span>주가정보</span></h1>
-					<ul class="kosdaq_ul clear">
-                    <% 
-                        if (GetDataTableCount(5) > 0)
-                        {
-                            string css = GetData(5, 0, "SIGN").Equals("1") || GetData(5, 0, "SIGN").Equals("2") ? "change_01 up" : (GetData(5, 0, "SIGN").Equals("4") || GetData(5, 0, "SIGN").Equals("5") ? "change_01 down" : "change_01 stand");
-                            string s_css = GetData(5, 0, "SIGN").Equals("1") || GetData(5, 0, "SIGN").Equals("2") ? "change_02 up" : (GetData(5, 0, "SIGN").Equals("4") || GetData(5, 0, "SIGN").Equals("5") ? "change_02 down" : "change_02 stand");
-                            string sign = GetData(5, 0, "SIGN").Equals("1") || GetData(5, 0, "SIGN").Equals("2") ? "+" : "";
-                    %>
-						<li><strong class="<%=css%>"><%=GetData(5, 0, "SIGN_NM")%></strong></li>
-						<li><strong class="won"><%=GetDataComma(5, 0, "PRICE")%></strong></li>
-						<li><span class="<%=s_css%>"><%=GetDataComma(5, 0, "CHANGE")%></span></li>
-						<li><span class="gray"><%=sign%><%=GetData(5, 0, "DIFF")%>% </span></li>
-                    <% 
-                        }
-                    %>
-					</ul>	   				
+					<ul id="ul_kosdaq" class="kosdaq_ul clear">
+                        <li><span class="change_01 <%=NvCss %>"><%=Nv %></span></li>
+                        <li><span class="won"><%=Nv %></span></li>
+                        <li><span class="change_02 <%=CvCss %>"><%=Cv %></span></li>
+                        <li><span class="gray"><%=CrSign %><%=Cr %>% </span></li>                    
+                    </ul>				
 				</article> <!-- // kosdaq -->
                 
 

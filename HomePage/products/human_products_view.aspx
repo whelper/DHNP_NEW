@@ -69,7 +69,7 @@
 	 	<article class="view_text">
 	  		<h1><%=GetData(0, "PROD_NM") %></h1>
 		  	<ul class="view_text_ul">
-	  			<li><strong>구분</strong><em><%=GetData(0, "PROD_TYPE_NM") %></em></li>
+	  			<li><strong>구분</strong><em><%=GetData(0, "PROD_DIV_NM") %></em></li>
 	  			<li><strong>분류</strong><em><%=GetData(0, "CATG_NM2") %></em></li>
 	  			<li><strong>주요성분</strong><em><%=GetData(0, "INGREDI")%></em></li>
 	  			<li><strong>성상</strong><em><%=GetData(0, "TEMPER")%></em></li>

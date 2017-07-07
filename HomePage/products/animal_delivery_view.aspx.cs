@@ -47,19 +47,8 @@ namespace HomePage.products
         {
             get
             {
-                string catalog_url = "";
-
-                StringBuilder param = new StringBuilder();
-                param.Append(CATG_NO1);
-                DataSet ds = GetDataSet(3231, param.ToString());
-
-                if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
-                {
-                    catalog_url = ds.Tables[0].Rows[0]["CATAL_URL"].ToString();
-                }
-
-                return catalog_url;
-            }
+				return getCatalogURL(CATG_NO1, LANG_CD);
+			}
         }
         #endregion
     }

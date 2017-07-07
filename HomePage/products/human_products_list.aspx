@@ -2,9 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceSubLayer" runat="server">
 <p class="pdf_target">
     <%
-        string rep_catg_url = RepCatal;
-        if ("".Equals(rep_catg_url))
-        {
+
+		string rep_catg_url = RepCatal;
+		if ("".Equals(rep_catg_url))
+		{
     %>
     <a href="javascript:alert('등록된 카달로그가 없습니다. 고객센터로 문의해 주세요.');">
         <img src="/common/images/common/btn_pdf_01.png" alt="카다로그 다운로드" />

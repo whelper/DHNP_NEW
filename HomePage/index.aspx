@@ -160,22 +160,12 @@
 
 				<article class="kosdaq">
 					<h1><span>주가정보</span></h1>
-					<ul class="kosdaq_ul clear">
-                    <% 
-                        if (GetDataTableCount(5) > 0)
-                        {
-                            string css = GetData(5, 0, "SIGN").Equals("1") || GetData(5, 0, "SIGN").Equals("2") ? "change_01 up" : (GetData(5, 0, "SIGN").Equals("4") || GetData(5, 0, "SIGN").Equals("5") ? "change_01 down" : "change_01 stand");
-                            string s_css = GetData(5, 0, "SIGN").Equals("1") || GetData(5, 0, "SIGN").Equals("2") ? "change_02 up" : (GetData(5, 0, "SIGN").Equals("4") || GetData(5, 0, "SIGN").Equals("5") ? "change_02 down" : "change_02 stand");
-                            string sign = GetData(5, 0, "SIGN").Equals("1") || GetData(5, 0, "SIGN").Equals("2") ? "+" : "";
-                    %>
-						<li><strong class="<%=css%>"><%=GetData(5, 0, "SIGN_NM")%></strong></li>
-						<li><strong class="won"><%=GetDataComma(5, 0, "PRICE")%></strong></li>
-						<li><span class="<%=s_css%>"><%=GetDataComma(5, 0, "CHANGE")%></span></li>
-						<li><span class="gray"><%=sign%><%=GetData(5, 0, "DIFF")%>% </span></li>
-                    <% 
-                        }
-                    %>
-					</ul>	   				
+					<ul id="ul_kosdaq" class="kosdaq_ul clear">
+                        <li><span class="change_01 <%=NvCss %>"><%=Nv %></span></li>
+                        <li><span class="won"><%=Nv %></span></li>
+                        <li><span class="change_02 <%=CvCss %>"><%=Cv %></span></li>
+                        <li><span class="gray"><%=CrSign %><%=Cr %>% </span></li>                    
+                    </ul>			
 				</article> <!-- // kosdaq -->
                 
 
@@ -212,8 +202,8 @@
    				</article> <!-- // customer -->
    				<article class="products_manu clear">
    					<h1 class="acc-hidden">제품메뉴로 바로가기</h1>
-   						<a class="line_Lno" href="/products/human_new_list.aspx"><IMG alt="인체의 약품 " src="/common/images/main/i_memu_01.png" onmouseover="this.src='/common/images/main/i_memu_01_on.png'" onmouseout="this.src='/common/images/main/i_memu_01.png'"></a>    
-						<a href="/products/animal_new_list.aspx"><IMG alt="동물의 약품 " src="/common/images/main/i_memu_02.png" onmouseover="this.src='/common/images/main/i_memu_02_on.png'" onmouseout="this.src='/common/images/main/i_memu_02.png'"></a>      
+   						<a class="line_Lno" href="/products/human_products_list.aspx"><IMG alt="인체의 약품 " src="/common/images/main/i_memu_01.png" onmouseover="this.src='/common/images/main/i_memu_01_on.png'" onmouseout="this.src='/common/images/main/i_memu_01.png'"></a>    
+						<a href="/products/animal_products_list.aspx"><IMG alt="동물의 약품 " src="/common/images/main/i_memu_02.png" onmouseover="this.src='/common/images/main/i_memu_02_on.png'" onmouseout="this.src='/common/images/main/i_memu_02.png'"></a>      
 						<a href="/products/bio_badge_list.aspx"><IMG alt="바이오의 약품 " src="/common/images/main/i_memu_03.png" onmouseover="this.src='/common/images/main/i_memu_03_on.png'" onmouseout="this.src='/common/images/main/i_memu_03.png'"></a>      
 						<a href="/products/global_human_list.aspx"><IMG alt="수출의 약품 " src="/common/images/main/i_memu_04.png" onmouseover="this.src='/common/images/main/i_memu_04_on.png'" onmouseout="this.src='/common/images/main/i_memu_04.png'"></a>      
 						<a href="/products/health_products_list.aspx"><IMG alt="건강기능식품 " src="/common/images/main/i_memu_05.png" onmouseover="this.src='/common/images/main/i_memu_05_on.png'" onmouseout="this.src='/common/images/main/i_memu_05.png'"></a>      

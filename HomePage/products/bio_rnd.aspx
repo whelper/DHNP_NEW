@@ -1,7 +1,27 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Products_Sub.Master" AutoEventWireup="true" CodeBehind="bio_rnd.aspx.cs" Inherits="HomePage.products.bio_rnd1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceSubLayer" runat="server">
-
-	</nav> <!-- // snb -->
+<p class="pdf_target">
+    <%
+        string rep_catg_url = RepCatal;
+        if ("".Equals(rep_catg_url))
+        {
+    %>
+    <a href="javascript:alert('등록된 카달로그가 없습니다. 고객센터로 문의해 주세요.');">
+        <img src="/common/images/common/btn_pdf_02.png" alt="카다로그 다운로드" />
+    </a>
+    <% 
+        }
+        else
+        {
+    %>
+    <a href="<%=rep_catg_url %>">
+        <img src="/common/images/common/btn_pdf_02.png" alt="카다로그 다운로드" />
+    </a>
+    <% 
+        }
+    %>
+</p>
+</nav> <!-- // snb --> 
     
 <section id="content" class="sub_content" >
 	<header>

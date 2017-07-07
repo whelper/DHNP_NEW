@@ -14,7 +14,7 @@ namespace HomePage.en.products
 {
     public partial class animal_new_list : PageBase
     {
-        private const string LANG_CD = "ENG";
+        private const string LANG_CD = "KOR";
         private const string CATG_NO1 = "2";
         private const string PROD_TYPE_CD = "PROD_NEW";
         private const int PAGE_SIZE = 8;
@@ -127,7 +127,8 @@ namespace HomePage.en.products
 
                 StringBuilder param = new StringBuilder();
                 param.Append(CATG_NO1);
-                DataSet ds = GetDataSet(3231, param.ToString());
+				param.Append(CConst.DB_PARAM_DELIMITER).Append(LANG_CD);
+				DataSet ds = GetDataSet(3231, param.ToString());
 
                 if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
                 {

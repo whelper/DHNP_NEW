@@ -14,7 +14,7 @@ namespace HomePage.en.products
 {
     public partial class animal_products_list : PageBase
     {
-        private const string LANG_CD = "ENG";
+        private const string LANG_CD = "KOR";
         private const string CATG_NO1 = "2";
         private const string PROD_TYPE_CD = "";
         private const int PAGE_SIZE = 9;

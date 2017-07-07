@@ -591,14 +591,33 @@ namespace HomePage.m_master
             return result;
         }
 
+		protected string getCatalogURL(string CATG_NO, string LANG_CD = "KOR") {
+			string catalog_url = "";
 
-        #region Request 파라미터 => Dictionary, Dictionary => UrlPameter로 변환
+			StringBuilder param = new StringBuilder();
+			param.Append(CATG_NO);
+			param.Append(CConst.DB_PARAM_DELIMITER).Append(LANG_CD);
+			DataSet ds = GetDataSet(3231, param.ToString());
 
-        /// <summary>
-        /// Request.Form으로 넘어온 모든 파라미터를 Dictionary로 만들어서 리턴
-        /// </summary>
-        /// <returns></returns>
-        public Dictionary<string, string> GetParameters()
+			if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+			{
+				catalog_url = ds.Tables[0].Rows[0]["CATAL_URL"].ToString();
+			}
+
+			return catalog_url;
+		}
+
+		
+
+
+
+		#region Request 파라미터 => Dictionary, Dictionary => UrlPameter로 변환
+
+		/// <summary>
+		/// Request.Form으로 넘어온 모든 파라미터를 Dictionary로 만들어서 리턴
+		/// </summary>
+		/// <returns></returns>
+		public Dictionary<string, string> GetParameters()
         {
             Dictionary<string, string> dic = null;
 
@@ -775,6 +794,7 @@ namespace HomePage.m_master
             }
         }
 
-        #endregion
-    }
+		
+		#endregion
+	}
 }
