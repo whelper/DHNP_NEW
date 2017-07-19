@@ -2924,11 +2924,48 @@ namespace CommonLib.DB
                     ds = command.ExecuteDataSetSecure("USP_ADMIN_3828_DUTY_DEPT_AUTH_ALL_D", variable, m_value, sqldbtype, 1);
                     break;
 
-                #endregion
+				#endregion
 
-                #region MobileWeb 제품 쿼리구역 (쿼리넘버:2000 ~ 2099)
+				#region Admin 계정관리 쿼리구역 (쿼리넘버:3900~)
+				case 3900:
+					variable[0] = "@LANG_CD";
+					sqldbtype[0] = SqlDbType.VarChar;
+					ds = command.ExecuteDataSetSecure("USP_ADMIN_3900_CATE_LIST_S", variable, m_value, sqldbtype, 1);
+					break;
+				case 3901:
+					variable[0] = "@LANG_CD";
+					variable[1] = "@DBJOB";
+					variable[2] = "@PARENT_NO";
+					variable[3] = "@CATE_CD";
+					variable[4] = "@CATE_NAME";
+					variable[5] = "@SORT_NO";
+					variable[6] = "@CATE_NO";
 
-                case 2001:// 제품관리 리스트
+					sqldbtype[0] = SqlDbType.VarChar;
+					sqldbtype[1] = SqlDbType.VarChar;
+					sqldbtype[2] = SqlDbType.VarChar;
+					sqldbtype[3] = SqlDbType.VarChar;
+					sqldbtype[4] = SqlDbType.VarChar;
+					sqldbtype[5] = SqlDbType.VarChar;
+					sqldbtype[6] = SqlDbType.VarChar;
+
+					ds = command.ExecuteDataSetSecure("USP_ADMIN_3901_CATE_DETAIL_PROC", variable, m_value, sqldbtype, 7);
+					break;
+				case 3902:
+					variable[0] = "@CATE_NO";
+					sqldbtype[0] = SqlDbType.Int;
+					ds = command.ExecuteDataSetSecure("USP_ADMIN_3902_CATE_DETAIL_S", variable, m_value, sqldbtype, 1);
+					break;
+				case 3903:
+					variable[0] = "@LANG_CD";
+					sqldbtype[0] = SqlDbType.VarChar;
+					ds = command.ExecuteDataSetSecure("USP_ADMIN_3903_CATE_MENU", variable, m_value, sqldbtype, 1);
+					break;
+				#endregion
+
+				#region MobileWeb 제품 쿼리구역 (쿼리넘버:2000 ~ 2099)
+
+				case 2001:// 제품관리 리스트
                     variable[0] = "@NOW_PAGE";
                     variable[1] = "@LANG_CD";
                     variable[2] = "@CATG_NO1";

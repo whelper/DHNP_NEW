@@ -10,10 +10,11 @@ using System.Web.Security;
 using System.Data;
 using System.Text;
 using CommonLib.DB;
+using log4net;
 
 namespace AdminSite
 {
-    public partial class SiteSub : System.Web.UI.MasterPage
+    public partial class SiteSub : System.Web.UI.MasterPage 
     {
         private string parentUri = ""; // content 웹페이지 부모 Uri(폴더) 
         private string pageName = ""; // 웹페이지 이름
@@ -51,10 +52,16 @@ namespace AdminSite
 
         private string[] account_2 = { "duty_list.aspx", "rcm_auth_list.aspx" };
 
-        protected void Page_Load(object sender, EventArgs e)
+		private int dataTotalCount = 0;
+		private DataRow[] dataRow = null; //datarow = datatable의 행을 나타낸다
+		CWebSql webSql = null;
+		private static readonly ILog logger = LogManager.GetLogger(typeof(SiteSub));
+		protected void Page_Load(object sender, EventArgs e)
         {
             ParserURL();
-        }
+			getProdCate();
+
+		}
 
         private void ParserURL()
         {
@@ -513,5 +520,114 @@ namespace AdminSite
         {
             return CConst.ADMIN_ROOT;
         }
-    }
+
+		protected void getProdCate()
+		{
+			StringBuilder param = new StringBuilder();
+			param.Append("KOR");
+
+			
+
+			try
+			{
+
+				CWebSql WebSql = new CWebSql();
+				//DataSet ds = webSql.SelectSql(3903, CSecureUtil.CheckString(param.ToString()));
+			
+				DataSet mds = WebSql.SelectSql(3903, CSecureUtil.CheckString(param.ToString()));
+				dataRow = mds.Tables[0].Select();
+
+				System.Diagnostics.Debug.WriteLine("dataRow=" + dataRow);
+				
+			}
+			catch (Exception e)
+			{
+				//CLog.debug(logger, "PageBase.SetDataCount(" + procIndex + "," + param + ") : " + e.Message);
+			}
+
+		}
+
+		/// <summary>
+		/// 데이터 조회
+		/// </summary>
+		/// <param name="procIndex"></param>
+		/// <param name="param"></param>
+		/// <returns></returns>
+		protected DataSet GetDataSet(int procIndex, string param)
+		{
+			try
+			{
+				return WebSql.SelectSql(procIndex, CSecureUtil.CheckString(param));
+			}
+			catch (Exception e)
+			{
+				CLog.debug(logger, "PageBase.GetDataSet(" + procIndex + "," + param + ") : " + e.Message);
+			}
+
+			return null;
+		}
+
+		/// <summary>
+		/// 줄단위 정보 출력 by 줄번호, 컬럼명
+		/// </summary>
+		/// <param name="rowNum">줄 번호</param>
+		/// <param name="colNum">컬럼명(속성정보)</param>
+		/// <returns>데이터</returns>
+		protected string GetData(int rowNum, string colName)
+		{
+			string data = "";
+
+			try
+			{
+				data = dataRow[rowNum][colName].ToString();
+			}
+			catch (Exception e)
+			{
+				CLog.debug(logger, "PageBase.GetData(" + rowNum + "," + colName + ") : " + e.Message);
+			}
+
+			return data;
+		}
+
+
+
+		protected int GetDataCount()
+        {
+            int rows = 0;
+
+            if (dataRow != null)
+            {
+                rows = dataRow.GetLength(0);
+            }
+
+            return rows;
+        }
+
+		#region GET-SET
+		protected int DataTotalCount
+		{
+			get
+			{
+				return dataTotalCount;
+			}
+			set
+			{
+				dataTotalCount = value;
+			}
+		}
+
+		private CWebSql WebSql
+		{
+			get
+			{
+				if (webSql == null)
+				{
+					webSql = new CWebSql();
+				}
+
+				return webSql;
+			}
+		}
+		#endregion
+	}
 }

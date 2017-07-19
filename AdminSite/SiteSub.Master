@@ -225,16 +225,13 @@
                 if (IsGetMenuAccess("2"))
                 {
             %>
-			<li><a href="<%=GetRoot()%>/pdt/pdt_human_list.aspx"<%=GetGnbIndicatorSelected("pdt")%>>제품관리</a> 
+			<li><a href="<%=GetRoot()%>/cate/cate_list.aspx"<%=GetGnbIndicatorSelected("cate")%>>카테고리 관리</a> 
+			<li><a href="<%=GetRoot()%>/pdt/pdt_list.aspx?category=<%=GetData(0, "CATE_CD")%>"<%=GetGnbIndicatorSelected("pdt")%>>제품관리</a> 
 				 <ul<%=GetGnbIndicator("pdt")%>>
-					<li<%=GetLnbIndicator("pdt1_1")%>><a href="<%=GetRoot()%>/pdt/pdt_human_list.aspx">인체 의약품</a></li>
-					<li<%=GetLnbIndicator("pdt1_2")%>><a href="<%=GetRoot()%>/pdt/pdt_ani_list.aspx">동물 의약품</a></li>
-					<li<%=GetLnbIndicator("pdt1_3")%>><a href="<%=GetRoot()%>/pdt/pdt_bio_list.aspx">바이오 공정소재</a></li>
-					<li<%=GetLnbIndicator("pdt1_4")%>><a href="<%=GetRoot()%>/pdt/pdt_ex_human_list.aspx">수출 의약품(인체)</a></li>
-					<li<%=GetLnbIndicator("pdt1_5")%>><a href="<%=GetRoot()%>/pdt/pdt_ex_ani_list.aspx">수출 의약품(동물)</a></li>
-					<li<%=GetLnbIndicator("pdt1_8")%>><a href="<%=GetRoot()%>/pdt/pdt_ex_etc_list.aspx">수출 의약품(기타)</a></li>
-                    <li<%=GetLnbIndicator("pdt1_6")%>><a href="<%=GetRoot()%>/pdt/pdt_health_list.aspx">건강기능식품</a></li>
-					<li<%=GetLnbIndicator("pdt1_7")%>><a href="<%=GetRoot()%>/pdt/pdt_device_list.aspx">의료기기</a></li>
+					<%for (int i = 0; i < GetDataCount(); i++){ %>
+					<li<%=GetLnbIndicator("pdt1_")%>><a href="<%=GetRoot()%>/pdt/pdt_list.aspx?category=<%=GetData(i, "CATE_CD")%>"><%=GetData(i, "CATE_NAME")%></a></li>
+					 <%} %>
+					 
 				 </ul>
 			</li>
             <% 

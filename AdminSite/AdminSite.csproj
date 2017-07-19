@@ -63,6 +63,7 @@
   <ItemGroup>
     <Content Include="account\duty_list.aspx" />
     <Content Include="account\rcm_auth_list.aspx" />
+    <Content Include="cate\cate_list.aspx" />
     <Content Include="code\code_ani_list.aspx" />
     <Content Include="code\code_bio_list.aspx" />
     <Content Include="code\code_device_list.aspx" />
@@ -365,6 +366,7 @@
     <Content Include="pdt\pdt_catalog_list.aspx" />
     <Content Include="pdt\pdt_cha_info_list.aspx" />
     <Content Include="pdt\pdt_cha_info_detail.aspx" />
+    <Content Include="pdt\pdt_detail.aspx" />
     <Content Include="pdt\pdt_device_detail.aspx" />
     <Content Include="pdt\pdt_device_list.aspx" />
     <Content Include="pdt\pdt_ex_ani_detail.aspx" />
@@ -374,9 +376,8 @@
     <Content Include="pdt\pdt_ex_human_list.aspx" />
     <Content Include="pdt\pdt_health_detail.aspx" />
     <Content Include="pdt\pdt_health_list.aspx" />
-    <Content Include="pdt\pdt_human_detail.aspx" />
-    <Content Include="pdt\pdt_human_list.aspx" />
     <Content Include="pdt\pdt_ex_etc_list.aspx" />
+    <Content Include="pdt\pdt_list.aspx" />
     <Content Include="pr\global_detail.aspx" />
     <Content Include="pr\global_head.aspx" />
     <Content Include="pr\global_list.aspx" />
@@ -419,6 +420,13 @@
     </Compile>
     <Compile Include="account\rcm_auth_list.aspx.designer.cs">
       <DependentUpon>rcm_auth_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cate\cate_list.aspx.cs">
+      <DependentUpon>cate_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cate\cate_list.aspx.designer.cs">
+      <DependentUpon>cate_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="code\code_ani_list.aspx.cs">
       <DependentUpon>code_ani_list.aspx</DependentUpon>
@@ -768,6 +776,13 @@
     <Compile Include="pdt\pdt_cha_info_detail.aspx.designer.cs">
       <DependentUpon>pdt_cha_info_detail.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pdt\pdt_detail.aspx.cs">
+      <DependentUpon>pdt_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_detail.aspx.designer.cs">
+      <DependentUpon>pdt_detail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pdt\pdt_device_detail.aspx.cs">
       <DependentUpon>pdt_device_detail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -831,26 +846,19 @@
     <Compile Include="pdt\pdt_health_list.aspx.designer.cs">
       <DependentUpon>pdt_health_list.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pdt\pdt_human_detail.aspx.cs">
-      <DependentUpon>pdt_human_detail.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_human_detail.aspx.designer.cs">
-      <DependentUpon>pdt_human_detail.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_human_list.aspx.cs">
-      <DependentUpon>pdt_human_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_human_list.aspx.designer.cs">
-      <DependentUpon>pdt_human_list.aspx</DependentUpon>
-    </Compile>
     <Compile Include="pdt\pdt_ex_etc_list.aspx.cs">
       <DependentUpon>pdt_ex_etc_list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pdt\pdt_ex_etc_list.aspx.designer.cs">
       <DependentUpon>pdt_ex_etc_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_list.aspx.cs">
+      <DependentUpon>pdt_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_list.aspx.designer.cs">
+      <DependentUpon>pdt_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="pr\global_detail.aspx.cs">
