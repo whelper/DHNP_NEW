@@ -105,11 +105,11 @@ namespace AdminSite.pdt
         {
 			//입력폼 설정
 			dicInputItems.Add("01", new string[] { "new_yn", "prod_div","ingredi", "temper", "insu_cd", "pdt_money", "pdt_unit" }); //인체
-			dicInputItems.Add("02", new string[] { "new_yn", "ingredi", "insu_cd", "pdt_money"}); //동물
-			dicInputItems.Add("03", new string[] { "pdt_summary", "pdt_keep", "pdt_boheom" }); //바이오
-			dicInputItems.Add("04", new string[] { "compt", "pdt_info", "pdt_unit" }); //수출(인체)
-			dicInputItems.Add("05", new string[] { "compt", "pdt_info", "pdt_unit" }); //수출(동물)
-			dicInputItems.Add("06", new string[] { "compt", "pdt_info", "pdt_unit" }); //수출(기타)
+			dicInputItems.Add("02", new string[] { "rdo_ani","new_yn", "ingredi", "insu_cd", "pdt_money"}); //동물
+			dicInputItems.Add("03", new string[] { "rdo_bio","pdt_summary", "pdt_keep", "pdt_boheom" }); //바이오
+			dicInputItems.Add("04", new string[] { "rdo_exp","compt", "pdt_info", "pdt_unit" }); //수출(인체)
+			dicInputItems.Add("05", new string[] { "rdo_exp", "compt", "pdt_info", "pdt_unit" }); //수출(동물)
+			dicInputItems.Add("06", new string[] { "rdo_exp", "compt", "pdt_info", "pdt_unit" }); //수출(기타)
 			dicInputItems.Add("07", new string[] { "ingredi", "insu_cd", "pdt_money", "temper", "pdt_unit" }); //건강기능식품
 			dicInputItems.Add("08", new string[] { "ingredi", "insu_cd", "pdt_money", "temper", "pdt_unit" }); //의료기기
 
@@ -143,20 +143,33 @@ namespace AdminSite.pdt
 
                 prod_cd.Value = GetData(0, 0, "PROD_CD");
                 prod_nm.Value = GetData(0, 0, "PROD_NM");
-                
-                
-                // 분류 선택
-                //for(int i=0; i < catg_no2.Items.Count; i++)
-                //{
-                //    if (GetData(0, 0, "CATG_NO2").Equals(catg_no2.Items[i].Value))
-                //    {   
-                //        catg_no2.SelectedIndex = i;
-                //        break;
-                //    }
-                //}
 
-                // 구분 선택
-                for (int i = 0; i < prod_div.Items.Count; i++)
+				string prodType = GetData(0, 0, "PROD_TYPE");
+				//바이오
+				pdt_re.Checked = prodType.Equals("PROD_REGIN") ? true : false;
+				pdt_bae.Checked = (prodType.Equals("") || prodType.Equals("PROD_BADG")) ? true : false;
+
+				//동의
+				pdt_godl.Checked = prodType.Equals("PROD_GODL") ? true : false;
+				pdt_org.Checked = prodType.Equals("PROD_ORG") || prodType.Equals("") ? true : false;
+
+				//수출
+				pdt_human.Checked = prodType.Equals("PROD_BODY_DRUG") ? true : false;
+				pdt_ani.Checked = prodType.Equals("PROD_ANI_DRUG") ? true : false;
+
+
+				// 분류 선택
+				//for(int i=0; i < catg_no2.Items.Count; i++)
+				//{
+				//    if (GetData(0, 0, "CATG_NO2").Equals(catg_no2.Items[i].Value))
+				//    {   
+				//        catg_no2.SelectedIndex = i;
+				//        break;
+				//    }
+				//}
+
+				// 구분 선택
+				for (int i = 0; i < prod_div.Items.Count; i++)
                 {
                     if (GetData(0, 0, "PROD_DIV").Equals(prod_div.Items[i].Value))
                     {
@@ -224,7 +237,7 @@ namespace AdminSite.pdt
 
 			string prodType = string.Empty;
 			prodType = pdt_org.Checked ? pdt_org.Value : prodType;
-			prodType = pdt_kwan.Checked ? pdt_kwan.Value : prodType;
+			prodType = pdt_godl.Checked ? pdt_godl.Value : prodType;
 			prodType = pdt_bae.Checked ? pdt_bae.Value : prodType;
 			prodType = pdt_re.Checked ? pdt_re.Value : prodType;
 			prodType = pdt_human.Checked ? pdt_human.Value : prodType;

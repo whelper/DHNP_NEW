@@ -47,7 +47,7 @@
 						<!--동의begin-->
 						<label for="" class="rdo_ani input-items"> 
 							<input type="radio" runat="server" id="pdt_org"  name="pdt_style" class="inline" value="PROD_ORG" />기존 제품
-							<input type="radio" runat="server" id="pdt_kwan"  name="pdt_style" class="inline" value="PROD_GODL" />관납제품	
+							<input type="radio" runat="server" id="pdt_godl"  name="pdt_style" class="inline" value="PROD_GODL" />관납제품	
 						</label>
 						<!--동의end-->
 						<!--바이오begin-->
