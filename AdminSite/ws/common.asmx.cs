@@ -28,5 +28,19 @@ namespace AdminSite.ws
 
             return doc;
         }
-    }
+
+		[WebMethod]
+		public XmlDocument GetCategory(string parent_id, string lang_cd)
+		{
+			XmlDocument doc = new XmlDocument();
+
+			CCommonCode code = new CCommonCode();
+			doc.InnerXml = code.GetCategory(parent_id, lang_cd);
+
+			//CAccount account = new CAccount();
+			//doc.InnerXml = account.GetDutyAuth(dutyNo);
+
+			return doc;
+		}
+	}
 }

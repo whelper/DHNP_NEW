@@ -233,6 +233,7 @@
     <Content Include="common\js\jquery.qtip.js" />
     <Content Include="common\js\jquery.scrolltable.js" />
     <Content Include="common\js\navi.js" />
+    <Content Include="common\js\thdays.category.js" />
     <Content Include="common\se\css\smart_editor2.css" />
     <Content Include="common\se\css\smart_editor2_in.css" />
     <Content Include="common\se\css\smart_editor2_items.css" />

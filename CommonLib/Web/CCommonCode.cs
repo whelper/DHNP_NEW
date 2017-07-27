@@ -55,12 +55,29 @@ namespace CommonLib.Web
             return result;
         }
 
-        /// <summary>
-        /// 공통 코드를 가져온다.
-        /// </summary>
-        /// <param name="upperCode"></param>
-        /// <returns></returns>
-        public string GetCommonCode(string upperCode)
+		/// <summary>
+		/// 카테고리를 DB에서 가져온다.
+		/// </summary>
+		/// <returns></returns>
+		public string GetCategory(string parent_id, string lang_cd)
+		{
+			string result = string.Empty;
+
+			StringBuilder param = new StringBuilder();
+			param.Append(lang_cd);
+
+			// DB조회
+			DataSet ds = WebSql.SelectSql(3, param.ToString());
+			result = XmlUtil.GetXml(ds, "Category");
+			return result;
+		}
+
+		/// <summary>
+		/// 공통 코드를 가져온다.
+		/// </summary>
+		/// <param name="upperCode"></param>
+		/// <returns></returns>
+		public string GetCommonCode(string upperCode)
         {
             string result = string.Empty;
 
