@@ -72,6 +72,22 @@ namespace CommonLib.DB
 
 					ds = command.ExecuteDataSetSecure("UPAR_COM_0003_PROD_CATG_ALL", variable, m_value, sqldbtype, 1);
 				break;
+				case 4: // 하위제품카테고리 전체
+					variable[0] = "@CATEGORY";
+					variable[1] = "@LANG_CD";
+
+					sqldbtype[0] = SqlDbType.VarChar;
+					sqldbtype[1] = SqlDbType.VarChar;
+					ds = command.ExecuteDataSetSecure("UPAR_COM_0004_PROD_CATG_CHILD", variable, m_value, sqldbtype, 2);
+				break;
+				case 5: // 제품 등록 카테고리 전체
+					variable[0] = "@PROD_CD";
+					variable[1] = "@LANG_CD";
+
+					sqldbtype[0] = SqlDbType.VarChar;
+					sqldbtype[1] = SqlDbType.VarChar;
+					ds = command.ExecuteDataSetSecure("UPAR_COM_0005_PROD_CATG_S", variable, m_value, sqldbtype, 2);
+					break;
 
 				case 10: // 우편번호
                 variable[0] = "@TEXT";

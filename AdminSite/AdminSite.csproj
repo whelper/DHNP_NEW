@@ -403,6 +403,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Test.aspx" />
     <Content Include="ws\account.asmx" />
     <Content Include="ws\common.asmx" />
     <Content Include="ws\member.asmx" />
@@ -973,6 +974,13 @@
     </Compile>
     <Compile Include="SiteSub.Master.designer.cs">
       <DependentUpon>SiteSub.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="ws\account.asmx.cs">
       <DependentUpon>account.asmx</DependentUpon>

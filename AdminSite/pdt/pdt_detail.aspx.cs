@@ -8,7 +8,10 @@ using System.Text;
 using System.Data;
 
 using CommonLib.Utils;
+using CommonLib.DB;
 using AdminSite.m_master;
+using System.Data.SqlClient;
+using System.Collections;
 
 namespace AdminSite.pdt
 {
@@ -16,8 +19,9 @@ namespace AdminSite.pdt
     {
         //private const string LANG_CD = "KOR";
         private const string UPR_CATG_NO = "1";
+		CommonLib.Web.CCommonCode code = new CommonLib.Web.CCommonCode();
 
-        protected void Page_Load(object sender, EventArgs e)
+		protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
@@ -236,11 +240,8 @@ namespace AdminSite.pdt
             param.Append(CConst.DB_PARAM_DELIMITER).Append(""); // 동의카테고리
 			param.Append(CConst.DB_PARAM_DELIMITER).Append(reg_dt.Value); // 등록일
 
-
-
-			//System.Diagnostics.Debug.WriteLine("wwwwwwwww" + new_start_dt.Value);
-
-
+			
+		
 			string[] result = null;
 
             if (CStringUtil.IsNullOrEmpty(ProdCd) == false)
@@ -254,7 +255,10 @@ namespace AdminSite.pdt
                 result = ExecuteQueryResult(3204, param.ToString());
             }
 
-            if (result == null)
+			//제품 카테고리 설정
+			AddProdCategory();
+
+			if (result == null)
             {
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "test", CWebUtil.MsgBox("시스템 오류가 발생 했습니다."));
             }
@@ -269,11 +273,61 @@ namespace AdminSite.pdt
                 AddTag();
             }
         }
+		/// <summary>
+		/// 제품 카테고리 설정
+		/// </summary>
+		private void AddProdCategory() {
+			CSQLHelper command = new CSQLHelper();
+			SqlDataReader dr;
+			string prodCd = prod_cd.Value.ToString();
+			string c = category.Value.ToString();
+			ArrayList arrCate = new ArrayList(c.Split(new char[] { ',' }));
+			dr = command.ExecuteReader("SELECT * FROM TB_PROD_CATEGORY WHERE PROD_CD='" + prodCd + "'");
 
-        /// <summary>
-        /// 태그를 입력한다.
-        /// </summary>
-        private void AddTag()
+			ArrayList a = new ArrayList();
+
+			while (dr.Read())
+			{
+				a.Add((string)dr["CATE_CD"]);
+			}
+
+			ArrayList insertSQL = new ArrayList();
+			//insert
+			foreach (string ca in arrCate)
+			{
+				if (!a.Contains(ca))
+				{
+					insertSQL.Add(ca);
+				}
+			}
+
+			ArrayList deleteSQL = new ArrayList();
+			//delete
+			foreach (string ca in a)
+			{
+				if (!arrCate.Contains(ca))
+				{
+					deleteSQL.Add(ca);
+				}
+			}
+
+			foreach (string ca in insertSQL) //등록
+			{
+				command.ExecuteNonQuery("INSERT INTO TB_PROD_CATEGORY(PROD_CD,PARENT_NO,CATE_CD,LANG_CD) SELECT '"+ prodCd + "',PARENT_NO,CATE_CD,'"+LANG_CD+"' FROM TB_CATEGORY WHERE CATE_CD='"+ca+"' AND LANG_CD='"+LANG_CD+"'");
+				//System.Diagnostics.Debug.WriteLine("INSERT INTO TB_PROD_CATEGORY(PROD_CD,PARENT_NO,CATE_CD) SELECT '" + prodCd + "',PARENT_NO,CATE_CD FROM TB_CATEGORY WHERE CATE_CD='" + ca + "' ");
+			}
+
+			foreach (string ca in deleteSQL) //삭제
+			{
+				command.ExecuteNonQuery("DELETE FROM TB_PROD_CATEGORY WHERE PROD_CD='"+ prodCd + "' AND CATE_CD='"+ca+ "' AND LANG_CD='" + LANG_CD + "'");
+			}
+
+		}
+
+		/// <summary>
+		/// 태그를 입력한다.
+		/// </summary>
+		private void AddTag()
         {
             #region 태그 입력
 
@@ -427,22 +481,33 @@ namespace AdminSite.pdt
             }
         }
 
-        #endregion
+		protected string _category
+		{
+			get { return Request["category"]; }
+		}
 
-        #region 이벤트 메소드
+		protected string _category_name
+		{
 
-        protected void btnSave_Click(object sender, EventArgs e)
+			get { return code.getCategoryName(_category); }
+		}
+
+		#endregion
+
+		#region 이벤트 메소드
+
+		protected void btnSave_Click(object sender, EventArgs e)
         {
             SaveData();
 
-            Response.Redirect("./pdt_human_list.aspx?prod_cd=" + ProdCd + "&LANG_CD=" + LANG_CD);
+            Response.Redirect("./pdt_list.aspx?prod_cd=" + ProdCd + "&LANG_CD=" + LANG_CD);
         }
 
         protected void btnDel_Click(object sender, EventArgs e)
         {
             RemoveData();
 
-            Response.Redirect("./pdt_human_list.aspx");
+            Response.Redirect("./pdt_list.aspx");
         }
 
         protected void btnProdImg1_Click(object sender, EventArgs e)
@@ -478,3 +543,4 @@ namespace AdminSite.pdt
         #endregion
     }
 }
+ 

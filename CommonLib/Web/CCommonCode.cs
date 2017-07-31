@@ -73,6 +73,44 @@ namespace CommonLib.Web
 		}
 
 		/// <summary>
+		/// 하위카테고리를 DB에서 가져온다.
+		/// </summary>
+		/// <returns></returns>
+		public string GetChildCategory(string category, string lang_cd)
+		{
+			string result = string.Empty;
+
+			StringBuilder param = new StringBuilder();
+			param.Length = 0;
+			param.Append(category);
+			param.Append(CConst.DB_PARAM_DELIMITER).Append(lang_cd);
+			//System.Diagnostics.Debug.WriteLine("category : " + category + " lang_cd :" + lang_cd+" len : "+ param.ToString());
+			// DB조회
+			DataSet ds = WebSql.SelectSql(4, param.ToString());
+			result = XmlUtil.GetXml(ds, "Category");
+			return result;
+		}
+
+		/// <summary>
+		/// 하위카테고리를 DB에서 가져온다.
+		/// </summary>
+		/// <returns></returns>
+		public string GetProdCategory(string prod_cd, string lang_cd)
+		{
+			string result = string.Empty;
+
+			StringBuilder param = new StringBuilder();
+			param.Length = 0;
+			param.Append(prod_cd);
+			param.Append(CConst.DB_PARAM_DELIMITER).Append(lang_cd);
+
+			// DB조회
+			DataSet ds = WebSql.SelectSql(5, param.ToString());
+			result = XmlUtil.GetXml(ds, "Category");
+			return result;
+		}
+
+		/// <summary>
 		/// 공통 코드를 가져온다.
 		/// </summary>
 		/// <param name="upperCode"></param>
@@ -105,9 +143,29 @@ namespace CommonLib.Web
             return result;
         }
 
-        #region GET-SET
+		public string getCategoryName(string category)
+		{
+			string cn = String.Empty;
+			try
+			{
+				CSQLHelper command = new CSQLHelper();
+				System.Data.SqlClient.SqlDataReader dr;
+				dr = command.ExecuteReader("SELECT * FROM TB_CATEGORY WHERE CATE_CD='" + category + "'");
+				if (dr.Read())
+				{
+					cn = dr["CATE_NAME"].ToString();
+				}
+			}
+			catch (Exception e)
+			{
+				System.Diagnostics.Debug.WriteLine(e.StackTrace.ToString());
+			}
+			return cn;
+		}
 
-        private CXmlUtil XmlUtil
+		#region GET-SET
+
+		private CXmlUtil XmlUtil
         {
             get
             {

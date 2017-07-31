@@ -9,6 +9,8 @@ using System.Data;
 
 using CommonLib.Utils;
 using AdminSite.m_master;
+using CommonLib.DB;
+using System.Data.SqlClient;
 
 namespace AdminSite.pdt
 {
@@ -16,8 +18,9 @@ namespace AdminSite.pdt
     {
         private const string LANG_CD = "KOR";
         private const string UPR_CATG_NO = "1";
+		CommonLib.Web.CCommonCode code = new CommonLib.Web.CCommonCode();
 
-        protected void Page_Load(object sender, EventArgs e)
+		protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
@@ -40,7 +43,7 @@ namespace AdminSite.pdt
 			StringBuilder param = new StringBuilder();
             param.Append(nowPageNo.Value);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(LANG_CD);
-            param.Append(CConst.DB_PARAM_DELIMITER).Append(UPR_CATG_NO);
+            param.Append(CConst.DB_PARAM_DELIMITER).Append(_category);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(catg_no2.SelectedValue);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(prod_nm.Value);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(prod_cd.Value);
@@ -79,6 +82,8 @@ namespace AdminSite.pdt
             pdt_all.Checked = true; 
         }
 
+		
+
         #region 이벤트 메소드
 
         /// <summary>
@@ -104,6 +109,22 @@ namespace AdminSite.pdt
             SearchData();
         }
 
-        #endregion
-    }
+		#endregion
+
+		#region GET-SET
+		protected string _category
+		{
+			get { return Request["category"]; }
+		}
+
+		protected string _category_name
+		{
+		
+			get { return code.getCategoryName(_category); }
+		}
+
+
+
+		#endregion
+	}
 }

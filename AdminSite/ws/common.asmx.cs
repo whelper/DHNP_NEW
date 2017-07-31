@@ -42,5 +42,28 @@ namespace AdminSite.ws
 
 			return doc;
 		}
+
+		[WebMethod]
+		public XmlDocument GetChildCategory(string category, string lang_cd)
+		{
+			XmlDocument doc = new XmlDocument();
+
+			CCommonCode code = new CCommonCode();
+			doc.InnerXml = code.GetChildCategory(category, lang_cd);
+
+			return doc;
+		}
+
+		[WebMethod]
+		public XmlDocument GetProdCategory(string prod_cd, string lang_cd)
+		{
+			XmlDocument doc = new XmlDocument();
+
+			CCommonCode code = new CCommonCode();
+			doc.InnerXml = code.GetProdCategory(prod_cd, lang_cd);
+
+			return doc;
+		}
+
 	}
 }

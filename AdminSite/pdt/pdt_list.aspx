@@ -6,7 +6,7 @@
 <div id="content">
 	
 	<div id="page-heading">
-		<h1>인체 의약품</h1>
+		<h1><%=_category_name %></h1>
 	</div>
 
 	<div class="wrap_box">
@@ -79,7 +79,7 @@
 					<td><%=GetBoardNum(i, Convert.ToInt32(nowPageNo.Value), 10)%></td>
 					<td><%=GetData(i, "PROD_CD")%></td>
 					<td><%=GetData(i, "PROD_TYPE_NM")%></td>
-					<td class="alignleft" ><a href="pdt_detail.aspx?prod_cd=<%=GetData(i, "PROD_CD")%>"><%=GetData(i, "PROD_NM")%></a> </td>
+					<td class="alignleft" ><a href="pdt_detail.aspx?prod_cd=<%=GetData(i, "PROD_CD")%>&category=<%=_category %>"><%=GetData(i, "PROD_NM")%></a> </td>
 					<td><%=GetData(i, "CATG_NM2")%></td>
 					<td><%=GetData(i, "CATG_NO")%></td>
 					<td><%=GetData(i, "REG_DT")%></td>

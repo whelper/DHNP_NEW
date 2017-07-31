@@ -6,7 +6,7 @@
 <div id="content">
 	
 	<div id="page-heading">
-		<h1>인체 의약품</h1>
+		<h1><%=_category_name %></h1>
 	</div>
 
 	<div class="wrap_box forms">
@@ -25,7 +25,9 @@
 						<label for="pdt_name">카테고리</label>     
 					</th>
 					<td class="alignleft" colspan="2">     
-						<a  class="add-cate"  data-parent-id="1" data-tag="cate"  href="javascript:cate('')"><span class="btn">추가</span></a>
+						<a  class="add-cate"  data-parent-id="" data-tag="cate"  data-langcd="<%=LANG_CD %>"  href="javascript:void(0)"><span class="btn">추가</span></a>
+						<ul id="cate_view" class="clist">
+						</ul>
 					</td>
 				</tr>
 				<tr>
@@ -404,7 +406,7 @@
 		</table>
 
         <input type="hidden" id="hdnContent" runat="server" />
-
+		<input type="hidden" id="category" runat="server" />
 		<div class="btn_area clearfix">
 			<div class="f_left"><a href="javascript:history.back();"><span class="btn">목록</span></a></div>
 			<div class="f_right">
@@ -438,9 +440,10 @@
 #category-controller{position:absolute;z-index:999;left:0;top:0;width:100%;}
 #category-controller .box{padding:25px 50px 25px 50px;background:#fff;border:1px solid #666;width:900px;position:relative;margin:0 auto;}
 #category-controller .box .btn{position:absolute;margin-left:15px;height:80px;}
-#category-controller .box>.category-close{display:inline !important;position:relative;top:-140px;right:-830px;font-weight:bold;cursor:pointer;width:20px;}
+#category-controller .box>.category-close{display:inline !important;position:relative;top:-80px;right:-930px;font-weight:bold;cursor:pointer;width:20px;}
 #category-controller select.select-category{width:180px !important;height:150px;}
 </style>
+	<script type="text/javascript" src="<%=GetRoot()%>/common/js/thdays.category.js" charset="utf-8"></script>
 <script type="text/javascript" src="<%=GetRoot()%>/common/se/js/HuskyEZCreator.js" charset="utf-8"></script>
 <script language="javascript" type="text/javascript">
     var textfd = {
@@ -478,6 +481,17 @@
     };
 
 	function CheckValid() {
+		var is_cate = 0; //카테고리등록여부
+		var c = '';
+		$(".clist li").each(function () {
+			if ($(this).attr("cate").substr(0, 2) == '01') { //카테고리등록체크
+				is_cate = 1;
+			}
+			c += (c) ? ',' + $(this).attr("cate") : $(this).attr("cate");
+		});
+		
+		$("#<%=category.ClientID%>").val(c);
+
 		if(!isValidDatetime($("#<%=reg_dt.ClientID%>").val())) return false;
 		var content = document.getElementById("<%= hdnContent.ClientID %>");
         content.value = oEditors.getById["<%= usage.ClientID %>"].getIR();
@@ -559,60 +573,10 @@
         return false;
 	}
 
-	function cate(parent_id) {
-		$.ajax({
-			type: "POST",
-			url: "/ws/common.asmx/GetCategory",
-			dataType: "xml",
-			data: "lang_cd=<%=LANG_CD%>&parent_id=" + parent_id,
-			success: function (data) {
-				$xml = $(data);
-				//alert($xml.find("ResultCd").text());
-				var str_op = "";
-				var cate_cd = "";
-				var cate_name = "";
-				$xml.find("Category").each(function (index) {
-					cate_cd = "";
-					cate_name = "";
-					if (!parent_id) {
-						if ($xml.find("PARENT_NO").eq(index).text() == "0") {
-							cate_cd = $xml.find("CATE_CD").eq(index).text();
-							cate_name = $xml.find("CATE_NAME").eq(index).text();
-						}
-					} else {
-						cate_cd = $xml.find("CATE_CD").eq(index).text();
-						cate_name = $xml.find("CATE_NAME").eq(index).text();
-					}
-
-					if (cate_cd && cate_name) { 
-						str_op += "<option value=\"" + cate_cd + "\">" + cate_name + "</option>";
-					}
-				});
-				var str = "";
-				str += "<div id=\"category-controller\">";
-				str += "	<div class=\"box\">";
-				str += "		<div class=\"category-close\">X</div>";
-				str += "		<select name=\"cate[]\" multiple class=\"select-category\">";
-				str +=			str_op;
-				str += "		</select>";
-				str += "		<select name=\"cate[]\" multiple class=\"select-category\"></select>";
-				str += "		<select name=\"cate[]\" multiple class=\"select-category\"></select>";
-				str += "		<select name=\"cate[]\" multiple class=\"select-category\"></select>";
-				str += "		<button class=\"btn btn-warning\" onclick=\"javascript: attachecategory.addCategory();\">추 가</button>";
-				str += "	</div>";
-				str += "</div>";			
-				$(".forms").append(str);
-
-				
-			},
-			error: function (error) { alert('에러'); }
-		});	
-	}
-
 
     $(function () {
-		var p = { "tags": ["cate"] };
-		//attachecategory.init(p);
+		var p = { "tags": ["cate"], "prod_cd": $("#<%= prod_cd.ClientID %>").val() };
+		attachecategory.init(p);
 
 
 		$("#ctl00_ContentPlaceSubLayer_new_yn").click(function () {

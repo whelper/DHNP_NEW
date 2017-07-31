@@ -24,7 +24,7 @@ namespace AdminSite.cate
 
 				getList();
 
-				if (CStringUtil.IsNullOrEmpty(_cate_no) == false && "r".Equals(_dbjob))
+				if (CStringUtil.IsNullOrEmpty(_cate_no) == false && ("r".Equals(_dbjob) || "d".Equals(_dbjob) == false))
 				{
 					getDetail();
 				}
@@ -86,15 +86,24 @@ namespace AdminSite.cate
 		{
 			StringBuilder param = new StringBuilder();
 			param.Append(_cate_no);
-			dbjob.Value = _dbjob;
+			dbjob.Value = ("".Equals(_dbjob) == false) ? _dbjob : "u";
 			ds = GetDataSet(3902, param.ToString());
 
-			parent_id.Value = _cate_no;
+			 
 			if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
 			{
-				lbl_cate.InnerHtml = ds.Tables[0].Rows[0]["CATE_NAME"].ToString()+" &gt; ";
-				category.Value = ds.Tables[0].Rows[0]["CATE_CD"].ToString();
+				
+				if (dbjob.Value == "r")
+				{
+					category.Value = ds.Tables[0].Rows[0]["CATE_CD"].ToString();
+					parent_id.Value = _cate_no;
+					lbl_cate.InnerHtml = ds.Tables[0].Rows[0]["CATE_NAME"].ToString() + " &gt; ";
 					
+				}
+				else {
+					cate_no.Value = _cate_no;
+					category_name.Value = ds.Tables[0].Rows[0]["CATE_NAME"].ToString();
+				}
 			}
 		}
 
@@ -132,7 +141,7 @@ namespace AdminSite.cate
 
 		protected string LANG_CD
 		{
-			get{return (Request.Form["lang_cd"] is null) ? "KOR" : Request["lang_cd"]; }
+			get{return (Request["lang_cd"] is null) ? "KOR" : Request["lang_cd"]; }
 		}
 
 		protected string _dbjob
