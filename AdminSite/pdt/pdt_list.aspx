@@ -58,7 +58,7 @@
 		<table cellpadding="0" cellspacing="0" border="0" class="table_new">
 			<thead>
 				<tr> 
-					<th width="5%">번호1</th>
+					<th width="5%">번호</th>
 					<th width="10%">제품코드</th>
 					<th width="15%">제품유형</th>
 					<th>제품명</th>
