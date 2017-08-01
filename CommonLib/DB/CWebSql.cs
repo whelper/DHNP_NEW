@@ -1058,9 +1058,9 @@ namespace CommonLib.DB
 
 					sqldbtype[0] = SqlDbType.VarChar;
                     sqldbtype[1] = SqlDbType.VarChar;
-                    sqldbtype[2] = SqlDbType.Int;
-                    sqldbtype[3] = SqlDbType.Int;
-                    sqldbtype[4] = SqlDbType.Int;
+                    sqldbtype[2] = SqlDbType.VarChar;
+                    sqldbtype[3] = SqlDbType.VarChar;
+                    sqldbtype[4] = SqlDbType.VarChar;
                     sqldbtype[5] = SqlDbType.VarChar;
                     sqldbtype[6] = SqlDbType.VarChar;
                     sqldbtype[7] = SqlDbType.VarChar;
@@ -1471,7 +1471,7 @@ namespace CommonLib.DB
                     variable[2] = "@CATAL_URL";
                     variable[3] = "@WRITER_ID";
 
-                    sqldbtype[0] = SqlDbType.Int;
+                    sqldbtype[0] = SqlDbType.VarChar;
                     sqldbtype[1] = SqlDbType.VarChar;
                     sqldbtype[2] = SqlDbType.VarChar;
                     sqldbtype[3] = SqlDbType.VarChar;

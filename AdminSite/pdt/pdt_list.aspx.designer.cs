@@ -31,6 +31,15 @@ namespace AdminSite.pdt {
         protected global::System.Web.UI.WebControls.DropDownList catg_no2;
         
         /// <summary>
+        /// catg_no3 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList catg_no3;
+        
+        /// <summary>
         /// btnSearch 컨트롤입니다.
         /// </summary>
         /// <remarks>
@@ -74,6 +83,15 @@ namespace AdminSite.pdt {
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton pdt_old;
+        
+        /// <summary>
+        /// catg 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField catg;
         
         /// <summary>
         /// nowPageNo 컨트롤입니다.

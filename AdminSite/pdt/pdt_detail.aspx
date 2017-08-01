@@ -11,8 +11,8 @@
 
 	<div class="wrap_box forms">
         <ul class="list_tab  clearfix target" >
-			<li<%if ("KOR".Equals(LANG_CD)) { %> class="tab_on"<%} %>><a href="pdt_human_detail.aspx?prod_cd=<%=ProdCd %>&LANG_CD=KOR">국문</a></li>
-			<li<%if ("ENG".Equals(LANG_CD)) { %> class="tab_on"<%} %>><a href="pdt_human_detail.aspx?prod_cd=<%=ProdCd %>&LANG_CD=ENG">영문</a></li>
+			<li<%if ("KOR".Equals(LANG_CD)) { %> class="tab_on"<%} %>><a href="pdt_detail.aspx?prod_cd=<%=ProdCd %>&LANG_CD=KOR&category=<%=_category %>">국문</a></li>
+			<li<%if ("ENG".Equals(LANG_CD)) { %> class="tab_on"<%} %>><a href="pdt_detail.aspx?prod_cd=<%=ProdCd %>&LANG_CD=ENG&category=<%=_category %>">영문</a></li>
 		</ul>
 		<table cellpadding="0" cellspacing="0" border="0" class="table_frm">
 		    <colgroup>
@@ -44,14 +44,34 @@
 					</th>
 					<td class="alignleft" colspan="2">     
 						<input type="text" runat="server" id="prod_cd"  value="" class="span6 text mR10" />
-						<label for="new_yn" style="margin-left:10px;">
+						<!--동의begin-->
+						<label for="" class="rdo_ani input-items"> 
+							<input type="radio" runat="server" id="pdt_org"  name="pdt_style" class="inline" value="PROD_ORG" />기존 제품
+							<input type="radio" runat="server" id="pdt_kwan"  name="pdt_style" class="inline" value="PROD_GODL" />관납제품	
+						</label>
+						<!--동의end-->
+						<!--바이오begin-->
+						<label for="" class="rdo_bio input-items"> 
+							<input type="radio" runat="server" id="pdt_bae" name="pdt_style" class="inline" value="PROD_BADG" />배지
+							<input type="radio" runat="server" id="pdt_re" name="pdt_style" class="inline"  value="PROD_REGIN" />레진
+						</label>
+						<!--바이오end-->
+						<!--수출begin-->
+						<label for="" class="rdo_exp input-items"> 
+							<input type="radio" runat="server" id="pdt_human"  name="pdt_human" class="inline" value="PROD_BODY_DRUG">인체 의약품
+							<input type="radio" runat="server" id="pdt_ani"  name="pdt_ani" class="inline"  value="PROD_ANI_DRUG">동물 의약품
+						</label> 
+						<!--수출end-->
+
+						<label for="" class="new_yn input-items">
 							<input type="checkbox" runat="server" id="new_yn"  name="new_yn" value="Y" class="inline">신제품 여부 
-							</label> 
-                        <span class="wrap-period">   
-                         <input id="new_start_dt" runat="server" type="text" value="" style="width:70px" class="datepicker mL10"  />
-                            ~
-                            <input id="new_end_dt" runat="server" type="text"  value="" style="width:70px" class="datepicker"  />
-					    </span>
+							<span class="wrap-period  ">   
+							 <input id="new_start_dt" runat="server" type="text" value="" style="width:70px" class="datepicker mL10"  />
+								~
+								<input id="new_end_dt" runat="server" type="text"  value="" style="width:70px" class="datepicker"  />
+							</span>
+						</label> 
+                        
                     </td>
 				</tr>
 				<tr>
@@ -62,7 +82,7 @@
 						<input type="text" runat="server" id="prod_nm" value="" class="span6 text" />
 					</td>
 				</tr>
-				<tr>
+				<tr class="prod_div input-items">
 					<th scope="row"> 
 						<label for="pdt_select_01">구분</label>   
 					</th>
@@ -75,14 +95,14 @@
 						</select>
 					</td>
 				</tr>
-				<tr>
+				<%--<tr>
 					<th scope="row">
 						<label for="pdt_select_02">분류</label> 
 					</th>
 					<td>  
 						<asp:DropDownList ID="catg_no2" runat="server" AutoPostBack="false" />
 					</td>
-				</tr>
+				</tr>--%>
 				<tr>
 					<th scope="row"> 
 						<label for="pdt_nember">분류번호</label>   
@@ -91,36 +111,60 @@
 						<input type="text" runat="server" id="catg_no" value="" class="span6 text" />
 					</td>
 				</tr>
-				<tr>
+				<tr class="compt input-items">
+					<th scope="row"> 
+						<label for="compt">구성</label>   
+					</th>
+					<td class="alignleft" colspan="2">     
+						<input type="text" runat="server" id="compt"  value=""  class="span6 text" />      
+					</td>
+				</tr> 
+				<tr class="pdt_summary input-items">
+					<th scope="row"> 
+						<label for="pdt_summary">개요</label>   
+					</th>
+					<td class="alignleft" colspan="2">     
+                        <textarea runat="server" id="pdt_summary" class="textarea_detail" rows="5"></textarea>
+					</td>
+				</tr>
+				<tr class="ingredi input-items">
 					<th scope="row" > 
-						<label for="pdt_component">주요성분(성분함량)</label>   
+						<label for="ingredi">주요성분(성분함량)</label>   
 					</th>
 					<td colspan="2" class="alignleft">     
                         <input type="text" runat="server" id="ingredi" value="" class="span6 text" />
 					</td>
 				</tr>
-				<tr>
-					<th scope="row"><label for="pdt_seongsang">성상</label></th>
+				<tr class="temper input-items">
+					<th scope="row"><label for="temper">성상</label></th>
 					<td class="alignleft" colspan="2">
                         <input type="text" runat="server" id="temper" value="" class="span6 text" />
 					</td>
 				</tr>
-				<tr>
-					<th scope="row"><label for="pdt_code">보험코드</label></th>
+				<tr class="insu_cd input-items">
+					<th scope="row"><label for="insu_cd">보험코드</label></th>
 					<td class="alignleft" colspan="2">     
 						<input type="text" runat="server" id="insu_cd" value="" class="span6 text" />
 					</td>
 				</tr>
-				<tr>
+				<tr class="pdt_money input-items">
 					<th scope="row"><label for="pdt_money">약가</label></th>
 					<td class="alignleft" colspan="2">     
 						<input type="text" runat="server" id="pmedi" value="" class="span6 text" />      
 					</td>
 				</tr>
-				<tr>
+				<tr class="pdt_unit input-items">
 					<th scope="row"><label for="pdt_unit">포장단위</label></th>
 					<td class="alignleft">  
 						<input type="text" runat="server" id="pack_mea" value="" class="span6 text" />
+					</td>
+				</tr>
+				<tr class="pdt_info input-items">
+					<th scope="row">  
+						<label for="pdt_info">정보</label> 
+					</th>
+					<td class="alignleft" colspan="2">     
+						<textarea  id="prod_info" runat="server" class="textarea_detail" ></textarea>  
 					</td>
 				</tr>
 				<tr>
@@ -130,6 +174,20 @@
 					<td>
                         <asp:TextBox ID="usage" runat="server" CssClass="textarea_detail_adit" style="width:1000px;" TextMode="MultiLine" ></asp:TextBox>
                     </td>
+				</tr>
+				<tr class="pdt_keep input-items">
+					<th scope="row"> 
+						<label for="pdt_keep">보관</label>   
+					</th>
+					<td class="alignleft" colspan="2">     
+						<input type="text" runat="server" id="pdt_keep"  value=""  class="span6 text" />      
+					</td>
+				</tr>
+				<tr class="pdt_boheom input-items">
+					<th scope="row"> <label for="pdt_boheom">규격</label> </th>
+					<td class="alignleft" colspan="2">     
+						<input type="text" runat="server" id="pdt_boheom"  value="" class="span6 text" />      
+					</td>
 				</tr>
 				<tr>
 					<th scope="row">
@@ -574,7 +632,8 @@
 	}
 
 
-    $(function () {
+	$(function () {
+		var input_items = "<%=_input_items%>";
 		var p = { "tags": ["cate"], "prod_cd": $("#<%= prod_cd.ClientID %>").val() };
 		attachecategory.init(p);
 
@@ -594,7 +653,16 @@
         }
 
         //calendar
-        $(".datepicker").datepicker({ dateFormat: "yy-mm-dd" });
+		$(".datepicker").datepicker({ dateFormat: "yy-mm-dd" });
+
+		//입력폼 초기화
+		$(".input-items").hide();
+		if (input_items) {
+			var s = input_items.split(",");
+			for (var i = 0; i < s.length; i++) {
+				$("." + s[i]).show();
+			}
+		}
     });
 </script>
 </asp:Content>

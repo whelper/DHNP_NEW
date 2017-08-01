@@ -46,7 +46,7 @@
                 %>
 				<tr>
 					<td class="cate ca-ml<%=s %>"><a href="?cate_no=<%=GetData(i, "CATE_NO")%>&lang_cd=<%=LANG_CD %>&dbjob=u"><%=GetData(i, "CATE_CD")%></a></td>
-					<td class="cate ca-ml<%=s %>"><a href="?cate_no=<%=GetData(i, "CATE_NO")%>&lang_cd=<%=LANG_CD %>&dbjob=u"><%=GetData(i, "CATE_NAME")%></a></td>
+					<td class="cate ca-ml<%=s %>"><a href="?cate_no=<%=GetData(i, "CATE_NO")%>&lang_cd=<%=LANG_CD %>&dbjob=u"><%=(LANG_CD.Equals("ENG") && !GetData(i, "CATE_ENAME").Equals("")) ? GetData(i, "CATE_ENAME") : GetData(i, "CATE_NAME")%></a></td>
 					<td>
 						<a href="?cate_no=<%=GetData(i, "CATE_NO")%>&lang_cd=<%=LANG_CD %>&dbjob=r"><span class="btn-small btn-primary">추가</span></a>
 						<a href="javascript:CheckDelValid('<%=GetData(i, "CATE_NO")%>');"><span class="btn-small btn-delete">삭제</span></a>
@@ -115,6 +115,12 @@
         if (confirm('삭제하시겠습니까?')) {
 			location.href = "./cate_list.aspx?cate_no=" + catgNo + "&dbjob=d";
         }
-    }		
+	  }
+
+	  $(".table_new tr").mouseover(function () {
+		  $(this).css({ "background-color":"#f9f9f9"});
+	  }).mouseout(function () {
+		  $(this).css({ "background-color": "#fff" });
+	  });
 </script> 
 </asp:Content>

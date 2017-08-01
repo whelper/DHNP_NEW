@@ -31,6 +31,60 @@ namespace AdminSite.pdt {
         protected global::System.Web.UI.HtmlControls.HtmlInputText prod_cd;
         
         /// <summary>
+        /// pdt_org 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton pdt_org;
+        
+        /// <summary>
+        /// pdt_kwan 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton pdt_kwan;
+        
+        /// <summary>
+        /// pdt_bae 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton pdt_bae;
+        
+        /// <summary>
+        /// pdt_re 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton pdt_re;
+        
+        /// <summary>
+        /// pdt_human 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton pdt_human;
+        
+        /// <summary>
+        /// pdt_ani 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton pdt_ani;
+        
+        /// <summary>
         /// new_yn 컨트롤입니다.
         /// </summary>
         /// <remarks>
@@ -76,15 +130,6 @@ namespace AdminSite.pdt {
         protected global::System.Web.UI.HtmlControls.HtmlSelect prod_div;
         
         /// <summary>
-        /// catg_no2 컨트롤입니다.
-        /// </summary>
-        /// <remarks>
-        /// 자동 생성 필드입니다.
-        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList catg_no2;
-        
-        /// <summary>
         /// catg_no 컨트롤입니다.
         /// </summary>
         /// <remarks>
@@ -92,6 +137,24 @@ namespace AdminSite.pdt {
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText catg_no;
+        
+        /// <summary>
+        /// compt 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText compt;
+        
+        /// <summary>
+        /// pdt_summary 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea pdt_summary;
         
         /// <summary>
         /// ingredi 컨트롤입니다.
@@ -139,6 +202,15 @@ namespace AdminSite.pdt {
         protected global::System.Web.UI.HtmlControls.HtmlInputText pack_mea;
         
         /// <summary>
+        /// prod_info 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea prod_info;
+        
+        /// <summary>
         /// usage 컨트롤입니다.
         /// </summary>
         /// <remarks>
@@ -146,6 +218,24 @@ namespace AdminSite.pdt {
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox usage;
+        
+        /// <summary>
+        /// pdt_keep 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText pdt_keep;
+        
+        /// <summary>
+        /// pdt_boheom 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText pdt_boheom;
         
         /// <summary>
         /// tag01 컨트롤입니다.

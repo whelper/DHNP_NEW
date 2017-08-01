@@ -11,9 +11,9 @@
 
 	    <div class="wrap_box">
             <ul class="list_tab  clearfix target" >
-		        <li><a href="pdt_human_list.aspx">인체의약품</a></li>
-		        <li class="tab_on"><a href="pdt_cha_info_list.aspx">제품변경정보</a></li>
-                <li><a href="pdt_catalog_list.aspx?upr_catg_no=1">대표카탈로그</a></li>
+		        <li><a href="pdt_list.aspx?category=<%=_category %>">인체의약품</a></li>
+		        <li class="tab_on"><a href="pdt_cha_info_list.aspx?category=<%=_category %>">제품변경정보</a></li>
+                <li><a href="pdt_catalog_list.aspx?category=<%=_category %>">대표카탈로그</a></li>
 	        </ul>    
 		    <table class="table_search">
 			    <colgroup>

@@ -47,14 +47,24 @@ namespace AdminSite.pdt
             }
         }
 
-        #region 이벤트 메소드
+		#region GET-SET
+		protected string _category
+		{
+			get
+			{
+				return Request["category"];
+			}
+		}
+		#endregion
 
-        /// <summary>
-        /// 조회 버튼 클릭
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void btnSearch_Click(object sender, EventArgs e)
+		#region 이벤트 메소드
+
+		/// <summary>
+		/// 조회 버튼 클릭
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		protected void btnSearch_Click(object sender, EventArgs e)
         {
             // 페이지는 1로 초기화
             nowPageNo.Value = "1";

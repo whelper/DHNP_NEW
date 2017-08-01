@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/SiteSub.Master" AutoEventWireup="true" CodeBehind="pdt_list.aspx.cs" Inherits="AdminSite.pdt.pdt_human_list" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/SiteSub.Master" EnableEventValidation="false" AutoEventWireup="true"  CodeBehind="pdt_list.aspx.cs" Inherits="AdminSite.pdt.pdt_human_list" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceSubLayer" runat="server">
 
 <!-- CONTENT -->
@@ -11,9 +11,9 @@
 
 	<div class="wrap_box">
         <ul class="list_tab  clearfix target" >
-		    <li class="tab_on"><a href="pdt_human_list.aspx">인체의약품</a></li>
-		    <li><a href="pdt_cha_info_list.aspx">제품변경정보</a></li>
-            <li><a href="pdt_catalog_list.aspx?upr_catg_no=1">대표카탈로그</a></li>
+		    <li class="tab_on"><a href="pdt_list.aspx?category=<%=_category %>"><%=_category_name %></a></li>
+		    <li><a href="pdt_cha_info_list.aspx?category=<%=_category %>">제품변경정보</a></li>
+            <li><a href="pdt_catalog_list.aspx?category=<%=_category %>">대표카탈로그</a></li>
 	    </ul>    
 		<table class="table_search">
 			<colgroup>
@@ -29,10 +29,11 @@
 					<td><input  type="text" id="prod_nm" runat="server" class="span4 text" placeholder="제품명을  입력해 주세요 " /></td> 
 					<th><label for="pdt_select">분류선택</label></th>       
 					<td>
-                        <asp:DropDownList ID="catg_no2" runat="server" AutoPostBack="false" />
+                        <asp:DropDownList ID="catg_no2" name="catg_no2" runat="server" AutoPostBack="false" style="width:180px" />
+						<asp:DropDownList ID="catg_no3" name="catg_no3" runat="server" AutoPostBack="false" style="width:180px" />
 					</td>
 					<td rowspan="2" class=" aligncenter">
-                        <asp:LinkButton ID="btnSearch" runat="server" CssClass="btn s_search" onclick="btnSearch_Click" Text="검색" />
+                        <asp:LinkButton ID="btnSearch" runat="server" CssClass="btn s_search" OnClientClick="return sch();" Text="검색" />
 					</td>
 				</tr> 
 				<tr> 
@@ -103,10 +104,11 @@
 
         <div class="btn_area clearfix">
 			<div class="f_right">
-				<a href="./pdt_detail.aspx"><span class="btn btn-ok">등록</span></a>
+				<a href="./pdt_detail.aspx?category=<%=_category %>"><span class="btn btn-ok">등록</span></a>
 			</div>
 		</div>
 
+		<asp:HiddenField ID="catg" runat="server" Value="" />
 		<asp:HiddenField ID="nowPageNo" runat="server" Value="1" onvaluechanged="nowPageNo_ValueChanged"/>
 	    <%= AdminSite.page.paging.getPageNo(DataTotalCount, Convert.ToInt32(nowPageNo.Value), 10)%>
 
@@ -122,8 +124,42 @@
             document.forms[0].submit();
         }
 
-        function prod_cd() {
-            
-        }
+		function sch() {
+			var catg = ($("#<%=catg_no3.ClientID%>").val()) ? $("#<%=catg_no3.ClientID%>").val() : $("#<%=catg_no2.ClientID%>").val();
+			$("#<%=catg.ClientID%>").val(catg);
+			document.forms[0].submit();
+		}
+
+		function getCategory(c) {
+			var c = (typeof (c) != "undefined") ? c : $("#<%=catg_no2.ClientID%>").val();
+			var c1 = "<%=_catg%>";
+			if (!c) return;
+			$.ajax({
+				type: "GET",
+				url: "/ws/common.asmx/GetChildCategory",
+				data: "lang_cd=KOR&category=" + c,
+				success: function (data) {
+					$xml = $(data);
+					var cate_cd = "";
+					var cate_name = "";
+					$xml.find("Category").each(function (i) {
+						cate_cd = $xml.find("CATE_CD").eq(i).text();
+						cate_name = $xml.find("CATE_NAME").eq(i).text();
+						$("#<%=catg_no3.ClientID%>").get(0).options[i + 1] = new Option(cate_name, cate_cd);
+						if (c1 == cate_cd) $("#<%=catg_no3.ClientID%>").get(0).selectedIndex = i+1;
+					});
+
+				},
+				error: function (error) { alert('에러'); }
+			});	
+		}
+
+
+		$("#<%=catg_no2.ClientID%>").change(function () {
+			getCategory();
+		}).filter(function () {
+			var c = $("#<%=catg_no2.ClientID%>").val();
+			getCategory(c);
+		});
     </script>
 </asp:Content>

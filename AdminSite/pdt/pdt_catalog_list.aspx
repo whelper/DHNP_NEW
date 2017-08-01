@@ -22,7 +22,7 @@
                     }
                 }
             %>
-			<li class="tab_on"><a href="pdt_catalog_list.aspx?upr_catg_no=<%=Upr_catg_no %>">대표카탈로그</a></li>
+			<li class="tab_on"><a href="pdt_catalog_list.aspx?category=<%=_category %>">대표카탈로그</a></li>
 		</ul>
 
 		<!-- 대표 카달로그 배너 등록     -->

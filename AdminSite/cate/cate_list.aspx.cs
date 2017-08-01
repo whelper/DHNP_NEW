@@ -88,21 +88,23 @@ namespace AdminSite.cate
 			param.Append(_cate_no);
 			dbjob.Value = ("".Equals(_dbjob) == false) ? _dbjob : "u";
 			ds = GetDataSet(3902, param.ToString());
-
+			string cate_name = "";
 			 
 			if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
 			{
-				
+
+				cate_name = (LANG_CD.Equals("ENG")) ? ds.Tables[0].Rows[0]["CATE_ENAME"].ToString() : ds.Tables[0].Rows[0]["CATE_NAME"].ToString();
+
 				if (dbjob.Value == "r")
 				{
 					category.Value = ds.Tables[0].Rows[0]["CATE_CD"].ToString();
 					parent_id.Value = _cate_no;
-					lbl_cate.InnerHtml = ds.Tables[0].Rows[0]["CATE_NAME"].ToString() + " &gt; ";
+					lbl_cate.InnerHtml = cate_name + " &gt; ";
 					
 				}
 				else {
 					cate_no.Value = _cate_no;
-					category_name.Value = ds.Tables[0].Rows[0]["CATE_NAME"].ToString();
+					category_name.Value = cate_name;
 				}
 			}
 		}

@@ -15,15 +15,22 @@ using System.Collections;
 
 namespace AdminSite.pdt
 {
-    public partial class pdt_human_detail : PageBase
-    {
-        //private const string LANG_CD = "KOR";
-        private const string UPR_CATG_NO = "1";
+	public partial class pdt_human_detail : PageBase
+	{
+		//private const string LANG_CD = "KOR";
+		private const string UPR_CATG_NO = "1";
 		CommonLib.Web.CCommonCode code = new CommonLib.Web.CCommonCode();
 
+
+		private Dictionary<string, string[]> dicInputItems = new Dictionary<string, string[]>();
+	
+		
 		protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+
+			
+
+			if (!IsPostBack)
             {
                 SearchData();
 
@@ -65,14 +72,14 @@ namespace AdminSite.pdt
 
             DataSet ds = GetDataSet(1, param.ToString());
 
-            catg_no2.Items.Clear();
-            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
-            {
-                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-                {
-                    catg_no2.Items.Add(new ListItem(ds.Tables[0].Rows[i]["CATG_NM"].ToString(), ds.Tables[0].Rows[i]["CATG_NO"].ToString()));
-                }
-            }
+            //catg_no2.Items.Clear();
+            //if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            //{
+            //    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            //    {
+            //        catg_no2.Items.Add(new ListItem(ds.Tables[0].Rows[i]["CATG_NM"].ToString(), ds.Tables[0].Rows[i]["CATG_NO"].ToString()));
+            //    }
+            //}
 
             // 구분 컨트롤 셋팅
             param.Length = 0;
@@ -96,8 +103,18 @@ namespace AdminSite.pdt
         /// </summary>
         private void InitControls()
         {
-            // 각 이미지 업로드 컨트롤에 javascript 이벤트를 등록한다. (페이지단 서버 컨트롤에 삽입 불가하여 CS단에서 삽입)
-            upload_01.Attributes.Add("onchange", "document.getElementById('" + upload_path_01.ClientID + "').value=document.getElementById('" + upload_01.ClientID + "').value;");
+			//입력폼 설정
+			dicInputItems.Add("01", new string[] { "new_yn", "prod_div","ingredi", "temper", "insu_cd", "pdt_money", "pdt_unit" }); //인체
+			dicInputItems.Add("02", new string[] { "new_yn", "ingredi", "insu_cd", "pdt_money"}); //동물
+			dicInputItems.Add("03", new string[] { "pdt_summary", "pdt_keep", "pdt_boheom" }); //바이오
+			dicInputItems.Add("04", new string[] { "compt", "pdt_info", "pdt_unit" }); //수출(인체)
+			dicInputItems.Add("05", new string[] { "compt", "pdt_info", "pdt_unit" }); //수출(동물)
+			dicInputItems.Add("06", new string[] { "compt", "pdt_info", "pdt_unit" }); //수출(기타)
+			dicInputItems.Add("07", new string[] { "ingredi", "insu_cd", "pdt_money", "temper", "pdt_unit" }); //건강기능식품
+			dicInputItems.Add("08", new string[] { "ingredi", "insu_cd", "pdt_money", "temper", "pdt_unit" }); //의료기기
+
+			// 각 이미지 업로드 컨트롤에 javascript 이벤트를 등록한다. (페이지단 서버 컨트롤에 삽입 불가하여 CS단에서 삽입)
+			upload_01.Attributes.Add("onchange", "document.getElementById('" + upload_path_01.ClientID + "').value=document.getElementById('" + upload_01.ClientID + "').value;");
             upload_02.Attributes.Add("onchange", "document.getElementById('" + upload_path_02.ClientID + "').value=document.getElementById('" + upload_02.ClientID + "').value;");
             upload_03.Attributes.Add("onchange", "document.getElementById('" + upload_path_03.ClientID + "').value=document.getElementById('" + upload_03.ClientID + "').value;");
             upload_04.Attributes.Add("onchange", "document.getElementById('" + upload_path_04.ClientID + "').value=document.getElementById('" + upload_04.ClientID + "').value;");
@@ -129,14 +146,14 @@ namespace AdminSite.pdt
                 
                 
                 // 분류 선택
-                for(int i=0; i < catg_no2.Items.Count; i++)
-                {
-                    if (GetData(0, 0, "CATG_NO2").Equals(catg_no2.Items[i].Value))
-                    {   
-                        catg_no2.SelectedIndex = i;
-                        break;
-                    }
-                }
+                //for(int i=0; i < catg_no2.Items.Count; i++)
+                //{
+                //    if (GetData(0, 0, "CATG_NO2").Equals(catg_no2.Items[i].Value))
+                //    {   
+                //        catg_no2.SelectedIndex = i;
+                //        break;
+                //    }
+                //}
 
                 // 구분 선택
                 for (int i = 0; i < prod_div.Items.Count; i++)
@@ -200,12 +217,20 @@ namespace AdminSite.pdt
             param.Append(CConst.DB_PARAM_DELIMITER).Append(prod_cd.Value);
             string catgNo = catg_no.Value.Equals("") ? "0" : catg_no.Value;
             param.Append(CConst.DB_PARAM_DELIMITER).Append(catgNo);
-            param.Append(CConst.DB_PARAM_DELIMITER).Append(UPR_CATG_NO);
-            param.Append(CConst.DB_PARAM_DELIMITER).Append(catg_no2.SelectedValue);
+            param.Append(CConst.DB_PARAM_DELIMITER).Append(0);
+            param.Append(CConst.DB_PARAM_DELIMITER).Append(0); //기존분류
 
             string db_new_yn = new_yn.Checked ? "Y" : "N";
-            
-            param.Append(CConst.DB_PARAM_DELIMITER).Append("PROD_ORG"); //제품유형
+
+			string prodType = string.Empty;
+			prodType = pdt_org.Checked ? pdt_org.Value : prodType;
+			prodType = pdt_kwan.Checked ? pdt_kwan.Value : prodType;
+			prodType = pdt_bae.Checked ? pdt_bae.Value : prodType;
+			prodType = pdt_re.Checked ? pdt_re.Value : prodType;
+			prodType = pdt_human.Checked ? pdt_human.Value : prodType;
+			prodType = pdt_ani.Checked ? pdt_ani.Value : prodType;
+
+			param.Append(CConst.DB_PARAM_DELIMITER).Append(prodType); //제품유형
             param.Append(CConst.DB_PARAM_DELIMITER).Append(Session["admin_id"]);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(img1);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(img2);
@@ -226,12 +251,12 @@ namespace AdminSite.pdt
             param.Append(CConst.DB_PARAM_DELIMITER).Append(pack_mea.Value);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(""); //주의사항 - 인체 의약품 입력 안함
             param.Append(CConst.DB_PARAM_DELIMITER).Append(""); // 특장점 - 인체 의약품 입력 안함
-            param.Append(CConst.DB_PARAM_DELIMITER).Append(""); // 개요 - 인체 의약품 입력 안함
-            param.Append(CConst.DB_PARAM_DELIMITER).Append(""); // 보관 - 인체 의약품 입력 안함
-            param.Append(CConst.DB_PARAM_DELIMITER).Append(""); // 규격 - 인체 의약품 입력 안함
+            param.Append(CConst.DB_PARAM_DELIMITER).Append(pdt_summary.Value); // 개요 - 인체 의약품 입력 안함
+            param.Append(CConst.DB_PARAM_DELIMITER).Append(pdt_keep.Value); // 보관 - 인체 의약품 입력 안함
+            param.Append(CConst.DB_PARAM_DELIMITER).Append(pdt_boheom.Value); // 규격 - 인체 의약품 입력 안함
             param.Append(CConst.DB_PARAM_DELIMITER).Append(""); // 비고 - 인체 의약품 입력 안함
-            param.Append(CConst.DB_PARAM_DELIMITER).Append(""); // 구성 - 인체 의약품 입력 안함
-            param.Append(CConst.DB_PARAM_DELIMITER).Append(""); // 정보 - 인체 의약품 입력 안함
+            param.Append(CConst.DB_PARAM_DELIMITER).Append(compt.Value); // 구성 - 인체 의약품 입력 안함
+            param.Append(CConst.DB_PARAM_DELIMITER).Append(prod_info.Value); // 정보 - 인체 의약품 입력 안함
             param.Append(CConst.DB_PARAM_DELIMITER).Append(prod_div.Value); // 구분
             param.Append(CConst.DB_PARAM_DELIMITER).Append(new_start_dt.Value); // 신제품 START
             param.Append(CConst.DB_PARAM_DELIMITER).Append(new_end_dt.Value); // 신제품 END
@@ -483,13 +508,21 @@ namespace AdminSite.pdt
 
 		protected string _category
 		{
-			get { return Request["category"]; }
+			get { return (Request["category"].Equals("")) ? "01" : Request["category"]; }
 		}
 
 		protected string _category_name
 		{
 
 			get { return code.getCategoryName(_category); }
+		}
+
+		/// <summary>
+		/// 카테고리별 제품 입력폼 표시
+		/// </summary>
+		protected string _input_items
+		{
+			get { return string.Join(",", dicInputItems[_category]);  }
 		}
 
 		#endregion
@@ -500,14 +533,14 @@ namespace AdminSite.pdt
         {
             SaveData();
 
-            Response.Redirect("./pdt_list.aspx?prod_cd=" + ProdCd + "&LANG_CD=" + LANG_CD);
+            Response.Redirect("./pdt_list.aspx?prod_cd=" + ProdCd + "&LANG_CD=" + LANG_CD+"&category="+ _category);
         }
 
         protected void btnDel_Click(object sender, EventArgs e)
         {
             RemoveData();
 
-            Response.Redirect("./pdt_list.aspx");
+            Response.Redirect("./pdt_list.aspx?category=" + _category);
         }
 
         protected void btnProdImg1_Click(object sender, EventArgs e)

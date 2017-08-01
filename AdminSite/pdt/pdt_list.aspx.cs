@@ -22,13 +22,14 @@ namespace AdminSite.pdt
 
 		protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+
+			
+			if (!IsPostBack)
             {
                 SetControls();
-
-                SearchData();
-            }
-        }
+			}
+			SearchData();
+		}
 
         /// <summary>
         /// 데이터 조회
@@ -38,13 +39,14 @@ namespace AdminSite.pdt
 			string prodType = string.Empty; // 전체
 			prodType = pdt_new.Checked ? pdt_new.Value : prodType;
 			prodType = pdt_old.Checked ? pdt_old.Value : prodType;
-		
-	
+
+			string c = (!catg.Value.Equals("")) ? catg.Value : _category;
+
 			StringBuilder param = new StringBuilder();
             param.Append(nowPageNo.Value);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(LANG_CD);
-            param.Append(CConst.DB_PARAM_DELIMITER).Append(_category);
-            param.Append(CConst.DB_PARAM_DELIMITER).Append(catg_no2.SelectedValue);
+            param.Append(CConst.DB_PARAM_DELIMITER).Append(c);
+            param.Append(CConst.DB_PARAM_DELIMITER).Append("");
             param.Append(CConst.DB_PARAM_DELIMITER).Append(prod_nm.Value);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(prod_cd.Value);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(prodType);
@@ -62,11 +64,10 @@ namespace AdminSite.pdt
         private void SetControls()
         {
             StringBuilder param = new StringBuilder();
-            param.Append(LANG_CD);
-            param.Append(CConst.DB_PARAM_DELIMITER).Append(UPR_CATG_NO);
-            param.Append(CConst.DB_PARAM_DELIMITER).Append("2");
+            param.Append(_category);
+            param.Append(CConst.DB_PARAM_DELIMITER).Append(LANG_CD);
 
-            DataSet ds = GetDataSet(1, param.ToString());
+            DataSet ds = GetDataSet(4, param.ToString());
 
             catg_no2.Items.Add(new ListItem("선택", ""));
 
@@ -74,12 +75,13 @@ namespace AdminSite.pdt
             {
                 for(int i=0; i < ds.Tables[0].Rows.Count; i++)
                 {
-                    catg_no2.Items.Add(new ListItem(ds.Tables[0].Rows[i]["CATG_NM"].ToString(), ds.Tables[0].Rows[i]["CATG_NO"].ToString()));
+                    catg_no2.Items.Add(new ListItem(ds.Tables[0].Rows[i]["CATE_NAME"].ToString(), ds.Tables[0].Rows[i]["CATE_CD"].ToString()));
                 }
             }
 
-            // 전체에 기본 checked
-            pdt_all.Checked = true; 
+			catg_no3.Items.Add(new ListItem("선택", ""));
+			// 전체에 기본 checked
+			pdt_all.Checked = true;
         }
 
 		
@@ -95,8 +97,8 @@ namespace AdminSite.pdt
         {
             // 페이지는 1로 초기화
             nowPageNo.Value = "1";
-
-            SearchData();
+			SearchData();
+			
         }
 
         /// <summary>
@@ -115,6 +117,12 @@ namespace AdminSite.pdt
 		protected string _category
 		{
 			get { return Request["category"]; }
+		}
+
+
+		protected string _catg
+		{
+			get { return catg.Value; }
 		}
 
 		protected string _category_name

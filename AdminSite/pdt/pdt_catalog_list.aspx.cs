@@ -14,9 +14,10 @@ namespace AdminSite.pdt
 {
     public partial class pdt_catalog_list : PageBase
     {
-        //private const string LANG_CD = "KOR";
+		//private const string LANG_CD = "KOR";
+		CommonLib.Web.CCommonCode code = new CommonLib.Web.CCommonCode();
 
-        protected void Page_Load(object sender, EventArgs e)
+		protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
@@ -29,7 +30,7 @@ namespace AdminSite.pdt
         private void SearchData()
         {
             StringBuilder param = new StringBuilder();
-            param.Append(Upr_catg_no);
+            param.Append(_category);
 
             // 실 데이터 조회
             SetDataList(3231, param.ToString());
@@ -55,7 +56,7 @@ namespace AdminSite.pdt
 
         private void SaveData()
         {
-            if (CStringUtil.IsNullOrEmpty(Upr_catg_no) == false)
+            if (CStringUtil.IsNullOrEmpty(_category) == false)
             {
                 string repFile = CStringUtil.IsNullOrEmpty(path_value_01.Value) == false ? UploadFile(file_01, "DIR_PRODUCT") : "";
                 string repFileEng = CStringUtil.IsNullOrEmpty(path_value_02.Value) == false ? UploadFile(file_02, "DIR_PRODUCT") : "";
@@ -65,7 +66,7 @@ namespace AdminSite.pdt
                 if (CStringUtil.IsNullOrEmpty(repFile) == false)
                 {
                     StringBuilder param = new StringBuilder();
-                    param.Append(Upr_catg_no);
+                    param.Append(_category);
                     param.Append(CConst.DB_PARAM_DELIMITER).Append("KOR");
                     param.Append(CConst.DB_PARAM_DELIMITER).Append(repFile);
                     param.Append(CConst.DB_PARAM_DELIMITER).Append(Session["admin_id"]);
@@ -76,7 +77,7 @@ namespace AdminSite.pdt
                 if (CStringUtil.IsNullOrEmpty(repFileEng) == false)
                 {
                     StringBuilder param = new StringBuilder();
-                    param.Append(Upr_catg_no);
+                    param.Append(_category);
                     param.Append(CConst.DB_PARAM_DELIMITER).Append("ENG");
                     param.Append(CConst.DB_PARAM_DELIMITER).Append(repFileEng);
                     param.Append(CConst.DB_PARAM_DELIMITER).Append(Session["admin_id"]);
@@ -86,40 +87,44 @@ namespace AdminSite.pdt
 
                 if (result == null)
                 {
-                    CWebUtil.jsAlertAndRedirect(this, "시스템 오류가 발생 했습니다.", "pdt_catalog_list.aspx?upr_catg_no=" + Upr_catg_no);
+                    CWebUtil.jsAlertAndRedirect(this, "시스템 오류가 발생 했습니다.", "pdt_catalog_list.aspx?_category=" + _category);
                 }
                 else if (result[0].Equals("00") == false)
                 {
-                    CWebUtil.jsAlertAndRedirect(this, result[1], "pdt_catalog_list.aspx?upr_catg_no=" + Upr_catg_no);
+                    CWebUtil.jsAlertAndRedirect(this, result[1], "pdt_catalog_list.aspx?_category=" + _category);
                 }
                 else
                 {
-                    Response.Redirect("pdt_catalog_list.aspx?upr_catg_no=" + Upr_catg_no);
+                    Response.Redirect("pdt_catalog_list.aspx?_category=" + _category);
                 }
             }
             else
             {
-                CWebUtil.jsAlertAndRedirect(this, "카테고리가 선택되지 않았습니다.", "pdt_catalog_list.aspx?upr_catg_no=" + Upr_catg_no);
+                CWebUtil.jsAlertAndRedirect(this, "카테고리가 선택되지 않았습니다.", "pdt_catalog_list.aspx?_category=" + _category);
             }
         }
 
         #region GET-SET
 
-        protected string Upr_catg_no
+        protected string _category
         {
             get
             {   
-                return Request["upr_catg_no"];
+                return Request["category"];
             }
         }
 
-        protected string PageName
+        /// <summary>
+		/// 
+		/// </summary>
+		protected string PageName
         {
-            get
-            {
-                string pagename = "";
 
-                switch (Upr_catg_no)
+			get
+            {
+                string pagename = code.getCategoryName(_category);
+
+               /* switch (_category)
                 {
                     case "1":
                         pagename = "인체 의약품";
@@ -146,7 +151,7 @@ namespace AdminSite.pdt
                         pagename = "의료기기";
                         break;
                 
-                }
+                }*/
 
                 return pagename;
             }
@@ -158,81 +163,93 @@ namespace AdminSite.pdt
             {
                 List<Dictionary<string, string>> pageList = new List<Dictionary<string, string>>();
 
-                switch (Upr_catg_no)
-                {
-                    case "1":
-                        Dictionary<string, string> dic11 = new Dictionary<string, string>();
-                        dic11.Add("pagename", "인체 의약품");
-                        dic11.Add("pageurl", "pdt_human_list.aspx");
+				Dictionary<string, string> dic11 = new Dictionary<string, string>();
+				dic11.Add("pagename", code.getCategoryName(_category));
+				dic11.Add("pageurl", "pdt_list.aspx?category="+_category);
 
-                        pageList.Add(dic11);
+				pageList.Add(dic11);
 
-                        Dictionary<string, string> dic12 = new Dictionary<string, string>();
-                        dic12.Add("pagename", "제품변경정보");
-                        dic12.Add("pageurl", "pdt_cha_info_list.aspx");
+				Dictionary<string, string> dic12 = new Dictionary<string, string>();
+				dic12.Add("pagename", "제품변경정보");
+				dic12.Add("pageurl", "pdt_cha_info_list.aspx?category=" + _category);
 
-                        pageList.Add(dic12);
+				pageList.Add(dic12);
 
-                        break;
-                    case "2":
-                        Dictionary<string, string> dic21 = new Dictionary<string, string>();
-                        dic21.Add("pagename", "동물 의약품");
-                        dic21.Add("pageurl", "pdt_ani_list.aspx");
+				/* switch (_category)
+				 {
+					 case "1":
+						 Dictionary<string, string> dic11 = new Dictionary<string, string>();
+						 dic11.Add("pagename", "인체 의약품");
+						 dic11.Add("pageurl", "pdt_human_list.aspx");
 
-                        pageList.Add(dic21);
-                        break;
-                    case "3":
-                        Dictionary<string, string> dic31 = new Dictionary<string, string>();
-                        dic31.Add("pagename", "배지/레진");
-                        dic31.Add("pageurl", "pdt_bio_list.aspx");
+						 pageList.Add(dic11);
 
-                        pageList.Add(dic31);
+						 Dictionary<string, string> dic12 = new Dictionary<string, string>();
+						 dic12.Add("pagename", "제품변경정보");
+						 dic12.Add("pageurl", "pdt_cha_info_list.aspx");
 
-                        Dictionary<string, string> dic32 = new Dictionary<string, string>();
-                        dic32.Add("pagename", "카달로그");
-                        dic32.Add("pageurl", "pdt_bioC_list.aspx");
+						 pageList.Add(dic12);
 
-                        pageList.Add(dic32);
-                        break;
-                    case "4":
-                        Dictionary<string, string> dic41 = new Dictionary<string, string>();
-                        dic41.Add("pagename", "수출의약품(인체)");
-                        dic41.Add("pageurl", "pdt_ex_human_list.aspx");
+						 break;
+					 case "2":
+						 Dictionary<string, string> dic21 = new Dictionary<string, string>();
+						 dic21.Add("pagename", "동물 의약품");
+						 dic21.Add("pageurl", "pdt_ani_list.aspx");
 
-                        pageList.Add(dic41);
-                        break;
-                    case "5":
-                        Dictionary<string, string> dic51 = new Dictionary<string, string>();
-                        dic51.Add("pagename", "수출의약품(동물)");
-                        dic51.Add("pageurl", "pdt_ex_ani_list.aspx");
+						 pageList.Add(dic21);
+						 break;
+					 case "3":
+						 Dictionary<string, string> dic31 = new Dictionary<string, string>();
+						 dic31.Add("pagename", "배지/레진");
+						 dic31.Add("pageurl", "pdt_bio_list.aspx");
 
-                        pageList.Add(dic51);
+						 pageList.Add(dic31);
 
-                        break;
-                    case "6":
-                        Dictionary<string, string> dic61 = new Dictionary<string, string>();
-                        dic61.Add("pagename", "건강기능식품");
-                        dic61.Add("pageurl", "pdt_health_list.aspx");
+						 Dictionary<string, string> dic32 = new Dictionary<string, string>();
+						 dic32.Add("pagename", "카달로그");
+						 dic32.Add("pageurl", "pdt_bioC_list.aspx");
 
-                        pageList.Add(dic61);
-                        break;
-                    case "7":
-                        Dictionary<string, string> dic71 = new Dictionary<string, string>();
-                        dic71.Add("pagename", "의료기기");
-                        dic71.Add("pageurl", "pdt_device_list.aspx");
+						 pageList.Add(dic32);
+						 break;
+					 case "4":
+						 Dictionary<string, string> dic41 = new Dictionary<string, string>();
+						 dic41.Add("pagename", "수출의약품(인체)");
+						 dic41.Add("pageurl", "pdt_ex_human_list.aspx");
 
-                        pageList.Add(dic71);
-                        break;
-                    case "10":
-                        Dictionary<string, string> dic81 = new Dictionary<string, string>();
-                        dic81.Add("pagename", "수출의약품(기타)");
-                        dic81.Add("pageurl", "pdt_ex_etc_list.aspx");
+						 pageList.Add(dic41);
+						 break;
+					 case "5":
+						 Dictionary<string, string> dic51 = new Dictionary<string, string>();
+						 dic51.Add("pagename", "수출의약품(동물)");
+						 dic51.Add("pageurl", "pdt_ex_ani_list.aspx");
 
-                        pageList.Add(dic81);
-                        break;
-                }
+						 pageList.Add(dic51);
 
-                return pageList;
+						 break;
+					 case "6":
+						 Dictionary<string, string> dic61 = new Dictionary<string, string>();
+						 dic61.Add("pagename", "건강기능식품");
+						 dic61.Add("pageurl", "pdt_health_list.aspx");
+
+						 pageList.Add(dic61);
+						 break;
+					 case "7":
+						 Dictionary<string, string> dic71 = new Dictionary<string, string>();
+						 dic71.Add("pagename", "의료기기");
+						 dic71.Add("pageurl", "pdt_device_list.aspx");
+
+						 pageList.Add(dic71);
+						 break;
+					 case "10":
+						 Dictionary<string, string> dic81 = new Dictionary<string, string>();
+						 dic81.Add("pagename", "수출의약품(기타)");
+						 dic81.Add("pageurl", "pdt_ex_etc_list.aspx");
+
+						 pageList.Add(dic81);
+						 break;
+				 }*/
+
+				return pageList;
             }
         }
 
@@ -244,7 +261,7 @@ namespace AdminSite.pdt
         private void DelFile(string lang_cd)
         {
             StringBuilder param = new StringBuilder();
-            param.Append(Upr_catg_no);
+            param.Append(_category);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(Session["admin_id"]);
 
             if (lang_cd.Equals("KOR"))
