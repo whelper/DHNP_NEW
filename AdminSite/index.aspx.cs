@@ -21,8 +21,8 @@ namespace AdminSite
             if (!IsPostBack)
             {
 				//임시 서버 적용시 주석처리
-				admin_id.Value = "admin";
-				admin_pw.Value = "dhnp2009newpharm";
+				//admin_id.Value = "admin";
+				//admin_pw.Value = "dhnp2009newpharm";
 				GetLogin();
 			}
         }

@@ -926,12 +926,12 @@
     <Content Include="products\health_products_view.aspx" />
     <Content Include="products\human_change_list.aspx" />
     <Content Include="products\human_change_view.aspx" />
-    <Content Include="products\human_new_list.aspx" />
-    <Content Include="products\human_new_view.aspx" />
-    <Content Include="products\human_products_list.aspx" />
     <Content Include="products\human_products_view.aspx" />
     <Content Include="products\medical_list.aspx" />
     <Content Include="products\medical_view.aspx" />
+    <Content Include="products\product_list.aspx" />
+    <Content Include="products\product_new_list.aspx" />
+    <Content Include="products\product_view.aspx" />
     <Content Include="pr\global_list.aspx" />
     <Content Include="pr\global_view.aspx" />
     <Content Include="pr\news_list.aspx" />
@@ -1660,27 +1660,6 @@
     <Compile Include="products\human_change_view.aspx.designer.cs">
       <DependentUpon>human_change_view.aspx</DependentUpon>
     </Compile>
-    <Compile Include="products\human_new_list.aspx.cs">
-      <DependentUpon>human_new_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\human_new_list.aspx.designer.cs">
-      <DependentUpon>human_new_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\human_new_view.aspx.cs">
-      <DependentUpon>human_new_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\human_new_view.aspx.designer.cs">
-      <DependentUpon>human_new_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\human_products_list.aspx.cs">
-      <DependentUpon>human_products_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\human_products_list.aspx.designer.cs">
-      <DependentUpon>human_products_list.aspx</DependentUpon>
-    </Compile>
     <Compile Include="products\human_products_view.aspx.cs">
       <DependentUpon>human_products_view.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1701,6 +1680,27 @@
     </Compile>
     <Compile Include="products\medical_view.aspx.designer.cs">
       <DependentUpon>medical_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\product_list.aspx.cs">
+      <DependentUpon>product_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\product_list.aspx.designer.cs">
+      <DependentUpon>product_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\product_new_list.aspx.cs">
+      <DependentUpon>product_new_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\product_new_list.aspx.designer.cs">
+      <DependentUpon>product_new_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\product_view.aspx.cs">
+      <DependentUpon>product_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\product_view.aspx.designer.cs">
+      <DependentUpon>product_view.aspx</DependentUpon>
     </Compile>
     <Compile Include="Products_Sub.Master.cs">
       <DependentUpon>Products_Sub.Master</DependentUpon>
