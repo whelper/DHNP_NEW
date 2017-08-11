@@ -27,7 +27,12 @@
 
 			    <fieldset>
 				    <legend>제품문의 폼</legend>
-				    <div class="inquire_input title">
+					<div class="inquire_input title">
+					    <label for="ttl"><span>구분</span></label>
+					    <asp:DropDownList ID="gubun" runat="server" style="margin:1px 12%">
+						</asp:DropDownList>
+				    </div>
+					<div class="inquire_input title">
 					    <label for="ttl"><span>제목</span></label>
 					    <input  type="text" id="ttl" runat="server" name="" placeholder="제목을 입력해 주세요." />  
 				    </div>
@@ -95,7 +100,7 @@
     };
 
     function CheckValid() {
-
+		textfd.chk('<%= gubun.ClientID %>', "구분 선택하세요");
         textfd.chk('<%= ttl.ClientID %>', "제목을 입력하세요!");
         textfd.chk('<%= writer_nm.ClientID %>', "이름을 입력하세요!");
         textfd.chk('<%= tel.ClientID %>', "연락처를 입력하세요!");

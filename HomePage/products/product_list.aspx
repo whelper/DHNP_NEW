@@ -29,8 +29,8 @@
 		<p class="location">
 			<a href="/index.aspx"><span><img src="/common/images/common/i_home.png" alt="home" /></span></a>
 			<a href="/products/human_new_list.aspx"><span>제품</span></a><em> > </em>
-			<a href="/products/human_new_list.aspx"><span>인체의약품</span></a><em> > </em>
-			<a href="/products/human_products_list.aspx"><strong>제품소개</strong></a>
+			<a href="/products/human_new_list.aspx"><span><%=categoryName%></span></a><em> > </em>
+			<a href="/products/product_list.aspx"><strong>제품소개</strong></a>
 		</p>
 	</header>
 	<!--  내용  ***************** -->
@@ -45,21 +45,21 @@
 			    <dt class="fB about"> 제품명 </dt>
 			    <dd>
 					<ul class="products_total_ul about">
-                        <li class="total"><a href="human_products_list.aspx?prod_initial=&catg_no2=<%=CatgNo2%>">전체</a></li>
-					    <li class="left"><a href="human_products_list.aspx?prod_initial=INIT_1&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_1")) {%> class="active" <%}%>>ㄱ</a></li>
-					    <li><a href="human_products_list.aspx?prod_initial=INIT_2&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_2")) {%> class="active" <%}%>>ㄴ</a></li>
-                        <li><a href="human_products_list.aspx?prod_initial=INIT_3&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_3")) {%> class="active" <%}%>>ㄷ</a></li>
-                        <li><a href="human_products_list.aspx?prod_initial=INIT_4&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_4")) {%> class="active" <%}%>>ㄹ</a></li>
-                        <li><a href="human_products_list.aspx?prod_initial=INIT_5&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_5")) {%> class="active" <%}%>>ㅁ</a></li>
-                        <li><a href="human_products_list.aspx?prod_initial=INIT_6&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_6")) {%> class="active" <%}%>>ㅂ</a></li>
-                        <li><a href="human_products_list.aspx?prod_initial=INIT_7&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_7")) {%> class="active" <%}%>>ㅅ</a></li>
-                        <li><a href="human_products_list.aspx?prod_initial=INIT_8&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_8")) {%> class="active" <%}%>>ㅇ</a></li>
-                        <li><a href="human_products_list.aspx?prod_initial=INIT_9&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_9")) {%> class="active" <%}%>>ㅈ</a></li>
-                        <li><a href="human_products_list.aspx?prod_initial=INIT_10&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_10")) {%> class="active" <%}%>>ㅊ</a></li>
-                        <li><a href="human_products_list.aspx?prod_initial=INIT_11&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_11")) {%> class="active" <%}%>>ㅋ</a></li>
-                        <li><a href="human_products_list.aspx?prod_initial=INIT_12&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_12")) {%> class="active" <%}%>>ㅌ</a></li>
-                        <li><a href="human_products_list.aspx?prod_initial=INIT_13&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_13")) {%> class="active" <%}%>>ㅍ</a></li>
-					    <li class="right"><a href="human_products_list.aspx?prod_initial=INIT_14&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_14")) {%> class="active" <%}%>>ㅎ</a></li>
+                        <li class="total"><a href="product_list.aspx?prod_initial=&category=<%=category%>">전체</a></li>
+					    <li class="left"><a href="product_list.aspx?prod_initial=INIT_1&category=<%=category%>"<%if (ProdInitial.Equals("INIT_1")) {%> class="active" <%}%>>ㄱ</a></li>
+					    <li><a href="product_list.aspx?menu=<%=menu%>&prod_initial=INIT_2&category=<%=category%>"<%if (ProdInitial.Equals("INIT_2")) {%> class="active" <%}%>>ㄴ</a></li>
+                        <li><a href="product_list.aspx?menu=<%=menu%>&prod_initial=INIT_3&category=<%=category%>"<%if (ProdInitial.Equals("INIT_3")) {%> class="active" <%}%>>ㄷ</a></li>
+                        <li><a href="product_list.aspx?menu=<%=menu%>&prod_initial=INIT_4&category=<%=category%>"<%if (ProdInitial.Equals("INIT_4")) {%> class="active" <%}%>>ㄹ</a></li>
+                        <li><a href="product_list.aspx?menu=<%=menu%>&prod_initial=INIT_5&category=<%=category%>"<%if (ProdInitial.Equals("INIT_5")) {%> class="active" <%}%>>ㅁ</a></li>
+                        <li><a href="product_list.aspx?menu=<%=menu%>&prod_initial=INIT_6&category=<%=category%>"<%if (ProdInitial.Equals("INIT_6")) {%> class="active" <%}%>>ㅂ</a></li>
+                        <li><a href="product_list.aspx?menu=<%=menu%>&prod_initial=INIT_7&category=<%=category%>"<%if (ProdInitial.Equals("INIT_7")) {%> class="active" <%}%>>ㅅ</a></li>
+                        <li><a href="product_list.aspx?menu=<%=menu%>&prod_initial=INIT_8&category=<%=category%>"<%if (ProdInitial.Equals("INIT_8")) {%> class="active" <%}%>>ㅇ</a></li>
+                        <li><a href="product_list.aspx?menu=<%=menu%>&prod_initial=INIT_9&category=<%=category%>"<%if (ProdInitial.Equals("INIT_9")) {%> class="active" <%}%>>ㅈ</a></li>
+                        <li><a href="product_list.aspx?menu=<%=menu%>&prod_initial=INIT_10&category=<%=category%>"<%if (ProdInitial.Equals("INIT_10")) {%> class="active" <%}%>>ㅊ</a></li>
+                        <li><a href="product_list.aspx?menu=<%=menu%>&prod_initial=INIT_11&category=<%=category%>"<%if (ProdInitial.Equals("INIT_11")) {%> class="active" <%}%>>ㅋ</a></li>
+                        <li><a href="product_list.aspx?menu=<%=menu%>&prod_initial=INIT_12&category=<%=category%>"<%if (ProdInitial.Equals("INIT_12")) {%> class="active" <%}%>>ㅌ</a></li>
+                        <li><a href="product_list.aspx?menu=<%=menu%>&prod_initial=INIT_13&category=<%=category%>"<%if (ProdInitial.Equals("INIT_13")) {%> class="active" <%}%>>ㅍ</a></li>
+					    <li class="right"><a href="product_list.aspx?menu=<%=menu%>&prod_initial=INIT_14&category=<%=category%>"<%if (ProdInitial.Equals("INIT_14")) {%> class="active" <%}%>>ㅎ</a></li>
 				    </ul>
 			    </dd>
 			</dl>
@@ -74,20 +74,49 @@
 		</asp:DropDownList>
 	</div>
 	<!--정렬 End-->
-
-	<nav class="tap_nav">
-		<h1 class="acc-hidden"> 제품소개 메뉴 </h1>
+	<%if (category.Substring(0,2) == "02"){ %>
+	<div class="tab_typeA">
+		<ul>					
+			<li class="first"><a href="?category=02" class="<%=(category == "02") ? "on" : "" %>">전체</a></li>
+			 <% 
+				
+				 if (CatgDs != null)
+				 {
+					 string _category = String.Empty;
+					 for (int i = 0; i < CatgDs.Tables[0].Rows.Count; i++)
+					 {
+						 _category = CatgDs.Tables[0].Rows[i]["CATE_CD"].ToString();
+						 if (_category.Length > 4) continue;
+			%>
+			<li><a href="?menu=<%=menu%>&category=<%=CatgDs.Tables[0].Rows[i]["CATE_CD"]%>" class="<%=(_category.Substring(0, 4) == category.Substring(0,cutLimit)) ? "on" : "" %>"><%=CatgDs.Tables[0].Rows[i]["CATE_NAME"]%></a></li>
+			<% 
+					}
+				}
+			%>
+		
+		</ul>
+	</div>	
+	<%} %>
+	<nav class="<%=(category.Substring(0,2) == "02") ? "tap_nav1" : "tap_nav" %>">
+		<h1 class="acc-hidden"> 제품소개 메뉴</h1>
 		<ul class="clear">
             <% 
-                string catgCss = "";
-                
-                if (CatgDs != null)
-                {
-                    for (int i = 0; i < CatgDs.Tables[0].Rows.Count; i++)
-                    {
-                        catgCss = (CatgDs.Tables[0].Rows[i]["CATG_NO"].ToString().Equals(CatgNo2) ? " class='onhover'" : "");
+				string catgCss = "";
+				
+				if (CatgDs != null)
+				{
+					string _category = String.Empty;
+					for (int i = 0; i < CatgDs.Tables[0].Rows.Count; i++)
+					{
+
+						_category = CatgDs.Tables[0].Rows[i]["CATE_CD"].ToString();
+						if (category.Substring(0,2) == "02") {
+							if (category.Length < 4 || _category.Length <= 4 || _category.Substring(0,cutLimit) != category.Substring(0,cutLimit)) continue;	
+						}
+
+
             %>
-			<li><a href="human_products_list.aspx?prod_initial=<%=ProdInitial%>&catg_no2=<%=CatgDs.Tables[0].Rows[i]["CATG_NO"]%>"<%=catgCss%>><%=CatgDs.Tables[0].Rows[i]["PROD_CATG_NM"]%> (<%=CatgDs.Tables[0].Rows[i]["PROD_CATG_CNT"]%>) </a></li>
+			<li><a href="product_list.aspx?menu=<%=menu%>prod_initial=<%=ProdInitial%>&category=<%=CatgDs.Tables[0].Rows[i]["CATE_CD"]%>"<%=catgCss%>><%=CatgDs.Tables[0].Rows[i]["CATE_NAME"]%> (<%=CatgDs.Tables[0].Rows[i]["CNT"]%>) </a></li>
             <% 
                     }
                 }
@@ -109,7 +138,7 @@
                  
 		<article class="list_Item about">
 			
-			<a href="/products/human_products_view.aspx?prod_cd=<%=GetData(i, "PROD_CD") %>">
+			<a href="/products/product_view.aspx?menu=<%=menu%>&prod_cd=<%=GetData(i, "PROD_CD") %>&category=<%=category%>">
 			    <% 
                     if (GetData(i, "PROD_IMG1").Equals("") == false)
                     {

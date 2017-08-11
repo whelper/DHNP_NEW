@@ -1,4 +1,5 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Products_Sub.master.cs" Inherits="HomePage.Products_Sub1" %>
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Products_Sub.master.cs" Inherits="HomePage.Products_Sub1" %>
 <!DOCTYPE html>
 <html lang="ko-KR">
 <head>
@@ -81,14 +82,14 @@
 							<li><a href="/intro/location.aspx"> 오시는길 </a></li>
 						</ul>
 					</li>
-					<li><a href="/products/human_products_list.aspx" class="gnb_02<%=GetGnbIndicator("products")%>">제품</a>
+					<li><a href="/products/product_list.aspx?category=01" class="gnb_02<%=GetGnbIndicator("products")%>">제품</a>
 						<ul  class="ly" style="display:none;">
-							<li><a href="/products/human_products_list.aspx">인체 의약품</a></li>
-							<li><a href="/products/animal_products_list.aspx">동물 의약품</a></li>
-							<li><a href="/products/bio_badge_list.aspx">바이오 의약품</a></li>
-							<li><a href="/products/global_human_list.aspx">수출 의약품</a></li>
-							<li><a href="/products/health_products_list.aspx">건강기능식품</a></li>
-	                        <li><a href="/products/medical_list.aspx">의료기기</a></li>
+							<li><a href="/products/product_list.aspx?category=01">인체 의약품</a></li>
+							<li><a href="/products/product_list.aspx?category=02">동물 의약품</a></li>
+							<li><a href="/products/product_list.aspx?category=03">바이오 의약품</a></li>
+							<li><a href="/products/product_list.aspx?category=04">수출 의약품</a></li>
+							<li><a href="/products/product_list.aspx?category=05">건강기능식품</a></li>
+	                        <li><a href="/products/product_list.aspx?category=06">의료기기</a></li>
 						</ul>
 					</li>
 					<li><a href="/pr/news_list.aspx" class="gnb_03<%=GetGnbIndicator("pr")%>">홍보</a>
@@ -142,42 +143,41 @@
 
 			<h1 class="snb_title t02">  제품 </h1>      
 			<ul>
-				<li> <a href="/products/product_new_list.aspx?category=01"<%=GetLnbIndicatorGroup("prod_group_1")%>>인체 의약품</a> 
-					<ul class="sy"<%=GetLnbIndicatorDisplay("prod_group_1")%>>
-						<li><a href="/products/product_new_list.aspx?category=01"<%=GetLnbIndicator("prod_1")%>>신제품</a> </li>
-						<li><a href="/products/product_list.aspx?category=01"<%=GetLnbIndicator("prod_2")%>>제품소개</a></li>
-						<li><a href="/products/human_change_list.aspx"<%=GetLnbIndicator("prod_3")%>>제품변경정보</a></li>
+				<li> <a href="/products/product_list.aspx?category=01&menu=0101"<%=GetLnbIndicatorGroup("01")%>>인체 의약품</a> 
+					<ul class="sy"<%=GetLnbIndicatorDisplay("01")%>>
+						<li><a href="/products/product_list.aspx?category=01&menu=0101"<%=GetLnbIndicator("0101")%>>제품소개</a></li>
+						<li><a href="/products/product_new_list.aspx?category=01&menu=0102"<%=GetLnbIndicator("0102")%>>신제품</a> </li>
+						<li><a href="/products/human_change_list.aspx?menu=0103"<%=GetLnbIndicator("0103")%>>제품변경정보</a></li>
 					</ul> 
 				</li>
-				<li> <a href="/products/product_new_list.aspx?category=02"<%=GetLnbIndicatorGroup("prod_group_2")%>>동물 의약품</a>
-					<ul class="sy"<%=GetLnbIndicatorDisplay("prod_group_2")%>>
-						<li><a href="/products/product_new_list.aspx?category=02"<%=GetLnbIndicator("prod_4")%>>신제품</a></li>
-						<li><a href="/products/product_list.aspx?category=02"<%=GetLnbIndicator("prod_5")%>>제품소개</a></li>
-						<li><a href="/products/animal_delivery_list.aspx"<%=GetLnbIndicator("prod_6")%>>관납제품</a></li>
+				<li> <a href="/products/product_list.aspx?category=02&menu=0201"<%=GetLnbIndicatorGroup("02")%>>동물 의약품</a>
+					<ul class="sy"<%=GetLnbIndicatorDisplay("02")%>>
+						<li><a href="/products/product_list.aspx?category=02&menu=0201"<%=GetLnbIndicator("0201")%>>제품소개</a></li>
+						<li><a href="/products/product_new_list.aspx?category=02&menu=0202"<%=GetLnbIndicator("0202")%>>신제품</a></li>
+						<li><a href="/products/product_list.aspx?category=0207&menu=0203"<%=GetLnbIndicator("0203")%>>관납제품</a></li>
 					</ul> 
 				</li>
-				<li> <a href="/products/product_list.aspx?category=03"<%=GetLnbIndicatorGroup("prod_group_3")%>>바이오 공정소재</a> 
-					<ul class="sy"<%=GetLnbIndicatorDisplay("prod_group_3")%>>
-					    <li><a href="/products/product_list.aspx?category=03"<%=GetLnbIndicator("prod_7")%>>무혈청배지</a></li>
-					    <li><a href="/products/product_list.aspx?category=03"<%=GetLnbIndicator("prod_8")%>>레진</a></li>
-					    <li><a href="/products/bio_catalog_list.aspx"<%=GetLnbIndicator("prod_9")%>> 카탈로그 제품  </a></li>
+				<li> <a href="/products/product_list.aspx?category=03&menu=0301"<%=GetLnbIndicatorGroup("03")%>>바이오의약품</a> 
+					<ul class="sy"<%=GetLnbIndicatorDisplay("03")%>>
+					    <li><a href="/products/product_list.aspx?category=03&menu=0301"<%=GetLnbIndicator("0301")%>>제품군</a></li>
+					    <li><a href="/products/bio_rnd.aspx?&menu=0302"<%=GetLnbIndicator("0302")%>>연구분야</a></li>
 					</ul> 
 			      </li>
-				<li> <a href="/products/product_list.aspx?category=04"<%=GetLnbIndicatorGroup("prod_group_4")%>>수출 의약품</a> 
-			            <ul class="sy"<%=GetLnbIndicatorDisplay("prod_group_4")%>>
-			                <li><a href="/products/product_list.aspx?category=04"<%=GetLnbIndicator("prod_10")%>> 인체 의약품</a></li>
-			                <li><a href="/products/product_list.aspx?category=05"<%=GetLnbIndicator("prod_11")%>> 동물 의약품</a></li>
-                             <li><a href="/products/product_list.aspx?category=06"<%=GetLnbIndicator("prod_15")%>> 기타</a></li>
+				<li> <a href="/products/product_list.aspx?category=04&menu=0401"<%=GetLnbIndicatorGroup("04")%>>수출 의약품</a> 
+			            <ul class="sy"<%=GetLnbIndicatorDisplay("04")%>>
+			                <li><a href="/products/product_list.aspx?category=04&menu=0401"<%=GetLnbIndicator("0401")%>> 인체 의약품</a></li>
+			                <li><a href="/products/product_list.aspx?category=05&menu=0402"<%=GetLnbIndicator("0402")%>> 동물 의약품</a></li>
+                             <li><a href="/products/product_list.aspx?category=06&menu=0403"<%=GetLnbIndicator("0403")%>> 기타</a></li>
 			            </ul> 
 				</li>
-				<li> <a href="/products/product_list.aspx?category=07"<%=GetLnbIndicatorGroup("prod_group_5")%>>건강기능식품</a> 
-					<ul class="sy"<%=GetLnbIndicatorDisplay("prod_group_5")%>>
-						<li><a href="/products/product_list.aspx?category=07"<%=GetLnbIndicator("prod_12")%>>제품소개</a></li>
+				<li> <a href="/products/product_list.aspx?category=07&menu=0501"<%=GetLnbIndicatorGroup("05")%>>건강기능식품</a> 
+					<ul class="sy"<%=GetLnbIndicatorDisplay("05")%>>
+						<li><a href="/products/product_list.aspx?category=07&menu=0501"<%=GetLnbIndicator("0501")%>>제품소개</a></li>
 					</ul> 
 				</li>
-				<li> <a href="/products/product_list.aspx?category=08"<%=GetLnbIndicatorGroup("prod_group_6")%>>의료기기</a> 
-					<ul class="sy"<%=GetLnbIndicatorDisplay("prod_group_6")%>>
-						<li><a href="/products/product_list.aspx?category=08"<%=GetLnbIndicator("prod_13")%>>의료기기</a></li>
+				<li> <a href="/products/product_list.aspx?category=08&menu=0601"<%=GetLnbIndicatorGroup("06")%>>의료기기</a> 
+					<ul class="sy"<%=GetLnbIndicatorDisplay("06")%>>
+						<li><a href="/products/product_list.aspx?category=08&menu=0601"<%=GetLnbIndicator("0601")%>>의료기기</a></li>
 					</ul> 
 				</li>
 			</ul>
