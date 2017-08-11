@@ -110,22 +110,14 @@
  						<a href="/pr/pr_new_list.aspx" ><span><%=GetData(5, 0, "TTL")%></span></a>	 
  						<a href="/pr/pr_new_list.aspx"><span class="more_arrow">more</span></a>	
  					</li>
- 					<li>
-                        <% 
-                            if (GetDataTableCount(6) > 0)
-                            {
-                                string css = GetData(6, 0, "SIGN").Equals("2") ? "change_01 up" : (GetData(6, 0, "SIGN").Equals("5") ? "change_01 down" : "change_01 stand");
-                                string s_css = GetData(6, 0, "SIGN").Equals("2") ? "change_02 up" : (GetData(6, 0, "SIGN").Equals("5") ? "change_02 down" : "change_02 stand");
-                                string sign = GetData(6, 0, "SIGN").Equals("2") ? "+" : "";
-                        %>
+ 					<li>                      
+
                         <strong>주가정보</strong> 
- 						<strong class="<%=css%>"><%=GetData(6, 0, "SIGN_NM")%></strong>
- 						<strong class="won"><%=GetDataComma(6, 0, "PRICE")%></strong>
- 						<span class="<%=s_css%>"><%=GetDataComma(6, 0, "CHANGE")%></span>
- 						<span class="gray"><%=sign%><%=GetData(6, 0, "DIFF")%>%</span>
-                        <% 
-                            }
-                        %>
+                        <strong class="change_01 <%=NvCss %>"><%=Nv %></strong>
+                        <strong class="won"><%=Nv %></strong>
+                        <span class="change_02 <%=CvCss %>"><%=Cv %></span>
+                        <span class="gray"><%=CrSign %><%=Cr %>% </span>
+                
  					</li>
  				</ul>	                     
 			</article>
@@ -134,9 +126,17 @@
 				<h1 class="acc-hidden"> <span> 고객센터 </span> </h1>	
  				<ul>
  					<li><a href="javascript:alert('모바일웹에서는 지원하실 수 없습니다.');"><img src="/common/images/indexCus_icon_01.png" alt="입사지원 " /></a></li>
- 					<li><a href="/cust/inquire_list.aspx"> <img src="/common/images/indexCus_icon_02.png" alt="고객문의 " /></a></li>
+ 					<li><img src="/common/images/indexCus_icon_02.png" alt="고객전화 " /></li>
  				</ul>                   
-			</article> <!-- // products_go  -->
+			</article>
+			
+			<article class="customer_form">
+				<h1 class="acc-hidden"> <span> 고객문의 </span> </h1>	
+ 				<ul>
+ 					<li><a href="/cust/inquire_list.aspx"><img src="/common/images/indexCus_icon_03.jpg" alt="고객문의 " /></a></li>
+ 				</ul>                   
+			</article>
+			 <!-- // products_go  -->
 		</div> <!-- // content  -->
 		
 		<footer class="footer main">

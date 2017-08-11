@@ -20,8 +20,8 @@ namespace HomePage.products
         private const int PAGE_SIZE = 10;
 
         private DataSet catgDs = null;
-
-        protected void Page_Load(object sender, EventArgs e)
+		CommonLib.Web.CCommonCode code = new CommonLib.Web.CCommonCode();
+		protected void Page_Load(object sender, EventArgs e)
         {
             SearchData();
 
@@ -38,7 +38,7 @@ namespace HomePage.products
             StringBuilder param = new StringBuilder();
             param.Append(nowPageNo.Value);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(LANG_CD);
-            param.Append(CConst.DB_PARAM_DELIMITER).Append(CATG_NO1);
+            param.Append(CConst.DB_PARAM_DELIMITER).Append(category);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(CatgNo2);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(PROD_TYPE_CD);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(CStringUtil.GetInitial(LANG_CD, "S", ProdInitial));
@@ -70,14 +70,15 @@ namespace HomePage.products
         {
             StringBuilder param = new StringBuilder();
             param.Append(LANG_CD);
-            param.Append(CConst.DB_PARAM_DELIMITER).Append(CATG_NO1);
-            param.Append(CConst.DB_PARAM_DELIMITER).Append(PROD_TYPE_CD);
+            param.Append(CConst.DB_PARAM_DELIMITER).Append(category);
+           /* param.Append(CConst.DB_PARAM_DELIMITER).Append(PROD_TYPE_CD);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(CStringUtil.GetInitial(LANG_CD, "S", ProdInitial));
             param.Append(CConst.DB_PARAM_DELIMITER).Append(CStringUtil.GetInitial(LANG_CD, "E", ProdInitial));
-            param.Append(CConst.DB_PARAM_DELIMITER).Append(search_text.Value);
+            param.Append(CConst.DB_PARAM_DELIMITER).Append(search_text.Value);*/
 
-            catgDs = GetDataSet(1100, param.ToString());
-        }
+			//catgDs = GetDataSet(1100, param.ToString());
+			catgDs = GetDataSet(1106, param.ToString());
+		}
 
         #region GET-SET
 
@@ -96,6 +97,16 @@ namespace HomePage.products
             }
         }
 
+		protected string category
+		{
+			get { return (Request["category"] != null) ? Request["category"] : "01"; }
+		}
+
+		protected string categoryName
+		{
+			get { return code.getCategoryName(category.Substring(0,2)); }
+		}
+
         protected string CatgNo2
         {
             get
@@ -111,6 +122,14 @@ namespace HomePage.products
             }
         }
 
+		/// <summary>
+		/// 사용자 화면 컨트롤을 위한 카테고리 자릿수 제한
+		/// </summary>
+		protected int cutLimit 
+		{
+			get { return (category.Length > 4) ? category.Length - 2 : category.Length; }
+		}
+
         protected DataSet CatgDs
         {
             get
@@ -123,21 +142,26 @@ namespace HomePage.products
         {
             get
             {
-				return getCatalogURL(CATG_NO1,LANG_CD);
+				return getCatalogURL(category,LANG_CD);
 			}
         }
 
-        #endregion
+		protected string menu
+		{
+			get { return (Request["menu"] != null) ? Request["menu"] : "0101"; }
+		}
 
-        #region 이벤트 메소드
+		#endregion
 
-        /// <summary>
-        /// 조회 버튼 클릭
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void btnSearch_Click(object sender, EventArgs e)
+		#region 이벤트 메소드
+
+		/// <summary>
+		/// 조회 버튼 클릭
+		/// 
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		protected void btnSearch_Click(object sender, EventArgs e)
         {
             // 페이지는 1로 초기화
             nowPageNo.Value = "1";

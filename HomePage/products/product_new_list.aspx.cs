@@ -20,8 +20,8 @@ namespace HomePage.products
         private const int PAGE_SIZE = 8;
 
         private DataSet catgDs = null;
-
-        protected void Page_Load(object sender, EventArgs e)
+		CommonLib.Web.CCommonCode code = new CommonLib.Web.CCommonCode();
+		protected void Page_Load(object sender, EventArgs e)
         {
 			SearchData();
 
@@ -38,7 +38,7 @@ namespace HomePage.products
             StringBuilder param = new StringBuilder();
             param.Append(nowPageNo.Value);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(LANG_CD);
-            param.Append(CConst.DB_PARAM_DELIMITER).Append(CATG_NO1);
+            param.Append(CConst.DB_PARAM_DELIMITER).Append(category);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(CatgNo2);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(PROD_TYPE_CD);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(CStringUtil.GetInitial(LANG_CD, "S", ProdInitial));
@@ -96,7 +96,17 @@ namespace HomePage.products
             }
         }
 
-        protected string CatgNo2
+		protected string category
+		{
+			get { return Request["category"]; }
+		}
+
+		protected string categoryName
+		{
+			get { return code.getCategoryName(category.Substring(0, 2)); }
+		}
+
+		protected string CatgNo2
         {
             get
             {
@@ -127,17 +137,22 @@ namespace HomePage.products
 			}
         }
 
-        #endregion
+		protected string menu
+		{
+			get { return (Request["menu"] != null) ? Request["menu"] : "0101"; }
+		}
 
-        #region 이벤트 메소드
+		#endregion
 
-        /// <summary>
-        /// 조회 버튼 클릭
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void btnSearch_Click(object sender, EventArgs e)
+		#region 이벤트 메소드
+
+		/// <summary>
+		/// 조회 버튼 클릭
+		/// 
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		protected void btnSearch_Click(object sender, EventArgs e)
         {   
             // 페이지는 1로 초기화
             nowPageNo.Value = "1";

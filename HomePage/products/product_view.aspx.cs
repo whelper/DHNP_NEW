@@ -32,7 +32,9 @@ namespace HomePage.products
             param.Append(CConst.DB_PARAM_DELIMITER).Append(ProdCd);
 
             SetDataList(1103, param.ToString());
-        }
+			
+
+		}
 
         #region GET-SET
         protected string ProdCd
@@ -43,11 +45,19 @@ namespace HomePage.products
             }
         }
 
-        protected string RepCatal
+		protected string category
+		{
+			get
+			{
+				return Request["category"];
+			}
+		}
+
+		protected string RepCatal
         {
             get
             {
-				return getCatalogURL(CATG_NO1, LANG_CD);
+				return getCatalogURL(category, LANG_CD);
 			}
         }
         #endregion

@@ -46,7 +46,7 @@ document.write(' 			</li>   ');
 document.write(' 			<li> <a href="#"><span class="gnb_i_06">  고객 </span></a>    ');
 document.write(' 				<ul  class="ly" style="display:none;">   ');
 document.write(' 					<li><a href="' + root + '/cust/inquire_list.aspx"> 제품문의 </a></li>   ');
-document.write(' 					<li><a href="' + root + '/cust/with_list.aspx"> 제휴제안 </a></li>   ');
+//document.write(' 					<li><a href="' + root + '/cust/with_list.aspx"> 제휴제안 </a></li>   ');
 document.write(' 				</ul>   ');
 document.write(' 			</li>   ');
 document.write(' 		</ul>   ');

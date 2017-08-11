@@ -288,3 +288,63 @@ border-bottom-left-radius: 0; border-top-left-radius: 0;}
 .table_style_row01 .file .form-control { padding: 6px 0px 6px 5px;}
 .table_style_row01 .file input {margin:0px;}
 .wrap_prod_sorting {text-align:right;margin-top:20px}
+
+/****************************************************************
+ # 2017-08-04 추가
+****************************************************************/
+
+.tap_nav1 {
+	padding: 20px 0px 0px 17px;
+	border-bottom-color: rgb(230, 230, 230);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+	.tap_nav1 li {
+		float: left;
+	}
+
+	.tap_nav1 a {
+		margin: 0px 5px 20px 0px;
+		width: 160px;
+		font-weight: bold;
+		display: block;
+	}
+
+		.tap_nav1 a.onhover {
+			color: rgb(104, 106, 113);
+		}
+
+
+.tab_typeA {
+	border-top: 1px solid #dadada;
+	border-right: 1px solid #dadada;
+	overflow: hidden;
+	margin-top: 20px;
+}
+
+	.tab_typeA li {
+		float: left;
+		border-bottom: 2px solid #04b25a;
+		border-left: 1px solid #dadada;
+	}
+
+		.tab_typeA li a {
+			display: inline-block;
+			text-align: center;
+			width: 86px;
+			height: 50px;
+			line-height: 50px;
+			font-size: 14px;
+			color: #000;
+			background: #fff;
+		}
+
+		.tab_typeA li.first a {
+			width: 85px;
+		}
+
+		.tab_typeA li a:hover, .tab_typeA li a.on {
+			color: #fff;
+			background: #04b25a;
+		}

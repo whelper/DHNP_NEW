@@ -57,25 +57,46 @@
 				%>
 				<span><img src="<%=s%>" width="56" height="56" alt="" onerror="this.src='/common/images/products/new_no.jpg'"></span>
 				<%} %>
-				 <!--<span><img src="<%=img1%>" width="56" height="56" alt="" ></span>
-		 		<span><img src="<%=img2%>" width="56" height="56" alt="" ></span>
-		 		<span><img src="<%=img3%>" width="56" height="56" alt="" ></span>
-		 		<span><img src="<%=img4%>" width="56" height="56" alt="" ></span>
-		 		<span><img src="<%=img5%>"  width="56" height="56" alt=""></span>--> 
 		 	</div>
 	 	</figure>
 
 	 	<article class="view_text">
 	  		<h1><%=GetData(0, "PROD_NM") %></h1>
 		  	<ul class="view_text_ul">
+				<%if (!GetData(0, "PROD_DIV_NM").Equals("")){ %>
 	  			<li><strong>구분</strong><em><%=GetData(0, "PROD_DIV_NM")%></em></li>
+				<%} %>
+				<%if (!GetData(0, "CATG_NO").Equals("CATG_NM2")){ %>
 	  			<li><strong>분류</strong><em><%=GetData(0, "CATG_NM2") %></em></li>
+				<%} %>
+                <%if (!GetData(0, "CATG_NO").Equals("0")){ %>
 				<li><strong>분류번호</strong><em><%=GetData(0, "CATG_NO")%></em></li>
-				 <li><strong>주요성분</strong><em><%=GetData(0, "INGREDI")%></em></li>
+	  			<%} %>
+				<%if (!GetData(0, "COMPT").Equals("")){ %>
+				<li><strong>구성</strong><em><%=GetData(0, "COMPT")%></em></li>
+                <%} %>
+				<%if (!GetData(0, "INGREDI").Equals("")){ %>
+				<li><strong>주요성분</strong><em><%=GetData(0, "INGREDI")%></em></li>
+	  			<%} %>
+				<%if (!GetData(0, "TEMPER").Equals("")){ %>	
 	  			<li><strong>성상</strong><em><%=GetData(0, "TEMPER")%></em></li>
-	  			<li><strong>보험코드</strong><em><%=GetData(0, "INSU_CD")%></em></li>
-                <li><strong>약가</strong><em><%=GetData(0, "PMEDI")%></em></li>
+	  			<%} %>
+				<%if (!GetData(0, "INSU_CD").Equals("")){ %>
+				<li><strong>보험코드</strong><em><%=GetData(0, "INSU_CD")%></em></li>
+                <%} %>
+                <%if (!GetData(0, "PMEDI").Equals("")){ %>
+				<li><strong>약가</strong><em><%=GetData(0, "PMEDI")%></em></li>
+	  			<%} %>
+				<%if (!GetData(0, "PACK_MEA").Equals("")){ %>
                 <li><strong>포장단위</strong><em><%=GetData(0, "PACK_MEA")%></em></li>
+				<%} %>
+				<%if (!GetData(0, "PROD_INFO").Equals("")){ %>
+				<li><strong>정보</strong><em><%=GetData(0, "PROD_INFO")%></em></li>  
+	  			<%} %>
+				<%if (!GetData(0, "SUMR").Equals("")){ %>
+				<li><strong>개요</strong><em><%=GetData(0, "SUMR")%></em></li>
+				<%} %>
+			
 	  		</ul>
 	  		<p class="btn_target"> 
                 <% 

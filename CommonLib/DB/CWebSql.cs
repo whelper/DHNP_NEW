@@ -257,8 +257,18 @@ namespace CommonLib.DB
                 // 마지막 인자값 항상 확인(파라미터 총수 임)
                 ds = command.ExecuteDataSetSecure("USP_HOMEPAGE_1105_PROD_CATAL_LIST_S", variable, m_value, sqldbtype, 2);
                 break;
+				case 1106:// 제품 서브 카테고리
+				variable[0] = "@LANG_CD";
+				variable[1] = "@CATEGORY";
 
-                case 1111: // 뉴스 리스트 카운트
+				sqldbtype[0] = SqlDbType.VarChar;
+				sqldbtype[1] = SqlDbType.VarChar;
+					
+				// 마지막 인자값 항상 확인(파라미터 총수 임)
+				ds = command.ExecuteDataSetSecure("USP_HOMEPAGE_1106_PROD_CATEGORY_LIST_S", variable, m_value, sqldbtype, 2);
+				break;
+
+				case 1111: // 뉴스 리스트 카운트
                 variable[0] = "@NOW_PAGE";
                 variable[1] = "@SEARCH_TYPE";
                 variable[2] = "@SEARCH_CONT";
@@ -1459,7 +1469,7 @@ namespace CommonLib.DB
                     variable[0] = "@CATG_NO";
 					variable[1] = "@LANG_CD";
 
-					sqldbtype[0] = SqlDbType.Int;
+					sqldbtype[0] = SqlDbType.VarChar;
 					sqldbtype[1] = SqlDbType.VarChar;
 
 					ds = command.ExecuteDataSetSecure("USP_ADMIN_3231_PROD_REP_CATAL_S", variable, m_value, sqldbtype, 2);

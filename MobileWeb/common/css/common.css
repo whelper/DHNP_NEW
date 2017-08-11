@@ -126,6 +126,14 @@ input.btn_gnbSearch { width:37px; height:35px; display:block; text-indent:-9999e
 .customer_go { overflow: hidden; border-top:1px solid #e5e5e5;  border-bottom:1px solid #e5e5e5; background-color:#fff; }
 .customer_go li { width: 49%; /* 198/600 */ float:left; text-align: center; border-left:1px solid #e5e5e5; }
 .customer_go li a {   display: block; text-align: center; margin: auto;  }
+
+/* 고객문의  */
+.customer_form { overflow: hidden; border-top:1px solid #e5e5e5;  border-bottom:1px solid #e5e5e5; background-color:#fff; }
+.customer_form li { width: 100%; /* 198/600 */ float:left; text-align: center; border-left:1px solid #e5e5e5; }
+.customer_form li a {   display: block; text-align: center; margin: auto;  }
+
+
+
 /*********************************************
 *  footer   z-index:1000; 
 *********************************************/
