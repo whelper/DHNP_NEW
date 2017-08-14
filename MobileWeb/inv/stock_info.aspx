@@ -20,9 +20,8 @@
 	<!--   width:100% -->
 	<section class="container">
 		<h1 class="acc-hidden">주식발행</h1>
-		<ul class="tap_3depth mB10">
+		<ul class="tap_2depth mB10">
 			<li> <a href="stock_info.aspx" class="onhover">주식발행</a> </li>
-			<li> <a href="stockholder.aspx">주주구성</a></li>
 			<li> <a href="treasury_stock.aspx">자기주식</a></li>
 		</ul>
 		<!--   content -->

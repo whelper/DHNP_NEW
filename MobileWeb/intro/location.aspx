@@ -60,6 +60,11 @@
 					        <p><span>▶</span>경기도 용인시 기흥구 흥덕1로101(영덕동) 스타프라자 5층 504호</p>
 					        <p><span>▶</span><em class="pR20">Tel :  031-461-0973~4 </em><em>Fax : 031-461-0972</em></p>
 				        </li>
+						<li>
+					        <h4>인천 지점</h4><!--<a href="javascript:popLocation(37.274813, 127.073696);" class="map_view">약도보기</a>-->
+					        <p><span>▶</span>인천광역시 계양구 작전동 901-3 세종팰리스 8층 802호</p>
+					        <p><span>▶</span><em class="pR20">Tel :  032-276-0021 </em><em>Fax : 070-4009-1020</em></p>
+				        </li>
 				        <li>
 					        <h4>부산 지점</h4><!--<a href="javascript:popLocation(35.146556, 129.111926);" class="map_view">약도보기</a>-->
 					        <p><span>▶</span>부산시 수영구 광남로 44 (남천동)</p>
@@ -67,7 +72,7 @@
 				        </li>
 				        <li>
 					        <h4>대구 지점</h4><!--<a href="javascript:popLocation(35.921066, 128.598935);" class="map_view">약도보기</a>-->
-					        <p><span>▶</span>대구시 북구 호국로 207  제일빌딩 3층</p>
+					        <p><span>▶</span>대구광역시 동구 팔공로47길 46(봉무동 1548-8) 캐슬빌딩 305호</p>
 					        <p><span>▶</span><em class="pR20">Tel : 053-951-5614</em><em>Fax : 053-951-5615</em></p>
 				        </li>
 				        <li>

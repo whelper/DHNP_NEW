@@ -30,6 +30,50 @@
 			<div class="leave content_01">
 				<h2 class="title_big">전략적 이노베이션</h2>
 				<div class="list pT18">
+					<h3>2017년</h3>
+					<dl>
+						<dt>03/28</dt>
+						<dd>BNC KOREA 필러 제품(큐젤 등) 국내 독점 판매<br>
+						    계약 체결</dd>
+						<dt>03/01</dt>
+						<dd>국내 최초 젖소 유방염 다가 백신 <br>
+						   '히프라 스타박' 출시</dd>
+					</dl>	
+				</div>
+				<div class="list">
+					<h3>2016년</h3>
+					<dl>
+						<dt>10/17</dt>
+						<dd>자가섬유아세포치료제 "큐어스킨" 독점 공급<br>
+						    계약 체결</dd>
+						<dt>10/01</dt>
+						<dd>조사료 신규사업 추진</dd>
+						<dt>09/13</dt>
+						<dd>섬유아세포 분리방법 특허 출원</dd>
+						<dt>08/29</dt>
+						<dd>미슬토 주사제 "이스카도" 국내 독점 판매<br>
+						    계약 체결</dd>
+						<dt>05/01</dt>
+						<dd>PPC제제, 일본 수출 계약 체결</dd>
+						<dt>04/01</dt>
+						<dd>수출의약품(제품명: Trimedat), <br>
+						    Russian Pharma Awards수상</dd>
+					</dl>	
+				</div>
+				<div class="list">
+					<h3>2015년</h3>
+					<dl>
+						<dt>12/15</dt>
+						<dd>서울대학교와 줄기세포 공동연구<br>
+						    협약 체결</dd>
+						<dt>12/05</dt>
+						<dd>'천만불 수출탑' 수상</dd>
+						<dt>12/01</dt>
+						<dd>루치온 스킨케어 화장품, <br>
+						    중국 수출 계약 체결</dd>
+					</dl>	
+				</div>
+				<div class="list">
 					<h3>2014년</h3>
 					<dl>
 						<dt>04/02</dt>

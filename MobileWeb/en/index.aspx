@@ -107,25 +107,15 @@
 				<h1 class="acc-hidden">새소식과 주가정보</h1>	
  				<ul>
  					<li><strong>새소식 </strong>
- 						<span><%=GetData(5, 0, "TTL")%></span>
+ 						<span><%=GetData(3, 0, "TTL")%></span>
  						<span class="more_arrow">more</span>
  					</li>
  					<li>
-                        <% 
-                            if (GetDataTableCount(6) > 0)
-                            {
-                                string css = GetData(6, 0, "SIGN").Equals("2") ? "change_01 up" : (GetData(6, 0, "SIGN").Equals("5") ? "change_01 down" : "change_01 stand");
-                                string s_css = GetData(6, 0, "SIGN").Equals("2") ? "change_02 up" : (GetData(6, 0, "SIGN").Equals("5") ? "change_02 down" : "change_02 stand");
-                                string sign = GetData(6, 0, "SIGN").Equals("2") ? "+" : "";
-                        %>
                         <strong>주가정보</strong> 
- 						<strong class="<%=css%>"><%=GetData(6, 0, "SIGN_NM")%></strong>
- 						<strong class="won"><%=GetDataComma(6, 0, "PRICE")%></strong>
- 						<span class="<%=s_css%>"><%=GetDataComma(6, 0, "CHANGE")%></span>
- 						<span class="gray"><%=sign%><%=GetData(6, 0, "DIFF")%>%</span>
-                        <% 
-                            }
-                        %>
+                        <strong class="change_01 <%=NvCss %>"><%=Nv %></strong>
+                        <strong class="won"><%=Nv %></strong>
+                        <span class="change_02 <%=CvCss %>"><%=Cv %></span>
+                        <span class="gray"><%=CrSign %><%=Cr %>% </span>
  					</li>
  				</ul>	                     
 			</article>

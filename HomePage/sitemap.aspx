@@ -66,7 +66,7 @@
 						<ul  class="ly" style="display:none;">
 							<li><a href="/products/human_new_list.aspx"> 인체 의약품 </a></li>
 							<li><a href="/products/animal_new_list.aspx"> 동물 의약품 </a></li>
-							<li><a href="/products/bio_badge_list.aspx"> 바이오 공정소재  </a></li>
+							<li><a href="/products/bio_badge_list.aspx"> 바이오 의약품  </a></li>
 							<li><a href="/products/global_human_list.aspx" > 수출 의약품 </a></li>
 							<li><a href="/products/health_products_list.aspx"> 건강기능식품  </a></li>
                         	<li><a href="../products/medical_list.aspx"> 의료기기  </a></li>
@@ -128,29 +128,29 @@
 			 		<ul>
 			 			<li><a href="/products/human_new_list.aspx"> 인체 의약품 </a>
 							<ul>
-								<li><a href="/products/human_new_list.aspx"> 신제품 </a></li>
 								<li><a href="/products/human_products_list.aspx"> 제품소개 </a></li>
+								<li><a href="/products/human_new_list.aspx"> 신제품 </a></li>
 								<li><a href="/products/human_change_list.aspx"> 제품변경정보 </a></li>
 							</ul>
 			 			</li>
 			 			<li><a href="/products/animal_new_list.aspx">동물 의약품</a>
 							<ul>
-								<li><a href="/products/animal_new_list.aspx">신제품</a></li>
 								<li><a href="/products/animal_products_list.aspx">제품소개</a></li>
+								<li><a href="/products/animal_new_list.aspx">신제품</a></li>
 								<li><a href="/products/animal_delivery_list.aspx">관납제품 </a></li>
 							</ul>
 			 			</li>
-			 			<li><a href="/products/bio_badge_list.aspx">바이오 공정소재 </a>
+			 			<li><a href="/products/bio_badge_list.aspx">바이오 의약품 </a>
 							<ul>
-								<li><a href="/products/bio_badge_list.aspx">무혈청배지</a></li>
-								<li><a href="/products/bio_resin_list.aspx">레진</a> </li>
-								<li><a href="/products/bio_catalog_list.aspx">카탈로그 제품</a> </li>
+								<li><a href="/products/bio_badge_list.aspx">제품군</a></li>
+								<li><a href="/products/bio_rnd.aspx">연구분야</a> </li>
 							</ul>
 			 			</li>
 			 			<li><a href="/products/global_human_list.aspx">수출 의약품</a>
 							<ul>
 								<li><a href="/products/global_human_list.aspx">인체 의약품</a></li>
 								<li><a href="/products/global_animal_list.aspx">동물 의약품</a></li>
+								<li><a href="/products/global_etc_list.aspx">기타</a></li>								
 							</ul>
 			 			</li>
 			 			<li><a href="/products/health_products_list.aspx">건강기능식품</a>
@@ -196,7 +196,7 @@
                         <!--
                         <li><a href="/invest/pub_announce.aspx">공시자료</a></li>
                         -->
-			 			<li><a href="/invest/notice_list.aspx">공고사항 </a></li>
+			 			<li><a href="/invest/notice_list.aspx">공지/공고 </a></li>
 			 		</ul>
 			 	</div>
 			 	<div class="col">
@@ -210,7 +210,7 @@
 								<li><a href="/recruit/new_edu.aspx">교육제도 </a></li>
 							</ul>
 			 			</li>
-			 			<li><a href="/recruit/job_notify_list.aspx">상시채용 </a> 
+			 			<li><a href="/recruit/job_notify_list.aspx">채용안내</a> 
 							<ul>
 								<li><a href="/recruit/job_notify_list.aspx">채용공고</a> </li>
 								<li><a href="/recruit/job_guide.aspx">채용절차</a></li>
@@ -225,7 +225,6 @@
 			 		<h1>고객 </h1>
 			 		<ul>
 			 			<li><a href="/customer/inquire.aspx">제품문의  </a> </li>
-			 			<li><a href="/customer/with.aspx">제휴제안 </a> </li>
 			 		</ul>
 			 	</div>	
 			 </section>
@@ -233,7 +232,7 @@
 			<!-- // 내용 ***************** -->         
 
 	</div><!--// container -->
-	
+<!--	
 	<aside id="quick_menu">
 		<h1> <span>  Quick menu  </span> </h1>
 		<ul>
@@ -241,9 +240,10 @@
 			<li class="qu_02"> <a href="/products/human_new_list.aspx"> 인체의 약품  </a> </li>
 			<li class="qu_03"> <a href="/products/animal_new_list.aspx"> 동물의 약품  </a> </li>
 			<li class="qu_04"> <a href="/products/bio_badge_list.aspx"> 바이오공정소재  </a> </li>
-			<li class="qu_05"> <a href="/recruit/job_notify_list.aspx"> 채용안내  </a> </li>
+			<li class="qu_05"> <a href="/recruit/job_notify_list.aspx"> </a> </li>
 		</ul>
 	</aside>	
+-->
 	<hr>
 	<footer class="footer">
 		<article class="footer_content">
@@ -251,8 +251,8 @@
 			<nav class="fnb clear"> 
 				<h1 class="acc-hidden"> 하단 메뉴 </h1>
 				<ul class="fnb_ul ">
-					<li> <a href="/main/terms.aspx" title="이용약관" target="_blank" onclick="window.open(this.href,'popup', 'width=600, height=800'); return false;">이용약관 </a> <em>&nbsp;</em> </li>
-				    <li> <a href="/main/agreement.aspx" title="개인정보취급방침" target="_blank" onclick="window.open(this.href, '_blank', 'toolbar=no, scrollbars=no, resizable=no, top=100, left=200, width=600, height=700'); return false;"  class="line">개인정보취급방침</a></li>
+					<li> <a href="/main/terms.aspx" title="이용약관" target="_blank" onClick="window.open(this.href,'popup', 'width=600, height=800'); return false;">이용약관 </a> <em>&nbsp;</em> </li>
+				    <li> <a href="/main/agreement.aspx" title="개인정보취급방침" target="_blank" onClick="window.open(this.href, '_blank', 'toolbar=no, scrollbars=no, resizable=no, top=100, left=200, width=600, height=700'); return false;"  class="line">개인정보취급방침</a></li>
 				</ul>
 			</nav>
 			<address class="address clear">

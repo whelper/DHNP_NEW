@@ -107,7 +107,7 @@
 				<h1 class="acc-hidden">새소식과 주가정보</h1>	
  				<ul>
  					<li><strong>새소식 </strong>
- 						<a href="/pr/pr_new_list.aspx" ><span><%=GetData(5, 0, "TTL")%></span></a>	 
+ 						<a href="/pr/pr_new_list.aspx" ><span><%=GetData(3, 0, "TTL")%></span></a>	 
  						<a href="/pr/pr_new_list.aspx"><span class="more_arrow">more</span></a>	
  					</li>
  					<li>                      

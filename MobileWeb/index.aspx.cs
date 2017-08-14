@@ -33,7 +33,8 @@ namespace MobileWeb
             param.Append(LANG_CD);
 
             SetDataTableList(2400, param.ToString());
-        }
+			GetStockForJson();
+		}
 
         private void SetControls()
         {
