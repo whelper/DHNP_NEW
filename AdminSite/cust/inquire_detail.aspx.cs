@@ -16,7 +16,7 @@ namespace AdminSite.cust
         {
             if (!IsPostBack)
             {
-                SearchData();
+				SearchData();
             }   
         }
 
@@ -31,7 +31,22 @@ namespace AdminSite.cust
                 param.Append(Seq);
                 
                 SetDataList(3613, param.ToString());
-            }
+
+
+				List<ListItem> items = new List<ListItem>();
+				items.Add(new ListItem("선택하세요", ""));
+
+				int i = 1;
+				int _index = 1;
+				foreach (var h in CConst.CODE_INQUIRY)
+				{
+					items.Add(new ListItem(h.Value, h.Key));
+					if (GetData(0, "GUBUN").Equals(h.Key)) _index = i;
+					i++;
+				}
+				gubun.Items.AddRange(items.ToArray());
+				gubun.SelectedIndex = _index;
+			}
         }
 
 

@@ -1065,6 +1065,7 @@ namespace CommonLib.DB
                     variable[36] = "@NEW_YN";
 					variable[37] = "@ANI_CATE";
 					variable[38] = "@REG_DT";
+					variable[39] = "@IDENT_NUMBER";
 
 					sqldbtype[0] = SqlDbType.VarChar;
                     sqldbtype[1] = SqlDbType.VarChar;
@@ -1105,9 +1106,10 @@ namespace CommonLib.DB
                     sqldbtype[36] = SqlDbType.VarChar;
 					sqldbtype[37] = SqlDbType.VarChar;
 					sqldbtype[38] = SqlDbType.VarChar;
+					sqldbtype[39] = SqlDbType.VarChar;
 
 					// 마지막 인자값 항상 확인(파라미터 총수 임)
-					ds = command.ExecuteDataSetSecure("USP_ADMIN_3204_PROD_DETAIL_I", variable, m_value, sqldbtype, 39);
+					ds = command.ExecuteDataSetSecure("USP_ADMIN_3204_PROD_DETAIL_I", variable, m_value, sqldbtype, 40);
                     break;
 
                 case 3205:// 제품관리 수정
@@ -1152,6 +1154,7 @@ namespace CommonLib.DB
                     variable[36] = "@NEW_YN";
                     variable[37] = "@ANI_CATE";
 					variable[38] = "@REG_DT";
+					variable[39] = "@IDENT_NUMBER";
 
 
 					sqldbtype[0] = SqlDbType.VarChar;
@@ -1193,9 +1196,10 @@ namespace CommonLib.DB
                     sqldbtype[36] = SqlDbType.VarChar;
                     sqldbtype[37] = SqlDbType.VarChar;
 					sqldbtype[38] = SqlDbType.VarChar;
+					sqldbtype[38] = SqlDbType.VarChar;
 
 					// 마지막 인자값 항상 확인(파라미터 총수 임)
-					ds = command.ExecuteDataSetSecure("USP_ADMIN_3205_PROD_DETAIL_U", variable, m_value, sqldbtype, 39);
+					ds = command.ExecuteDataSetSecure("USP_ADMIN_3205_PROD_DETAIL_U", variable, m_value, sqldbtype, 40);
                     break;
 
                 case 3206:// 제품관리 삭제
@@ -3194,15 +3198,17 @@ namespace CommonLib.DB
                     variable[2] = "@TEL";
                     variable[3] = "@EMAIL";
                     variable[4] = "@CONT";
+					variable[5] = "@GUBUN";
 
-                    sqldbtype[0] = SqlDbType.VarChar;
+					sqldbtype[0] = SqlDbType.VarChar;
                     sqldbtype[1] = SqlDbType.VarChar;
                     sqldbtype[2] = SqlDbType.VarChar;
                     sqldbtype[3] = SqlDbType.VarChar;
                     sqldbtype[4] = SqlDbType.VarChar;
+					sqldbtype[5] = SqlDbType.VarChar;
 
-                    // 마지막 인자값 항상 확인(파라미터 총수 임)
-                    ds = command.ExecuteDataSetSecure("USP_MOBILE_2300_CUST_PROD_INQ_I", variable, m_value, sqldbtype, 5);
+					// 마지막 인자값 항상 확인(파라미터 총수 임)
+					ds = command.ExecuteDataSetSecure("USP_MOBILE_2300_CUST_PROD_INQ_I", variable, m_value, sqldbtype, 6);
                     break;
 
                 case 2310:// 제휴제안 등록

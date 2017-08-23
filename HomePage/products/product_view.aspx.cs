@@ -16,8 +16,9 @@ namespace HomePage.products
     {
         private const string LANG_CD = "KOR";
         private const string CATG_NO1 = "1";
+		CommonLib.Web.CCommonCode code = new CommonLib.Web.CCommonCode();
 
-        protected void Page_Load(object sender, EventArgs e)
+		protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
@@ -60,6 +61,21 @@ namespace HomePage.products
 				return getCatalogURL(category, LANG_CD);
 			}
         }
-        #endregion
-    }
+
+		protected string categoryName
+		{
+			get { return code.getCategoryName(category.Substring(0, 2)); }
+		}
+
+		protected string categoryNameView
+		{
+			get { return code.getCategoryName(category); }
+		}
+
+		protected string menu
+		{
+			get { return (Request["menu"] != null) ? Request["menu"] : "0101"; }
+		}
+		#endregion
+	}
 }

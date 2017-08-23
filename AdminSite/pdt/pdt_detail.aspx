@@ -46,8 +46,8 @@
 						<input type="text" runat="server" id="prod_cd"  value="" class="span6 text mR10" />
 						<!--동의begin-->
 						<label for="" class="rdo_ani input-items"> 
-							<input type="radio" runat="server" id="pdt_org"  name="pdt_style" class="inline" value="PROD_ORG" />기존 제품
-							<input type="radio" runat="server" id="pdt_godl"  name="pdt_style" class="inline" value="PROD_GODL" />관납제품	
+							<input type="radio" runat="server" id="pdt_org"  name="pdt_style" value="PROD_ORG" checked />기존 제품
+							<input type="radio" runat="server" id="pdt_godl"  name="pdt_style" class="inline" value="PROD_GODL" />관납제품
 						</label>
 						<!--동의end-->
 						<!--바이오begin-->
@@ -80,6 +80,14 @@
 					</th>
 					<td class="alignleft" colspan="2">     
 						<input type="text" runat="server" id="prod_nm" value="" class="span6 text" />
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"> 
+						<label for="pdt_name">물품식별번호</label>     
+					</th>
+					<td class="alignleft" colspan="2">     
+						<input type="text" runat="server" id="ident_number" value="" class="span6 text" />
 					</td>
 				</tr>
 				<tr class="prod_div input-items">
@@ -131,8 +139,8 @@
 					<th scope="row" > 
 						<label for="ingredi">주요성분(성분함량)</label>   
 					</th>
-					<td colspan="2" class="alignleft">     
-                        <input type="text" runat="server" id="ingredi" value="" class="span6 text" />
+					<td colspan="2" class="alignleft">
+						<textarea  id="ingredi" runat="server" class="textarea_detail"  rows="5"></textarea>  
 					</td>
 				</tr>
 				<tr class="temper input-items">

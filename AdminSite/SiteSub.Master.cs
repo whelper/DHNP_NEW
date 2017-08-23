@@ -537,7 +537,7 @@ namespace AdminSite
 				DataSet mds = WebSql.SelectSql(3903, CSecureUtil.CheckString(param.ToString()));
 				dataRow = mds.Tables[0].Select();
 
-				System.Diagnostics.Debug.WriteLine("dataRow=" + dataRow);
+				//System.Diagnostics.Debug.WriteLine("dataRow=" + dataRow);
 				
 			}
 			catch (Exception e)

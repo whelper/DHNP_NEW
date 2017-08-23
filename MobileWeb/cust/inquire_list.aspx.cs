@@ -38,8 +38,9 @@ namespace MobileWeb.cust
             param.Append(CConst.DB_PARAM_DELIMITER).Append(tel.Value);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(email.Value);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(cont.Value);
+			param.Append(CConst.DB_PARAM_DELIMITER).Append(gubun.SelectedValue);
 
-            string[] result = null;
+			string[] result = null;
             
             // 입력 모드
             result = ExecuteQueryResult(2300, param.ToString());

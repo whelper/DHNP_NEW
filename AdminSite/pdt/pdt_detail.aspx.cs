@@ -105,7 +105,7 @@ namespace AdminSite.pdt
         {
 			//입력폼 설정
 			dicInputItems.Add("01", new string[] { "new_yn", "prod_div","ingredi", "temper", "insu_cd", "pdt_money", "pdt_unit" }); //인체
-			dicInputItems.Add("02", new string[] { "rdo_ani","new_yn", "ingredi", "insu_cd", "pdt_money"}); //동물
+			dicInputItems.Add("02", new string[] { "new_yn", "ingredi", "insu_cd", "pdt_money"}); //동물
 			dicInputItems.Add("03", new string[] { "rdo_bio","pdt_summary", "pdt_keep", "pdt_boheom" }); //바이오
 			dicInputItems.Add("04", new string[] { "rdo_exp","compt", "pdt_info", "pdt_unit" }); //수출(인체)
 			dicInputItems.Add("05", new string[] { "rdo_exp", "compt", "pdt_info", "pdt_unit" }); //수출(동물)
@@ -150,9 +150,9 @@ namespace AdminSite.pdt
 				pdt_bae.Checked = (prodType.Equals("") || prodType.Equals("PROD_BADG")) ? true : false;
 
 				//동의
-				pdt_godl.Checked = prodType.Equals("PROD_GODL") ? true : false;
+				//pdt_godl.Checked = prodType.Equals("PROD_GODL") ? true : false;
 				pdt_org.Checked = prodType.Equals("PROD_ORG") || prodType.Equals("") ? true : false;
-
+				
 				//수출
 				pdt_human.Checked = prodType.Equals("PROD_BODY_DRUG") ? true : false;
 				pdt_ani.Checked = prodType.Equals("PROD_ANI_DRUG") ? true : false;
@@ -277,9 +277,12 @@ namespace AdminSite.pdt
             param.Append(CConst.DB_PARAM_DELIMITER).Append(db_new_yn); // 신제품 여부
             param.Append(CConst.DB_PARAM_DELIMITER).Append(""); // 동의카테고리
 			param.Append(CConst.DB_PARAM_DELIMITER).Append(reg_dt.Value); // 등록일
-
+			param.Append(CConst.DB_PARAM_DELIMITER).Append(ident_number.Value); // 물품식별번호
 			
-		
+
+
+
+
 			string[] result = null;
 
             if (CStringUtil.IsNullOrEmpty(ProdCd) == false)
@@ -358,6 +361,7 @@ namespace AdminSite.pdt
 			foreach (string ca in deleteSQL) //삭제
 			{
 				command.ExecuteNonQuery("DELETE FROM TB_PROD_CATEGORY WHERE PROD_CD='"+ prodCd + "' AND CATE_CD='"+ca+ "' AND LANG_CD='" + LANG_CD + "'");
+				//System.Diagnostics.Debug.WriteLine("DELETE FROM TB_PROD_CATEGORY WHERE PROD_CD='" + prodCd + "' AND CATE_CD='" + ca + "' AND LANG_CD='" + LANG_CD + "'");
 			}
 
 		}

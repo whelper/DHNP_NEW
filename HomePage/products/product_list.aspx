@@ -8,7 +8,7 @@
 		{
     %>
     <a href="javascript:alert('등록된 카달로그가 없습니다. 고객센터로 문의해 주세요.');">
-        <img src="/common/images/common/btn_pdf_01.png" alt="카다로그 다운로드" />
+        <img src="/common/images/common/btn_pdf.png" alt="카다로그 다운로드" />
     </a>
     <% 
         }
@@ -16,7 +16,7 @@
         {
     %>
     <a href="<%=rep_catg_url %>">
-        <img src="/common/images/common/btn_pdf_01.png" alt="카다로그 다운로드" />
+        <img src="/common/images/common/btn_pdf_<%=category.Substring(0,2)%>.png" alt="카다로그 다운로드" />
     </a>
     <% 
         }
@@ -45,8 +45,8 @@
 			    <dt class="fB about"> 제품명 </dt>
 			    <dd>
 					<ul class="products_total_ul about">
-                        <li class="total"><a href="product_list.aspx?prod_initial=&category=<%=category%>">전체</a></li>
-					    <li class="left"><a href="product_list.aspx?prod_initial=INIT_1&category=<%=category%>"<%if (ProdInitial.Equals("INIT_1")) {%> class="active" <%}%>>ㄱ</a></li>
+                        <li class="total"><a href="product_list.aspx?menu=<%=menu%>&prod_initial=&category=<%=category%>">전체</a></li>
+					    <li class="left"><a href="product_list.aspx?menu=<%=menu%>&prod_initial=INIT_1&category=<%=category%>"<%if (ProdInitial.Equals("INIT_1")) {%> class="active" <%}%>>ㄱ</a></li>
 					    <li><a href="product_list.aspx?menu=<%=menu%>&prod_initial=INIT_2&category=<%=category%>"<%if (ProdInitial.Equals("INIT_2")) {%> class="active" <%}%>>ㄴ</a></li>
                         <li><a href="product_list.aspx?menu=<%=menu%>&prod_initial=INIT_3&category=<%=category%>"<%if (ProdInitial.Equals("INIT_3")) {%> class="active" <%}%>>ㄷ</a></li>
                         <li><a href="product_list.aspx?menu=<%=menu%>&prod_initial=INIT_4&category=<%=category%>"<%if (ProdInitial.Equals("INIT_4")) {%> class="active" <%}%>>ㄹ</a></li>
@@ -77,7 +77,7 @@
 	<%if (category.Substring(0,2) == "02"){ %>
 	<div class="tab_typeA">
 		<ul>					
-			<li class="first"><a href="?category=02" class="<%=(category == "02") ? "on" : "" %>">전체</a></li>
+			<li class="first"><a href="?menu=<%=menu%>&category=02" class="<%=(category == "02") ? "on" : "" %>">전체</a></li>
 			 <% 
 				
 				 if (CatgDs != null)
@@ -116,7 +116,7 @@
 
 
             %>
-			<li><a href="product_list.aspx?menu=<%=menu%>prod_initial=<%=ProdInitial%>&category=<%=CatgDs.Tables[0].Rows[i]["CATE_CD"]%>"<%=catgCss%>><%=CatgDs.Tables[0].Rows[i]["CATE_NAME"]%> (<%=CatgDs.Tables[0].Rows[i]["CNT"]%>) </a></li>
+			<li><a href="product_list.aspx?menu=<%=menu%>&category=<%=CatgDs.Tables[0].Rows[i]["CATE_CD"]%>"<%=catgCss%>><%=CatgDs.Tables[0].Rows[i]["CATE_NAME"]%> (<%=CatgDs.Tables[0].Rows[i]["CNT"]%>) </a></li>
             <% 
                     }
                 }

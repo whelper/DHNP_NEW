@@ -20,6 +20,15 @@
 			<tbody>
 				<tr>
 					<th scope="row"> 
+						<label for="pdt_name01"> 구 분  </label> 
+					</th>
+					<td class="alignleft" colspan="2">     
+					 	<asp:DropDownList ID="gubun" runat="server">
+						</asp:DropDownList>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"> 
 						<label for="pdt_name01"> 작성자  </label> 
 					</th>
 					<td class="alignleft" colspan="2">     

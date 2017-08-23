@@ -24,12 +24,12 @@
 </nav> <!-- // snb -->
 <section id="content" class="sub_content" >
 	<header>
-		<h1 class="pageTitle"> 신제품 </h1>
+		<h1 class="pageTitle"> 제품소개 </h1>
 		<p class="location">
 			<a href="/index.aspx"><span><c<img src="/common/images/common/i_home.png" alt="home" /></span></a>
-			<a href="/products/human_new_list.aspx"><span>제품</span></a><em> > </em>
-			<a href="/products/human_new_list.aspx"><span>인체의약품</span></a><em> > </em>
-			<a href="/products/human_new_list.aspx"><strong>신제품</strong></a>
+			<a href="/products/product_list.aspx?menu=<%=menu %>&category=<%=category %>"><span>제품</span></a><em> > </em>
+			<a href="/products/product_list.aspx?menu=<%=menu %>&category=<%=category %>"><span><%=categoryName %></span></a>
+			<%--<a href="/products/product_list.aspx"><strong>신제품</strong></a>--%>
 		</p>
 	</header>
 	<!--  내용  ***************** -->
@@ -66,17 +66,20 @@
 				<%if (!GetData(0, "PROD_DIV_NM").Equals("")){ %>
 	  			<li><strong>구분</strong><em><%=GetData(0, "PROD_DIV_NM")%></em></li>
 				<%} %>
-				<%if (!GetData(0, "CATG_NO").Equals("CATG_NM2")){ %>
-	  			<li><strong>분류</strong><em><%=GetData(0, "CATG_NM2") %></em></li>
+				<%if (!categoryNameView.Equals("")){ %>
+	  			<li><strong>분류</strong><em><%=categoryNameView %></em></li>
 				<%} %>
                 <%if (!GetData(0, "CATG_NO").Equals("0")){ %>
 				<li><strong>분류번호</strong><em><%=GetData(0, "CATG_NO")%></em></li>
+	  			<%} %>
+				<%if (!GetData(0, "IDENT_NUMBER").Equals("")){ %>
+				<li><strong>물품식별번호</strong><em><%=GetData(0, "IDENT_NUMBER")%></em></li>
 	  			<%} %>
 				<%if (!GetData(0, "COMPT").Equals("")){ %>
 				<li><strong>구성</strong><em><%=GetData(0, "COMPT")%></em></li>
                 <%} %>
 				<%if (!GetData(0, "INGREDI").Equals("")){ %>
-				<li><strong>주요성분</strong><em><%=GetData(0, "INGREDI")%></em></li>
+				<li><strong>주요성분</strong><em><%=GetData(0, "INGREDI").Replace("\n","<br />")%></em></li>
 	  			<%} %>
 				<%if (!GetData(0, "TEMPER").Equals("")){ %>	
 	  			<li><strong>성상</strong><em><%=GetData(0, "TEMPER")%></em></li>
