@@ -80,14 +80,14 @@
 							<li><a href="/intro/location.aspx"> 오시는길 </a></li>
 						</ul>
 					</li>
-					<li><a href="/products/product_list.aspx?category=01" class="gnb_02<%=GetGnbIndicator("products")%>">제품</a>
+					<li><a href="/products/product_list.aspx?category=01&menu=0101" class="gnb_02<%=GetGnbIndicator("products")%>">제품</a>
 						<ul  class="ly" style="display:none;">
-							<li><a href="/products/product_list.aspx?category=01">인체 의약품</a></li>
-							<li><a href="/products/product_list.aspx?category=02">동물 의약품</a></li>
-							<li><a href="/products/product_list.aspx?category=03">바이오 의약품</a></li>
-							<li><a href="/products/product_list.aspx?category=04">수출 의약품</a></li>
-							<li><a href="/products/product_list.aspx?category=05">건강기능식품</a></li>
-	                        <li><a href="/products/product_list.aspx?category=06">의료기기</a></li>
+							<li><a href="/products/product_list.aspx?category=01&menu=0101">인체 의약품</a></li>
+							<li><a href="/products/product_list.aspx?category=02&menu=0201">동물 의약품</a></li>
+							<li><a href="/products/product_list.aspx?category=03&menu=0301">바이오 의약품</a></li>
+							<li><a href="/products/product_list.aspx?category=04&menu=0401">수출 의약품</a></li>
+							<li><a href="/products/product_list.aspx?category=05&menu=0501">건강기능식품</a></li>
+	                        <li><a href="/products/product_list.aspx?category=06&menu=0601">의료기기</a></li>
 						</ul>
 					</li>
 					<li><a href="/pr/news_list.aspx" class="gnb_03<%=GetGnbIndicator("pr")%>">홍보</a>

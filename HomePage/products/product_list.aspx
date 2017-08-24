@@ -102,7 +102,7 @@
 		<ul class="clear">
             <% 
 				string catgCss = "";
-				
+
 				if (CatgDs != null)
 				{
 					string _category = String.Empty;
@@ -111,8 +111,10 @@
 
 						_category = CatgDs.Tables[0].Rows[i]["CATE_CD"].ToString();
 						if (category.Substring(0,2) == "02") {
-							if (category.Length < 4 || _category.Length <= 4 || _category.Substring(0,cutLimit) != category.Substring(0,cutLimit)) continue;	
+							if (category.Length < 4 || _category.Length <= 4 || _category.Substring(0,cutLimit) != category.Substring(0,cutLimit)) continue;
 						}
+
+					catgCss =  (_category == category) ? " class='onhover'" : "";
 
 
             %>
