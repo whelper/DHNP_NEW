@@ -86,14 +86,14 @@
 							<li><a href="/intro/location.aspx"> 오시는길 </a></li>
 						</ul>
 					</li>
-					<li><a href="/products/product_list.aspx?category=01&menu=0101" class="gnb_02<%=GetGnbIndicator("products")%>">제품</a>
+					<li><a href="/products/product_new_list.aspx?category=01&menu=0102" class="gnb_02<%=GetGnbIndicator("products")%>">제품</a>
 						<ul  class="ly" style="display:none;">
-							<li><a href="/products/product_list.aspx?category=01&menu=0101">인체 의약품</a></li>
-							<li><a href="/products/product_list.aspx?category=02&menu=0201">동물 의약품</a></li>
+							<li><a href="/products/product_new_list.aspx?category=01&menu=0102">인체 의약품</a></li>
+							<li><a href="/products/product_new_list.aspx?category=02&menu=0202">동물 의약품</a></li>
 							<li><a href="/products/product_list.aspx?category=03&menu=0301">바이오 의약품</a></li>
 							<li><a href="/products/product_list.aspx?category=04&menu=0401">수출 의약품</a></li>
-							<li><a href="/products/product_list.aspx?category=05&menu=0501">건강기능식품</a></li>
-	                        <li><a href="/products/product_list.aspx?category=06&menu=0601">의료기기</a></li>
+							<li><a href="/products/product_list.aspx?category=07&menu=0501">건강기능식품</a></li>
+	                        <li><a href="/products/product_list.aspx?category=08&menu=0601">의료기기</a></li>
 						</ul>
 					</li>
 					<li><a href="/pr/news_list.aspx" class="gnb_03<%=GetGnbIndicator("pr")%>">홍보</a>
@@ -277,12 +277,13 @@
     <aside id="quick_menu">
 		<h1><span>Quick Menu</span></h1>
 		<ul>
-			<li class="qu_01"><a href="/products/human_products_list.aspx"></a></li>
-			<li class="qu_02"><a href="/products/animal_products_list.aspx"></a></li>
-			<li class="qu_03"><a href="/products/bio_badge_list.aspx"></a></li>
-			<li class="qu_04"><a href="/products/global_human_list.aspx"></a></li>
-			<li class="qu_05"><a href="/products/health_products_list.aspx"></a></li>
-			<li class="qu_06"><a href="/products/medical_list.aspx"></a></li></ul>
+
+			<li class="qu_01"><a href="/products/product_new_list.aspx?category=01&menu=0102"></a></li>
+			<li class="qu_02"><a href="/products/product_new_list.aspx?category=02&menu=0202"></a></li>
+			<li class="qu_03"><a href="/products/product_list.aspx?category=03&menu=0301"></a></li>
+			<li class="qu_04"><a href="/products/product_list.aspx?category=04&menu=0401"></a></li>
+			<li class="qu_05"><a href="/products/product_list.aspx?category=07&menu=0501"></a></li>
+			<li class="qu_06"><a href="/products/product_list.aspx?category=08&menu=0601"></a></li></ul>
 		</ul>
         <% 
             if (MDS != null && MDS.Tables.Count > 0 && MDS.Tables[0].Rows.Count > 0)

@@ -208,12 +208,12 @@
    				</article> <!-- // customer -->
    				<article class="products_manu clear">
    					<h1 class="acc-hidden">제품메뉴로 바로가기</h1>
-   						<a class="line_Lno" href="/products/human_products_list.aspx"><IMG alt="인체의 약품 " src="/common/images/main/i_memu_01.png" onmouseover="this.src='/common/images/main/i_memu_01_on.png'" onmouseout="this.src='/common/images/main/i_memu_01.png'"></a>    
-						<a href="/products/animal_products_list.aspx"><IMG alt="동물의 약품 " src="/common/images/main/i_memu_02.png" onmouseover="this.src='/common/images/main/i_memu_02_on.png'" onmouseout="this.src='/common/images/main/i_memu_02.png'"></a>      
-						<a href="/products/bio_badge_list.aspx"><IMG alt="바이오의 약품 " src="/common/images/main/i_memu_03.png" onmouseover="this.src='/common/images/main/i_memu_03_on.png'" onmouseout="this.src='/common/images/main/i_memu_03.png'"></a>      
-						<a href="/products/global_human_list.aspx"><IMG alt="수출의 약품 " src="/common/images/main/i_memu_04.png" onmouseover="this.src='/common/images/main/i_memu_04_on.png'" onmouseout="this.src='/common/images/main/i_memu_04.png'"></a>      
-						<a href="/products/health_products_list.aspx"><IMG alt="건강기능식품 " src="/common/images/main/i_memu_05.png" onmouseover="this.src='/common/images/main/i_memu_05_on.png'" onmouseout="this.src='/common/images/main/i_memu_05.png'"></a>      
-						<a href="/products/medical_list.aspx"><IMG alt="의료기기 " src="/common/images/main/i_memu_06.png" onmouseover="this.src='/common/images/main/i_memu_06_on.png'" onmouseout="this.src='/common/images/main/i_memu_06.png'"></a>     
+   						<a class="line_Lno" href="/products/product_new_list.aspx?category=01&menu=0102"><IMG alt="인체의 약품 " src="/common/images/main/i_memu_01.png" onmouseover="this.src='/common/images/main/i_memu_01_on.png'" onmouseout="this.src='/common/images/main/i_memu_01.png'"></a>    
+						<a href="/products/product_new_list.aspx?category=02&menu=0202"><IMG alt="동물의 약품 " src="/common/images/main/i_memu_02.png" onmouseover="this.src='/common/images/main/i_memu_02_on.png'" onmouseout="this.src='/common/images/main/i_memu_02.png'"></a>      
+						<a href="/products/product_list.aspx?category=03&menu=0301"><IMG alt="바이오의 약품 " src="/common/images/main/i_memu_03.png" onmouseover="this.src='/common/images/main/i_memu_03_on.png'" onmouseout="this.src='/common/images/main/i_memu_03.png'"></a>      
+						<a href="/products/product_list.aspx?category=04&menu=0401"><IMG alt="수출의 약품 " src="/common/images/main/i_memu_04.png" onmouseover="this.src='/common/images/main/i_memu_04_on.png'" onmouseout="this.src='/common/images/main/i_memu_04.png'"></a>      
+						<a href="/products/product_list.aspx?category=07&menu=0501"><IMG alt="건강기능식품 " src="/common/images/main/i_memu_05.png" onmouseover="this.src='/common/images/main/i_memu_05_on.png'" onmouseout="this.src='/common/images/main/i_memu_05.png'"></a>      
+						<a href="/products/product_list.aspx?category=08&menu=0601"><IMG alt="의료기기 " src="/common/images/main/i_memu_06.png" onmouseover="this.src='/common/images/main/i_memu_06_on.png'" onmouseout="this.src='/common/images/main/i_memu_06.png'"></a>     
                     <% 
                         if (GetDataTableCount(4) > 0)
                         {

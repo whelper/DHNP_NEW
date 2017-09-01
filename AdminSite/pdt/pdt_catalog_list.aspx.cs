@@ -31,9 +31,9 @@ namespace AdminSite.pdt
         {
             StringBuilder param = new StringBuilder();
             param.Append(_category);
-
-            // 실 데이터 조회
-            SetDataList(3231, param.ToString());
+			param.Append(CConst.DB_PARAM_DELIMITER).Append(""); //언어
+			// 실 데이터 조회
+			SetDataList(3231, param.ToString());
         }
 
         private void InitControls()

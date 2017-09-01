@@ -158,7 +158,7 @@ namespace AdminSite
                     startupUrl = "/main/main_list.aspx";
                     break;
                 case "2":
-                    startupUrl = "/pdt/pdt_human_list.aspx";
+                    startupUrl = "/pdt/pdt_list.aspx?category=01";
                     break;
                 case "3":
                     startupUrl = "/pr/new_list.aspx";

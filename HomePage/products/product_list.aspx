@@ -77,7 +77,7 @@
 	<%if (category.Substring(0,2) == "02"){ %>
 	<div class="tab_typeA">
 		<ul>					
-			<li class="first"><a href="?menu=<%=menu%>&category=02" class="<%=(category == "02") ? "on" : "" %>">전체</a></li>
+			<%--<li class="first"><a href="?menu=<%=menu%>&category=02" class="<%=(category == "02") ? "on" : "" %>">전체</a></li>--%>
 			 <% 
 				
 				 if (CatgDs != null)

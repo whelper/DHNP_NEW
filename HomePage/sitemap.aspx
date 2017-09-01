@@ -64,12 +64,12 @@
 					</li>
 					<li><a href="/products/human_new_list.aspx" class="gnb_02 "> 제품  </a>
 						<ul  class="ly" style="display:none;">
-							<li><a href="/products/human_new_list.aspx"> 인체 의약품 </a></li>
-							<li><a href="/products/animal_new_list.aspx"> 동물 의약품 </a></li>
-							<li><a href="/products/bio_badge_list.aspx"> 바이오 의약품  </a></li>
-							<li><a href="/products/global_human_list.aspx" > 수출 의약품 </a></li>
-							<li><a href="/products/health_products_list.aspx"> 건강기능식품  </a></li>
-                        	<li><a href="../products/medical_list.aspx"> 의료기기  </a></li>
+							<li><a href="/products/product_new_list.aspx?category=01&menu=0102"> 인체 의약품 </a></li>
+							<li><a href="/products/product_new_list.aspx?category=02&menu=0202"> 동물 의약품 </a></li>
+							<li><a href="/products/product_list.aspx?category=03&menu=0301"> 바이오 의약품  </a></li>
+							<li><a href="/products/product_list.aspx?category=04&menu=0401" > 수출 의약품 </a></li>
+							<li><a href="/products/product_list.aspx?category=07&menu=0501"> 건강기능식품  </a></li>
+                        	<li><a href="/products/product_list.aspx?category=08&menu=0601"> 의료기기  </a></li>
 						</ul>
 					</li>
 					<li><a href="/pr/news_list.aspx" class="gnb_03"> 홍보  </a>
@@ -126,41 +126,41 @@
 			 	<div class="col" style="width:160px;">
 			 		<h1>제품 </h1>
 			 		<ul>
-			 			<li><a href="/products/human_new_list.aspx"> 인체 의약품 </a>
+			 			<li><a href="/products/product_new_list.aspx?category=01&menu=0102"> 인체 의약품 </a>
 							<ul>
-								<li><a href="/products/human_products_list.aspx"> 제품소개 </a></li>
-								<li><a href="/products/human_new_list.aspx"> 신제품 </a></li>
-								<li><a href="/products/human_change_list.aspx"> 제품변경정보 </a></li>
+								<li><a href="/products/product_new_list.aspx?category=01&menu=0102"> 신제품 </a></li>
+								<li><a href="/products/product_list.aspx?category=01&menu=0101"> 제품소개 </a></li>
+								<li><a href="/products/human_change_list.aspx?menu=0103"> 제품변경정보 </a></li>
 							</ul>
 			 			</li>
-			 			<li><a href="/products/animal_new_list.aspx">동물 의약품</a>
+			 			<li><a href="/products/product_new_list.aspx?category=02&menu=0202">동물 의약품</a>
 							<ul>
-								<li><a href="/products/animal_products_list.aspx">제품소개</a></li>
-								<li><a href="/products/animal_new_list.aspx">신제품</a></li>
-								<li><a href="/products/animal_delivery_list.aspx">관납제품 </a></li>
+								<li><a href="/products/product_new_list.aspx?category=02&menu=0202">신제품</a></li>
+								<li><a href="/products/product_list.aspx?category=02&menu=0201">제품소개</a></li>
+								<li><a href="/products/product_list.aspx?category=0207&menu=0203">관납제품 </a></li>
 							</ul>
 			 			</li>
-			 			<li><a href="/products/bio_badge_list.aspx">바이오 의약품 </a>
+			 			<li><a href="/products/product_list.aspx?category=03&menu=0301">바이오 의약품 </a>
 							<ul>
-								<li><a href="/products/bio_badge_list.aspx">제품군</a></li>
-								<li><a href="/products/bio_rnd.aspx">연구분야</a> </li>
+								<li><a href="/products/product_list.aspx?category=03&menu=0301">제품군</a></li>
+								<li><a href="/products/bio_rnd.aspx?&menu=0302">연구분야</a> </li>
 							</ul>
 			 			</li>
-			 			<li><a href="/products/global_human_list.aspx">수출 의약품</a>
+			 			<li><a href="/products/product_list.aspx?category=04&menu=0401">수출 의약품</a>
 							<ul>
-								<li><a href="/products/global_human_list.aspx">인체 의약품</a></li>
-								<li><a href="/products/global_animal_list.aspx">동물 의약품</a></li>
-								<li><a href="/products/global_etc_list.aspx">기타</a></li>								
+								<li><a href="/products/product_list.aspx?category=04&menu=0401">인체 의약품</a></li>
+								<li><a href="/products/product_list.aspx?category=05&menu=0402">동물 의약품</a></li>
+								<li><a href="/products/product_list.aspx?category=06&menu=0403">기타</a></li>								
 							</ul>
 			 			</li>
-			 			<li><a href="/products/health_products_list.aspx">건강기능식품</a>
+			 			<li><a href="/products/product_list.aspx?category=07&menu=0501">건강기능식품</a>
 							<ul>
-								<li><a href="/products/health_products_list.aspx">제품소개</a></li>
+								<li><a href="/products/product_list.aspx?category=07&menu=0501">제품소개</a></li>
 							</ul>
 			 			</li>
-			 			<li><a href="/products/medical_list.aspx">의료기기</a>
+			 			<li><a href="/products/product_list.aspx?category=08&menu=0601">의료기기</a>
 							<ul>
-								<li><a href="/products/medical_list.aspx">제품소개</a></li>
+								<li><a href="/products/product_list.aspx?category=08&menu=0601">제품소개</a></li>
 							</ul>
 			 			</li>
 			 		</ul>

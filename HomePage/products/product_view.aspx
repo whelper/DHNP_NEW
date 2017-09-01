@@ -66,14 +66,14 @@
 				<%if (!GetData(0, "PROD_DIV_NM").Equals("")){ %>
 	  			<li><strong>구분</strong><em><%=GetData(0, "PROD_DIV_NM")%></em></li>
 				<%} %>
-				<%if (!categoryNameView.Equals("")){ %>
-	  			<li><strong>분류</strong><em><%=categoryNameView %></em></li>
+				<%if (!GetData(0, "CATG_NM1").Equals("") && category.Substring(0,2) !="02"){ %>
+	  			<li><strong>분류</strong><em><%=GetData(0, "CATG_NM1") %></em></li>
 				<%} %>
                 <%if (!GetData(0, "CATG_NO").Equals("0")){ %>
 				<li><strong>분류번호</strong><em><%=GetData(0, "CATG_NO")%></em></li>
 	  			<%} %>
 				<%if (!GetData(0, "IDENT_NUMBER").Equals("")){ %>
-				<li><strong>물품식별번호</strong><em><%=GetData(0, "IDENT_NUMBER")%></em></li>
+				<li><strong>물품식별번호</strong><em><%=GetData(0, "IDENT_NUMBER").Replace("\n","<br />")%></em></li>
 	  			<%} %>
 				<%if (!GetData(0, "COMPT").Equals("")){ %>
 				<li><strong>구성</strong><em><%=GetData(0, "COMPT")%></em></li>

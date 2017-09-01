@@ -7,7 +7,7 @@
         {
     %>
     <a href="javascript:alert('등록된 카달로그가 없습니다. 고객센터로 문의해 주세요.');">
-        <img src="/common/images/common/btn_pdf_02.png" alt="카다로그 다운로드" />
+        <img src="/common/images/common/btn_pdf_03.png" alt="카다로그 다운로드" />
     </a>
     <% 
         }
@@ -15,7 +15,7 @@
         {
     %>
     <a href="<%=rep_catg_url %>">
-        <img src="/common/images/common/btn_pdf_02.png" alt="카다로그 다운로드" />
+        <img src="/common/images/common/btn_pdf_03.png" alt="카다로그 다운로드" />
     </a>
     <% 
         }

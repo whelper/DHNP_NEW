@@ -22,9 +22,10 @@ namespace AdminSite.pdt
 		CommonLib.Web.CCommonCode code = new CommonLib.Web.CCommonCode();
 
 
-		private Dictionary<string, string[]> dicInputItems = new Dictionary<string, string[]>();
-	
-		
+		private Dictionary<string, string[]> dicInputItems = new Dictionary<string, string[]>(); //국문
+		private Dictionary<string, string[]> dicEngInputItems = new Dictionary<string, string[]>(); //영문 
+
+
 		protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -90,7 +91,8 @@ namespace AdminSite.pdt
             prod_div.Items.Clear();
             if (dsDiv != null && dsDiv.Tables.Count > 0 && dsDiv.Tables[0].Rows.Count > 0)
             {
-                for (int i = 0; i < dsDiv.Tables[0].Rows.Count; i++)
+				prod_div.Items.Add(new ListItem("선택하세요", ""));
+				for (int i = 0; i < dsDiv.Tables[0].Rows.Count; i++)
                 {
                     prod_div.Items.Add(new ListItem(dsDiv.Tables[0].Rows[i]["COMM_CD_NM"].ToString(), dsDiv.Tables[0].Rows[i]["COMM_CD"].ToString()));
                 }
@@ -104,14 +106,26 @@ namespace AdminSite.pdt
         private void InitControls()
         {
 			//입력폼 설정
-			dicInputItems.Add("01", new string[] { "new_yn", "prod_div","ingredi", "temper", "insu_cd", "pdt_money", "pdt_unit" }); //인체
-			dicInputItems.Add("02", new string[] { "new_yn", "ingredi", "insu_cd", "pdt_money"}); //동물
-			dicInputItems.Add("03", new string[] { "rdo_bio","pdt_summary", "pdt_keep", "pdt_boheom" }); //바이오
-			dicInputItems.Add("04", new string[] { "rdo_exp","compt", "pdt_info", "pdt_unit" }); //수출(인체)
-			dicInputItems.Add("05", new string[] { "rdo_exp", "compt", "pdt_info", "pdt_unit" }); //수출(동물)
-			dicInputItems.Add("06", new string[] { "rdo_exp", "compt", "pdt_info", "pdt_unit" }); //수출(기타)
-			dicInputItems.Add("07", new string[] { "ingredi", "insu_cd", "pdt_money", "temper", "pdt_unit" }); //건강기능식품
-			dicInputItems.Add("08", new string[] { "ingredi", "insu_cd", "pdt_money", "temper", "pdt_unit" }); //의료기기
+
+			//국문
+			dicInputItems.Add("01", new string[] { "new_yn", "ident_number", "catg_no", "prod_div","ingredi", "temper", "insu_cd", "pdt_money", "pdt_unit" }); //인체
+			dicInputItems.Add("02", new string[] { "new_yn", "ident_number", "catg_no", "ingredi", "insu_cd", "pdt_money"}); //동물
+			dicInputItems.Add("03", new string[] { "rdo_bio", "ident_number", "catg_no", "pdt_summary", "pdt_keep", "pdt_boheom" }); //바이오
+			dicInputItems.Add("04", new string[] { "rdo_exp", "ident_number", "catg_no", "compt", "pdt_info", "pdt_unit" }); //수출(인체)
+			dicInputItems.Add("05", new string[] { "rdo_exp", "ident_number", "catg_no", "compt", "pdt_info", "pdt_unit" }); //수출(동물)
+			dicInputItems.Add("06", new string[] { "rdo_exp", "ident_number", "catg_no", "compt", "pdt_info", "pdt_unit" }); //수출(기타)
+			dicInputItems.Add("07", new string[] { "ingredi", "ident_number", "catg_no", "insu_cd", "pdt_money", "temper", "pdt_unit" }); //건강기능식품
+			dicInputItems.Add("08", new string[] { "ingredi", "ident_number", "catg_no", "insu_cd", "pdt_money", "temper", "pdt_unit" }); //의료기기
+
+			//영문
+			dicEngInputItems.Add("01", new string[] { "new_yn", "dosage", "ingredi","pdt_unit" }); //인체
+			dicEngInputItems.Add("02", new string[] { "new_yn", "dosage", "ingredi" }); //동물
+			dicEngInputItems.Add("03", new string[] { "rdo_bio" }); //바이오
+			dicEngInputItems.Add("04", new string[] { "rdo_exp", "dosage", "ingredi", "pdt_unit" }); //수출(인체)
+			dicEngInputItems.Add("05", new string[] { "rdo_exp", "dosage", "ingredi" }); //수출(동물)
+			dicEngInputItems.Add("06", new string[] { "rdo_exp", "ingredi", "pdt_unit" }); //수출(기타)
+			dicEngInputItems.Add("07", new string[] { "ingredi", "pdt_unit" }); //건강기능식품
+			dicEngInputItems.Add("08", new string[] { "ingredi", "pdt_unit" }); //의료기기
 
 			// 각 이미지 업로드 컨트롤에 javascript 이벤트를 등록한다. (페이지단 서버 컨트롤에 삽입 불가하여 CS단에서 삽입)
 			upload_01.Attributes.Add("onchange", "document.getElementById('" + upload_path_01.ClientID + "').value=document.getElementById('" + upload_01.ClientID + "').value;");
@@ -185,8 +199,10 @@ namespace AdminSite.pdt
                 pmedi.Value = GetData(0, 0, "PMEDI");
                 pack_mea.Value = GetData(0, 0, "PACK_MEA");
                 usage.Text = GetData(0, 0, "USAGE");
-                
-                h_prod_img1_path.Value = GetData(0, 0, "PROD_IMG1");
+				ident_number.Value = GetData(0, 0, "IDENT_NUMBER");
+				dosage.Value = GetData(0, 0, "DOSAGE");
+
+				h_prod_img1_path.Value = GetData(0, 0, "PROD_IMG1");
                 h_prod_img2_path.Value = GetData(0, 0, "PROD_IMG2");
                 h_prod_img3_path.Value = GetData(0, 0, "PROD_IMG3");
                 h_prod_img4_path.Value = GetData(0, 0, "PROD_IMG4");
@@ -278,10 +294,7 @@ namespace AdminSite.pdt
             param.Append(CConst.DB_PARAM_DELIMITER).Append(""); // 동의카테고리
 			param.Append(CConst.DB_PARAM_DELIMITER).Append(reg_dt.Value); // 등록일
 			param.Append(CConst.DB_PARAM_DELIMITER).Append(ident_number.Value); // 물품식별번호
-			
-
-
-
+			param.Append(CConst.DB_PARAM_DELIMITER).Append(dosage.Value); // 복용법
 
 			string[] result = null;
 
@@ -539,7 +552,13 @@ namespace AdminSite.pdt
 		/// </summary>
 		protected string _input_items
 		{
-			get { return string.Join(",", dicInputItems[_category]);  }
+			
+			get {
+				string _input = string.Join(",", dicInputItems[_category]);
+				if (LANG_CD == "ENG") _input = string.Join(",", dicEngInputItems[_category]);
+
+				return _input;  
+			}
 		}
 
 		#endregion

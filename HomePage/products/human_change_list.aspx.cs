@@ -50,7 +50,7 @@ namespace HomePage.products
         {
             get
             {
-				return getCatalogURL(CATG_NO1, "KOR");
+				return getCatalogURL("01", "KOR");
 			}
         }
 

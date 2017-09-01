@@ -93,7 +93,7 @@ namespace AdminSite.cate
 			if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
 			{
 
-				cate_name = (LANG_CD.Equals("ENG")) ? ds.Tables[0].Rows[0]["CATE_ENAME"].ToString() : ds.Tables[0].Rows[0]["CATE_NAME"].ToString();
+				cate_name =  ds.Tables[0].Rows[0]["CATE_NAME"].ToString();
 
 				if (dbjob.Value == "r")
 				{

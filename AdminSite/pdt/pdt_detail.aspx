@@ -82,12 +82,20 @@
 						<input type="text" runat="server" id="prod_nm" value="" class="span6 text" />
 					</td>
 				</tr>
-				<tr>
+				<tr class="ident_number input-items">
 					<th scope="row"> 
 						<label for="pdt_name">물품식별번호</label>     
 					</th>
-					<td class="alignleft" colspan="2">     
-						<input type="text" runat="server" id="ident_number" value="" class="span6 text" />
+					<td class="alignleft" colspan="2">
+						<textarea runat="server" id="ident_number" class="textarea_detail" rows="5"></textarea>	
+					</td>
+				</tr>
+				<tr class="dosage input-items">
+					<th scope="row"> 
+						<label for="pdt_name">복용법</label>     
+					</th>
+					<td class="alignleft" colspan="2">
+						<textarea runat="server" id="dosage" class="textarea_detail" rows="5"></textarea>	
 					</td>
 				</tr>
 				<tr class="prod_div input-items">
@@ -111,7 +119,7 @@
 						<asp:DropDownList ID="catg_no2" runat="server" AutoPostBack="false" />
 					</td>
 				</tr>--%>
-				<tr>
+				<tr class="catg_no input-items">
 					<th scope="row"> 
 						<label for="pdt_nember">분류번호</label>   
 					</th>

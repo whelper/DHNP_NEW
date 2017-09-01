@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Products_Sub.Master" AutoEventWireup="true" CodeBehind="product_new_list.aspx.cs" Inherits="HomePage.products.human_new_list" %>
+﻿
+<%@ Page Language="C#" MasterPageFile="~/Products_Sub.Master" AutoEventWireup="true" CodeBehind="product_new_list.aspx.cs" Inherits="HomePage.products.human_new_list" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceSubLayer" runat="server">
 <p class="pdf_target">
@@ -8,15 +9,15 @@
         {
     %>
     <a href="javascript:alert('등록된 카달로그가 없습니다. 고객센터로 문의해 주세요.');">
-        <img src="/common/images/common/btn_pdf_01.png" alt="카다로그 다운로드" />
+         <img src="/common/images/common/btn_pdf.png" alt="카다로그 다운로드" />
     </a>
     <% 
         }
         else
         {
     %>
-    <a href="<%=rep_catg_url %>">
-        <img src="/common/images/common/btn_pdf_01.png" alt="카다로그 다운로드" />
+     <a href="<%=rep_catg_url %>">
+        <img src="/common/images/common/btn_pdf_<%=category.Substring(0,2)%>.png" alt="카다로그 다운로드" />
     </a>
     <% 
         }

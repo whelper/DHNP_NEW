@@ -58,7 +58,7 @@ namespace HomePage.products
         {
             get
             {
-				return getCatalogURL(category, LANG_CD);
+				return getCatalogURL(category.Substring(0, 2), LANG_CD);
 			}
         }
 

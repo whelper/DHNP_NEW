@@ -24,7 +24,7 @@ namespace HomePage.products
 		{
 			get
 			{
-				return getCatalogURL(CATG_NO1, LANG_CD);
+				return getCatalogURL("03", LANG_CD);
 			}
 		}
 		#endregion
