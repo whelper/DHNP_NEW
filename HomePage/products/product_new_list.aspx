@@ -1,5 +1,5 @@
 ﻿
-<%@ Page Language="C#" MasterPageFile="~/Products_Sub.Master" AutoEventWireup="true" CodeBehind="product_new_list.aspx.cs" Inherits="HomePage.products.human_new_list" %>
+<%@ Page Language="C#" MasterPageFile="~/Products_Sub.Master" AutoEventWireup="true" CodeBehind="product_new_list.aspx.cs" Inherits="HomePage.products.product_new_list" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceSubLayer" runat="server">
 <p class="pdf_target">

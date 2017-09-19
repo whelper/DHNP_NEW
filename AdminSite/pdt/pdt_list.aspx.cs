@@ -26,7 +26,8 @@ namespace AdminSite.pdt
 			
 			if (!IsPostBack)
             {
-                SetControls();
+				nowPageNo.Value = _PAGE_NO;
+				SetControls();
 			}
 			SearchData();
 		}
@@ -131,6 +132,20 @@ namespace AdminSite.pdt
 			get { return code.getCategoryName(_category); }
 		}
 
+		protected string _PAGE_NO
+		{
+			get
+			{
+				if (Request["page_no"] == null)
+				{
+					return "1";
+				}
+				else
+				{
+					return Request["page_no"];
+				}
+			}
+		}
 
 
 		#endregion

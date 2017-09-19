@@ -799,12 +799,14 @@
     <Content Include="en\products\global_human_view.aspx" />
     <Content Include="en\products\health_products_list.aspx" />
     <Content Include="en\products\health_products_view.aspx" />
-    <Content Include="en\products\human_new_list.aspx" />
     <Content Include="en\products\human_new_view.aspx" />
-    <Content Include="en\products\human_products_list.aspx" />
-    <Content Include="en\products\human_products_view.aspx" />
     <Content Include="en\products\medical_list.aspx" />
     <Content Include="en\products\medical_view.aspx" />
+    <Content Include="en\products\product_list.aspx" />
+    <Content Include="en\products\product_view.20170915.aspx" />
+    <Content Include="en\products\product_new_list.aspx" />
+    <Content Include="en\products\bio_rnd.aspx" />
+    <Content Include="en\products\product_view.aspx" />
     <Content Include="en\sitemap.aspx" />
     <Content Include="event\event_complete.aspx" />
     <Content Include="event\event_view.aspx" />
@@ -830,76 +832,6 @@
     <Content Include="invest\treasury_stock.aspx" />
     <Content Include="main\agreement.aspx" />
     <Content Include="main\terms.aspx" />
-    <Content Include="micro\css\bootstrap.css" />
-    <Content Include="micro\css\flexslider.css" />
-    <Content Include="micro\css\font-awesome.min.css" />
-    <Content Include="micro\css\magnific-popup.css" />
-    <Content Include="micro\css\responsive.css" />
-    <Content Include="micro\css\style.css" />
-    <Content Include="micro\fonts\fontawesome-webfont.svg" />
-    <Content Include="micro\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="micro\img\icons\appstore.png" />
-    <Content Include="micro\img\icons\back-to-top.png" />
-    <Content Include="micro\img\icons\dot.gif" />
-    <Content Include="micro\img\icons\favicon.ico" />
-    <Content Include="micro\img\icons\google.png" />
-    <Content Include="micro\img\icons\loader.gif" />
-    <Content Include="micro\img\icons\loader22.gif" />
-    <Content Include="micro\img\icons\loader44.gif" />
-    <Content Include="micro\img\icons\windows.png" />
-    <Content Include="micro\img\icons\zoom-ico.png" />
-    <Content Include="micro\img\logo.png" />
-    <Content Include="micro\img\parallax_bg\newsletter_bkg.jpg" />
-    <Content Include="micro\img\parallax_bg\testimonials_bkg.jpg" />
-    <Content Include="micro\img\thumbs\1.png" />
-    <Content Include="micro\img\thumbs\2.png" />
-    <Content Include="micro\img\thumbs\6.png" />
-    <Content Include="micro\img\thumbs\contact_bkg.jpg" />
-    <Content Include="micro\img\thumbs\gallery1.jpg" />
-    <Content Include="micro\img\thumbs\gallery2.jpg" />
-    <Content Include="micro\img\thumbs\gallery3.jpg" />
-    <Content Include="micro\img\thumbs\gallery4.jpg" />
-    <Content Include="micro\img\thumbs\gallery5.jpg" />
-    <Content Include="micro\img\thumbs\gallery6.jpg" />
-    <Content Include="micro\img\thumbs\gallery7.jpg" />
-    <Content Include="micro\img\thumbs\gallery8.jpg" />
-    <Content Include="micro\img\thumbs\gallery_2x\gallery1.jpg" />
-    <Content Include="micro\img\thumbs\gallery_2x\gallery2.jpg" />
-    <Content Include="micro\img\thumbs\gallery_2x\gallery3.jpg" />
-    <Content Include="micro\img\thumbs\gallery_2x\gallery3.png" />
-    <Content Include="micro\img\thumbs\gallery_2x\gallery4.jpg" />
-    <Content Include="micro\img\thumbs\gallery_2x\gallery5.jpg" />
-    <Content Include="micro\img\thumbs\gallery_2x\gallery6.jpg" />
-    <Content Include="micro\img\thumbs\gallery_2x\gallery7.jpg" />
-    <Content Include="micro\img\thumbs\gallery_2x\gallery8.jpg" />
-    <Content Include="micro\img\thumbs\img_about.jpg" />
-    <Content Include="micro\img\thumbs\intro_slide_1.jpg" />
-    <Content Include="micro\img\thumbs\intro_slide_2.jpg" />
-    <Content Include="micro\img\thumbs\intro_slide_3.jpg" />
-    <Content Include="micro\img\thumbs\kazahstan.jpg" />
-    <Content Include="micro\img\thumbs\mail_sent.png" />
-    <Content Include="micro\img\thumbs\op_bg.jpg" />
-    <Content Include="micro\img\thumbs\tst_author_1.jpg" />
-    <Content Include="micro\img\thumbs\tst_author_2.jpg" />
-    <Content Include="micro\img\thumbs\tst_author_3.jpg" />
-    <Content Include="micro\img\thumbs\tst_author_4.jpg" />
-    <Content Include="micro\index.html" />
-    <Content Include="micro\js\bootstrap.min.js" />
-    <Content Include="micro\js\custom.js" />
-    <Content Include="micro\js\html5shiv.js" />
-    <Content Include="micro\js\IE7.js" />
-    <Content Include="micro\js\IE8.js" />
-    <Content Include="micro\js\jquery-2.1.0.min.js" />
-    <Content Include="micro\js\jquery.flexslider.js" />
-    <Content Include="micro\js\jquery.magnific-popup.min.js" />
-    <Content Include="micro\js\jquery.parallax-1.1.3.js" />
-    <Content Include="micro\js\jquery.stellar.min.js" />
-    <Content Include="micro\js\jquery.superslides.js" />
-    <Content Include="micro\js\jquery.validate.min.js" />
-    <Content Include="micro\js\modernizr.custom.js" />
-    <Content Include="micro\js\respond.min.js" />
-    <Content Include="micro\js\retina.js" />
-    <Content Include="micro\js\tabs.js" />
     <Content Include="m_master\PageBase.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -1278,33 +1210,12 @@
     <Compile Include="en\products\health_products_view.aspx.designer.cs">
       <DependentUpon>health_products_view.aspx</DependentUpon>
     </Compile>
-    <Compile Include="en\products\human_new_list.aspx.cs">
-      <DependentUpon>human_new_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\human_new_list.aspx.designer.cs">
-      <DependentUpon>human_new_list.aspx</DependentUpon>
-    </Compile>
     <Compile Include="en\products\human_new_view.aspx.cs">
       <DependentUpon>human_new_view.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="en\products\human_new_view.aspx.designer.cs">
       <DependentUpon>human_new_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\products\human_products_list.aspx.cs">
-      <DependentUpon>human_products_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\human_products_list.aspx.designer.cs">
-      <DependentUpon>human_products_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\products\human_products_view.aspx.cs">
-      <DependentUpon>human_products_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\human_products_view.aspx.designer.cs">
-      <DependentUpon>human_products_view.aspx</DependentUpon>
     </Compile>
     <Compile Include="en\products\medical_list.aspx.cs">
       <DependentUpon>medical_list.aspx</DependentUpon>
@@ -1319,6 +1230,41 @@
     </Compile>
     <Compile Include="en\products\medical_view.aspx.designer.cs">
       <DependentUpon>medical_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\product_list.aspx.cs">
+      <DependentUpon>product_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\product_list.aspx.designer.cs">
+      <DependentUpon>product_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\product_view.20170915.aspx.cs">
+      <DependentUpon>product_view.20170915.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\product_view.20170915.aspx.designer.cs">
+      <DependentUpon>product_view.20170915.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\product_new_list.aspx.cs">
+      <DependentUpon>product_new_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\product_new_list.aspx.designer.cs">
+      <DependentUpon>product_new_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\bio_rnd.aspx.cs">
+      <DependentUpon>bio_rnd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\bio_rnd.aspx.designer.cs">
+      <DependentUpon>bio_rnd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="en\products\product_view.aspx.cs">
+      <DependentUpon>product_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="en\products\product_view.aspx.designer.cs">
+      <DependentUpon>product_view.aspx</DependentUpon>
     </Compile>
     <Compile Include="en\sitemap.aspx.cs">
       <DependentUpon>sitemap.aspx</DependentUpon>
@@ -1945,13 +1891,6 @@
     <Content Include="en\EnProducts_Sub.Master" />
     <Content Include="en\EnSite.Master" />
     <Content Include="en\EnSiteSub.Master" />
-    <None Include="micro\fonts\fontawesome-webfont.eot" />
-    <None Include="micro\fonts\fontawesome-webfont.ttf" />
-    <None Include="micro\fonts\fontawesome-webfont.woff" />
-    <None Include="micro\fonts\FontAwesome.otf" />
-    <None Include="micro\fonts\glyphicons-halflings-regular.eot" />
-    <None Include="micro\fonts\glyphicons-halflings-regular.ttf" />
-    <None Include="micro\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\Profile1.pubxml" />
   </ItemGroup>

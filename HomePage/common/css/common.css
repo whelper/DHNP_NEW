@@ -118,12 +118,44 @@
 #slider img {
 	left: 0px; top: 0px; display: none; position: absolute;
 }
-.nivo-nextNav {
-	display: none;
+
+/* [S] 2017.09.05 추가 */
+#slider .nivo-directionNav a {
+	position: absolute;
+	top:308px;
+	width:23px;
+	height:40px;
+	border:0;
+	opacity: 1;
+    text-indent: -9999px;
+	-webkit-transition: all 200ms ease-in-out;
+	-moz-transition: all 200ms ease-in-out;
+	-o-transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out;
+	z-index: 100;
 }
-.nivo-prevNav {
-	display: none;
+#slider:hover .nivo-directionNav a { opacity: 1; }
+#slider a.nivo-nextNav {
+	background-position:-30px 0;
+	right:10px;
+	
+	background: url(/common/images/main/arrows.png) no-repeat center center;
+	background-size: cover;
+	cursor: pointer;
 }
+#slider a.nivo-prevNav {
+	left:10px;
+	
+	background: url(/common/images/main/arrows.png) no-repeat center center;
+	transform:rotate(180deg);
+    -moz-transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+    -o-transform:rotate(180deg);
+	background-size: cover;
+	cursor: pointer;
+}
+/* [E] 2017.09.05 추가 */
+
 .nivo-slice {
 	height: 100%; display: block; position: absolute; z-index: 5;
 }
@@ -143,6 +175,7 @@
 	font-size: 16px;
 }
 .nivo-controlNav {
+	/*top: 20px; width: 192px; height: 16px; text-align: right; right: 16px; display: block; position: absolute; z-index: 51; */
 	top: 20px; width: 192px; height: 16px; text-align: right; right: 16px; display: block; position: absolute; z-index: 51;
 }
 .nivo-controlNav a {
@@ -317,7 +350,7 @@
 	background: url("../images/main/slide_main.png") no-repeat 350px 8px; border: 2px solid rgb(4, 178, 90); border-image: none; height: 42px; margin-bottom: 20px; display: block; position: relative;
 }
 .search input {
-	margin: 2px 0px 0px 15px; border: currentColor; border-image: none; width: 320px; height: 38px; color: rgb(154, 154, 154); line-height: 35px; font-size: 16px;
+	margin: 2px 0px 0px 15px; border: currentColor; border-image: none; width: 320px; height: 38px; color: rgb(154, 154, 154); line-height: 35px; font-size: 16px; outline: 0;
 }
 .search .btn_search {
 	border: currentColor; border-image: none; width: 40px; height: 30px; color: transparent; font-size: 1px;

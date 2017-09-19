@@ -76,7 +76,7 @@
 				</tr>
 				<tr>
 					<th scope="row"> 
-						<label for="pdt_name">제품명</label>     
+						<label for="pdt_name">제품명<br />(Product name)</label>     
 					</th>
 					<td class="alignleft" colspan="2">     
 						<input type="text" runat="server" id="prod_nm" value="" class="span6 text" />
@@ -92,7 +92,7 @@
 				</tr>
 				<tr class="dosage input-items">
 					<th scope="row"> 
-						<label for="pdt_name">복용법</label>     
+						<label for="pdt_name">복용법<br />(Dosage)</label>     
 					</th>
 					<td class="alignleft" colspan="2">
 						<textarea runat="server" id="dosage" class="textarea_detail" rows="5"></textarea>	
@@ -137,7 +137,7 @@
 				</tr> 
 				<tr class="pdt_summary input-items">
 					<th scope="row"> 
-						<label for="pdt_summary">개요</label>   
+						<label for="pdt_summary">개요<br />(Overview)</label>   
 					</th>
 					<td class="alignleft" colspan="2">     
                         <textarea runat="server" id="pdt_summary" class="textarea_detail" rows="5"></textarea>
@@ -145,7 +145,7 @@
 				</tr>
 				<tr class="ingredi input-items">
 					<th scope="row" > 
-						<label for="ingredi">주요성분(성분함량)</label>   
+						<label for="ingredi">주요성분(성분함량)<br />(Active Ingredients)</label>   
 					</th>
 					<td colspan="2" class="alignleft">
 						<textarea  id="ingredi" runat="server" class="textarea_detail"  rows="5"></textarea>  
@@ -170,7 +170,7 @@
 					</td>
 				</tr>
 				<tr class="pdt_unit input-items">
-					<th scope="row"><label for="pdt_unit">포장단위</label></th>
+					<th scope="row"><label for="pdt_unit">포장단위<br />(Package)</label></th>
 					<td class="alignleft">  
 						<input type="text" runat="server" id="pack_mea" value="" class="span6 text" />
 					</td>
@@ -185,7 +185,7 @@
 				</tr>
 				<tr>
 					<th scope="row" class="th_top">
-						<label for="pdt_ex">제품설명<br/>(효능 효과 / 용법용량)</label> 
+						<label for="pdt_ex">제품설명<br/>(효능 효과 / 용법용량) <br />(Indication)</label> 
 					</th>
 					<td>
                         <asp:TextBox ID="usage" runat="server" CssClass="textarea_detail_adit" style="width:1000px;" TextMode="MultiLine" ></asp:TextBox>
@@ -478,7 +478,6 @@
 				</tr>
 			</tbody>
 		</table>
-
         <input type="hidden" id="hdnContent" runat="server" />
 		<input type="hidden" id="category" runat="server" />
 		<div class="btn_area clearfix">

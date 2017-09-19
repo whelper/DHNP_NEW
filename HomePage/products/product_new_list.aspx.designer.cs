@@ -10,7 +10,7 @@
 namespace HomePage.products {
     
     
-    public partial class human_new_list {
+    public partial class product_new_list {
         
         /// <summary>
         /// search_text 컨트롤입니다.

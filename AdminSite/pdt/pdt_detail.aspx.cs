@@ -28,12 +28,12 @@ namespace AdminSite.pdt
 
 		protected void Page_Load(object sender, EventArgs e)
         {
-
 			
 
 			if (!IsPostBack)
             {
-                SearchData();
+
+				SearchData();
 
                 SetControls();
 
@@ -110,7 +110,7 @@ namespace AdminSite.pdt
 			//국문
 			dicInputItems.Add("01", new string[] { "new_yn", "ident_number", "catg_no", "prod_div","ingredi", "temper", "insu_cd", "pdt_money", "pdt_unit" }); //인체
 			dicInputItems.Add("02", new string[] { "new_yn", "ident_number", "catg_no", "ingredi", "insu_cd", "pdt_money"}); //동물
-			dicInputItems.Add("03", new string[] { "rdo_bio", "ident_number", "catg_no", "pdt_summary", "pdt_keep", "pdt_boheom" }); //바이오
+			dicInputItems.Add("03", new string[] { "rdo_bio", "ident_number", "catg_no", "pdt_keep", "pdt_boheom" }); //바이오
 			dicInputItems.Add("04", new string[] { "rdo_exp", "ident_number", "catg_no", "compt", "pdt_info", "pdt_unit" }); //수출(인체)
 			dicInputItems.Add("05", new string[] { "rdo_exp", "ident_number", "catg_no", "compt", "pdt_info", "pdt_unit" }); //수출(동물)
 			dicInputItems.Add("06", new string[] { "rdo_exp", "ident_number", "catg_no", "compt", "pdt_info", "pdt_unit" }); //수출(기타)
@@ -120,7 +120,7 @@ namespace AdminSite.pdt
 			//영문
 			dicEngInputItems.Add("01", new string[] { "new_yn", "dosage", "ingredi","pdt_unit" }); //인체
 			dicEngInputItems.Add("02", new string[] { "new_yn", "dosage", "ingredi" }); //동물
-			dicEngInputItems.Add("03", new string[] { "rdo_bio" }); //바이오
+			dicEngInputItems.Add("03", new string[] { "rdo_bio", "dosage", "pdt_summary" }); //바이오
 			dicEngInputItems.Add("04", new string[] { "rdo_exp", "dosage", "ingredi", "pdt_unit" }); //수출(인체)
 			dicEngInputItems.Add("05", new string[] { "rdo_exp", "dosage", "ingredi" }); //수출(동물)
 			dicEngInputItems.Add("06", new string[] { "rdo_exp", "ingredi", "pdt_unit" }); //수출(기타)
@@ -162,6 +162,8 @@ namespace AdminSite.pdt
 				//바이오
 				pdt_re.Checked = prodType.Equals("PROD_REGIN") ? true : false;
 				pdt_bae.Checked = (prodType.Equals("") || prodType.Equals("PROD_BADG")) ? true : false;
+				pdt_summary.Value = GetData(0, 0, "SUMR");
+
 
 				//동의
 				//pdt_godl.Checked = prodType.Equals("PROD_GODL") ? true : false;
@@ -520,6 +522,20 @@ namespace AdminSite.pdt
             }
         }
 
+		protected string _PAGE_NO
+		{
+			get {
+				if (Request["page_no"] == null)
+				{
+					return "1";
+				}
+				else
+				{
+					return Request["page_no"];
+				}
+			}
+		}
+
         protected string LANG_CD
         {
             get
@@ -569,7 +585,7 @@ namespace AdminSite.pdt
         {
             SaveData();
 
-            Response.Redirect("./pdt_list.aspx?prod_cd=" + ProdCd + "&LANG_CD=" + LANG_CD+"&category="+ _category);
+            Response.Redirect("./pdt_list.aspx?prod_cd=" + ProdCd + "&LANG_CD=" + LANG_CD+"&category="+ _category+"&page_no="+_PAGE_NO);
         }
 
         protected void btnDel_Click(object sender, EventArgs e)

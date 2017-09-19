@@ -81,7 +81,7 @@
 					<td><%=GetBoardNum(i, Convert.ToInt32(nowPageNo.Value), 10)%></td>
 					<td><%=GetData(i, "PROD_CD")%></td>
 					<td><%=GetData(i, "PROD_TYPE_NM")%></td>
-					<td class="alignleft" ><a href="pdt_detail.aspx?prod_cd=<%=GetData(i, "PROD_CD")%>&category=<%=_category %>"><%=GetData(i, "PROD_NM")%></a> </td>
+					<td class="alignleft" ><a href="pdt_detail.aspx?prod_cd=<%=GetData(i, "PROD_CD")%>&category=<%=_category %>&page_no=<%=nowPageNo.Value%>"><%=GetData(i, "PROD_NM")%></a> </td>
 					<td><%=GetData(i, "CATG_NM2")%></td>
 					<td><%=GetData(i, "CATG_NO")%></td>
 					<td><%=GetData(i, "REG_DT")%></td>

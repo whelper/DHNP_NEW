@@ -30,21 +30,21 @@ $(function(){
   	});
 	
 
-	/******* 제품  사진 ************/  
-      //  제품 리스트 2개일때  
-	$('.list_Item:even').css( "margin-right", "33px" );
-     //  제품 리스트 3개일때 
-     $('.list_Item.about').css( "margin-right", "30px" );  
-     $('.list_Item.about:nth-child(3n+3)').css( "margin-right", "0" );
-     //  제품 리스트 4개일때 
-     $('.list_Item.total').css( "margin-right", "14px" ); 
-     $('.list_Item.total:nth-child(4n)').css( "margin-right", "0" );
- 	// 제품 상세보기 -  사진 갤러리 
-	$('#thumbs').delegate( 'img','click', function(){
-		$('#largeImage').attr( 'src', $(this).attr('src').replace('small','big') );
-		//$('#description').html($(this).attr('alt'));
-	});
-
+        /******* 제품  사진 ************/
+        //  제품 리스트 2개일때  
+        //$('.list_Item:even').css("margin-right", "33px");
+        //  제품 리스트 3개일때 
+        //$('.list_Item.about').css("margin-right", "30px");
+        $('.list_Item.about:nth-child(3n+3)').css("margin-right", "0");
+        //  제품 리스트 4개일때 
+        $('.list_Item.total').css("margin-right", "14px");
+        $('.list_Item.total:nth-child(4n)').css("margin-right", "0");
+        // 제품 상세보기 -  사진 갤러리 
+        $('#thumbs').delegate('img', 'click', function () {
+            $('#largeImage').attr('src', $(this).attr('src').replace('small', 'big'));
+            $('#largeImage').parent().attr('href', $(this).attr('src').replace('small', 'big'));;
+            //$('#description').html($(this).attr('alt'));
+        });
 	/******* table   ************/  
       var table_a = $("#j_table button"),
 	      table_content = $("#j_table .content_view");

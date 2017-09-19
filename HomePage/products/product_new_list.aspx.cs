@@ -12,8 +12,8 @@ using CommonLib.Utils;
 
 namespace HomePage.products
 {
-    public partial class human_new_list : PageBase
-    {
+	public partial class product_new_list : PageBase
+	{
         private const string LANG_CD = "KOR";
         private const string CATG_NO1 = "1";
         private const string PROD_TYPE_CD = "PROD_NEW";

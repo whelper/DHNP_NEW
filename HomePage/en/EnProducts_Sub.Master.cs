@@ -39,20 +39,15 @@ namespace HomePage.en
         private static string[] prod_13 = { "medical_list.aspx", "medical_view.aspx" };                                          // 의료기기
         private static string[] prod_15 = { "global_etc_list.aspx", "global_etc_view.aspx" };        // 수출의약품 - 동물의약품
 
-        private static string[] prod_group_1 = { "human_new_list.aspx", "human_new_view.aspx", "human_products_list.aspx", "human_products_view.aspx" 
-                                            , "human_change_list.aspx", "human_change_view.aspx"
-                                        };
-        private static string[] prod_group_2 = { "animal_new_list.aspx", "animal_new_view.aspx", "animal_products_list.aspx", "animal_products_view.aspx"
-                                            , "animal_delivery_list.aspx", "animal_delivery_view.aspx"};
-        private static string[] prod_group_3 = { "bio_badge_list.aspx", "bio_badge_view.aspx", "bio_resin_list.aspx", "bio_resin_view.aspx" 
-                                            , "bio_catalog_list.aspx", "bio_catalog_view.aspx"
-                                        };
-        private static string[] prod_group_4 = { "global_human_list.aspx", "global_human_view.aspx", "global_animal_list.aspx", "global_animal_view.aspx" };
-        private static string[] prod_group_5 = { "health_products_list.aspx", "health_products_view.aspx" };
-        private static string[] prod_group_6 = { "medical_list.aspx", "medical_view.aspx" };
+		private static string[] prod_group_1 = { "01" };
+		private static string[] prod_group_2 = { "02" };
+		private static string[] prod_group_3 = { "03" };
+		private static string[] prod_group_4 = { "04" };
+		private static string[] prod_group_5 = { "05" };
+		private static string[] prod_group_6 = { "06" };
 
-        /* 홍보 */
-        private static string[] pr_1 = { "news_list.aspx", "news_view.aspx" };                             // 새소식
+		/* 홍보 */
+		private static string[] pr_1 = { "news_list.aspx", "news_view.aspx" };                             // 새소식
         private static string[] pr_2 = { "global_list.aspx", "global_view.aspx" };                       // 해외자원투자
         //private static string[] pr_4 = { "global_list.aspx", "global_view.aspx" };
 
@@ -149,281 +144,286 @@ namespace HomePage.en
         /// <returns></returns>
         protected string GetLnbIndicator(string token)
         {
-            string css = "";
 
-            switch (token)
-            {
-                #region 제품 매뉴
-                case "prod_1":
-                    for (int i = 0; i < prod_1.Length; i++)
-                    {
-                        if (prod_1[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
+			string css = "";
+			if (token == menu)
+			{
+				css = " class='onhover current'";
+			}
 
-                case "prod_2":
-                    for (int i = 0; i < prod_2.Length; i++)
-                    {
-                        if (prod_2[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
+			//switch (token)
+			//{
+			//    #region 제품 매뉴
+			//    case "prod_1":
+			//        for (int i = 0; i < prod_1.Length; i++)
+			//        {
+			//            if (prod_1[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "prod_3":
-                    for (int i = 0; i < prod_3.Length; i++)
-                    {
-                        if (prod_3[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "prod_2":
+			//        for (int i = 0; i < prod_2.Length; i++)
+			//        {
+			//            if (prod_2[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "prod_4":
-                    for (int i = 0; i < prod_4.Length; i++)
-                    {
-                        if (prod_4[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "prod_3":
+			//        for (int i = 0; i < prod_3.Length; i++)
+			//        {
+			//            if (prod_3[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "prod_5":
-                    for (int i = 0; i < prod_5.Length; i++)
-                    {
-                        if (prod_5[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "prod_4":
+			//        for (int i = 0; i < prod_4.Length; i++)
+			//        {
+			//            if (prod_4[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "prod_6":
-                    for (int i = 0; i < prod_6.Length; i++)
-                    {
-                        if (prod_6[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "prod_5":
+			//        for (int i = 0; i < prod_5.Length; i++)
+			//        {
+			//            if (prod_5[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "prod_7":
-                    for (int i = 0; i < prod_7.Length; i++)
-                    {
-                        if (prod_7[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "prod_6":
+			//        for (int i = 0; i < prod_6.Length; i++)
+			//        {
+			//            if (prod_6[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "prod_8":
-                    for (int i = 0; i < prod_8.Length; i++)
-                    {
-                        if (prod_8[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "prod_7":
+			//        for (int i = 0; i < prod_7.Length; i++)
+			//        {
+			//            if (prod_7[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "prod_9":
-                    for (int i = 0; i < prod_9.Length; i++)
-                    {
-                        if (prod_9[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "prod_8":
+			//        for (int i = 0; i < prod_8.Length; i++)
+			//        {
+			//            if (prod_8[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "prod_10":
-                    for (int i = 0; i < prod_10.Length; i++)
-                    {
-                        if (prod_10[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "prod_9":
+			//        for (int i = 0; i < prod_9.Length; i++)
+			//        {
+			//            if (prod_9[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "prod_11":
-                    for (int i = 0; i < prod_11.Length; i++)
-                    {
-                        if (prod_11[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "prod_10":
+			//        for (int i = 0; i < prod_10.Length; i++)
+			//        {
+			//            if (prod_10[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "prod_12":
-                    for (int i = 0; i < prod_12.Length; i++)
-                    {
-                        if (prod_12[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "prod_11":
+			//        for (int i = 0; i < prod_11.Length; i++)
+			//        {
+			//            if (prod_11[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "prod_13":
-                    for (int i = 0; i < prod_13.Length; i++)
-                    {
-                        if (prod_13[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
-                case "prod_15":
-                    for (int i = 0; i < prod_15.Length; i++)
-                    {
-                        if (prod_15[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
-                #endregion
+			//    case "prod_12":
+			//        for (int i = 0; i < prod_12.Length; i++)
+			//        {
+			//            if (prod_12[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                #region 홍보 매뉴
-                case "pr_1":
-                    for (int i = 0; i < pr_1.Length; i++)
-                    {
-                        if (pr_1[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
-                case "pr_2":
-                    for (int i = 0; i < pr_2.Length; i++)
-                    {
-                        if (pr_2[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "prod_13":
+			//        for (int i = 0; i < prod_13.Length; i++)
+			//        {
+			//            if (prod_13[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
+			//    case "prod_15":
+			//        for (int i = 0; i < prod_15.Length; i++)
+			//        {
+			//            if (prod_15[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
+			//    #endregion
 
-                #endregion
+			//    #region 홍보 매뉴
+			//    case "pr_1":
+			//        for (int i = 0; i < pr_1.Length; i++)
+			//        {
+			//            if (pr_1[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
+			//    case "pr_2":
+			//        for (int i = 0; i < pr_2.Length; i++)
+			//        {
+			//            if (pr_2[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                #region 투자 메뉴
+			//    #endregion
 
-                case "invest_2":
-                    for (int i = 0; i < invest_2.Length; i++)
-                    {
-                        if (invest_2[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
+			//    #region 투자 메뉴
 
-                case "invest_8":
-                    for (int i = 0; i < invest_8.Length; i++)
-                    {
-                        if (invest_8[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
-                #endregion
+			//    case "invest_2":
+			//        for (int i = 0; i < invest_2.Length; i++)
+			//        {
+			//            if (invest_2[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                #region 채용 메뉴
-                case "recruit_6":
-                    for (int i = 0; i < recruit_6.Length; i++)
-                    {
-                        if (recruit_6[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "invest_8":
+			//        for (int i = 0; i < invest_8.Length; i++)
+			//        {
+			//            if (invest_8[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
+			//    #endregion
 
-                case "recruit_7":
-                    for (int i = 0; i < recruit_7.Length; i++)
-                    {
-                        if (recruit_7[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
+			//    #region 채용 메뉴
+			//    case "recruit_6":
+			//        for (int i = 0; i < recruit_6.Length; i++)
+			//        {
+			//            if (recruit_6[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "recruit_8":
-                    for (int i = 0; i < recruit_8.Length; i++)
-                    {
-                        if (recruit_8[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "recruit_7":
+			//        for (int i = 0; i < recruit_7.Length; i++)
+			//        {
+			//            if (recruit_7[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "recruit_9":
-                    for (int i = 0; i < recruit_9.Length; i++)
-                    {
-                        if (recruit_9[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "recruit_8":
+			//        for (int i = 0; i < recruit_8.Length; i++)
+			//        {
+			//            if (recruit_8[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "recruit_10":
-                    for (int i = 0; i < recruit_10.Length; i++)
-                    {
-                        if (recruit_10[i].Equals(pageName))
-                        {
-                            css = " class='onhover current'";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "recruit_9":
+			//        for (int i = 0; i < recruit_9.Length; i++)
+			//        {
+			//            if (recruit_9[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                #endregion
+			//    case "recruit_10":
+			//        for (int i = 0; i < recruit_10.Length; i++)
+			//        {
+			//            if (recruit_10[i].Equals(pageName))
+			//            {
+			//                css = " class='onhover current'";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-            }
+			//    #endregion
 
-            // switch문을 타지 않은 것은 여기서 검색
-            if (token.Equals(pageName))
-            {
-                css = " class='onhover current'";
-            }
+			//}
 
-            return css;
+			//// switch문을 타지 않은 것은 여기서 검색
+			//if (token.Equals(pageName))
+			//{
+			//    css = " class='onhover current'";
+			//}
+
+			return css;
         }
 
         /// <summary>
@@ -632,194 +632,198 @@ namespace HomePage.en
         /// <returns></returns>
         protected string GetLnbIndicatorDisplay(string token)
         {
-            string css = " style='display:none'";
+			string css = " style='display:none'";
+			if (token == menu.Substring(0, 2))
+			{
+				css = "";
+			}
 
-            switch (token)
-            {
-                #region 제품 매뉴
-                case "prod_group_1":
-                    for (int i = 0; i < prod_group_1.Length; i++)
-                    {
-                        if (prod_group_1[i].Equals(pageName))
-                        {
-                            css = "";
-                            break;
-                        }
-                    }
-                    break;
+			//switch (token)
+			//{
+			//    #region 제품 매뉴
+			//    case "prod_group_1":
+			//        for (int i = 0; i < prod_group_1.Length; i++)
+			//        {
+			//            if (prod_group_1[i].Equals(pageName))
+			//            {
+			//                css = "";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "prod_group_2":
-                    for (int i = 0; i < prod_group_2.Length; i++)
-                    {
-                        if (prod_group_2[i].Equals(pageName))
-                        {
-                            css = "";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "prod_group_2":
+			//        for (int i = 0; i < prod_group_2.Length; i++)
+			//        {
+			//            if (prod_group_2[i].Equals(pageName))
+			//            {
+			//                css = "";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "prod_group_3":
-                    for (int i = 0; i < prod_group_3.Length; i++)
-                    {
-                        if (prod_group_3[i].Equals(pageName))
-                        {
-                            css = "";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "prod_group_3":
+			//        for (int i = 0; i < prod_group_3.Length; i++)
+			//        {
+			//            if (prod_group_3[i].Equals(pageName))
+			//            {
+			//                css = "";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "prod_group_4":
-                    for (int i = 0; i < prod_group_4.Length; i++)
-                    {
-                        if (prod_group_4[i].Equals(pageName))
-                        {
-                            css = "";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "prod_group_4":
+			//        for (int i = 0; i < prod_group_4.Length; i++)
+			//        {
+			//            if (prod_group_4[i].Equals(pageName))
+			//            {
+			//                css = "";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "prod_group_5":
-                    for (int i = 0; i < prod_group_5.Length; i++)
-                    {
-                        if (prod_group_5[i].Equals(pageName))
-                        {
-                            css = "";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "prod_group_5":
+			//        for (int i = 0; i < prod_group_5.Length; i++)
+			//        {
+			//            if (prod_group_5[i].Equals(pageName))
+			//            {
+			//                css = "";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "prod_group_6":
-                    for (int i = 0; i < prod_group_6.Length; i++)
-                    {
-                        if (prod_group_6[i].Equals(pageName))
-                        {
-                            css = "";
-                            break;
-                        }
-                    }
-                    break;
-                #endregion
+			//    case "prod_group_6":
+			//        for (int i = 0; i < prod_group_6.Length; i++)
+			//        {
+			//            if (prod_group_6[i].Equals(pageName))
+			//            {
+			//                css = "";
+			//                break;
+			//            }
+			//        }
+			//        break;
+			//    #endregion
 
-                #region 홍보 매뉴
-                case "pr_1":
-                    for (int i = 0; i < pr_1.Length; i++)
-                    {
-                        if (pr_1[i].Equals(pageName))
-                        {
-                            css = "";
-                            break;
-                        }
-                    }
-                    break;
-                case "pr_2":
-                    for (int i = 0; i < pr_2.Length; i++)
-                    {
-                        if (pr_2[i].Equals(pageName))
-                        {
-                            css = "";
-                            break;
-                        }
-                    }
-                    break;
+			//    #region 홍보 매뉴
+			//    case "pr_1":
+			//        for (int i = 0; i < pr_1.Length; i++)
+			//        {
+			//            if (pr_1[i].Equals(pageName))
+			//            {
+			//                css = "";
+			//                break;
+			//            }
+			//        }
+			//        break;
+			//    case "pr_2":
+			//        for (int i = 0; i < pr_2.Length; i++)
+			//        {
+			//            if (pr_2[i].Equals(pageName))
+			//            {
+			//                css = "";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                #endregion
+			//    #endregion
 
-                #region 투자 메뉴
+			//    #region 투자 메뉴
 
-                case "invest_group_1":
-                    for (int i = 0; i < invest_group_1.Length; i++)
-                    {
-                        if (invest_group_1[i].Equals(pageName))
-                        {
-                            css = "";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "invest_group_1":
+			//        for (int i = 0; i < invest_group_1.Length; i++)
+			//        {
+			//            if (invest_group_1[i].Equals(pageName))
+			//            {
+			//                css = "";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "invest_group_2":
-                    for (int i = 0; i < invest_group_2.Length; i++)
-                    {
-                        if (invest_group_2[i].Equals(pageName))
-                        {
-                            css = "";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "invest_group_2":
+			//        for (int i = 0; i < invest_group_2.Length; i++)
+			//        {
+			//            if (invest_group_2[i].Equals(pageName))
+			//            {
+			//                css = "";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "invest_group_3":
-                    for (int i = 0; i < invest_group_3.Length; i++)
-                    {
-                        if (invest_group_3[i].Equals(pageName))
-                        {
-                            css = "";
-                            break;
-                        }
-                    }
-                    break;
-                #endregion
+			//    case "invest_group_3":
+			//        for (int i = 0; i < invest_group_3.Length; i++)
+			//        {
+			//            if (invest_group_3[i].Equals(pageName))
+			//            {
+			//                css = "";
+			//                break;
+			//            }
+			//        }
+			//        break;
+			//    #endregion
 
-                #region 채용 메뉴
-                case "recruit_group_1":
-                    for (int i = 0; i < recruit_group_1.Length; i++)
-                    {
-                        if (recruit_group_1[i].Equals(pageName))
-                        {
-                            css = "";
-                            break;
-                        }
-                    }
-                    break;
+			//    #region 채용 메뉴
+			//    case "recruit_group_1":
+			//        for (int i = 0; i < recruit_group_1.Length; i++)
+			//        {
+			//            if (recruit_group_1[i].Equals(pageName))
+			//            {
+			//                css = "";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "recruit_group_2":
-                    for (int i = 0; i < recruit_group_2.Length; i++)
-                    {
-                        if (recruit_group_2[i].Equals(pageName))
-                        {
-                            css = "";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "recruit_group_2":
+			//        for (int i = 0; i < recruit_group_2.Length; i++)
+			//        {
+			//            if (recruit_group_2[i].Equals(pageName))
+			//            {
+			//                css = "";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "recruit_group_3":
-                    for (int i = 0; i < recruit_group_3.Length; i++)
-                    {
-                        if (recruit_group_3[i].Equals(pageName))
-                        {
-                            css = "";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "recruit_group_3":
+			//        for (int i = 0; i < recruit_group_3.Length; i++)
+			//        {
+			//            if (recruit_group_3[i].Equals(pageName))
+			//            {
+			//                css = "";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                case "recruit_group_4":
-                    for (int i = 0; i < recruit_group_4.Length; i++)
-                    {
-                        if (recruit_group_4[i].Equals(pageName))
-                        {
-                            css = "";
-                            break;
-                        }
-                    }
-                    break;
+			//    case "recruit_group_4":
+			//        for (int i = 0; i < recruit_group_4.Length; i++)
+			//        {
+			//            if (recruit_group_4[i].Equals(pageName))
+			//            {
+			//                css = "";
+			//                break;
+			//            }
+			//        }
+			//        break;
 
-                #endregion
+			//    #endregion
 
-            }
+			//}
 
-            // switch문을 타지 않은 것은 여기서 검색
-            if (token.Equals(pageName))
-            {
-                css = "";
-            }
+			//// switch문을 타지 않은 것은 여기서 검색
+			//if (token.Equals(pageName))
+			//{
+			//    css = "";
+			//}
 
-            return css;
+			return css;
         }
 
         /// <summary>
@@ -833,9 +837,19 @@ namespace HomePage.en
             mds = WebSql.SelectSql(1001, param.ToString());
         }
 
-        #region GET-SET
+		protected string category
+		{
+			get { return (Request["category"] != null) ? Request["category"].Substring(0, 2) : "01"; }
+		}
 
-        private CWebSql WebSql
+		protected string menu
+		{
+			get { return (Request["menu"] != null) ? Request["menu"] : "0101"; }
+		}
+
+		#region GET-SET
+
+		private CWebSql WebSql
         {
             get
             {

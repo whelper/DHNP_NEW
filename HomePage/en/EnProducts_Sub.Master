@@ -70,14 +70,14 @@
 							<li><a href="/en/intro/location.aspx"> Contact Us </a></li>
 						</ul>
 					</li>
-					<li><a href="/en/products/human_new_list.aspx" class="gnb_02<%=GetGnbIndicator("products")%>">Products</a>
+					<li><a href="/en/products/product_new_list.aspx?category=09&menu=0102" class="gnb_02<%=GetGnbIndicator("products")%>">Products</a>
 						<ul  class="ly" style="display:none;">
-							<li><a href="/en/products/human_new_list.aspx">Pharmaceutical</a></li>
-							<li><a href="/en/products/animal_new_list.aspx">Animal Health & Nutrition</a></li>
-							<li><a href="/en/products/bio_badge_list.aspx">Bioprocess</a></li>
-							<li><a href="/en/products/global_human_list.aspx">International Sales</a></li>
-							<li><a href="/en/products/health_products_list.aspx">Health Suppliments</a></li>
-	                        <li><a href="/en/products/medical_list.aspx">Medical Devices</a></li>
+							<li><a href="/en/products/product_new_list.aspx?category=09&menu=0102">Pharmaceutical</a></li>
+							<li><a href="/en/products/product_new_list.aspx?category=10&menu=0202">Animal Health & Nutrition</a></li>
+							<li><a href="/en/products/product_list.aspx?category=11&menu=0301">Biopharmaceutical</a></li>
+							<li><a href="/en/products/product_list.aspx?category=12&menu=0401">International Sales</a></li>
+							<li><a href="/en/products/product_list.aspx?category=13&menu=0501">Health Suppliments</a></li>
+	                        <li><a href="/en/products/product_list.aspx?category=14&menu=0601">Medical Devices</a></li>
 						</ul>
 					</li>
 					<%--<li><a href="/en/pr/news_list.aspx" class="gnb_03<%=GetGnbIndicator("pr")%>">홍보</a>
@@ -131,42 +131,42 @@
 
 			<h1 class="snb_title t02">  제품 </h1>      
 			<ul>
-				<li> <a href="/en/products/human_new_list.aspx"<%=GetLnbIndicatorGroup("prod_group_1")%>>Pharmaceutical</a> 
-					<ul class="sy"<%=GetLnbIndicatorDisplay("prod_group_1")%>>
-						<li><a href="/en/products/human_new_list.aspx"<%=GetLnbIndicator("prod_1")%>>New Products</a> </li>
-						<li><a href="/en/products/human_products_list.aspx"<%=GetLnbIndicator("prod_2")%>>Products</a></li>
+				<li> <a href="/en/products/product_new_list.aspx?category=09&menu=0102"<%=GetLnbIndicatorGroup("01")%>>Pharmaceutical</a> 
+					<ul class="sy"<%=GetLnbIndicatorDisplay("01")%>>
+						<li><a href="/en/products/product_new_list.aspx?category=09&menu=0102"<%=GetLnbIndicator("0102")%>>New Products</a> </li>
+						<li><a href="/en/products/product_list.aspx?category=09&menu=0101"<%=GetLnbIndicator("0101")%>>Products</a></li>
 						<%--<li><a href="/en/products/human_change_list.aspx"<%=GetLnbIndicator("prod_3")%>>제품변경정보</a></li>--%>
 					</ul> 
 				</li>
-				<li> <a href="/en/products/animal_new_list.aspx"<%=GetLnbIndicatorGroup("prod_group_2")%>>Animal Health & Nutrition</a>
-					<ul class="sy"<%=GetLnbIndicatorDisplay("prod_group_2")%>>
-						<li><a href="/en/products/animal_new_list.aspx"<%=GetLnbIndicator("prod_4")%>>New Products</a></li>
-						<li><a href="/en/products/animal_products_list.aspx"<%=GetLnbIndicator("prod_5")%>>Products</a></li>
+				<li> <a href="/en/products/product_new_list.aspx?category=10&menu=0202"<%=GetLnbIndicatorGroup("02")%>>Animal Health & Nutrition</a>
+					<ul class="sy"<%=GetLnbIndicatorDisplay("02")%>>
+						<li><a href="/en/products/product_new_list.aspx?category=10&menu=0202"<%=GetLnbIndicator("0202")%>>New Products</a></li>
+						<li><a href="/en/products/product_list.aspx?category=10&menu=0201"<%=GetLnbIndicator("0201")%>>Products</a></li>
 						<%--<li><a href="/en/products/animal_delivery_list.aspx"<%=GetLnbIndicator("prod_6")%>>관납제품</a></li>--%>
 					</ul> 
 				</li>
-				<li> <a href="/en/products/bio_badge_list.aspx"<%=GetLnbIndicatorGroup("prod_group_3")%>>Bioprocess</a> 
-					<ul class="sy"<%=GetLnbIndicatorDisplay("prod_group_3")%>>
-					    <li><a href="/en/products/bio_badge_list.aspx"<%=GetLnbIndicator("prod_7")%>>Cell Culture Media</a></li>
-					    <li><a href="/en/products/bio_resin_list.aspx"<%=GetLnbIndicator("prod_8")%>>Chromatography Resins</a></li>
-					    <li><a href="/en/products/bio_catalog_list.aspx"<%=GetLnbIndicator("prod_9")%>> Catalog Products  </a></li>
+				<li> <a href="/en/products/product_list.aspx?category=11&menu=0301"<%=GetLnbIndicatorGroup("03")%>>Biopharmaceutical</a> 
+					<ul class="sy"<%=GetLnbIndicatorDisplay("03")%>>
+					    <li><a href="/en/products/product_list.aspx?category=11&menu=0301"<%=GetLnbIndicator("0301")%>>Cell Culture Media</a></li>
+					    <li><a href="/en/products/bio_rnd.aspx?category=11&&menu=0302"<%=GetLnbIndicator("0302")%>>Chromatography Resins</a></li>
+					    <%--<li><a href="/en/products/bio_catalog_list.aspx"<%=GetLnbIndicator("prod_9")%>> Catalog Products  </a></li>--%>
 					</ul> 
 			      </li>
-				<li> <a href="/en/products/global_human_list.aspx"<%=GetLnbIndicatorGroup("prod_group_4")%>>International Sales</a> 
-			            <ul class="sy"<%=GetLnbIndicatorDisplay("prod_group_4")%>>
-			                <li><a href="/en/products/global_human_list.aspx"<%=GetLnbIndicator("prod_10")%>> Pharmaceutical</a></li>
-			                <li><a href="/en/products/global_animal_list.aspx"<%=GetLnbIndicator("prod_11")%>> Animal Health & Nutrition</a></li>
-                            <li><a href="/en/products/global_animal_list.aspx"<%=GetLnbIndicator("prod_15")%>> ETC</a></li>
+				<li> <a href="/en/products/product_list.aspx?category=12&menu=0401"<%=GetLnbIndicatorGroup("04")%>>International Sales</a> 
+			            <ul class="sy"<%=GetLnbIndicatorDisplay("04")%>>
+			                <li><a href="/en/products/product_list.aspx?category=12&menu=0401"<%=GetLnbIndicator("0401")%>> Pharmaceutical</a></li>
+			                <li><a href="/en/products/product_list.aspx?category=13&menu=0402"<%=GetLnbIndicator("0402")%>> Animal Health & Nutrition</a></li>
+                            <li><a href="/en/products/product_list.aspx?category=14&menu=0403"<%=GetLnbIndicator("0403")%>> ETC</a></li>
 			            </ul> 
 				</li>
-				<li> <a href="/en/products/health_products_list.aspx"<%=GetLnbIndicatorGroup("prod_group_5")%>>Health Suppliments</a> 
-					<ul class="sy"<%=GetLnbIndicatorDisplay("prod_group_5")%>>
-						<li><a href="/en/products/health_products_list.aspx"<%=GetLnbIndicator("prod_12")%>>Products</a></li>
+				<li> <a href="/en/products/product_list.aspx?category=15&menu=0501"<%=GetLnbIndicatorGroup("05")%>>Health Suppliments</a> 
+					<ul class="sy"<%=GetLnbIndicatorDisplay("05")%>>
+						<li><a href="/en/products/product_list.aspx?category=15&menu=0501"<%=GetLnbIndicator("0501")%>>Products</a></li>
 					</ul> 
 				</li>
-				<li> <a href="/en/products/medical_list.aspx"<%=GetLnbIndicatorGroup("prod_group_6")%>>Medical Devices</a> 
-					<ul class="sy"<%=GetLnbIndicatorDisplay("prod_group_6")%>>
-						<li><a href="/en/products/medical_list.aspx"<%=GetLnbIndicator("prod_13")%>>Medical Devices</a></li>
+				<li> <a href="/en/products/product_list.aspx?category=16&menu=0601"<%=GetLnbIndicatorGroup("06")%>>Medical Devices</a> 
+					<ul class="sy"<%=GetLnbIndicatorDisplay("06")%>>
+						<li><a href="/en/products/product_list.aspx?category=16&menu=0601"<%=GetLnbIndicator("0601")%>>Medical Devices</a></li>
 					</ul> 
 				</li>
 			</ul>
