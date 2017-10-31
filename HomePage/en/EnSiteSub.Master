@@ -267,9 +267,9 @@
     <aside id="quick_menu">
 		<h1><span>Quick Menu</span></h1>
 		<ul>
-			<LI class="qu_01"><A href="/en/products/human_new_list.aspx"></A></LI>
-                      <LI class="qu_02"><A href="/en/products/animal_new_list.aspx"></A></LI>
-                      <LI class="qu_03"><A href="/en/products/bio_badge_list.aspx"></A></LI>
+			<LI class="qu_01"><A href="/en/products/product_new_list.aspx?category=09&menu=0102"></A></LI>
+                      <LI class="qu_02"><A href="/en/products/product_new_list.aspx?category=10&menu=0202"></A></LI>
+                      <LI class="qu_03"><A href="/en/products/product_list.aspx?category=11&menu=0301"></A></LI>
 			    <%--<li class="qu_01"><a href="/en/index.aspx">home</a></li>
 			    <li class="qu_02"><a href="/en/products/human_new_list.aspx">Quick menu</a></li>
 			    <li class="qu_03"><a href="/en/products/animal_new_list.aspx"> Animal Health & Nutrition</a></li>

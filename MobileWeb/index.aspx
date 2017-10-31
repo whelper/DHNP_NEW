@@ -22,12 +22,13 @@
 		<div class="bxslider_box"> 
 			<ul  id="slider1" >
                 <% 
-                    if (GetDataTableCount(0) > 0)
-                    {
-                        // 이미지 존재
-                        for (int i = 0; i < GetDataTableCount(0); i++)
-                        {
-                                // 링크가 있는 경우
+					if (GetDataTableCount(0) > 0)
+					{
+						// 이미지 존재
+						for (int i = 0; i < GetDataTableCount(0); i++)
+						{
+							// 링크가 있는 경우
+							if (GetData(0, i, "FILE_PATH").Equals("")) continue;
                 %>
                 <li>
                     <img src="<%=GetData(0, i, "FILE_PATH") %>" alt="" onerror="this.src='/common/images/index_visual_01.jpg'" />
@@ -52,9 +53,9 @@
 		<article class="products_go">
 			<h1 class="acc-hidden"> 제품소개 </h1>	
 			<ul>
-				<li><a href="/pdt/pdt_human_new_list.aspx"><img src="<%=GetRoot() %>/common/images/indexPr_icon_01.png" alt="인체 의약품" /></a></li>
-				<li><a href="/pdt/pdt_animal_new_list.aspx"><img src="<%=GetRoot() %>/common/images/indexPr_icon_02.png" alt="동물 의약품" /></a></li>
-				<li><a href="/pdt/pdt_bio_badge_list.aspx"><img src="<%=GetRoot() %>/common/images/indexPr_icon_03.png" alt="바이오 공정소재" /></a></li>
+				<li><a href="/pdt/pdt_new_list.aspx?category=01&menu=0102"><img src="<%=GetRoot() %>/common/images/indexPr_icon_01.png" alt="인체 의약품" /></a></li>
+				<li><a href="/pdt/pdt_new_list.aspx?category=02&menu=0202"><img src="<%=GetRoot() %>/common/images/indexPr_icon_02.png" alt="동물 의약품" /></a></li>
+				<li><a href="/pdt/pdt_list.aspx?category=03&menu=0301"><img src="<%=GetRoot() %>/common/images/indexPr_icon_03.png" alt="바이오 공정소재" /></a></li>
 			</ul>                
 		</article> 
 		<!--  //  인체의약품 /동물의약품/바이오공정소재  -->
@@ -133,7 +134,8 @@
 			<article class="customer_form">
 				<h1 class="acc-hidden"> <span> 고객문의 </span> </h1>	
  				<ul>
- 					<li><a href="/cust/inquire_list.aspx"><img src="/common/images/indexCus_icon_03.jpg" alt="고객문의 " /></a></li>
+ 					<li><a href="/cust/inquire_list.aspx"><img src="/common/images/indexCus_icon_03.png" alt="고객문의 " /></a></li>
+					<li><a href="https://www.dhnp.co.kr/micro/index.html" target="_blank"><img src="/common/images/indexCus_icon_04.png" alt="해외자원투자 " /></a></li>
  				</ul>                   
 			</article>
 			 <!-- // products_go  -->

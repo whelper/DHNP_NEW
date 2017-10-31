@@ -46,21 +46,21 @@
 			    <dt class="fB about"> 제품명 </dt>
 			    <dd>
 				<ul class="products_total_ul about">
-                    <li class="total"><a href="?menu=<%=menu%>&prod_initial=&catg_no2=<%=CatgNo2%>">전체</a></li>
-					<li class="left"><a href="?menu=<%=menu%>&prod_initial=INIT_1&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_1")) {%> class="active" <%}%>>ㄱ</a></li>
-					<li><a href="?menu=<%=menu%>&prod_initial=INIT_2&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_2")) {%> class="active" <%}%>>ㄴ</a></li>
-                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_3&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_3")) {%> class="active" <%}%>>ㄷ</a></li>
-                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_4&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_4")) {%> class="active" <%}%>>ㄹ</a></li>
-                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_5&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_5")) {%> class="active" <%}%>>ㅁ</a></li>
-                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_6&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_6")) {%> class="active" <%}%>>ㅂ</a></li>
-                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_7&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_7")) {%> class="active" <%}%>>ㅅ</a></li>
-                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_8&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_8")) {%> class="active" <%}%>>ㅇ</a></li>
-                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_9&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_9")) {%> class="active" <%}%>>ㅈ</a></li>
-                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_10&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_10")) {%> class="active" <%}%>>ㅊ</a></li>
-                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_11&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_11")) {%> class="active" <%}%>>ㅋ</a></li>
-                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_12&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_12")) {%> class="active" <%}%>>ㅌ</a></li>
-                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_13&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_13")) {%> class="active" <%}%>>ㅍ</a></li>
-					<li class="right"><a href="?menu=<%=menu%>&prod_initial=INIT_14&catg_no2=<%=CatgNo2%>"<%if (ProdInitial.Equals("INIT_14")) {%> class="active" <%}%>>ㅎ</a></li>
+                    <li class="total"><a href="?menu=<%=menu%>&prod_initial=&category=<%=category%>">전체</a></li>
+					<li class="left"><a href="?menu=<%=menu%>&prod_initial=INIT_1&category=<%=category%>"<%if (ProdInitial.Equals("INIT_1")) {%> class="active" <%}%>>ㄱ</a></li>
+					<li><a href="?menu=<%=menu%>&prod_initial=INIT_2&category=<%=category%>"<%if (ProdInitial.Equals("INIT_2")) {%> class="active" <%}%>>ㄴ</a></li>
+                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_3&category=<%=category%>"<%if (ProdInitial.Equals("INIT_3")) {%> class="active" <%}%>>ㄷ</a></li>
+                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_4&category=<%=category%>"<%if (ProdInitial.Equals("INIT_4")) {%> class="active" <%}%>>ㄹ</a></li>
+                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_5&category=<%=category%>"<%if (ProdInitial.Equals("INIT_5")) {%> class="active" <%}%>>ㅁ</a></li>
+                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_6&category=<%=category%>"<%if (ProdInitial.Equals("INIT_6")) {%> class="active" <%}%>>ㅂ</a></li>
+                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_7&category=<%=category%>"<%if (ProdInitial.Equals("INIT_7")) {%> class="active" <%}%>>ㅅ</a></li>
+                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_8&category=<%=category%>"<%if (ProdInitial.Equals("INIT_8")) {%> class="active" <%}%>>ㅇ</a></li>
+                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_9&category=<%=category%>"<%if (ProdInitial.Equals("INIT_9")) {%> class="active" <%}%>>ㅈ</a></li>
+                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_10&category=<%=category%>"<%if (ProdInitial.Equals("INIT_10")) {%> class="active" <%}%>>ㅊ</a></li>
+                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_11&category=<%=category%>"<%if (ProdInitial.Equals("INIT_11")) {%> class="active" <%}%>>ㅋ</a></li>
+                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_12&category=<%=category%>"<%if (ProdInitial.Equals("INIT_12")) {%> class="active" <%}%>>ㅌ</a></li>
+                    <li><a href="?menu=<%=menu%>&prod_initial=INIT_13&category=<%=category%>"<%if (ProdInitial.Equals("INIT_13")) {%> class="active" <%}%>>ㅍ</a></li>
+					<li class="right"><a href="?menu=<%=menu%>&prod_initial=INIT_14&category=<%=category%>"<%if (ProdInitial.Equals("INIT_14")) {%> class="active" <%}%>>ㅎ</a></li>
 				</ul>
 			    </dd>
 			</dl>

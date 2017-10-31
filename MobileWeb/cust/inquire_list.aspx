@@ -42,7 +42,7 @@
 				    </div>
 				    <div class="inquire_input tel">
 					    <label for="tel"><span>연락처</span></label>
-					    <input  type="text" id="tel" runat="server" name="" placeholder="연락처을 입력해 주세요." />  
+					    <input  type="text" id="tel" runat="server" name="" placeholder="연락처를 입력해 주세요." />  
 				    </div>
 				    <div class="inquire_input email">
 					    <label for="email"><span>이메일 </span></label>

@@ -110,14 +110,16 @@
                     , "prod_type_cd": ""
                     , "prod_s_init_cd": ''
                     , "prod_e_init_cd": ''
-                    , "prod_tag": $('#<%= search_text.ClientID %>').val()
+					, "prod_tag": $('#<%= search_text.ClientID %>').val()
+					, "prod_sorting": ""
                 }
                 , async: false
                 , dataType: "xml" // Debugging을 위해 일단 TEXT로 받는다.
                 , success: function (xml, status) {
                     html = '';
 
-                    $(xml).find("Result>List>Products").each(function () {
+					$(xml).find("Result>List>Products").each(function () {
+						var CATE_CD = $(this).children("CATE_CD").text();
                         var CATG_NO1 = $(this).children("CATG_NO1").text();
                         var PROD_IMG1 = $(this).children("PROD_IMG1").text();
                         var PROD_CD = $(this).children("PROD_CD").text();
@@ -132,11 +134,11 @@
                         if (PROD_TYPE == "PROD_NEW") {
                             html += '       <i class="new"> new </i>';
                         }
-                        html += '       <img src="' + PROD_IMG1 + '" alt=""  width="107" height="78" onerror="this.src=<%=GetRoot() %>/common/images/products/new_no.jpg" />';
+						html += '       <a href="/pdt/pdt_view.aspx?category=' + CATE_CD+'&prod_cd=' + PROD_CD + '"><img src="' + PROD_IMG1 + '" alt=""  width="107" height="78" onerror="this.src=<%=GetRoot() %>/common/images/products/new_no.jpg" /></a>';
                         html += '   </span>';
-                        html += '   <a href="'+ view_url +'?prod_cd=' + PROD_CD + '" class="right_text">';
+						html += '   <a href="/pdt/pdt_view.aspx?category=' + CATE_CD +'&prod_cd=' + PROD_CD + '" class="right_text">';
                         html += '		<h1>' + PROD_NM + '</h1>';
-                        html += '		<p>' + USAGE + '</p>';
+                        //html += '		<p>' + USAGE + '</p>';
                         html += '	</a>';
                         html += '</article>';
                     });

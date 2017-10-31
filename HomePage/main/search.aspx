@@ -86,7 +86,7 @@
 		        <article class="list_Item total" >
 			        <i class="<%=css%>"><em></em></i>
 					<%--<i class="<%=product_type%>"></i>--%>
-			        <a href="<%=URL  + "?PROD_CD=" + GetData(i, "PROD_CD")%>"><img src="<%=GetData(i, "PROD_IMG1") %>" width="232" height="177" alt="" onerror="this.src='/common/images/products/new_no.jpg'" /></a>
+			        <a href="<%="/products/product_view.aspx"  + "?category="+GetData(i, "CATE_CD")+"&PROD_CD=" + GetData(i, "PROD_CD")%>"><img src="<%=GetData(i, "PROD_IMG1") %>" width="232" height="177" alt="" onerror="this.src='/common/images/products/new_no.jpg'" /></a>
 			        <h1><%=GetData(i, "PROD_NM") %></h1>
 		        </article>	
         <% 

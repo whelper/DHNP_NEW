@@ -452,6 +452,7 @@
     <Content Include="inv\stock_info.aspx" />
     <Content Include="inv\treasury_stock.aspx" />
     <Content Include="m_master\PageBase.aspx" />
+    <Content Include="pdt\bio_rnd.aspx" />
     <Content Include="pdt\pdt_animal_delivery_list.aspx" />
     <Content Include="pdt\pdt_animal_delivery_view.aspx" />
     <Content Include="pdt\pdt_animal_new_list.aspx" />
@@ -474,8 +475,11 @@
     <Content Include="pdt\pdt_human_new_view.aspx" />
     <Content Include="pdt\pdt_human_products_list.aspx" />
     <Content Include="pdt\pdt_human_products_view.aspx" />
+    <Content Include="pdt\pdt_list.aspx" />
     <Content Include="pdt\pdt_medical_list.aspx" />
     <Content Include="pdt\pdt_medical_view.aspx" />
+    <Content Include="pdt\pdt_new_list.aspx" />
+    <Content Include="pdt\pdt_view.aspx" />
     <Content Include="pr\pr_global_list.aspx" />
     <Content Include="pr\pr_global_view.aspx" />
     <Content Include="pr\pr_new_list.aspx" />
@@ -954,6 +958,13 @@
     <Compile Include="m_master\PageBase.aspx.designer.cs">
       <DependentUpon>PageBase.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pdt\bio_rnd.aspx.cs">
+      <DependentUpon>bio_rnd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\bio_rnd.aspx.designer.cs">
+      <DependentUpon>bio_rnd.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pdt\pdt_animal_delivery_list.aspx.cs">
       <DependentUpon>pdt_animal_delivery_list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1108,6 +1119,13 @@
     <Compile Include="pdt\pdt_human_products_view.aspx.designer.cs">
       <DependentUpon>pdt_human_products_view.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pdt\pdt_list.aspx.cs">
+      <DependentUpon>pdt_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_list.aspx.designer.cs">
+      <DependentUpon>pdt_list.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pdt\pdt_medical_list.aspx.cs">
       <DependentUpon>pdt_medical_list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1121,6 +1139,20 @@
     </Compile>
     <Compile Include="pdt\pdt_medical_view.aspx.designer.cs">
       <DependentUpon>pdt_medical_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_new_list.aspx.cs">
+      <DependentUpon>pdt_new_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_new_list.aspx.designer.cs">
+      <DependentUpon>pdt_new_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdt\pdt_view.aspx.cs">
+      <DependentUpon>pdt_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdt\pdt_view.aspx.designer.cs">
+      <DependentUpon>pdt_view.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="pr\pr_global_list.aspx.cs">

@@ -21,12 +21,12 @@ namespace MobileWeb.ws
     {
 
         [WebMethod]
-        public XmlDocument GetProductList(int now_page, string lang_cd, string catg_no1, string catg_no2, string prod_type_cd, string prod_s_init_cd, string prod_e_init_cd, string prod_tag)
+        public XmlDocument GetProductList(int now_page, string lang_cd, string catg_no1, string catg_no2, string prod_type_cd, string prod_s_init_cd, string prod_e_init_cd, string prod_tag, string prod_sorting)
         {
             XmlDocument doc = new XmlDocument();
 
             CProduct product = new CProduct();
-            doc.InnerXml = product.GetProductList(now_page, lang_cd, catg_no1, catg_no2, prod_type_cd, prod_s_init_cd, prod_e_init_cd, prod_tag);
+            doc.InnerXml = product.GetProductList(now_page, lang_cd, catg_no1, catg_no2, prod_type_cd, prod_s_init_cd, prod_e_init_cd, prod_tag, prod_sorting);
 
             return doc;
         }

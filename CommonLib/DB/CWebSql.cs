@@ -3015,8 +3015,9 @@ namespace CommonLib.DB
                     variable[5] = "@PROD_S_INIT_NM";
                     variable[6] = "@PROD_E_INIT_NM";
                     variable[7] = "@PROD_TAG";
+					variable[8] = "@ORDER_BY";
 
-                    sqldbtype[0] = SqlDbType.Int;
+					sqldbtype[0] = SqlDbType.Int;
                     sqldbtype[1] = SqlDbType.VarChar;
                     sqldbtype[2] = SqlDbType.VarChar;
                     sqldbtype[3] = SqlDbType.VarChar;
@@ -3024,9 +3025,10 @@ namespace CommonLib.DB
                     sqldbtype[5] = SqlDbType.VarChar;
                     sqldbtype[6] = SqlDbType.VarChar;
                     sqldbtype[7] = SqlDbType.VarChar;
+					sqldbtype[8] = SqlDbType.VarChar;
 
-                    // 마지막 인자값 항상 확인(파라미터 총수 임)
-                    ds = command.ExecuteDataSetSecure("USP_MOBILE_2001_PROD_LIST_S", variable, m_value, sqldbtype, 8);
+					// 마지막 인자값 항상 확인(파라미터 총수 임)
+					ds = command.ExecuteDataSetSecure("USP_MOBILE_2001_PROD_LIST_S", variable, m_value, sqldbtype, 9);
                     break;
 
                 case 2002: // 제품관리 상세

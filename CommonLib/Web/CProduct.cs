@@ -23,7 +23,7 @@ namespace CommonLib.Web
         /// </summary>
         /// <param name="upperProdTypeNo"></param>
         /// <returns></returns>
-        public string GetProductList(int now_page, string lang_cd, string catg_no1, string catg_no2, string prod_type_cd, string prod_s_init_cd, string prod_e_init_cd, string prod_tag)
+        public string GetProductList(int now_page, string lang_cd, string catg_no1, string catg_no2, string prod_type_cd, string prod_s_init_cd, string prod_e_init_cd, string prod_tag, string prod_sorting)
         {
             string result = string.Empty;
 
@@ -36,9 +36,11 @@ namespace CommonLib.Web
             param.Append(CConst.DB_PARAM_DELIMITER).Append(CStringUtil.GetInitial(lang_cd, "S", prod_s_init_cd));
             param.Append(CConst.DB_PARAM_DELIMITER).Append(CStringUtil.GetInitial(lang_cd, "E", prod_e_init_cd));
             param.Append(CConst.DB_PARAM_DELIMITER).Append(prod_tag); // 태그명으로 검색
+			param.Append(CConst.DB_PARAM_DELIMITER).Append(prod_sorting); // 제품정렬
+			
 
-            // DB조회
-            DataSet ds = WebSql.SelectSql(2001, param.ToString());
+			// DB조회
+			DataSet ds = WebSql.SelectSql(2001, param.ToString());
 
             // XML로 변환
             result = XmlUtil.GetXml(ds, "Products");
