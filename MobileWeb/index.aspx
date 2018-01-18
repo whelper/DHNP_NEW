@@ -2,6 +2,7 @@
 <asp:Content ID="Content" ContentPlaceHolderID="HeadContent" runat="server">
     <header class="header main">
         <h1 class="logo"><span>대한뉴팜</span></h1>
+		<div class="language"><a href="/en/index.aspx">English</a></div>
         <button class="gnb_icon" id="j_iconOpen" onclick="return false;"><span>글로벌 네비게이션</span></button>
         <div class="search">
             <label for="f_headerSearch" class="acc-hidden"> 검색어 입력 </label>
@@ -107,10 +108,10 @@
 			<article class="news_info">
 				<h1 class="acc-hidden">새소식과 주가정보</h1>	
  				<ul>
- 					<li><strong>새소식 </strong>
+ 					<%--<li><strong>새소식 </strong>
  						<a href="/pr/pr_new_list.aspx" ><span><%=GetData(3, 0, "TTL")%></span></a>	 
  						<a href="/pr/pr_new_list.aspx"><span class="more_arrow">more</span></a>	
- 					</li>
+ 					</li>--%>
  					<li>                      
 
                         <strong>주가정보</strong> 
@@ -151,8 +152,8 @@
 				    </ul>
 			    </nav>
 			    <p class="lnb"> 
-				    <a href="/cust/inquire_list.aspx">Customer</a>  <span>|</span> 
-				    <a href="/en/index.aspx">English</a> 		
+				    <a href="/cust/inquire_list.aspx">Customer</a>
+				    	
 			    </p>  	
 		    </nav> 
 		    <p class="copyright"> Copyright  &copy;  Daehan New Pharm Co.,Ltd </p>

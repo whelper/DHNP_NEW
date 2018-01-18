@@ -77,7 +77,21 @@ namespace AdminSite.pdt
                 if (CStringUtil.IsNullOrEmpty(repFileEng) == false)
                 {
                     StringBuilder param = new StringBuilder();
-                    param.Append(_category);
+					string _category_eng = "";
+					switch (_category) {
+						case ("01"): _category_eng = "09"; break;
+						case ("02"): _category_eng = "10"; break;
+						case ("03"): _category_eng = "11"; break;
+						case ("04"): _category_eng = "12"; break;
+						case ("05"): _category_eng = "13"; break;
+						case ("06"): _category_eng = "14"; break;
+						case ("07"): _category_eng = "15"; break;
+						case ("08"): _category_eng = "16"; break;
+
+					}
+
+
+					param.Append(_category_eng);
                     param.Append(CConst.DB_PARAM_DELIMITER).Append("ENG");
                     param.Append(CConst.DB_PARAM_DELIMITER).Append(repFileEng);
                     param.Append(CConst.DB_PARAM_DELIMITER).Append(Session["admin_id"]);
@@ -87,7 +101,7 @@ namespace AdminSite.pdt
 
                 if (result == null)
                 {
-                    CWebUtil.jsAlertAndRedirect(this, "시스템 오류가 발생 했습니다.", "pdt_catalog_list.aspx?_category=" + _category);
+                    CWebUtil.jsAlertAndRedirect(this, "시스템 오류가 발생 했습니다.", "pdt_catalog_list.aspx?category=" + _category);
                 }
                 else if (result[0].Equals("00") == false)
                 {
@@ -95,12 +109,12 @@ namespace AdminSite.pdt
                 }
                 else
                 {
-                    Response.Redirect("pdt_catalog_list.aspx?_category=" + _category);
+                    Response.Redirect("pdt_catalog_list.aspx?category=" + _category);
                 }
             }
             else
             {
-                CWebUtil.jsAlertAndRedirect(this, "카테고리가 선택되지 않았습니다.", "pdt_catalog_list.aspx?_category=" + _category);
+                CWebUtil.jsAlertAndRedirect(this, "카테고리가 선택되지 않았습니다.", "pdt_catalog_list.aspx?category=" + _category);
             }
         }
 

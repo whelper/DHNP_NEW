@@ -204,7 +204,7 @@
 			<nav class="fnb clear"> 
 				<h1 class="acc-hidden"> 하단 메뉴 </h1>
 				<ul class="fnb_ul ">
-					<li> <a href="/en/main/terms.aspx" title="이용약관" target="_blank" onClick="window.open(this.href,'popup', 'width=600, height=800'); return false;">TOS</a> <em>&nbsp;</em> </li>
+					<li> <a href="/en/main/terms.aspx" title="이용약관" target="_blank" onClick="window.open(this.href,'popup', 'width=600, height=800'); return false;">Terms of Use</a> <em>&nbsp;</em> </li>
 					<li> <a href="/en/main/agreement.aspx" title="개인정보취급방침" target="_blank" onClick="window.open(this.href, '_blank', 'toolbar=no, scrollbars=no, resizable=no, top=100, left=200, width=600, height=700'); return false;"  class="line">Privacy Policy </a> </li>			
 				</ul>
 			</nav>

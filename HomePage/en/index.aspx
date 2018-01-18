@@ -190,9 +190,9 @@
 
 					<ARTICLE class="products_manu clear">
 					<H1 class="acc-hidden">제품메뉴로 바로가기</H1>
-					<A class="line_Lno" href="/en/products/human_new_list.aspx"><IMG alt="인체의 약품" src="/en/common/images/main/i_memu_01.png" onmouseover="this.src='/en/common/images/main/i_memu_01_on.png'" onmouseout="this.src='/en/common/images/main/i_memu_01.png'"></A>      
-					<A href="/en/products/animal_new_list.aspx"><IMG alt="동물의 약품" src="/en/common/images/main/i_memu_02.png" onmouseover="this.src='/en/common/images/main/i_memu_02_on.png'" onmouseout="this.src='/en/common/images/main/i_memu_02.png'"></A>      
-					<A href="/en/products/bio_badge_list.aspx"><IMG alt="바이오 약품" src="/en/common/images/main/i_memu_03.png" onmouseover="this.src='/en/common/images/main/i_memu_03_on.png'" onmouseout="this.src='/en/common/images/main/i_memu_03.png'"></A>      
+					<A class="line_Lno" href="/en/products/product_new_list.aspx?category=09&menu=0102"><IMG alt="인체의 약품" src="/en/common/images/main/i_memu_01.png" onmouseover="this.src='/en/common/images/main/i_memu_01_on.png'" onmouseout="this.src='/en/common/images/main/i_memu_01.png'"></A>      
+					<A href="/en/products/product_new_list.aspx?category=10&menu=0202"><IMG alt="동물의 약품" src="/en/common/images/main/i_memu_02.png" onmouseover="this.src='/en/common/images/main/i_memu_02_on.png'" onmouseout="this.src='/en/common/images/main/i_memu_02.png'"></A>      
+					<A href="/en/products/product_list.aspx?category=11&menu=0301"><IMG alt="바이오 약품" src="/en/common/images/main/i_memu_03.png" onmouseover="this.src='/en/common/images/main/i_memu_03_on.png'" onmouseout="this.src='/en/common/images/main/i_memu_03.png'"></A>      
 
 
 					</ARTICLE>

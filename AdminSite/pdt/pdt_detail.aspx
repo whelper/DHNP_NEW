@@ -11,8 +11,8 @@
 
 	<div class="wrap_box forms">
         <ul class="list_tab  clearfix target" >
-			<li<%if ("KOR".Equals(LANG_CD)) { %> class="tab_on"<%} %>><a href="pdt_detail.aspx?prod_cd=<%=ProdCd %>&LANG_CD=KOR&category=<%=_category %>">국문</a></li>
-			<li<%if ("ENG".Equals(LANG_CD)) { %> class="tab_on"<%} %>><a href="pdt_detail.aspx?prod_cd=<%=ProdCd %>&LANG_CD=ENG&category=<%=_category %>">영문</a></li>
+			<li<%if ("KOR".Equals(LANG_CD)) { %> class="tab_on"<%} %>><a href="pdt_detail.aspx?prod_cd=<%=ProdCd %>&LANG_CD=KOR&category=<%=_category %>&page_no=<%=_PAGE_NO %>">국문</a></li>
+			<li<%if ("ENG".Equals(LANG_CD)) { %> class="tab_on"<%} %>><a href="pdt_detail.aspx?prod_cd=<%=ProdCd %>&LANG_CD=ENG&category=<%=_category %>&page_no=<%=_PAGE_NO %>">영문</a></li>
 		</ul>
 		<table cellpadding="0" cellspacing="0" border="0" class="table_frm">
 		    <colgroup>

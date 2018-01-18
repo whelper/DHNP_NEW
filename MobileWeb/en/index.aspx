@@ -2,6 +2,7 @@
 <asp:Content ID="Content" ContentPlaceHolderID="HeadContent" runat="server">
     <header class="header main">
         <h1 class="logo"><span>대한뉴팜</span></h1>
+		<div class="language" style="width:60px; height:40px; position:absolute; top:15px; right:40px; font-weight: bold;"><a href="/index.aspx" style="">Korean</a></div>
         <button class="gnb_icon" id="j_iconOpen" onclick="return false;"><span>글로벌 네비게이션</span></button>
         <div class="search">
             <label for="f_headerSearch" class="acc-hidden"> 검색어 입력 </label>
@@ -52,16 +53,16 @@
 		<article class="products_go">
 			<h1 class="acc-hidden"> 제품소개 </h1>	
 			<ul>
-				<li><a href="/en/pdt/pdt_human_new_list.aspx"><img src="<%=GetRoot() %>/en/common/images/indexPr_icon_01.png" alt="인체 의약품" /></a></li>
-				<li><a href="/en/pdt/pdt_animal_new_list.aspx"><img src="<%=GetRoot() %>/en/common/images/indexPr_icon_02.png" alt="동물 의약품" /></a></li>
-				<li><a href="/en/pdt/pdt_bio_badge_list.aspx"><img src="<%=GetRoot() %>/en/common/images/indexPr_icon_03.png" alt="바이오 공정소재" /></a></li>
+				<li><a href="/en/pdt/pdt_new_list.aspx?category=09&menu=0102"><img src="<%=GetRoot() %>/en/common/images/indexPr_icon_01.png" alt="인체 의약품" /></a></li>
+				<li><a href="/en/pdt/pdt_new_list.aspx?category=10&menu=0202"><img src="<%=GetRoot() %>/en/common/images/indexPr_icon_02.png" alt="동물 의약품" /></a></li>
+				<li><a href="/en/pdt/pdt_list.aspx?category=11&menu=0301"><img src="<%=GetRoot() %>/en/common/images/indexPr_icon_03.png" alt="바이오 공정소재" /></a></li>
 			</ul>                
 		</article> 
 		<!--  //  인체의약품 /동물의약품/바이오공정소재  -->
 		<div class="content  main">
 			<!-- 제품소개  -->
 			<article  id="slider2_btns"class="products_about">
-				<h1> <span> 제품소개 </span> </h1>	
+				<h1> <span> Products </span> </h1>	
  				<ul  id="slider2" class="products_about_list bxslider">
                         <% 
                             if (GetDataTableCount(2) > 0)
@@ -106,12 +107,12 @@
 			<article class="news_info">
 				<h1 class="acc-hidden">새소식과 주가정보</h1>	
  				<ul>
- 					<li><strong>새소식 </strong>
+ 					<%--<li><strong>새소식 </strong>
  						<span><%=GetData(3, 0, "TTL")%></span>
  						<span class="more_arrow">more</span>
- 					</li>
+ 					</li>--%>
  					<li>
-                        <strong>주가정보</strong> 
+                        <strong>Stock</strong> 
                         <strong class="change_01 <%=NvCss %>"><%=Nv %></strong>
                         <strong class="won"><%=Nv %></strong>
                         <span class="change_02 <%=CvCss %>"><%=Cv %></span>
@@ -124,7 +125,7 @@
 				<h1 class="acc-hidden"> <span> 고객센터 </span> </h1>	
  				<ul>
  					<li><a href="/en/intro/location.aspx"> <img src="/en/common/images/indexCus_icon_01.png" alt="Customer " ></a></li>
-					<li><a href="/en/cust/inquire_list.aspx"> <img src="/en/common/images/indexCus_icon_02.png" alt="Customer" /></a></li>
+					<li><a href="/en/cust/inquire_list.aspx"> <img src="/en/common/images/indexCus_icon_03.png" alt="Customer" /></a></li>
  				</ul>                   
 			</article> <!-- // products_go  -->
 		</div> <!-- // content  -->
@@ -135,12 +136,11 @@
 			    <nav class="fnb ">
 				    <ul> 
 					    <li> <a href="/en/intro/location.aspx">Contact Us</a> </li>
-					    <li> <a href="#tos">TOS</a> </li>
+					    <li> <a href="#tos">Terms of Use</a> </li>
 				    </ul>
 			    </nav>
 			    <p class="lnb"> 
-				    <a href="/en/cust/inquire_list.aspx">Customer</a>  <span>|</span> 
-				    <a href="/index.aspx">Korean</a>
+				    <a href="/en/cust/inquire_list.aspx">Customer</a> 
 			    </p>  	
 		    </nav> 
 		    <p class="copyright"> Copyright  &copy;  Daehan New Pharm Co.,Ltd </p>

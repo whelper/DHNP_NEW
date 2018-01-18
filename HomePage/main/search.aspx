@@ -25,7 +25,7 @@
 				for (int i = 0; i < GetDataCount(); i++)
 				{
 
-					String catg_no1 = GetData(i, "CATG_NO1");
+					/*String catg_no1 = GetData(i, "CATG_NO1");
 					String prod_type = GetData(i, "PROD_TYPE");
 					String product_type = "";
 					String URL = "";
@@ -78,7 +78,7 @@
 					{
 						//product_type = "i_animal";
 						URL = "/products/medical_view.aspx";
-					}
+					}*/
 
 					String css = (GetData(i, "NEW_YN") == "Y") ? "s_new" : null;
 

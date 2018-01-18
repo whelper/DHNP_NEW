@@ -26,6 +26,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -783,27 +784,7 @@
     <Content Include="en\main\agreement.aspx" />
     <Content Include="en\main\search.aspx" />
     <Content Include="en\main\terms.aspx" />
-    <Content Include="en\products\animal_new_list.aspx" />
-    <Content Include="en\products\animal_new_view.aspx" />
-    <Content Include="en\products\animal_products_list.aspx" />
-    <Content Include="en\products\animal_products_view.aspx" />
-    <Content Include="en\products\bio_badge_list.aspx" />
-    <Content Include="en\products\bio_badge_view.aspx" />
-    <Content Include="en\products\bio_catalog_list.aspx" />
-    <Content Include="en\products\bio_catalog_view.aspx" />
-    <Content Include="en\products\bio_resin_list.aspx" />
-    <Content Include="en\products\bio_resin_view.aspx" />
-    <Content Include="en\products\global_animal_list.aspx" />
-    <Content Include="en\products\global_animal_view.aspx" />
-    <Content Include="en\products\global_human_list.aspx" />
-    <Content Include="en\products\global_human_view.aspx" />
-    <Content Include="en\products\health_products_list.aspx" />
-    <Content Include="en\products\health_products_view.aspx" />
-    <Content Include="en\products\human_new_view.aspx" />
-    <Content Include="en\products\medical_list.aspx" />
-    <Content Include="en\products\medical_view.aspx" />
     <Content Include="en\products\product_list.aspx" />
-    <Content Include="en\products\product_view.20170915.aspx" />
     <Content Include="en\products\product_new_list.aspx" />
     <Content Include="en\products\bio_rnd.aspx" />
     <Content Include="en\products\product_view.aspx" />
@@ -835,32 +816,9 @@
     <Content Include="m_master\PageBase.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="products\animal_delivery_list.aspx" />
-    <Content Include="products\animal_delivery_view.aspx" />
-    <Content Include="products\animal_new_list.aspx" />
-    <Content Include="products\animal_new_view.aspx" />
-    <Content Include="products\animal_products_list.aspx" />
-    <Content Include="products\animal_products_view.aspx" />
-    <Content Include="products\bio_badge_list.aspx" />
-    <Content Include="products\bio_badge_view.aspx" />
-    <Content Include="products\bio_catalog_list.aspx" />
-    <Content Include="products\bio_catalog_view.aspx" />
-    <Content Include="products\bio_resin_list.aspx" />
-    <Content Include="products\bio_resin_view.aspx" />
     <Content Include="products\bio_rnd.aspx" />
-    <Content Include="products\global_animal_list.aspx" />
-    <Content Include="products\global_animal_view.aspx" />
-    <Content Include="products\global_etc_list.aspx" />
-    <Content Include="products\global_etc_view.aspx" />
-    <Content Include="products\global_human_list.aspx" />
-    <Content Include="products\global_human_view.aspx" />
-    <Content Include="products\health_products_list.aspx" />
-    <Content Include="products\health_products_view.aspx" />
     <Content Include="products\human_change_list.aspx" />
     <Content Include="products\human_change_view.aspx" />
-    <Content Include="products\human_products_view.aspx" />
-    <Content Include="products\medical_list.aspx" />
-    <Content Include="products\medical_view.aspx" />
     <Content Include="products\product_list.aspx" />
     <Content Include="products\product_new_list.aspx" />
     <Content Include="products\product_view.aspx" />
@@ -1098,152 +1056,12 @@
     <Compile Include="en\main\terms.aspx.designer.cs">
       <DependentUpon>terms.aspx</DependentUpon>
     </Compile>
-    <Compile Include="en\products\animal_new_list.aspx.cs">
-      <DependentUpon>animal_new_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\animal_new_list.aspx.designer.cs">
-      <DependentUpon>animal_new_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\products\animal_new_view.aspx.cs">
-      <DependentUpon>animal_new_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\animal_new_view.aspx.designer.cs">
-      <DependentUpon>animal_new_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\products\animal_products_list.aspx.cs">
-      <DependentUpon>animal_products_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\animal_products_list.aspx.designer.cs">
-      <DependentUpon>animal_products_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\products\animal_products_view.aspx.cs">
-      <DependentUpon>animal_products_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\animal_products_view.aspx.designer.cs">
-      <DependentUpon>animal_products_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\products\bio_badge_list.aspx.cs">
-      <DependentUpon>bio_badge_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\bio_badge_list.aspx.designer.cs">
-      <DependentUpon>bio_badge_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\products\bio_badge_view.aspx.cs">
-      <DependentUpon>bio_badge_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\bio_badge_view.aspx.designer.cs">
-      <DependentUpon>bio_badge_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\products\bio_catalog_list.aspx.cs">
-      <DependentUpon>bio_catalog_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\bio_catalog_list.aspx.designer.cs">
-      <DependentUpon>bio_catalog_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\products\bio_catalog_view.aspx.cs">
-      <DependentUpon>bio_catalog_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\bio_catalog_view.aspx.designer.cs">
-      <DependentUpon>bio_catalog_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\products\bio_resin_list.aspx.cs">
-      <DependentUpon>bio_resin_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\bio_resin_list.aspx.designer.cs">
-      <DependentUpon>bio_resin_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\products\bio_resin_view.aspx.cs">
-      <DependentUpon>bio_resin_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\bio_resin_view.aspx.designer.cs">
-      <DependentUpon>bio_resin_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\products\global_animal_list.aspx.cs">
-      <DependentUpon>global_animal_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\global_animal_list.aspx.designer.cs">
-      <DependentUpon>global_animal_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\products\global_animal_view.aspx.cs">
-      <DependentUpon>global_animal_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\global_animal_view.aspx.designer.cs">
-      <DependentUpon>global_animal_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\products\global_human_list.aspx.cs">
-      <DependentUpon>global_human_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\global_human_list.aspx.designer.cs">
-      <DependentUpon>global_human_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\products\global_human_view.aspx.cs">
-      <DependentUpon>global_human_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\global_human_view.aspx.designer.cs">
-      <DependentUpon>global_human_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\products\health_products_list.aspx.cs">
-      <DependentUpon>health_products_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\health_products_list.aspx.designer.cs">
-      <DependentUpon>health_products_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\products\health_products_view.aspx.cs">
-      <DependentUpon>health_products_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\health_products_view.aspx.designer.cs">
-      <DependentUpon>health_products_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\products\human_new_view.aspx.cs">
-      <DependentUpon>human_new_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\human_new_view.aspx.designer.cs">
-      <DependentUpon>human_new_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\products\medical_list.aspx.cs">
-      <DependentUpon>medical_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\medical_list.aspx.designer.cs">
-      <DependentUpon>medical_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\products\medical_view.aspx.cs">
-      <DependentUpon>medical_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\medical_view.aspx.designer.cs">
-      <DependentUpon>medical_view.aspx</DependentUpon>
-    </Compile>
     <Compile Include="en\products\product_list.aspx.cs">
       <DependentUpon>product_list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="en\products\product_list.aspx.designer.cs">
       <DependentUpon>product_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\products\product_view.20170915.aspx.cs">
-      <DependentUpon>product_view.20170915.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\products\product_view.20170915.aspx.designer.cs">
-      <DependentUpon>product_view.20170915.aspx</DependentUpon>
     </Compile>
     <Compile Include="en\products\product_new_list.aspx.cs">
       <DependentUpon>product_new_list.aspx</DependentUpon>
@@ -1445,152 +1263,12 @@
       <DependentUpon>PageBase.aspx</DependentUpon>
     </Compile>
     <Compile Include="page\paging.cs" />
-    <Compile Include="products\animal_delivery_list.aspx.cs">
-      <DependentUpon>animal_delivery_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\animal_delivery_list.aspx.designer.cs">
-      <DependentUpon>animal_delivery_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\animal_delivery_view.aspx.cs">
-      <DependentUpon>animal_delivery_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\animal_delivery_view.aspx.designer.cs">
-      <DependentUpon>animal_delivery_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\animal_new_list.aspx.cs">
-      <DependentUpon>animal_new_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\animal_new_list.aspx.designer.cs">
-      <DependentUpon>animal_new_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\animal_new_view.aspx.cs">
-      <DependentUpon>animal_new_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\animal_new_view.aspx.designer.cs">
-      <DependentUpon>animal_new_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\animal_products_list.aspx.cs">
-      <DependentUpon>animal_products_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\animal_products_list.aspx.designer.cs">
-      <DependentUpon>animal_products_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\animal_products_view.aspx.cs">
-      <DependentUpon>animal_products_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\animal_products_view.aspx.designer.cs">
-      <DependentUpon>animal_products_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\bio_badge_list.aspx.cs">
-      <DependentUpon>bio_badge_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\bio_badge_list.aspx.designer.cs">
-      <DependentUpon>bio_badge_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\bio_badge_view.aspx.cs">
-      <DependentUpon>bio_badge_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\bio_badge_view.aspx.designer.cs">
-      <DependentUpon>bio_badge_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\bio_catalog_list.aspx.cs">
-      <DependentUpon>bio_catalog_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\bio_catalog_list.aspx.designer.cs">
-      <DependentUpon>bio_catalog_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\bio_catalog_view.aspx.cs">
-      <DependentUpon>bio_catalog_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\bio_catalog_view.aspx.designer.cs">
-      <DependentUpon>bio_catalog_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\bio_resin_list.aspx.cs">
-      <DependentUpon>bio_resin_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\bio_resin_list.aspx.designer.cs">
-      <DependentUpon>bio_resin_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\bio_resin_view.aspx.cs">
-      <DependentUpon>bio_resin_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\bio_resin_view.aspx.designer.cs">
-      <DependentUpon>bio_resin_view.aspx</DependentUpon>
-    </Compile>
     <Compile Include="products\bio_rnd.aspx.cs">
       <DependentUpon>bio_rnd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="products\bio_rnd.aspx.designer.cs">
       <DependentUpon>bio_rnd.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\global_animal_list.aspx.cs">
-      <DependentUpon>global_animal_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\global_animal_list.aspx.designer.cs">
-      <DependentUpon>global_animal_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\global_animal_view.aspx.cs">
-      <DependentUpon>global_animal_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\global_animal_view.aspx.designer.cs">
-      <DependentUpon>global_animal_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\global_etc_list.aspx.cs">
-      <DependentUpon>global_etc_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\global_etc_list.aspx.designer.cs">
-      <DependentUpon>global_etc_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\global_etc_view.aspx.cs">
-      <DependentUpon>global_etc_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\global_etc_view.aspx.designer.cs">
-      <DependentUpon>global_etc_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\global_human_list.aspx.cs">
-      <DependentUpon>global_human_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\global_human_list.aspx.designer.cs">
-      <DependentUpon>global_human_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\global_human_view.aspx.cs">
-      <DependentUpon>global_human_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\global_human_view.aspx.designer.cs">
-      <DependentUpon>global_human_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\health_products_list.aspx.cs">
-      <DependentUpon>health_products_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\health_products_list.aspx.designer.cs">
-      <DependentUpon>health_products_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\health_products_view.aspx.cs">
-      <DependentUpon>health_products_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\health_products_view.aspx.designer.cs">
-      <DependentUpon>health_products_view.aspx</DependentUpon>
     </Compile>
     <Compile Include="products\human_change_list.aspx.cs">
       <DependentUpon>human_change_list.aspx</DependentUpon>
@@ -1605,27 +1283,6 @@
     </Compile>
     <Compile Include="products\human_change_view.aspx.designer.cs">
       <DependentUpon>human_change_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\human_products_view.aspx.cs">
-      <DependentUpon>human_products_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\human_products_view.aspx.designer.cs">
-      <DependentUpon>human_products_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\medical_list.aspx.cs">
-      <DependentUpon>medical_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\medical_list.aspx.designer.cs">
-      <DependentUpon>medical_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products\medical_view.aspx.cs">
-      <DependentUpon>medical_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products\medical_view.aspx.designer.cs">
-      <DependentUpon>medical_view.aspx</DependentUpon>
     </Compile>
     <Compile Include="products\product_list.aspx.cs">
       <DependentUpon>product_list.aspx</DependentUpon>

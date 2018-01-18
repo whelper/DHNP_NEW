@@ -41,6 +41,8 @@
 *********************************************/
 .logo { width:100%; height: 44px; border-bottom: 1px solid #a5a5a5;  background:url(../../common/images/logo.png) no-repeat 50% 12px;  background-size:87px 22px; }
 .logo a { width:170px; height:40px;  display:block; margin:auto; text-indent: -9999em; }
+.language { width:60px; height:40px; position:absolute; top:15px; right:40px; font-weight: bold;  }
+.language a { color:#848484;}
 .gnb_icon { width:30px; height:30px; position:absolute; top:7px; right:10px; }
 .gnb_icon span { width:100%; height:100%;  display:block; text-indent: -9999em; background:url(../../common/images/nav_btn.png) no-repeat  0 0; background-size:30px 30px ;  } /* 검색창  600/640 */
 .search { width:93.75%; height:32px; position:relative; margin:0 auto; margin-top:7px; border:2px solid #04b25a;  background:url(../../common/images/i_serach_01.png) no-repeat  98% 7px; background-size:17px;  } 
@@ -123,46 +125,14 @@ input.btn_gnbSearch { width:37px; height:35px; display:block; text-indent:-9999e
 
 .gray { width: 55px; /* 600 */color:#999999; display:inline-block; font-weight:bold; }
 /* 입사지원 고객문의  */
-.customer_go {
-	overflow: hidden;
-	border-top: 1px solid #e5e5e5;
-	border-bottom: 1px solid #e5e5e5;
-	background-color: #fff;
-}
-
-	.customer_go li {
-		width: 49%; /* 198/600 */
-		float: left;
-		text-align: center;
-		border-left: 1px solid #e5e5e5;
-	}
-
-		.customer_go li a {
-			display: block;
-			text-align: center;
-			margin: auto;
-		}
+.customer_go { overflow: hidden; border-top:1px solid #e5e5e5;  border-bottom:1px solid #e5e5e5; background-color:#fff; }
+.customer_go li { width: 49%; /* 198/600 */ float:left; text-align: center; border-left:1px solid #e5e5e5; }
+.customer_go li a {   display: block; text-align: center; margin: auto;  }
 
 /* 고객문의  */
-.customer_form {
-	overflow: hidden;
-	border-top: 1px solid #e5e5e5;
-	border-bottom: 1px solid #e5e5e5;
-	background-color: #fff;
-}
-
-	.customer_form li {
-		width: 49%; /* 198/600 */
-		float: left;
-		text-align: center;
-		border-left: 1px solid #e5e5e5;
-	}
-
-		.customer_form li a {
-			display: block;
-			text-align: center;
-			margin: auto;
-		}
+.customer_form { overflow: hidden; border-top:1px solid #e5e5e5;  border-bottom:1px solid #e5e5e5; background-color:#fff; }
+.customer_form li { width: 49%; /* 198/600 */ float:left; text-align: center; border-left:1px solid #e5e5e5; }
+.customer_form li a {   display: block; text-align: center; margin: auto;  }
 
 
 

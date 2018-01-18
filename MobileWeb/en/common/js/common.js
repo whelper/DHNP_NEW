@@ -7,7 +7,11 @@ $(function(){
 	//$('.content').css({'min-height':($(document).height()-300)+'px'}); 
 	/* 메뉴 열고 닫기 */
 	var open =false;
-	var wrap = $('.wrap');      
+    var wrap = $('.wrap');   
+     $(".container").on("click", function () {
+        if (wrap.hasClass('open')) wrap.removeClass('open');
+    });
+
 	$('#j_iconOpen').on( 'click', function(){
 		open=!open
 		if(open==true){

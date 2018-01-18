@@ -8,7 +8,12 @@ $(function(){
 	/* 메뉴 열고 닫기 */
 	var open =false;
 	var wrap = $('.wrap');      
-	$('#j_iconOpen').on( 'click', function(){
+
+    $(".container").on("click", function () {
+        if (wrap.hasClass('open')) wrap.removeClass('open');
+    });
+
+    $('#j_iconOpen').on('click', function () {
 		open=!open
 		if(open==true){
 		 		wrap.addClass('open');	 

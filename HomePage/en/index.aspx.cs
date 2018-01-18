@@ -108,7 +108,7 @@ namespace HomePage.en
 			{
 				end = new StreamReader(new WebClient().OpenRead(requestUrl)).ReadToEnd();
 			}
-			catch (Exception ex)
+			catch
 			{
 				return (string)null;
 			}

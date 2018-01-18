@@ -26,6 +26,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -408,28 +409,10 @@
     <Content Include="en\inv\stockholder.aspx" />
     <Content Include="en\inv\stock_info.aspx" />
     <Content Include="en\inv\treasury_stock.aspx" />
-    <Content Include="en\pdt\pdt_animal_new_list.aspx" />
-    <Content Include="en\pdt\pdt_animal_new_view.aspx" />
-    <Content Include="en\pdt\pdt_animal_products_list.aspx" />
-    <Content Include="en\pdt\pdt_animal_products_view.aspx" />
-    <Content Include="en\pdt\pdt_bio_badge_list.aspx" />
-    <Content Include="en\pdt\pdt_bio_badge_view.aspx" />
-    <Content Include="en\pdt\pdt_bio_catalog_list.aspx" />
-    <Content Include="en\pdt\pdt_bio_catalog_view.aspx" />
-    <Content Include="en\pdt\pdt_bio_resin_list.aspx" />
-    <Content Include="en\pdt\pdt_bio_resin_view.aspx" />
-    <Content Include="en\pdt\pdt_global_animal_list.aspx" />
-    <Content Include="en\pdt\pdt_global_animal_view.aspx" />
-    <Content Include="en\pdt\pdt_global_human_list.aspx" />
-    <Content Include="en\pdt\pdt_global_human_view.aspx" />
-    <Content Include="en\pdt\pdt_health_list.aspx" />
-    <Content Include="en\pdt\pdt_health_view.aspx" />
-    <Content Include="en\pdt\pdt_human_new_list.aspx" />
-    <Content Include="en\pdt\pdt_human_new_view.aspx" />
-    <Content Include="en\pdt\pdt_human_products_list.aspx" />
-    <Content Include="en\pdt\pdt_human_products_view.aspx" />
-    <Content Include="en\pdt\pdt_medical_list.aspx" />
-    <Content Include="en\pdt\pdt_medical_view.aspx" />
+    <Content Include="en\pdt\bio_rnd.aspx" />
+    <Content Include="en\pdt\pdt_list.aspx" />
+    <Content Include="en\pdt\pdt_new_list.aspx" />
+    <Content Include="en\pdt\pdt_view.aspx" />
     <Content Include="en\search.aspx" />
     <Content Include="en\terms.htm" />
     <Content Include="favicon.png" />
@@ -453,31 +436,7 @@
     <Content Include="inv\treasury_stock.aspx" />
     <Content Include="m_master\PageBase.aspx" />
     <Content Include="pdt\bio_rnd.aspx" />
-    <Content Include="pdt\pdt_animal_delivery_list.aspx" />
-    <Content Include="pdt\pdt_animal_delivery_view.aspx" />
-    <Content Include="pdt\pdt_animal_new_list.aspx" />
-    <Content Include="pdt\pdt_animal_new_view.aspx" />
-    <Content Include="pdt\pdt_animal_products_list.aspx" />
-    <Content Include="pdt\pdt_animal_products_view.aspx" />
-    <Content Include="pdt\pdt_bio_badge_list.aspx" />
-    <Content Include="pdt\pdt_bio_badge_view.aspx" />
-    <Content Include="pdt\pdt_bio_catalog_list.aspx" />
-    <Content Include="pdt\pdt_bio_catalog_view.aspx" />
-    <Content Include="pdt\pdt_bio_resin_list.aspx" />
-    <Content Include="pdt\pdt_bio_resin_view.aspx" />
-    <Content Include="pdt\pdt_global_animal_list.aspx" />
-    <Content Include="pdt\pdt_global_animal_view.aspx" />
-    <Content Include="pdt\pdt_global_human_list.aspx" />
-    <Content Include="pdt\pdt_global_human_view.aspx" />
-    <Content Include="pdt\pdt_health_list.aspx" />
-    <Content Include="pdt\pdt_health_view.aspx" />
-    <Content Include="pdt\pdt_human_new_list.aspx" />
-    <Content Include="pdt\pdt_human_new_view.aspx" />
-    <Content Include="pdt\pdt_human_products_list.aspx" />
-    <Content Include="pdt\pdt_human_products_view.aspx" />
     <Content Include="pdt\pdt_list.aspx" />
-    <Content Include="pdt\pdt_medical_list.aspx" />
-    <Content Include="pdt\pdt_medical_view.aspx" />
     <Content Include="pdt\pdt_new_list.aspx" />
     <Content Include="pdt\pdt_view.aspx" />
     <Content Include="pr\pr_global_list.aspx" />
@@ -668,159 +627,33 @@
     <Compile Include="en\inv\treasury_stock.aspx.designer.cs">
       <DependentUpon>treasury_stock.aspx</DependentUpon>
     </Compile>
-    <Compile Include="en\pdt\pdt_animal_new_list.aspx.cs">
-      <DependentUpon>pdt_animal_new_list.aspx</DependentUpon>
+    <Compile Include="en\pdt\bio_rnd.aspx.cs">
+      <DependentUpon>bio_rnd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="en\pdt\pdt_animal_new_list.aspx.designer.cs">
-      <DependentUpon>pdt_animal_new_list.aspx</DependentUpon>
+    <Compile Include="en\pdt\bio_rnd.aspx.designer.cs">
+      <DependentUpon>bio_rnd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="en\pdt\pdt_animal_new_view.aspx.cs">
-      <DependentUpon>pdt_animal_new_view.aspx</DependentUpon>
+    <Compile Include="en\pdt\pdt_list.aspx.cs">
+      <DependentUpon>pdt_list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="en\pdt\pdt_animal_new_view.aspx.designer.cs">
-      <DependentUpon>pdt_animal_new_view.aspx</DependentUpon>
+    <Compile Include="en\pdt\pdt_list.aspx.designer.cs">
+      <DependentUpon>pdt_list.aspx</DependentUpon>
     </Compile>
-    <Compile Include="en\pdt\pdt_animal_products_list.aspx.cs">
-      <DependentUpon>pdt_animal_products_list.aspx</DependentUpon>
+    <Compile Include="en\pdt\pdt_new_list.aspx.cs">
+      <DependentUpon>pdt_new_list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="en\pdt\pdt_animal_products_list.aspx.designer.cs">
-      <DependentUpon>pdt_animal_products_list.aspx</DependentUpon>
+    <Compile Include="en\pdt\pdt_new_list.aspx.designer.cs">
+      <DependentUpon>pdt_new_list.aspx</DependentUpon>
     </Compile>
-    <Compile Include="en\pdt\pdt_animal_products_view.aspx.cs">
-      <DependentUpon>pdt_animal_products_view.aspx</DependentUpon>
+    <Compile Include="en\pdt\pdt_view.aspx.cs">
+      <DependentUpon>pdt_view.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="en\pdt\pdt_animal_products_view.aspx.designer.cs">
-      <DependentUpon>pdt_animal_products_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\pdt\pdt_bio_badge_list.aspx.cs">
-      <DependentUpon>pdt_bio_badge_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\pdt\pdt_bio_badge_list.aspx.designer.cs">
-      <DependentUpon>pdt_bio_badge_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\pdt\pdt_bio_badge_view.aspx.cs">
-      <DependentUpon>pdt_bio_badge_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\pdt\pdt_bio_badge_view.aspx.designer.cs">
-      <DependentUpon>pdt_bio_badge_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\pdt\pdt_bio_catalog_list.aspx.cs">
-      <DependentUpon>pdt_bio_catalog_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\pdt\pdt_bio_catalog_list.aspx.designer.cs">
-      <DependentUpon>pdt_bio_catalog_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\pdt\pdt_bio_catalog_view.aspx.cs">
-      <DependentUpon>pdt_bio_catalog_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\pdt\pdt_bio_catalog_view.aspx.designer.cs">
-      <DependentUpon>pdt_bio_catalog_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\pdt\pdt_bio_resin_list.aspx.cs">
-      <DependentUpon>pdt_bio_resin_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\pdt\pdt_bio_resin_list.aspx.designer.cs">
-      <DependentUpon>pdt_bio_resin_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\pdt\pdt_bio_resin_view.aspx.cs">
-      <DependentUpon>pdt_bio_resin_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\pdt\pdt_bio_resin_view.aspx.designer.cs">
-      <DependentUpon>pdt_bio_resin_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\pdt\pdt_global_animal_list.aspx.cs">
-      <DependentUpon>pdt_global_animal_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\pdt\pdt_global_animal_list.aspx.designer.cs">
-      <DependentUpon>pdt_global_animal_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\pdt\pdt_global_animal_view.aspx.cs">
-      <DependentUpon>pdt_global_animal_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\pdt\pdt_global_animal_view.aspx.designer.cs">
-      <DependentUpon>pdt_global_animal_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\pdt\pdt_global_human_list.aspx.cs">
-      <DependentUpon>pdt_global_human_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\pdt\pdt_global_human_list.aspx.designer.cs">
-      <DependentUpon>pdt_global_human_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\pdt\pdt_global_human_view.aspx.cs">
-      <DependentUpon>pdt_global_human_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\pdt\pdt_global_human_view.aspx.designer.cs">
-      <DependentUpon>pdt_global_human_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\pdt\pdt_health_list.aspx.cs">
-      <DependentUpon>pdt_health_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\pdt\pdt_health_list.aspx.designer.cs">
-      <DependentUpon>pdt_health_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\pdt\pdt_health_view.aspx.cs">
-      <DependentUpon>pdt_health_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\pdt\pdt_health_view.aspx.designer.cs">
-      <DependentUpon>pdt_health_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\pdt\pdt_human_new_list.aspx.cs">
-      <DependentUpon>pdt_human_new_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\pdt\pdt_human_new_list.aspx.designer.cs">
-      <DependentUpon>pdt_human_new_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\pdt\pdt_human_new_view.aspx.cs">
-      <DependentUpon>pdt_human_new_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\pdt\pdt_human_new_view.aspx.designer.cs">
-      <DependentUpon>pdt_human_new_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\pdt\pdt_human_products_list.aspx.cs">
-      <DependentUpon>pdt_human_products_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\pdt\pdt_human_products_list.aspx.designer.cs">
-      <DependentUpon>pdt_human_products_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\pdt\pdt_human_products_view.aspx.cs">
-      <DependentUpon>pdt_human_products_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\pdt\pdt_human_products_view.aspx.designer.cs">
-      <DependentUpon>pdt_human_products_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\pdt\pdt_medical_list.aspx.cs">
-      <DependentUpon>pdt_medical_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\pdt\pdt_medical_list.aspx.designer.cs">
-      <DependentUpon>pdt_medical_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\pdt\pdt_medical_view.aspx.cs">
-      <DependentUpon>pdt_medical_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\pdt\pdt_medical_view.aspx.designer.cs">
-      <DependentUpon>pdt_medical_view.aspx</DependentUpon>
+    <Compile Include="en\pdt\pdt_view.aspx.designer.cs">
+      <DependentUpon>pdt_view.aspx</DependentUpon>
     </Compile>
     <Compile Include="en\search.aspx.cs">
       <DependentUpon>search.aspx</DependentUpon>
@@ -965,180 +798,12 @@
     <Compile Include="pdt\bio_rnd.aspx.designer.cs">
       <DependentUpon>bio_rnd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pdt\pdt_animal_delivery_list.aspx.cs">
-      <DependentUpon>pdt_animal_delivery_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_animal_delivery_list.aspx.designer.cs">
-      <DependentUpon>pdt_animal_delivery_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_animal_delivery_view.aspx.cs">
-      <DependentUpon>pdt_animal_delivery_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_animal_delivery_view.aspx.designer.cs">
-      <DependentUpon>pdt_animal_delivery_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_animal_new_list.aspx.cs">
-      <DependentUpon>pdt_animal_new_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_animal_new_list.aspx.designer.cs">
-      <DependentUpon>pdt_animal_new_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_animal_new_view.aspx.cs">
-      <DependentUpon>pdt_animal_new_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_animal_new_view.aspx.designer.cs">
-      <DependentUpon>pdt_animal_new_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_animal_products_list.aspx.cs">
-      <DependentUpon>pdt_animal_products_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_animal_products_list.aspx.designer.cs">
-      <DependentUpon>pdt_animal_products_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_animal_products_view.aspx.cs">
-      <DependentUpon>pdt_animal_products_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_animal_products_view.aspx.designer.cs">
-      <DependentUpon>pdt_animal_products_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_bio_badge_list.aspx.cs">
-      <DependentUpon>pdt_bio_badge_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_bio_badge_list.aspx.designer.cs">
-      <DependentUpon>pdt_bio_badge_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_bio_badge_view.aspx.cs">
-      <DependentUpon>pdt_bio_badge_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_bio_badge_view.aspx.designer.cs">
-      <DependentUpon>pdt_bio_badge_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_bio_catalog_list.aspx.cs">
-      <DependentUpon>pdt_bio_catalog_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_bio_catalog_list.aspx.designer.cs">
-      <DependentUpon>pdt_bio_catalog_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_bio_catalog_view.aspx.cs">
-      <DependentUpon>pdt_bio_catalog_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_bio_catalog_view.aspx.designer.cs">
-      <DependentUpon>pdt_bio_catalog_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_bio_resin_list.aspx.cs">
-      <DependentUpon>pdt_bio_resin_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_bio_resin_list.aspx.designer.cs">
-      <DependentUpon>pdt_bio_resin_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_bio_resin_view.aspx.cs">
-      <DependentUpon>pdt_bio_resin_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_bio_resin_view.aspx.designer.cs">
-      <DependentUpon>pdt_bio_resin_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_global_animal_list.aspx.cs">
-      <DependentUpon>pdt_global_animal_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_global_animal_list.aspx.designer.cs">
-      <DependentUpon>pdt_global_animal_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_global_animal_view.aspx.cs">
-      <DependentUpon>pdt_global_animal_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_global_animal_view.aspx.designer.cs">
-      <DependentUpon>pdt_global_animal_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_global_human_list.aspx.cs">
-      <DependentUpon>pdt_global_human_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_global_human_list.aspx.designer.cs">
-      <DependentUpon>pdt_global_human_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_global_human_view.aspx.cs">
-      <DependentUpon>pdt_global_human_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_global_human_view.aspx.designer.cs">
-      <DependentUpon>pdt_global_human_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_health_list.aspx.cs">
-      <DependentUpon>pdt_health_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_health_list.aspx.designer.cs">
-      <DependentUpon>pdt_health_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_health_view.aspx.cs">
-      <DependentUpon>pdt_health_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_health_view.aspx.designer.cs">
-      <DependentUpon>pdt_health_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_human_new_list.aspx.cs">
-      <DependentUpon>pdt_human_new_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_human_new_list.aspx.designer.cs">
-      <DependentUpon>pdt_human_new_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_human_new_view.aspx.cs">
-      <DependentUpon>pdt_human_new_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_human_new_view.aspx.designer.cs">
-      <DependentUpon>pdt_human_new_view.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_human_products_list.aspx.cs">
-      <DependentUpon>pdt_human_products_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_human_products_list.aspx.designer.cs">
-      <DependentUpon>pdt_human_products_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_human_products_view.aspx.cs">
-      <DependentUpon>pdt_human_products_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_human_products_view.aspx.designer.cs">
-      <DependentUpon>pdt_human_products_view.aspx</DependentUpon>
-    </Compile>
     <Compile Include="pdt\pdt_list.aspx.cs">
       <DependentUpon>pdt_list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pdt\pdt_list.aspx.designer.cs">
       <DependentUpon>pdt_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_medical_list.aspx.cs">
-      <DependentUpon>pdt_medical_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_medical_list.aspx.designer.cs">
-      <DependentUpon>pdt_medical_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pdt\pdt_medical_view.aspx.cs">
-      <DependentUpon>pdt_medical_view.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pdt\pdt_medical_view.aspx.designer.cs">
-      <DependentUpon>pdt_medical_view.aspx</DependentUpon>
     </Compile>
     <Compile Include="pdt\pdt_new_list.aspx.cs">
       <DependentUpon>pdt_new_list.aspx</DependentUpon>

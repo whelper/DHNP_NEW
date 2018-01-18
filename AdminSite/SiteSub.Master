@@ -35,8 +35,8 @@
 		hr = parseInt(tm.substr(0, 2));
 		min = parseInt(tm.substr(-2));
 
-		var dateVar = new Date(yy, mm, dd);
-		if (dateVar.getFullYear() !== parseInt(yy) || dateVar.getMonth() != parseInt(mm) || dateVar.getDate() != parseInt(dd)) {
+		var dateVar = new Date(yy, mm-1, dd);
+		if (dateVar.getFullYear() !== parseInt(yy) || dateVar.getMonth()+1 != parseInt(mm) || dateVar.getDate() != parseInt(dd)) {
 			alert('날짜 형식을 확인해 주세요');
 			return false;
 		}

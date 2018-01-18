@@ -74,7 +74,7 @@
 						<ul  class="ly" style="display:none;">
 							<li><a href="/en/products/product_new_list.aspx?category=09&menu=0102">Pharmaceutical</a></li>
 							<li><a href="/en/products/product_new_list.aspx?category=10&menu=0202">Animal Health & Nutrition</a></li>
-							<li><a href="/en/products/product_list.aspx?category=11&menu=0301">Biopharmaceutical</a></li>
+							<li><a href="/en/products/product_list.aspx?category=11&menu=0301">Bio</a></li>
 							<li><a href="/en/products/product_list.aspx?category=12&menu=0401">International Sales</a></li>
 							<li><a href="/en/products/product_list.aspx?category=13&menu=0501">Health Suppliments</a></li>
 	                        <li><a href="/en/products/product_list.aspx?category=14&menu=0601">Medical Devices</a></li>
@@ -145,7 +145,7 @@
 						<%--<li><a href="/en/products/animal_delivery_list.aspx"<%=GetLnbIndicator("prod_6")%>>관납제품</a></li>--%>
 					</ul> 
 				</li>
-				<li> <a href="/en/products/product_list.aspx?category=11&menu=0301"<%=GetLnbIndicatorGroup("03")%>>Biopharmaceutical</a> 
+				<li> <a href="/en/products/product_list.aspx?category=11&menu=0301"<%=GetLnbIndicatorGroup("03")%>>Bio</a> 
 					<ul class="sy"<%=GetLnbIndicatorDisplay("03")%>>
 					    <li><a href="/en/products/product_list.aspx?category=11&menu=0301"<%=GetLnbIndicator("0301")%>>Cell Culture Media</a></li>
 					    <li><a href="/en/products/bio_rnd.aspx?category=11&&menu=0302"<%=GetLnbIndicator("0302")%>>Chromatography Resins</a></li>
@@ -310,7 +310,7 @@
 			<nav class="fnb clear"> 
 				<h1 class="acc-hidden"> 하단 메뉴 </h1>
 				<ul class="fnb_ul ">
-					<li> <a href="/en/main/terms.aspx" title="이용약관" target="_blank" onclick="window.open(this.href,'popup', 'width=600, height=700'); return false;">TOS</a> <em>&nbsp;</em> </li>
+					<li> <a href="/en/main/terms.aspx" title="이용약관" target="_blank" onclick="window.open(this.href,'popup', 'width=600, height=700'); return false;">Terms of Use</a> <em>&nbsp;</em> </li>
 				    <li> <a href="/en/main/agreement.aspx" title="개인정보취급방침" target="_blank" onclick="window.open(this.href, '_blank', 'toolbar=no, scrollbars=no, resizable=no, top=100, left=200, width=600, height=700'); return false;"  class="line">Privacy Policy</a></li>
 				</ul>
 			</nav>

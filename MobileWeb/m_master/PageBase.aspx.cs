@@ -179,7 +179,7 @@ namespace MobileWeb.m_master
             }
             catch (Exception e)
             {
-                CLog.debug(logger, "PageBase.GetDataSet(" + procIndex + "," + param + ") : " + e.Message);
+                CLog.debug(logger, "PageBase.GetDataSet(" + procIndex + "," + param + ") : " + Request.Url.ToString() + "/" +e.Message);
             }
 
             return null;
@@ -262,7 +262,7 @@ namespace MobileWeb.m_master
             }
             catch (Exception e)
             {
-                CLog.debug(logger, "PageBase.GetData(" + rowNum + "," + colNum + ") : " + e.Message);
+                CLog.debug(logger, "PageBase.GetData(" + rowNum + "," + colNum + ") : " + Request.Url.ToString() + "/" + e.Message);
             }
             return data;
         }
@@ -300,12 +300,15 @@ namespace MobileWeb.m_master
 
             try
             {
-                data = dataRow[rowNum][colName].ToString();
-            }
+				if (dataRow != null)
+				{
+					data = dataRow[rowNum][colName].ToString();
+				}
+			}
             catch (Exception e)
             {
-                CLog.debug(logger, "PageBase.GetData(" + rowNum + "," + colName + ") : " + e.Message);
-            }
+				CLog.debug(logger, "PageBase.GetData(" + rowNum + "," + colName + ") : " + Request.Url.ToString() + e.Message);
+			}
 
             return data;
         }
@@ -351,7 +354,7 @@ namespace MobileWeb.m_master
             }
             catch (Exception e)
             {
-                CLog.debug(logger, "PageBase.GetData(" + rowNum + "," + colName + ") : " + e.Message);
+                CLog.debug(logger, "PageBase.GetData(" + rowNum + "," + colName + ") : " + Request.Url.ToString() + "/" + e.Message);
             }
 
             return data;

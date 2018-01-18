@@ -96,18 +96,19 @@ namespace HomePage.m_master
         /// <param name="param">"|" 연결된 파라미터 조합</param>
         protected void SetDataList(int procIndex, string param)
         {
-            try
-            {
-                DataSet mds = WebSql.SelectSql(procIndex, CSecureUtil.CheckString(param));
-                dataRow = mds.Tables[0].Select();
+			try
+			{
+				DataSet mds = WebSql.SelectSql(procIndex, CSecureUtil.CheckString(param));
+				dataRow = mds.Tables[0].Select();
 
-                System.Diagnostics.Debug.WriteLine("dataRow=" + dataRow);
+				System.Diagnostics.Debug.WriteLine("dataRow=" + dataRow);
 
-            }
-            catch (Exception e)
-            {
-                CLog.debug(logger, "PageBase.SetDataList(" + procIndex + "," + param + ") : " + e.Message);
-            }
+			}
+			catch (Exception e)
+			{
+				CLog.debug(logger, "PageBase.SetDataList(" + procIndex + "," + param + ") : " + e.Message);
+			}
+			
         }
 
         /// <summary>
@@ -178,7 +179,7 @@ namespace HomePage.m_master
             }
             catch (Exception e)
             {
-                CLog.debug(logger, "PageBase.GetDataSet(" + procIndex + "," + param + ") : " + e.Message);
+                CLog.debug(logger, "PageBase.GetDataSet(" + procIndex + "," + param + ") : " + Request.Url.ToString()+"/"+ e.Message);
             }
 
             return null;
@@ -305,11 +306,13 @@ namespace HomePage.m_master
 
             try
             {
-                data = dataRow[rowNum][colNum].ToString();
+				if (dataRow != null) {
+					data = dataRow[rowNum][colNum].ToString();
+				}
             }
             catch (Exception e)
             {
-                CLog.debug(logger, "PageBase.GetData(" + rowNum + "," + colNum + ") : " + e.Message);
+                CLog.debug(logger, "PageBase.GetData(" + rowNum + "," + colNum + ") : " + Request.Url.ToString() + "/" + e.Message);
             }
             return data;
         }
@@ -345,14 +348,18 @@ namespace HomePage.m_master
         {
             string data = "";
 
-            try
-            {
-                data = dataRow[rowNum][colName].ToString();
-            }
-            catch (Exception e)
-            {
-                CLog.debug(logger, "PageBase.GetData(" + rowNum + "," + colName + ") : " + e.Message);
-            }
+			try
+			{
+				if (dataRow != null)
+				{ 
+					data = dataRow[rowNum][colName].ToString();
+				}
+			}
+			catch (Exception e)
+			{
+				CLog.debug(logger, "PageBase.GetData(" + rowNum + "," + colName + ") : "+Request.Url.ToString()+"/"+ e.Message);	
+			}
+			
 
             return data;
         }
@@ -398,7 +405,7 @@ namespace HomePage.m_master
             }
             catch (Exception e)
             {
-                CLog.debug(logger, "PageBase.GetData(" + rowNum + "," + colName + ") : " + e.Message);
+                CLog.debug(logger, "PageBase.GetData(" + rowNum + "," + colName + ") : " + Request.Url.ToString() + "/" + e.Message);
             }
 
             return data;
@@ -417,7 +424,10 @@ namespace HomePage.m_master
 
             try
             {
-                data = mds.Tables[tableNum].Rows[rowNum][colName].ToString();
+				if (mds != null && mds.Tables.Count > 0 && mds.Tables[tableNum].Rows.Count > 0)
+				{
+					data = mds.Tables[tableNum].Rows[rowNum][colName].ToString();
+				}
 
                 if (CStringUtil.IsNullOrEmpty(data) == false && Encoding.Default.GetByteCount(data) > len)
                 {
@@ -428,7 +438,7 @@ namespace HomePage.m_master
             }
             catch (Exception e)
             {
-                CLog.debug(logger, "PageBase.GetData(" + rowNum + "," + colName + ") : " + e.Message);
+                CLog.debug(logger, "PageBase.GetData(" + tableNum + "," + rowNum + ","+ colName + "," + len + ") : " + Request.Url.ToString() + "/" + e.Message);
             }
 
             return data;
@@ -440,7 +450,10 @@ namespace HomePage.m_master
 
             try
             {
-                data = dataRow[rowNum][colName].ToString();
+				if (dataRow != null)
+				{
+					data = dataRow[rowNum][colName].ToString();
+				}
 
                 if (CStringUtil.IsNumber(data))
                 {
@@ -449,7 +462,7 @@ namespace HomePage.m_master
             }
             catch (Exception e)
             {
-                CLog.debug(logger, "PageBase.GetData(" + rowNum + "," + colName + ") : " + e.Message);
+                CLog.debug(logger, "PageBase.GetDataComma(" + rowNum + "," + colName + ") : " + Request.Url.ToString() + "/" + e.Message);
             }
 
             return data;
@@ -467,7 +480,10 @@ namespace HomePage.m_master
 
             try
             {
-                data = mds.Tables[tableNum].Rows[rowNum][colName].ToString();
+				if (mds != null && mds.Tables.Count > 0 && mds.Tables[tableNum].Rows.Count > 0)
+				{
+					data = mds.Tables[tableNum].Rows[rowNum][colName].ToString();
+				}
 
                 if (CStringUtil.IsNumber(data))
                 {
@@ -476,7 +492,7 @@ namespace HomePage.m_master
             }
             catch (Exception e)
             {
-                CLog.debug(logger, "PageBase.GetData(" + rowNum + "," + colName + ") : " + e.Message);
+                CLog.debug(logger, "PageBase.GetDataComma(" + tableNum + "," + rowNum + "," + colName + ") : " + e.Message);
             }
 
             return data;
@@ -594,15 +610,23 @@ namespace HomePage.m_master
 		protected string getCatalogURL(string CATG_NO, string LANG_CD = "KOR") {
 			string catalog_url = "";
 
-			StringBuilder param = new StringBuilder();
-			param.Append(CATG_NO);
-			param.Append(CConst.DB_PARAM_DELIMITER).Append(LANG_CD);
-			DataSet ds = GetDataSet(3231, param.ToString());
-
-			if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+			try
 			{
-				catalog_url = ds.Tables[0].Rows[0]["CATAL_URL"].ToString();
+				StringBuilder param = new StringBuilder();
+				param.Append(CATG_NO);
+				param.Append(CConst.DB_PARAM_DELIMITER).Append(LANG_CD);
+				DataSet ds = GetDataSet(3231, param.ToString());
+
+				if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+				{
+					catalog_url = ds.Tables[0].Rows[0]["CATAL_URL"].ToString();
+				}
 			}
+			catch (Exception e)
+			{
+				CLog.debug(logger, "PageBase.getCatalogURL(" + CATG_NO + "," + LANG_CD + ") : " + Request.Url.ToString() + e.Message);
+			}
+
 
 			return catalog_url;
 		}

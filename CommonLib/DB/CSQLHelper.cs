@@ -317,7 +317,7 @@ namespace CommonLib.DB
             }
             catch (Exception e)
             {
-                string error = string.Format("CSQLHelper.ExecuteDataSetSecure: exception={0}", e.Message);
+                string error = string.Format("CSQLHelper.ExecuteDataSetSecure: exception={0}", "["+sqlQuery+ "]"+e.Message);
                 CLog.debug(logger, error);
             }
 
