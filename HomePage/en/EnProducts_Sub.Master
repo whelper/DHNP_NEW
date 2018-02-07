@@ -72,10 +72,10 @@
 					</li>
 					<li><a href="/en/products/product_new_list.aspx?category=09&menu=0102" class="gnb_02<%=GetGnbIndicator("products")%>">Products</a>
 						<ul  class="ly" style="display:none;">
+							<li><a href="/en/products/product_list.aspx?category=12&menu=0401">International Sales</a></li>
 							<li><a href="/en/products/product_new_list.aspx?category=09&menu=0102">Pharmaceutical</a></li>
 							<li><a href="/en/products/product_new_list.aspx?category=10&menu=0202">Animal Health & Nutrition</a></li>
-							<li><a href="/en/products/product_list.aspx?category=11&menu=0301">Bio</a></li>
-							<li><a href="/en/products/product_list.aspx?category=12&menu=0401">International Sales</a></li>
+							<li><a href="/en/products/bio_rnd.aspx?category=11&&menu=0302"<%=GetLnbIndicator("0302")%>>Bio</a></li>
 							<li><a href="/en/products/product_list.aspx?category=13&menu=0501">Health Suppliments</a></li>
 	                        <li><a href="/en/products/product_list.aspx?category=14&menu=0601">Medical Devices</a></li>
 						</ul>
@@ -131,6 +131,13 @@
 
 			<h1 class="snb_title t02">  제품 </h1>      
 			<ul>
+				<li> <a href="/en/products/product_list.aspx?category=12&menu=0401"<%=GetLnbIndicatorGroup("04")%>>International Sales</a> 
+			            <ul class="sy"<%=GetLnbIndicatorDisplay("04")%>>
+			                <li><a href="/en/products/product_list.aspx?category=12&menu=0401"<%=GetLnbIndicator("0401")%>> Pharmaceutical</a></li>
+			                <li><a href="/en/products/product_list.aspx?category=13&menu=0402"<%=GetLnbIndicator("0402")%>> Animal Health & Nutrition</a></li>
+                            <li><a href="/en/products/product_list.aspx?category=14&menu=0403"<%=GetLnbIndicator("0403")%>> ETC</a></li>
+			            </ul> 
+				</li>
 				<li> <a href="/en/products/product_new_list.aspx?category=09&menu=0102"<%=GetLnbIndicatorGroup("01")%>>Pharmaceutical</a> 
 					<ul class="sy"<%=GetLnbIndicatorDisplay("01")%>>
 						<li><a href="/en/products/product_new_list.aspx?category=09&menu=0102"<%=GetLnbIndicator("0102")%>>New Products</a> </li>
@@ -145,20 +152,14 @@
 						<%--<li><a href="/en/products/animal_delivery_list.aspx"<%=GetLnbIndicator("prod_6")%>>관납제품</a></li>--%>
 					</ul> 
 				</li>
-				<li> <a href="/en/products/product_list.aspx?category=11&menu=0301"<%=GetLnbIndicatorGroup("03")%>>Bio</a> 
+				<li> <a href="/en/products/bio_rnd.aspx?category=11&&menu=0302"<%=GetLnbIndicator("0302")%>>Bio</a> 
 					<ul class="sy"<%=GetLnbIndicatorDisplay("03")%>>
-					    <li><a href="/en/products/product_list.aspx?category=11&menu=0301"<%=GetLnbIndicator("0301")%>>Cell Culture Media</a></li>
-					    <li><a href="/en/products/bio_rnd.aspx?category=11&&menu=0302"<%=GetLnbIndicator("0302")%>>Chromatography Resins</a></li>
+					    	<li><a href="/en/products/bio_rnd.aspx?category=11&&menu=0302"<%=GetLnbIndicator("0302")%>>R&D</a></li>
+						<li><a href="/en/products/product_list.aspx?category=11&menu=0301"<%=GetLnbIndicator("0301")%>>Serum Free Media</a></li>
 					    <%--<li><a href="/en/products/bio_catalog_list.aspx"<%=GetLnbIndicator("prod_9")%>> Catalog Products  </a></li>--%>
 					</ul> 
 			      </li>
-				<li> <a href="/en/products/product_list.aspx?category=12&menu=0401"<%=GetLnbIndicatorGroup("04")%>>International Sales</a> 
-			            <ul class="sy"<%=GetLnbIndicatorDisplay("04")%>>
-			                <li><a href="/en/products/product_list.aspx?category=12&menu=0401"<%=GetLnbIndicator("0401")%>> Pharmaceutical</a></li>
-			                <li><a href="/en/products/product_list.aspx?category=13&menu=0402"<%=GetLnbIndicator("0402")%>> Animal Health & Nutrition</a></li>
-                            <li><a href="/en/products/product_list.aspx?category=14&menu=0403"<%=GetLnbIndicator("0403")%>> ETC</a></li>
-			            </ul> 
-				</li>
+				
 				<li> <a href="/en/products/product_list.aspx?category=15&menu=0501"<%=GetLnbIndicatorGroup("05")%>>Health Suppliments</a> 
 					<ul class="sy"<%=GetLnbIndicatorDisplay("05")%>>
 						<li><a href="/en/products/product_list.aspx?category=15&menu=0501"<%=GetLnbIndicator("0501")%>>Products</a></li>

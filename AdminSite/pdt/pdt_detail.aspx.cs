@@ -24,24 +24,17 @@ namespace AdminSite.pdt
 
 		private Dictionary<string, string[]> dicInputItems = new Dictionary<string, string[]>(); //국문
 		private Dictionary<string, string[]> dicEngInputItems = new Dictionary<string, string[]>(); //영문 
-
+		private Boolean isErr = false; //제품 등록 처리 결과
 
 		protected void Page_Load(object sender, EventArgs e)
         {
-			
-
 			if (!IsPostBack)
-            {
-
+            {				
 				SearchData();
-
                 SetControls();
-
-                InitControls();
-
-				
-            }
-        }
+			}
+			InitControls();
+		}
 
         /// <summary>
         /// 데이터 조회
@@ -106,7 +99,7 @@ namespace AdminSite.pdt
         private void InitControls()
         {
 			//입력폼 설정
-
+			
 			//국문
 			dicInputItems.Add("01", new string[] { "new_yn", "ident_number", "catg_no", "prod_div","ingredi", "temper", "insu_cd", "pdt_money", "pdt_unit" }); //인체
 			dicInputItems.Add("02", new string[] { "new_yn", "ident_number", "catg_no", "ingredi", "insu_cd", "pdt_money"}); //동물
@@ -135,7 +128,7 @@ namespace AdminSite.pdt
             upload_05.Attributes.Add("onchange", "document.getElementById('" + upload_path_05.ClientID + "').value=document.getElementById('" + upload_05.ClientID + "').value;");
             upload_file.Attributes.Add("onchange", "document.getElementById('" + upload_path_file.ClientID + "').value=document.getElementById('" + upload_file.ClientID + "').value;");
 			open_yn1.Checked = true;
-			reg_dt.Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+			if(reg_dt.Value.Equals(""))	reg_dt.Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
 
 			if (GetDataTableCount(0) > 0)
             {
@@ -310,25 +303,27 @@ namespace AdminSite.pdt
                 // 입력 모드
                 result = ExecuteQueryResult(3204, param.ToString());
             }
-
 			//제품 카테고리 설정
 			AddProdCategory();
 
 			if (result == null)
             {
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "test", CWebUtil.MsgBox("시스템 오류가 발생 했습니다."));
+				isErr = true;
+				ClientScript.RegisterClientScriptBlock(this.GetType(), "test", CWebUtil.MsgBox("시스템 오류가 발생 했습니다."));
             }
-            else if (result[0].Equals("00") == false)
+            else if (!result[0].Equals("00"))
             {
-                // 입력 or 수정 실패
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "test", CWebUtil.MsgBox(result[1]));
-            }
-            else
+				isErr = true;
+				// 입력 or 수정 실패
+				ClientScript.RegisterClientScriptBlock(this.GetType(), "test", CWebUtil.MsgBox(result[1]));
+					
+			}
+			else
             {
                 // 입력 성공 - 이어서 태그 입력
                 AddTag();
             }
-        }
+		}
 		/// <summary>
 		/// 제품 카테고리 설정
 		/// </summary>
@@ -568,11 +563,9 @@ namespace AdminSite.pdt
 		/// </summary>
 		protected string _input_items
 		{
-			
 			get {
-				string _input = string.Join(",", dicInputItems[_category]);
+				string _input =  string.Join(",", dicInputItems[_category]);
 				if (LANG_CD == "ENG") _input = string.Join(",", dicEngInputItems[_category]);
-
 				return _input;  
 			}
 		}
@@ -584,8 +577,15 @@ namespace AdminSite.pdt
 		protected void btnSave_Click(object sender, EventArgs e)
         {
             SaveData();
-
-            Response.Redirect("./pdt_list.aspx?prod_cd=" + ProdCd + "&LANG_CD=" + LANG_CD+"&category="+ _category+"&page_no="+_PAGE_NO);
+			string return_url = "./pdt_list.aspx?prod_cd=" + ProdCd + "&LANG_CD=" + LANG_CD + "&category=" + _category + "&page_no=" + _PAGE_NO;
+			if (isErr.Equals(false))
+			{
+				ScriptManager.RegisterClientScriptBlock(this.Page, this.GetType(), null, "move_link('" + return_url + "');", true);
+			}
+			
+			//Response.Write("<script>location.replace('"+return_url+"')</script>");
+			//Response.End();
+			//Response.Redirect("./pdt_list.aspx?prod_cd=" + ProdCd + "&LANG_CD=" + LANG_CD+"&category="+ _category+"&page_no="+_PAGE_NO);
         }
 
         protected void btnDel_Click(object sender, EventArgs e)

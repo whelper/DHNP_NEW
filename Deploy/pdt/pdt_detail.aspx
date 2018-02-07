@@ -11,8 +11,8 @@
 
 	<div class="wrap_box forms">
         <ul class="list_tab  clearfix target" >
-			<li<%if ("KOR".Equals(LANG_CD)) { %> class="tab_on"<%} %>><a href="pdt_detail.aspx?prod_cd=<%=ProdCd %>&LANG_CD=KOR&category=<%=_category %>&page_no=<%=_PAGE_NO %>">국문</a></li>
-			<li<%if ("ENG".Equals(LANG_CD)) { %> class="tab_on"<%} %>><a href="pdt_detail.aspx?prod_cd=<%=ProdCd %>&LANG_CD=ENG&category=<%=_category %>&page_no=<%=_PAGE_NO %>">영문</a></li>
+			<li<%if ("KOR".Equals(LANG_CD)) { %> class="tab_on"<%} %>><a href="pdt_detail.aspx?prod_cd=<%=ProdCd %>&LANG_CD=KOR&category=<%=_category %>">국문</a></li>
+			<li<%if ("ENG".Equals(LANG_CD)) { %> class="tab_on"<%} %>><a href="pdt_detail.aspx?prod_cd=<%=ProdCd %>&LANG_CD=ENG&category=<%=_category %>">영문</a></li>
 		</ul>
 		<table cellpadding="0" cellspacing="0" border="0" class="table_frm">
 		    <colgroup>
@@ -76,26 +76,18 @@
 				</tr>
 				<tr>
 					<th scope="row"> 
-						<label for="pdt_name">제품명<br />(Product name)</label>     
+						<label for="pdt_name">제품명</label>     
 					</th>
 					<td class="alignleft" colspan="2">     
 						<input type="text" runat="server" id="prod_nm" value="" class="span6 text" />
 					</td>
 				</tr>
-				<tr class="ident_number input-items">
+				<tr>
 					<th scope="row"> 
 						<label for="pdt_name">물품식별번호</label>     
 					</th>
-					<td class="alignleft" colspan="2">
-						<textarea runat="server" id="ident_number" class="textarea_detail" rows="5"></textarea>	
-					</td>
-				</tr>
-				<tr class="dosage input-items">
-					<th scope="row"> 
-						<label for="pdt_name">복용법<br />(Dosage)</label>     
-					</th>
-					<td class="alignleft" colspan="2">
-						<textarea runat="server" id="dosage" class="textarea_detail" rows="5"></textarea>	
+					<td class="alignleft" colspan="2">     
+						<input type="text" runat="server" id="ident_number" value="" class="span6 text" />
 					</td>
 				</tr>
 				<tr class="prod_div input-items">
@@ -119,7 +111,7 @@
 						<asp:DropDownList ID="catg_no2" runat="server" AutoPostBack="false" />
 					</td>
 				</tr>--%>
-				<tr class="catg_no input-items">
+				<tr>
 					<th scope="row"> 
 						<label for="pdt_nember">분류번호</label>   
 					</th>
@@ -137,7 +129,7 @@
 				</tr> 
 				<tr class="pdt_summary input-items">
 					<th scope="row"> 
-						<label for="pdt_summary">개요<br />(Overview)</label>   
+						<label for="pdt_summary">개요</label>   
 					</th>
 					<td class="alignleft" colspan="2">     
                         <textarea runat="server" id="pdt_summary" class="textarea_detail" rows="5"></textarea>
@@ -145,7 +137,7 @@
 				</tr>
 				<tr class="ingredi input-items">
 					<th scope="row" > 
-						<label for="ingredi">주요성분(성분함량)<br />(Active Ingredients)</label>   
+						<label for="ingredi">주요성분(성분함량)</label>   
 					</th>
 					<td colspan="2" class="alignleft">
 						<textarea  id="ingredi" runat="server" class="textarea_detail"  rows="5"></textarea>  
@@ -170,7 +162,7 @@
 					</td>
 				</tr>
 				<tr class="pdt_unit input-items">
-					<th scope="row"><label for="pdt_unit">포장단위<br />(Package)</label></th>
+					<th scope="row"><label for="pdt_unit">포장단위</label></th>
 					<td class="alignleft">  
 						<input type="text" runat="server" id="pack_mea" value="" class="span6 text" />
 					</td>
@@ -185,7 +177,7 @@
 				</tr>
 				<tr>
 					<th scope="row" class="th_top">
-						<label for="pdt_ex">제품설명<br/>(효능 효과 / 용법용량) <br />(Indication)</label> 
+						<label for="pdt_ex">제품설명<br/>(효능 효과 / 용법용량)</label> 
 					</th>
 					<td>
                         <asp:TextBox ID="usage" runat="server" CssClass="textarea_detail_adit" style="width:1000px;" TextMode="MultiLine" ></asp:TextBox>
@@ -478,6 +470,7 @@
 				</tr>
 			</tbody>
 		</table>
+
         <input type="hidden" id="hdnContent" runat="server" />
 		<input type="hidden" id="category" runat="server" />
 		<div class="btn_area clearfix">
@@ -645,8 +638,6 @@
 
         return false;
 	}
-
-
 
 
 	$(function () {

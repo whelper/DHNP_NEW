@@ -1,4 +1,4 @@
-document.write(' 	<h1 class="acc-hidden"> 메인메뉴 </h1>	   ');
+﻿document.write(' 	<h1 class="acc-hidden"> 메인메뉴 </h1>	   ');
 document.write(' 	<!-- // gnb 검색 -->   ');
 document.write(' 	<div class="gnb_search_box">   ');
 document.write(' 		<div class="gnb_search_bg">   ');
@@ -21,10 +21,10 @@ document.write(' 				</ul>   ');
 document.write(' 			</li>   ');
 document.write(' 			<li> <a href="#"><span class="gnb_i_03"> Products </span></a>    ');
 document.write(' 				<ul  class="ly" style="display:none;">   ');
+document.write(' 					<li><a href="' + root + '/en/pdt/pdt_list.aspx?category=12&menu=0401">International Sales</a></li>   ');
 document.write(' 					<li><a href="' + root + '/en/pdt/pdt_new_list.aspx?category=09&menu=0102">Pharmaceutical</a></li>   ');
 document.write(' 					<li><a href="' + root + '/en/pdt/pdt_new_list.aspx?category=10&menu=0202">Animal Health & Nutrition</a></li>   ');
 document.write(' 					<li><a href="' + root + '/en/pdt/bio_rnd.aspx?menu=0302">Bio</a></li>   ');
-document.write(' 					<li><a href="' + root + '/en/pdt/pdt_list.aspx?category=12&menu=0401">International Sales</a></li>   ');
 document.write(' 					<li><a href="' + root + '/en/pdt/pdt_list.aspx?category=15&menu=0501">Health Suppliments</a></li>   ');
 document.write(' 					<li><a href="' + root + '/en/pdt/pdt_list.aspx?category=16&menu=0601">Medical Devices</a></li>   ');
 document.write(' 				</ul>   ');

@@ -19,6 +19,10 @@
 <script type="text/javascript" src="<%=GetRoot()%>/common/js/function.js"></script>
 <script type="text/javascript" src="<%=GetRoot()%>/common/js/html5shiv-printshiv.js"></script>
 <script type="text/javascript">
+	function move_link(url) {
+		location.href = url;
+	}
+
 	function isValidDatetime(dt) {
 
 		//형식 : 0000-00-00 00:00

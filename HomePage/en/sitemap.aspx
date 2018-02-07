@@ -68,14 +68,14 @@
 							<li><a href="/en/intro/location.aspx">Contact Us</a></li>
 						</ul>
 					</li>
-					<li><a href="/en/products/human_new_list.aspx" class="gnb_02 "> Products  </a>
+					<li><a href="/en/products/product_list.aspx?category=12&menu=0401" class="gnb_02 "> Products  </a>
 						<ul  class="ly" style="display:none;">
-							<li><a href="/en/products/human_new_list.aspx">Pharmaceutical</a></li>
-							<li><a href="/en/products/animal_new_list.aspx">Animal Health & Nutrition</a></li>
-							<li><a href="/en/products/bio_badge_list.aspx">Biopharmaceutical</a></li>
-							<li><a href="/en/products/global_human_list.aspx" >International Sales</a></li>
-							<li><a href="/en/products/health_products_list.aspx">Health Suppliments</a></li>
-                        	<li><a href="/en/products/medical_list.aspx">Medical Devices</a></li>
+							<li><a href="/en/products/product_list.aspx?category=12&menu=0401" >International Sales</a></li>
+							<li><a href="/en/products/product_new_list.aspx?category=09&menu=0102">Pharmaceutical</a></li>
+							<li><a href="/en/products/product_new_list.aspx?category=10&menu=0202">Animal Health & Nutrition</a></li>
+							<li><a href="/en/products/bio_rnd.aspx?category=11&&menu=0302">Bio</a></li>
+							<li><a href="/en/products/product_list.aspx?category=15&menu=0501">Health Suppliments</a></li>
+                        	<li><a href="/en/products/product_list.aspx?category=16&menu=0601">Medical Devices</a></li>
 						</ul>
 					</li>
 					<li><a href="/en/invest/ir_info_list.aspx" class="gnb_04">Investors</a>
@@ -114,39 +114,40 @@
 			 	<div class="col">
 			 		<h1>Products</h1>
 			 		<ul>
-			 			<li><a href="/en/products/human_new_list.aspx">Pharmaceutical</a>
+						<li><a href="/en/products/product_list.aspx?category=12&menu=0401">International Sales</a>
 							<ul>
-								<li><a href="/en/products/human_new_list.aspx"> New Products </a></li>
-								<li><a href="/en/products/human_products_list.aspx"> Products </a></li>
+								<li><a href="/en/products/product_list.aspx?category=12&menu=0401">Pharmaceutical</a></li>
+								<li><a href="/en/products/product_list.aspx?category=13&menu=0402">Animal Health & Nutrition</a></li>
+								<li><a href="/en/products/product_list.aspx?category=14&menu=0403">ETC</a></li>
 							</ul>
 			 			</li>
-			 			<li><a href="/en/products/animal_new_list.aspx">Animal Health & Nutrition</a>
+			 			<li><a href="/en/products/product_new_list.aspx?category=09&menu=0102">Pharmaceutical</a>
 							<ul>
-								<li><a href="/en/products/animal_new_list.aspx">New Products</a></li>
-								<li><a href="/en/products/animal_products_list.aspx">Products</a></li>
+								<li><a href="/en/products/product_new_list.aspx?category=09&menu=0102"> New Products </a></li>
+								<li><a href="/en/products/product_list.aspx?category=09&menu=0101"> Products </a></li>
 							</ul>
 			 			</li>
-			 			<li><a href="/en/products/bio_badge_list.aspx">Biopharmaceutical</a>
+			 			<li><a href="/en/products/product_new_list.aspx?category=10&menu=0202">Animal Health & Nutrition</a>
 							<ul>
-								<li><a href="/en/products/bio_badge_list.aspx">Cell Culture Media</a></li>
-								<li><a href="/en/products/bio_resin_list.aspx">Chromatography Resins</a> </li>
-								<li><a href="/en/products/bio_catalog_list.aspx">Catalog Products</a> </li>
+								<li><a href="/en/products/product_new_list.aspx?category=10&menu=0202">New Products</a></li>
+								<li><a href="/en/products/product_list.aspx?category=10&menu=0201">Products</a></li>
 							</ul>
 			 			</li>
-			 			<li><a href="/en/products/global_human_list.aspx">International Sales</a>
+			 			<li><a href="/en/products/bio_rnd.aspx?category=11&&menu=0302">Bio</a>
 							<ul>
-								<li><a href="/en/products/global_human_list.aspx">Pharmaceutical</a></li>
-								<li><a href="/en/products/global_animal_list.aspx">Animal Health & Nutrition</a></li>
+								<li><a href="/en/products/bio_rnd.aspx?category=11&&menu=0302">R&D</a></li>
+								<li><a href="/en/products/product_list.aspx?category=11&menu=0301">Serum Free Media</a> </li>
 							</ul>
 			 			</li>
-			 			<li><a href="/en/products/health_products_list.aspx">Health Suppliments</a>
+			 			
+			 			<li><a href="/en/products/product_list.aspx?category=15&menu=0501">Health Suppliments</a>
 							<ul>
-								<li><a href="/en/products/health_products_list.aspx">Health Suppliments</a></li>
+								<li><a href="/en/products/product_list.aspx?category=15&menu=0501">Health Suppliments</a></li>
 							</ul>
 			 			</li>
-			 			<li><a href="/en/products/medical_list.aspx">Medical Devices</a>
+			 			<li><a href="/en/products/product_list.aspx?category=16&menu=0601">Medical Devices</a>
 							<ul>
-								<li><a href="/en/products/medical_list.aspx">Medical Devices</a></li>
+								<li><a href="/en/products/product_list.aspx?category=16&menu=0601">Medical Devices</a></li>
 							</ul>
 			 			</li>
 			 		</ul>
@@ -187,16 +188,27 @@
 
 	</div><!--// container -->
 	
+	
+	
 	<aside id="quick_menu">
-		<h1> <span>  Quick menu  </span> </h1>
+		<h1><span>Quick Menu</span></h1>
 		<ul>
-			<li class="qu_01"> <a href="./"> home </a> </li>
-			<li class="qu_02"> <a href="/en/products/human_new_list.aspx"> 인체의 약품  </a> </li>
-			<li class="qu_03"> <a href="/en/products/animal_new_list.aspx"> 동물의 약품  </a> </li>
-			<li class="qu_04"> <a href="/en/products/bio_badge_list.aspx"> 바이오공정소재  </a> </li>
-			<li class="qu_05"> <a href="/en/recruit/job_notify_list.aspx"> 채용안내  </a> </li>
+			<li class="qu_01"><a href="/en/products/product_new_list.aspx?category=09&amp;menu=0102"></a></li>
+                      <li class="qu_02"><a href="/en/products/product_new_list.aspx?category=10&amp;menu=0202"></a></li>
+                      <li class="qu_03"><a href="/en/products/bio_rnd.aspx?category=11&&menu=0301"></a></li>
+			    
 		</ul>
-	</aside>	
+       
+		    <div class="quick_ad">
+                
+                <img alt="해외자원 개발 IMG " src="/upload/main/banner_70x237_20170726161415742.jpg">
+                
+		    </div>
+            
+		    <!--<a href="#top" class="btn_top"><span>맨위로 </span></a>-->
+		    <div><a href="#top"><img alt="" src="/common/images/common/img_top.jpg"></a></div>
+        </aside>
+	
 	<hr>
 	<footer class="footer">
 		<article class="footer_content">

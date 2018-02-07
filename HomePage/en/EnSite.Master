@@ -70,10 +70,10 @@
 					</li>
 					<li><a href="/en/products/product_new_list.aspx?category=09&menu=0102" class="gnb_02<%=GetGnbIndicator("products")%>">Products</a>
 						<ul  class="ly" style="display:none;">
+							<li><a href="/en/products/product_list.aspx?category=12&menu=0401">International Sales</a></li>
 							<li><a href="/en/products/product_new_list.aspx?category=09&menu=0102">Pharmaceutical</a></li>
 							<li><a href="/en/products/product_new_list.aspx?category=10&menu=0202">Animal Health & Nutrition</a></li>
-							<li><a href="/en/products/product_list.aspx?category=11&menu=0301">Bio</a></li>
-							<li><a href="/en/products/product_list.aspx?category=12&menu=0401">International Sales</a></li>
+							<li><a href="/en/products/bio_rnd.aspx?category=11&&menu=0302">Bio</a></li>
 							<li><a href="/en/products/product_list.aspx?category=13&menu=0501">Health Suppliments</a></li>
 	                        <li><a href="/en/products/product_list.aspx?category=14&menu=0601">Medical Devices</a></li>
 						</ul>
