@@ -77,11 +77,14 @@
 						<th><label for="name_01_06">주소</label> </th>       
 						<td colspan="3"> 
 							<div>
-								<input type="text"  id="zipcode_str" name="zipcode_str" title="우편번호 앞자리 " maxlength="3" class="w20p "  value="<%=GetDsData(0, 0, "ZIPCODE_STR") %>" onfocus="javascript:jop_popupClick(2);" readonly/>
+								<!--<input type="text"  id="zipcode_str" name="zipcode_str" title="우편번호 앞자리 " maxlength="3" class="w20p "  value="<%=GetDsData(0, 0, "ZIPCODE_STR") %>" onfocus="javascript:jop_popupClick(2);" readonly/>
 								<span class="inlineB pLR5"> - </span>
 								<label for="zipcode_end" class="acc-hidden">우편번호 뒤자리</label> 
 								<input type="text"  id="zipcode_end" name="zipcode_end" class="w20p " maxlength="3" style="margin-right:5px;" value="<%=GetDsData(0, 0, "ZIPCODE_END") %>" onfocus="javascript:jop_popupClick(2);" readonly/> 
-								<a href="javascript:jop_popupClick(2);" class="button blue2 mL5" >우편번호 검색</a>
+								<a href="javascript:jop_popupClick(2);" class="button blue2 mL5" >우편번호 검색</a>-->
+								<input type="text"  id="zipcode_str" name="zipcode_str" title="우편번호 앞자리 " value="<%=GetDsData(0, 0, "ZIPCODE_STR") %>" class="w20p " readonly/>
+								<input type="hidden"  id="zipcode_end" name="zipcode_end" value="<%=GetDsData(0, 0, "ZIPCODE_END") %>" />
+								<a href="javascript:postCode();" class="button blue2 mL5" >우편번호 검색</a>
 							</div>
 							<div>
 								<label for="addr" class="acc-hidden ">기본주소</label> 
@@ -2035,6 +2038,67 @@
             $("#attach_file_path_"+num).val("");
         }
     }
-    
+</script>
+<%if (Request.ServerVariables["HTTPS"] == "on"){ %>
+<script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+<%}else{ %>
+<script src="//dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<%} %>
+<script type="text/javascript">
+	function postCode() {
+		new daum.Postcode({
+			oncomplete: function (data) {
+				// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+				// 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+				// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+				var roadAddr = data.roadAddress; // 도로명 주소 변수
+				var extraRoadAddr = ''; // 참고 항목 변수
+
+				// 법정동명이 있을 경우 추가한다. (법정리는 제외)
+				// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+				if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+					extraRoadAddr += data.bname;
+				}
+				// 건물명이 있고, 공동주택일 경우 추가한다.
+				if (data.buildingName !== '' && data.apartment === 'Y') {
+					extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+				}
+				// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+				if (extraRoadAddr !== '') {
+					extraRoadAddr = ' (' + extraRoadAddr + ')';
+				}
+
+				// 우편번호와 주소 정보를 해당 필드에 넣는다.
+				document.getElementById('zipcode_str').value = data.zonecode;
+				document.getElementById("addr").value = roadAddr;
+				//document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+
+				// 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+				if (roadAddr !== '') {
+					//document.getElementById("sample4_extraAddress").value = extraRoadAddr;
+				} else {
+					//document.getElementById("sample4_extraAddress").value = '';
+				}
+
+				/*
+				var guideTextBox = document.getElementById("guide");
+				// 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+				if (data.autoRoadAddress) {
+					var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
+					guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
+					guideTextBox.style.display = 'block';
+
+				} else if (data.autoJibunAddress) {
+					var expJibunAddr = data.autoJibunAddress;
+					guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
+					guideTextBox.style.display = 'block';
+				} else {
+					guideTextBox.innerHTML = '';
+					guideTextBox.style.display = 'none';
+				}*/
+			}
+		}).open();
+	}
 </script>
 </asp:Content>

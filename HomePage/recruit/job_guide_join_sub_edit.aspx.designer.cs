@@ -17,7 +17,7 @@ namespace HomePage.recruit {
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
-        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하십시오.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden img;
         
@@ -26,7 +26,7 @@ namespace HomePage.recruit {
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
-        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하십시오.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload attach_file_1;
         
@@ -35,7 +35,7 @@ namespace HomePage.recruit {
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
-        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하십시오.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload attach_file_2;
         
@@ -44,7 +44,7 @@ namespace HomePage.recruit {
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
-        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하십시오.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload attach_file_3;
         
@@ -53,7 +53,7 @@ namespace HomePage.recruit {
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
-        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하십시오.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnSave;
     }

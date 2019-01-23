@@ -308,7 +308,14 @@
               margin: 70,
               auto: true,
               auto_controls: true
-          });
+		  });
+
+		  $("#pBox").click(function () {
+			  dayClose(1000);
+		  });
+		  $("#cBox").click(function () {
+			  dayClose(1);
+		  });
       });
 
       //  메인 팝업 자동조절 
@@ -333,7 +340,7 @@
           var blnCookie = getCookie(winName);
           var obj = eval("window." + winName);
           if (!blnCookie) {
-              $("#pop_wrap").fadeIn();    
+			  $("#pop_wrap").fadeIn();    
           }
           else 
           {
@@ -347,7 +354,12 @@
       }
 
       function dayClose(day) {
-          if ($("#cBox").is(":checked") == true || $("#pBox").is(":checked") == true) {
+		  if (day == 1) {
+			  $("#cBox").attr("checked", true);	
+		  } else {
+			  $("#pBox").attr("checked", true);	
+		  }
+		  if ($("#cBox").is(":checked") == true || $("#pBox").is(":checked") == true) {
 
             var todayDate = new Date();
             todayDate.setDate(todayDate.getDate() + day);

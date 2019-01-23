@@ -227,3 +227,221 @@ hr {display: none !important; visibility: hidden; }
 *********************************************/
 .lineB { border-bottom: 1px solid #dbdbdb; }
 .center { text-align: center; }
+
+.pop_wrap {
+	margin: 0px;
+	padding: 0px;
+	left: 0px;
+	top: 98px;
+	width: 100%;
+	position: fixed;
+	z-index: 9999;
+}
+
+.pop_wrap_alpha {
+	margin: 0px;
+	padding: 0px;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: auto !important;
+	display: block;
+	position: fixed !important;
+	z-index: 50;
+	min-height: 100%;
+	opacity: 0.7;
+	background-color: rgb(255, 255, 255);
+	-moz-opacity: 0.70;
+}
+
+.popupContent {
+	background: rgb(255, 255, 255);
+	border: 1px solid rgb(219, 219, 219);
+	border-image: none;
+	left: 50%;
+	top: 200px;
+	height: auto !important;
+	font-size: 12px;
+	margin-left: -255px;
+	position: fixed;
+	z-index: 9999;
+	min-height: 313px;
+	min-width: 500px;
+	box-shadow: 2px 3px 7px 0px #bfbfbf;
+	-webkit-box-shadow: #bfbfbf 2px 3px 7px 0;
+	-moz-box-shadow: #bfbfbf 2px 3px 7px 0;
+}
+
+	.popupContent.top {
+		top: 10%;
+		width: 700px;
+		height: 422px;
+	}
+
+.popupContent_main {
+	background: none;
+	height: auto !important;
+	font-size: 12px;
+
+}
+
+.popupContent > h1 {
+	padding: 10px 20px 0px;
+	cursor: pointer;
+}
+
+	.popupContent > h1.no {
+		color: transparent;
+		text-indent: -9999em;
+		font-size: 1px;
+	}
+
+.popup_title_01 {
+	text-align: left;
+	color: rgb(52, 152, 255);
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.popupContent .i_my {
+	background: url("../images/common/pop_i_head.png") no-repeat 0px 48%;
+	height: 100%;
+	padding-left: 50px;
+	display: inline-block;
+}
+
+.popupContent {
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+	.popupContent .lineBox_1 {
+		color: rgb(120, 120, 120);
+		line-height: 230px;
+		margin-bottom: 30px;
+		border-bottom-color: rgb(227, 227, 227);
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
+	}
+
+	.popupContent .job_ok_neme {
+		color: rgb(115, 115, 115);
+		font-size: 15px;
+		font-weight: 600;
+	}
+
+		.popupContent .job_ok_neme strong {
+			color: rgb(52, 152, 255);
+			font-size: 25px;
+			font-weight: 600;
+		}
+
+	.popupContent .lineBox {
+		margin: 10px 5%;
+		height: 70px;
+		color: rgb(120, 120, 120);
+		border-top-color: rgb(227, 227, 227);
+		border-bottom-color: rgb(227, 227, 227);
+		border-top-width: 1px;
+		border-bottom-width: 1px;
+		border-top-style: solid;
+		border-bottom-style: solid;
+	}
+
+		.popupContent .lineBox .zone_search {
+			margin-top: 18px;
+		}
+
+			.popupContent .lineBox .zone_search label {
+				margin-right: 5px;
+				display: inline-block;
+			}
+
+			.popupContent .lineBox .zone_search input {
+				width: 180px;
+				height: 29px;
+				margin-right: 5px;
+			}
+
+	.popupContent .button {
+		height: 34px;
+		line-height: 34px;
+		display: inline-block;
+		min-width: 150px;
+	}
+
+		.popupContent .button.gray {
+			background: rgb(169, 169, 169);
+			color: rgb(255, 255, 255);
+		}
+
+		.popupContent .button.green {
+			background: rgb(4, 178, 90);
+			color: rgb(255, 255, 255);
+		}
+
+		.popupContent .button.w310 {
+			width: 310px !important;
+		}
+
+		.popupContent .button.w100 {
+			width: 70px !important;
+		}
+
+.mainPopup_btn {
+	width: 100%;
+	height: 60px;
+	line-height: 50px;
+	float: left;
+	background-color: rgb(255, 255, 255);
+}
+
+	.mainPopup_btn input {
+		margin-top: 17px;
+		float: left;
+	}
+
+	.mainPopup_btn label {
+		color: rgb(129, 129, 129);
+		line-height: 60px;
+		letter-spacing: -1px;
+		font-size: 14px;
+	}
+
+	.mainPopup_btn .left {
+		width: 100px;
+		margin-left: 20px;
+		float: left;
+		display: inline-block;
+	}
+
+		.mainPopup_btn .left input {
+			margin-right: 5px;
+		}
+
+	.mainPopup_btn .right {
+		width: 100px;
+		text-align: right;
+		margin-right: 20px;
+		float: right;
+		display: inline-block;
+	}
+
+.btn_close {
+	background: url("../images/main/btn_close.png") no-repeat 0px 48%;
+	top: 17px;
+	width: 24px;
+	height: 25px;
+	right: 17px;
+	text-indent: -9999em;
+	position: absolute;
+}
+
+.popupContent .lineBox_input {
+	padding: 20px;
+	text-align: left;
+	color: rgb(120, 120, 120);
+	border-bottom-color: rgb(227, 227, 227);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}

@@ -70,11 +70,15 @@
 						<th><label for="name_01_06">주소</label> </th>       
 						<td colspan="3"> 
 							<div>
-								<input type="text"  id="zipcode_str" name="zipcode_str" title="우편번호 앞자리 " maxlength="3" class="w20p " onfocus="javascript:jop_popupClick(2);" readonly/>
+								<!--<input type="text"  id="zipcode_str" name="zipcode_str" title="우편번호 앞자리 " maxlength="3" class="w20p " onfocus="javascript:jop_popupClick(2);" readonly/>
 								<span class="inlineB pLR5"> - </span>
 								<label for="zipcode_end" class="acc-hidden">우편번호 뒤자리</label> 
 								<input type="text"  id="zipcode_end" name="zipcode_end" class="w20p " maxlength="3" style="margin-right:5px;" onfocus="javascript:jop_popupClick(2);" readonly/> 
-								<a href="javascript:jop_popupClick(2);" class="button blue2 mL5" >우편번호 검색</a>
+								<a href="javascript:jop_popupClick(2);" class="button blue2 mL5" >우편번호 검색</a>-->
+								<input type="text"  id="zipcode_str" name="zipcode_str" title="우편번호 앞자리 " maxlength="3" class="w20p " readonly/>
+								<input type="hidden"  id="zipcode_end" name="zipcode_end" value="000" />
+								<a href="javascript:postCode();" class="button blue2 mL5" >우편번호 검색</a>
+								
 							</div>
 							<div>
 								<label for="addr" class="acc-hidden ">기본주소</label> 
@@ -110,12 +114,12 @@
 							<select id="rcm_type" name="rcm_type" class="select_basis top">
 								<option value="">유형</option>
                                 <% 
-                                    for (int i = 0; i < GetRowCount(1); i++)
-                                    {
+									for (int i = 0; i < GetRowCount(1); i++)
+									{
                                 %>
 								<option value="<%=GetData(1, i, "COMM_CD") %>"><%=GetData(1, i, "COMM_CD_NM") %></option>
                                 <% 
-                                    }
+									}
                                 %>
 							</select>
 						</span>
@@ -124,12 +128,12 @@
 							<select id="rcm_jobgroup" name="rcm_jobgroup" class="select_basis top" >
 								<option  value="">직군   </option>
 								<% 
-                                    for (int i = 0; i < GetRowCount(2); i++)
-                                    {
+									for (int i = 0; i < GetRowCount(2); i++)
+									{
                                 %>
 								<option value="<%=GetData(2, i, "COMM_CD") %>"><%=GetData(2, i, "COMM_CD_NM") %></option>
                                 <% 
-                                    }
+									}
                                 %>
 							</select>
 						</span>
@@ -138,12 +142,12 @@
 							<select id="rcm_career" name="rcm_career" class="select_basis top">
 								<option   value="">경력구분</option>
 								<% 
-                                    for (int i = 0; i < GetRowCount(3); i++)
-                                    {
+									for (int i = 0; i < GetRowCount(3); i++)
+									{
                                 %>
 								<option value="<%=GetData(3, i, "COMM_CD") %>"><%=GetData(3, i, "COMM_CD_NM") %></option>
                                 <% 
-                                    }
+									}
                                 %>
 							</select>
 						</span>
@@ -155,11 +159,11 @@
 						<span class="select_col4 first">
 							<label for="duty_no" class="acc-hidden"><%=GetData(4, 0, "UPR_DUTY_NM")%></label>
                             <% 
-                            if (DutyDs != null && DutyDs.Tables.Count > 0 && DutyDs.Tables[0].Rows.Count > 0)
-                             {
-                                for (int i = 0; i < DutyDs.Tables[0].Rows.Count; i++)
-                                    { 
-							        if ((RcmDutyNo).Equals(DutyDs.Tables[0].Rows[i]["DUTY_NO"].ToString())) {%>
+								if (DutyDs != null && DutyDs.Tables.Count > 0 && DutyDs.Tables[0].Rows.Count > 0)
+								{
+									for (int i = 0; i < DutyDs.Tables[0].Rows.Count; i++)
+									{
+										if ((RcmDutyNo).Equals(DutyDs.Tables[0].Rows[i]["DUTY_NO"].ToString())) {%>
                                         <%=DutyDs.Tables[0].Rows[i]["DUTY_NM"] %>
                                     <%}%>
                                 <%}%>
@@ -334,12 +338,12 @@
 						<select id="rcm_stead_catg" name="rcm_stead_catg" style="width:96%">
 							<option value="">소재지</option>
                             <% 
-                                for (int i = 0; i < GetRowCount(5); i++)
-                                {
+								for (int i = 0; i < GetRowCount(5); i++)
+								{
                             %>
 							<option value="<%=GetData(5, i, "COMM_CD") %>"><%=GetData(5, i, "COMM_CD_NM") %></option>
                             <%      
-                                }
+								}
                             %>
 						</select>
 					</td>
@@ -355,12 +359,12 @@
 					<td >
 						<select id="hs_grad_date" name="hs_grad_date" style="width:100px !important; float:left;">
                         <% 
-                            for (int i = NowYear+1; i > NowYear - 60; i--)
-                            {
+							for (int i = NowYear + 1; i > NowYear - 60; i--)
+							{
                         %>
 							<option value="<%=i %>"><%=i %></option>
                         <% 
-                            }
+							}
                         %>
 						</select>
 					</td>
@@ -369,12 +373,12 @@
                         <select id="hs_grad_select_catg" name="hs_grad_select_catg" style="width:96%">
 							<option value="">졸업선택</option>
                         <% 
-                            for (int i = 0; i < GetRowCount(6); i++)
-                            {
+							for (int i = 0; i < GetRowCount(6); i++)
+							{
                         %>
 						<option value="<%=GetData(6, i, "COMM_CD") %>"><%=GetData(6, i, "COMM_CD_NM") %></option>
                         <%      
-                            }
+							}
                         %>
                         </select>
 					</td>
@@ -388,12 +392,12 @@
                         <select id="rcm_major_catg" name="rcm_major_catg" style="width:96%">
 							<option value="">전공선택</option>
                         <% 
-                            for (int i = 0; i < GetRowCount(7); i++)
-                            {
+							for (int i = 0; i < GetRowCount(7); i++)
+							{
                         %>
 						<option value="<%=GetData(7, i, "COMM_CD") %>"><%=GetData(7, i, "COMM_CD_NM") %></option>
                         <%      
-                            }
+							}
                         %>
                         </select>
 					</td>
@@ -449,12 +453,12 @@
 						    <select id="mater_cd1" name="mater_cd" >
 						        <option value="">소재지</option>
 						        <% 
-                                    for (int i = 0; i < GetRowCount(5); i++)
-                                    {
+									for (int i = 0; i < GetRowCount(5); i++)
+									{
                                 %>
 							    <option value="<%=GetData(5, i, "COMM_CD") %>"><%=GetData(5, i, "COMM_CD_NM") %></option>
                                 <%      
-                                    }
+									}
                                 %>
 					        </select>
 					        <select id="bsl_tsl_cd1" name="bsl_tsl_cd">
@@ -470,12 +474,12 @@
 					    <td>
 						    <select id="admis_year1" name="admis_year" >
 							    <% 
-                                    for (int i = NowYear; i > NowYear - 60; i--)
-                                    {
+									for (int i = NowYear; i > NowYear - 60; i--)
+									{
                                 %>
 							        <option value="<%=i %>"><%=i %></option>
                                 <% 
-                                    }
+									}
                                 %>
 						    </select>
                             <select id="admis_cd1" name="admis_cd">
@@ -486,12 +490,12 @@
 						    <label for="gradut_year1" class="acc-hidden">졸업</label> 
 						    <select id="gradut_year1" name="gradut_year" >
 							    <% 
-                                    for (int i = NowYear; i > NowYear - 60; i--)
-                                    {
+									for (int i = NowYear; i > NowYear - 60; i--)
+									{
                                 %>
 							        <option value="<%=i %>"><%=i %></option>
                                 <% 
-                                    }
+									}
                                 %>
 						    </select>
                             <select id="gradut_cd1" name="gradut_cd">
@@ -1074,12 +1078,12 @@
 <script type="text/javascript">
     $( document ).ready(function() {
         <%
-            if (LoadType.Equals("") == false)
-            {
+	if (LoadType.Equals("") == false)
+	{
         %>
         $("#pop_wrap_01").attr("style","display:block");
         <% 
-            }
+	}
         %>
     });
 
@@ -1293,12 +1297,12 @@
 			'<td>' +
 				'<select id="admis_year' + college + '" name="admis_year" >' +
                     <% 
-                        for (int i = NowYear + 1; i > NowYear - 20; i--)
-                        {
+	for (int i = NowYear + 1; i > NowYear - 20; i--)
+	{
                     %>
 						'<option value="<%=i %>"><%=i %></option>' +
                     <% 
-                        }
+	}
                     %>
 				'</select>' +
                 '<select id="admis_cd' + college + '" name="admis_cd">' +
@@ -1309,12 +1313,12 @@
 				'<label for="gradut_year' + college + '" class="acc-hidden">졸업</label>' +
 				'<select id="gradut_year' + college + '" name="gradut_year" >' +
 					<% 
-                        for (int i = NowYear + 1; i > NowYear - 20; i--)
-                        {
+	for (int i = NowYear + 1; i > NowYear - 20; i--)
+	{
                     %>
 						'<option value="<%=i %>"><%=i %></option>' +
                     <% 
-                        }
+	}
                     %>
 				'</select>' +
                 '<select id="gradut_cd' + college + '" name="gradut_cd">' +
@@ -1660,5 +1664,67 @@
 		});
     });
     
+</script>
+<%if (Request.ServerVariables["HTTPS"] == "on"){ %>
+<script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+<%}else{ %>
+<script src="//dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<%} %>
+<script type="text/javascript">
+	function postCode() {
+		new daum.Postcode({
+			oncomplete: function (data) {
+				// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+				// 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+				// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+				var roadAddr = data.roadAddress; // 도로명 주소 변수
+				var extraRoadAddr = ''; // 참고 항목 변수
+
+				// 법정동명이 있을 경우 추가한다. (법정리는 제외)
+				// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+				if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+					extraRoadAddr += data.bname;
+				}
+				// 건물명이 있고, 공동주택일 경우 추가한다.
+				if (data.buildingName !== '' && data.apartment === 'Y') {
+					extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+				}
+				// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+				if (extraRoadAddr !== '') {
+					extraRoadAddr = ' (' + extraRoadAddr + ')';
+				}
+
+				// 우편번호와 주소 정보를 해당 필드에 넣는다.
+				document.getElementById('zipcode_str').value = data.zonecode;
+				document.getElementById("addr").value = roadAddr;
+				//document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+
+				// 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+				if (roadAddr !== '') {
+					//document.getElementById("sample4_extraAddress").value = extraRoadAddr;
+				} else {
+					//document.getElementById("sample4_extraAddress").value = '';
+				}
+
+				/*
+				var guideTextBox = document.getElementById("guide");
+				// 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+				if (data.autoRoadAddress) {
+					var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
+					guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
+					guideTextBox.style.display = 'block';
+
+				} else if (data.autoJibunAddress) {
+					var expJibunAddr = data.autoJibunAddress;
+					guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
+					guideTextBox.style.display = 'block';
+				} else {
+					guideTextBox.innerHTML = '';
+					guideTextBox.style.display = 'none';
+				}*/
+			}
+		}).open();
+	}
 </script>
 </asp:Content>

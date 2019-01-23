@@ -269,7 +269,7 @@
 	border-top-color: rgb(229, 229, 229); border-top-width: 0px; border-top-style: dashed;
 }
 .news_ul li a {
-	display:block; width: 250px; height: 33px; line-height: 33px; overflow: hidden; float: left; white-space: nowrap; -ms-text-overflow: ellipsis; text-overflow: ellipsis;
+	display:block;width: 250px; height: 33px; line-height: 33px; overflow: hidden; float: left; white-space: nowrap; -ms-text-overflow: ellipsis; text-overflow: ellipsis;
 }
 .news_ul li span {
 	color: rgb(185, 185, 185); line-height: 33px; font-size: 12px; margin-right: 20px; float: right;

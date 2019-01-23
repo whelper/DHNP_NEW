@@ -1,34 +1,34 @@
-ï»¿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="MobileWeb.index" %>
+<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="MobileWeb.index" %>
 <asp:Content ID="Content" ContentPlaceHolderID="HeadContent" runat="server">
     <header class="header main">
-        <h1 class="logo"><span>ëŒ€í•œë‰´íŒœ</span></h1>
+        <h1 class="logo"><span>´ëÇÑ´ºÆÊ</span></h1>
 		<div class="language"><a href="/en/index.aspx">English</a></div>
-        <button class="gnb_icon" id="j_iconOpen" onclick="return false;"><span>ê¸€ë¡œë²Œ ë„¤ë¹„ê²Œì´ì…˜</span></button>
+        <button class="gnb_icon" id="j_iconOpen" onclick="return false;"><span>±Û·Î¹ú ³×ºñ°ÔÀÌ¼Ç</span></button>
         <div class="search">
-            <label for="f_headerSearch" class="acc-hidden"> ê²€ìƒ‰ì–´ ì…ë ¥ </label>
+            <label for="f_headerSearch" class="acc-hidden"> °Ë»ö¾î ÀÔ·Â </label>
             <input type="text" id="txt_search" runat="server"/>
-            <asp:LinkButton ID="btn_Search" class="btn_headerSearch" runat="server" onClick="btnSearch_Click">ê²€ìƒ‰</asp:LinkButton>
+            <asp:LinkButton ID="btn_Search" class="btn_headerSearch" runat="server" onClick="btnSearch_Click">°Ë»ö</asp:LinkButton>
 		</div>
 	</header>
 
-	<!-- ì˜¤í”ˆì‹œ ë³´ì¼ ë©”ë‰´ -->
+	<!-- ¿ÀÇÂ½Ã º¸ÀÏ ¸Ş´º -->
 	<nav class="gnb" >
 		<script src="<%=GetRoot() %>/common/include/gnb.js"></script> 	
 	</nav>
-	<!-- // ì˜¤í”ˆì‹œ ë³´ì¼ ë©”ë‰´  -->
+	<!-- // ¿ÀÇÂ½Ã º¸ÀÏ ¸Ş´º  -->
 
 	<section class="container main" style="text-align:center;">
-		<h1 class="acc-hidden">ë©”ì¸ ì»¨í…ì¸ </h1>
-		<!-- ë¡¤ë§ ë°°ë„ˆ  -->
+		<h1 class="acc-hidden">¸ŞÀÎ ÄÁÅÙÃ÷</h1>
+		<!-- ·Ñ¸µ ¹è³Ê  -->
 		<div class="bxslider_box"> 
 			<ul  id="slider1" >
                 <% 
 					if (GetDataTableCount(0) > 0)
 					{
-						// ì´ë¯¸ì§€ ì¡´ì¬
+						// ÀÌ¹ÌÁö Á¸Àç
 						for (int i = 0; i < GetDataTableCount(0); i++)
 						{
-							// ë§í¬ê°€ ìˆëŠ” ê²½ìš°
+							// ¸µÅ©°¡ ÀÖ´Â °æ¿ì
 							if (GetData(0, i, "FILE_PATH").Equals("")) continue;
                 %>
                 <li>
@@ -40,40 +40,40 @@
                     }
                     else
                     {
-                        // ë“±ë¡ëœ ì´ë¯¸ì§€ ì—†ìŒ
+                        // µî·ÏµÈ ÀÌ¹ÌÁö ¾øÀ½
                 %>
-                <img src="" alt="ë“±ë¡ëœ ì´ë¯¸ì§€ê°€ ì—†ìŠµë‹ˆë‹¤." title="#caption1" onerror="this.src='/common/images/index_visual_01.jpg'" />
+                <img src="" alt="µî·ÏµÈ ÀÌ¹ÌÁö°¡ ¾ø½À´Ï´Ù." title="#caption1" onerror="this.src='/common/images/index_visual_01.jpg'" />
                 <% 
                     }
                 %>
 			</ul>
 		</div>
-		<!-- // ë¡¤ë§ ë°°ë„ˆ  -->
+		<!-- // ·Ñ¸µ ¹è³Ê  -->
 
-		<!--  ì¸ì²´ì˜ì•½í’ˆ /ë™ë¬¼ì˜ì•½í’ˆ/ë°”ì´ì˜¤ê³µì •ì†Œì¬  -->
+		<!--  ÀÎÃ¼ÀÇ¾àÇ° /µ¿¹°ÀÇ¾àÇ°/¹ÙÀÌ¿À°øÁ¤¼ÒÀç  -->
 		<article class="products_go">
-			<h1 class="acc-hidden"> ì œí’ˆì†Œê°œ </h1>	
+			<h1 class="acc-hidden"> Á¦Ç°¼Ò°³ </h1>	
 			<ul>
-				<li><a href="/pdt/pdt_new_list.aspx?category=01&menu=0102"><img src="<%=GetRoot() %>/common/images/indexPr_icon_01.png" alt="ì¸ì²´ ì˜ì•½í’ˆ" /></a></li>
-				<li><a href="/pdt/pdt_new_list.aspx?category=02&menu=0202"><img src="<%=GetRoot() %>/common/images/indexPr_icon_02.png" alt="ë™ë¬¼ ì˜ì•½í’ˆ" /></a></li>
-				<li><a href="/pdt/pdt_list.aspx?category=03&menu=0301"><img src="<%=GetRoot() %>/common/images/indexPr_icon_03.png" alt="ë°”ì´ì˜¤ ê³µì •ì†Œì¬" /></a></li>
+				<li><a href="/pdt/pdt_new_list.aspx?category=01&menu=0102"><img src="<%=GetRoot() %>/common/images/indexPr_icon_01.png" alt="ÀÎÃ¼ ÀÇ¾àÇ°" /></a></li>
+				<li><a href="/pdt/pdt_new_list.aspx?category=02&menu=0202"><img src="<%=GetRoot() %>/common/images/indexPr_icon_02.png" alt="µ¿¹° ÀÇ¾àÇ°" /></a></li>
+				<li><a href="/pdt/pdt_list.aspx?category=03&menu=0301"><img src="<%=GetRoot() %>/common/images/indexPr_icon_03.png" alt="¹ÙÀÌ¿À °øÁ¤¼ÒÀç" /></a></li>
 			</ul>                
 		</article> 
-		<!--  //  ì¸ì²´ì˜ì•½í’ˆ /ë™ë¬¼ì˜ì•½í’ˆ/ë°”ì´ì˜¤ê³µì •ì†Œì¬  -->
+		<!--  //  ÀÎÃ¼ÀÇ¾àÇ° /µ¿¹°ÀÇ¾àÇ°/¹ÙÀÌ¿À°øÁ¤¼ÒÀç  -->
 		<div class="content  main">
-			<!-- ì œí’ˆì†Œê°œ  -->
+			<!-- Á¦Ç°¼Ò°³  -->
 			<article  id="slider2_btns"class="products_about">
-				<h1> <span> ì œí’ˆì†Œê°œ </span> </h1>	
+				<h1> <span> Á¦Ç°¼Ò°³ </span> </h1>	
  				<ul  id="slider2" class="products_about_list bxslider">
                         <% 
                             if (GetDataTableCount(2) > 0)
                             {
-                                // ì´ë¯¸ì§€ ì¡´ì¬
+                                // ÀÌ¹ÌÁö Á¸Àç
                                 for (int i = 0; i < GetDataTableCount(2); i++)
                                 {   
                                     if (GetData(0, i, "LINK_URL").Equals("") == false)
                                     {
-                                        // ë§í¬ê°€ ìˆëŠ” ê²½ìš°
+                                        // ¸µÅ©°¡ ÀÖ´Â °æ¿ì
                         %>
                         <li>
 						    <a href="<%=GetData(2, i, "LINK_URL") %>">
@@ -84,7 +84,7 @@
                                     }
                                     else
                                     {
-                                        // ë§í¬ ì—†ìŒ
+                                        // ¸µÅ© ¾øÀ½
                         %>
                         <li>
                                 <img src="<%=GetData(2, i, "FILE_PATH") %>" alt="" onerror="this.src='/common/images/products/new_no.jpg'" />
@@ -95,26 +95,26 @@
                             }
                             else
                             {
-                                // ë“±ë¡ëœ ì´ë¯¸ì§€ ì—†ìŒ
+                                // µî·ÏµÈ ÀÌ¹ÌÁö ¾øÀ½
                         %>
-                        <img src="" alt="ë“±ë¡ëœ ì´ë¯¸ì§€ê°€ ì—†ìŠµë‹ˆë‹¤." title="#caption1" />
+                        <img src="" alt="µî·ÏµÈ ÀÌ¹ÌÁö°¡ ¾ø½À´Ï´Ù." title="#caption1" />
                         <% 
                             }
                         %>
  				</ul>
  				<a href="/pdt/pdt_human_new_list.aspx"><span class="more_arrow">more</span></a>	                     
 			</article>
-			<!-- // ì œí’ˆì†Œê°œ  -->
+			<!-- // Á¦Ç°¼Ò°³  -->
 			<article class="news_info">
-				<h1 class="acc-hidden">ìƒˆì†Œì‹ê³¼ ì£¼ê°€ì •ë³´</h1>	
+				<h1 class="acc-hidden">»õ¼Ò½Ä°ú ÁÖ°¡Á¤º¸</h1>	
  				<ul>
- 					<%--<li><strong>ìƒˆì†Œì‹ </strong>
+ 					<%--<li><strong>»õ¼Ò½Ä </strong>
  						<a href="/pr/pr_new_list.aspx" ><span><%=GetData(3, 0, "TTL")%></span></a>	 
  						<a href="/pr/pr_new_list.aspx"><span class="more_arrow">more</span></a>	
  					</li>--%>
  					<li>                      
 
-                        <strong>ì£¼ê°€ì •ë³´</strong> 
+                        <strong>ÁÖ°¡Á¤º¸</strong> 
                         <strong class="change_01 <%=NvCss %>"><%=Nv %></strong>
                         <strong class="won"><%=Nv %></strong>
                         <span class="change_02 <%=CvCss %>"><%=Cv %></span>
@@ -125,30 +125,128 @@
 			</article>
 
 			<article class="customer_go">
-				<h1 class="acc-hidden"> <span> ê³ ê°ì„¼í„° </span> </h1>	
+				<h1 class="acc-hidden"> <span> °í°´¼¾ÅÍ </span> </h1>	
  				<ul>
- 					<li><a href="javascript:alert('ëª¨ë°”ì¼ì›¹ì—ì„œëŠ” ì§€ì›í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.');"><img src="/common/images/indexCus_icon_01.png" alt="ì…ì‚¬ì§€ì› " /></a></li>
- 					<li><img src="/common/images/indexCus_icon_02.png" alt="ê³ ê°ì „í™” " /></li>
+ 					<li><a href="javascript:alert('¸ğ¹ÙÀÏÀ¥¿¡¼­´Â Áö¿øÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.');"><img src="/common/images/indexCus_icon_01.png" alt="ÀÔ»çÁö¿ø " /></a></li>
+ 					<li><img src="/common/images/indexCus_icon_02.png" alt="°í°´ÀüÈ­ " /></li>
  				</ul>                   
 			</article>
 			
 			<article class="customer_form">
-				<h1 class="acc-hidden"> <span> ê³ ê°ë¬¸ì˜ </span> </h1>	
+				<h1 class="acc-hidden"> <span> °í°´¹®ÀÇ </span> </h1>	
  				<ul>
- 					<li><a href="/cust/inquire_list.aspx"><img src="/common/images/indexCus_icon_03.png" alt="ê³ ê°ë¬¸ì˜ " /></a></li>
-					<li><a href="https://www.dhnp.co.kr/micro/index.html" target="_blank"><img src="/common/images/indexCus_icon_04.png" alt="í•´ì™¸ìì›íˆ¬ì " /></a></li>
+ 					<li><a href="/cust/inquire_list.aspx"><img src="/common/images/indexCus_icon_03.png" alt="°í°´¹®ÀÇ " /></a></li>
+					<li><a href="https://www.dhnp.co.kr/micro/index.html" target="_blank"><img src="/common/images/indexCus_icon_04.png" alt="ÇØ¿ÜÀÚ¿øÅõÀÚ " /></a></li>
  				</ul>                   
 			</article>
 			 <!-- // products_go  -->
 		</div> <!-- // content  -->
 		
+		<!--begin popup-->
+		<div class="pop_wrap" id="pop_wrap">
+			<div id="popupContainer_01">
+				<section class="popupContent_main1" style="width:100%;">
+				<h1 class="acc-hidden">special Event</h1>
+				<a href="#" target="_blank">
+				</a><p class="popup_auto"><a href="#" target="_blank">
+				</a><a href="http://webinar.keymedi.com/webinar/webinar_01.php?wb_id=8&#10;" target="_blank"><img src="/common/images/pop_20180628.jpg" alt=""></a>
+				</p>
+		
+				<div class="mainPopup_btn">
+					<span class="mainPopup_btn">
+					<span class="left">
+					<input type="checkbox" id="pBox" value="Y">
+					<label onclick="dayClose(1000); return false;">´Ù½Ãº¸Áö¾Ê±â</label></span>
+					<span class="right">
+					<input type="checkbox" id="cBox" value="Y">
+					<label onclick="dayClose(1); return false;">¿À´Ã ÇÏ·ç´İ±â</label>
+					</span>
+					</span>
+				</div>
+				<button class="btn_close" onclick="mainPopupClose(); return false;">´İ±â</button>
+				</section>
+			</div>
+		</div>
+		<!--end popup-->
+		
+
+	  <script type="text/javascript">
+      $(window).load(function () {
+       
+
+		  $("#pBox").click(function () {
+			  dayClose(1000);
+		  });
+		  $("#cBox").click(function () {
+			  dayClose(1);
+		  });
+      });
+
+
+      // ÆäÀÌÁö ·Îµù½Ã ½ÇÇà 
+      openPop("Notice");
+
+      // ÆË¾÷Ã¢ ¿­±â  
+      function openPop(winName) {
+          var blnCookie = getCookie(winName);
+          var obj = eval("window." + winName);
+          if (!blnCookie) {
+			  $("#pop_wrap").fadeIn();    
+          }
+          else 
+          {
+              $("#pop_wrap").hide();
+          }
+      }
+
+      function dayClose(day) {
+		  if (day == 1) {
+			  $("#cBox").attr("checked", true);	
+		  } else {
+			  $("#pBox").attr("checked", true);	
+		  }
+		  if ($("#cBox").is(":checked") == true || $("#pBox").is(":checked") == true) {
+
+            var todayDate = new Date();
+            todayDate.setDate(todayDate.getDate() + day);
+            document.cookie = "Notice" + "=" + escape("done") + "; path=/; expires=" + todayDate.toGMTString() + ";"
+          }
+
+          $("#pop_wrap").hide();
+      }
+
+      // ÄíÅ° °¡Á®¿À±â  
+      function getCookie(name) {
+          var nameOfCookie = name + "=";
+          var x = 0;
+          while (x <= document.cookie.length) {
+              var y = (x + nameOfCookie.length);
+              if (document.cookie.substring(x, y) == nameOfCookie) {
+                  if ((endOfCookie = document.cookie.indexOf(";", y)) == -1)
+                      endOfCookie = document.cookie.length;
+                  return unescape(document.cookie.substring(y, endOfCookie));
+              }
+              x = document.cookie.indexOf(" ", x) + 1;
+              if (x == 0)
+                  break;
+          }
+          return "";
+      }
+
+      // ÆË¾÷ ´İ±â
+      function mainPopupClose() {
+          $("#pop_wrap").hide();
+      }
+  </script>
+
+		
 		<footer class="footer main">
 		    <nav class="footer_nav">
-			    <h1 class="acc-hidden"> í•˜ë‹¨ ë©”ë‰´  </h1>
+			    <h1 class="acc-hidden"> ÇÏ´Ü ¸Ş´º  </h1>
 			    <nav class="fnb ">
 				    <ul> 
-					    <li> <a href="/intro/location.aspx"> ì˜¤ì‹œëŠ” ê¸¸ </a> </li>  
-					    <li> <a href="#tos"> ì´ìš©ì•½ê´€  </a> </li>
+					    <li> <a href="/intro/location.aspx"> ¿À½Ã´Â ±æ </a> </li>  
+					    <li> <a href="#tos"> ÀÌ¿ë¾à°ü  </a> </li>
 				    </ul>
 			    </nav>
 			    <p class="lnb"> 

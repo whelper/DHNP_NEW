@@ -58,7 +58,7 @@
 				</tr>
 				<tr>
 					<th>주소</th>       
-					<td colspan="3"><span><%=GetData(0, 0, "ADDR")%> <%=GetData(0, 0, "ADDR_DTL")%> (<%=GetData(0, 0, "ZIPCODE_STR")%>-<%=GetData(0, 0, "ZIPCODE_END")%>)</span> </td>
+					<td colspan="3"><span><%=GetData(0, 0, "ADDR")%> <%=GetData(0, 0, "ADDR_DTL")%> (<%=GetData(0, 0, "ZIPCODE_STR")%><%=(GetData(0, 0, "ZIPCODE_END")!="000")?"-"+GetData(0, 0, "ZIPCODE_END"):""%>)</span> </td>
 				</tr>
 			</tbody>
 		</table>
@@ -516,7 +516,8 @@
                 }
             %>
 		</table>
-		<!-- 08 첨부파일   -->
+		<!-- 08 첨부파일   -->
+
         <!-- 09 채용공고   -->
 		<h2 class="sub_title_02 mT10"> 채용공고</h2>
 		<table class="table_search height tdLeft mB30">
