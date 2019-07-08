@@ -50,7 +50,8 @@ namespace AdminSite.inv
 
             if (GetDataCount() > 0)
             {
-                writerNm.Value = GetData(0, "WRITER_NM");
+				reg_dt.Value = GetData(0, "REG_DT");
+				writerNm.Value = GetData(0, "WRITER_NM");
                 txtTitle.Value = GetData(0, "TTL");
                 txtBoxBody.Text = GetData(0, "CONT");
 
@@ -60,7 +61,8 @@ namespace AdminSite.inv
                 h_prod_img4_path.Value = GetData(0, "IMG4");
                 h_prod_img5_path.Value = GetData(0, "IMG5");
             }
-        }
+			if (reg_dt.Value.Equals("")) reg_dt.Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+		}
 
         /// <summary>
         /// 데이터를 저장한다. (추가 or 수정)
@@ -82,8 +84,9 @@ namespace AdminSite.inv
             param.Append(CConst.DB_PARAM_DELIMITER).Append(img3);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(img4);
             param.Append(CConst.DB_PARAM_DELIMITER).Append(img5);
+			param.Append(CConst.DB_PARAM_DELIMITER).Append(reg_dt.Value);
 
-            string[] result = null;
+			string[] result = null;
 
             if (CStringUtil.IsNullOrEmpty(Seq) == false)
             {

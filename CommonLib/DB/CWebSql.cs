@@ -1557,8 +1557,9 @@ namespace CommonLib.DB
                     variable[7] = "@IMG4";
                     variable[8] = "@IMG5";
                     variable[9] = "@CLIP_URL";
+					variable[10] = "@REG_DT";
 
-                    sqldbtype[0] = SqlDbType.VarChar;
+					sqldbtype[0] = SqlDbType.VarChar;
                     sqldbtype[1] = SqlDbType.VarChar;
                     sqldbtype[2] = SqlDbType.VarChar;
                     sqldbtype[3] = SqlDbType.VarChar;
@@ -1568,8 +1569,9 @@ namespace CommonLib.DB
                     sqldbtype[7] = SqlDbType.VarChar;
                     sqldbtype[8] = SqlDbType.VarChar;
                     sqldbtype[9] = SqlDbType.VarChar;
+					sqldbtype[10] = SqlDbType.VarChar;
 
-                    ds = command.ExecuteDataSetSecure("USP_ADMIN_3304_PROMT_NEWS_DETAIL_I", variable, m_value, sqldbtype, 10);
+					ds = command.ExecuteDataSetSecure("USP_ADMIN_3304_PROMT_NEWS_DETAIL_I", variable, m_value, sqldbtype, 11);
                     break;
 
                 case 3305: // 뉴스 수정
@@ -1583,9 +1585,10 @@ namespace CommonLib.DB
                     variable[7] = "@IMG4";
                     variable[8] = "@IMG5";
                     variable[9] = "@CLIP_URL";
-                    variable[10] = "@SEQ_NO";
-
-                    sqldbtype[0] = SqlDbType.VarChar;
+					variable[10] = "@REG_DT";
+					variable[11] = "@SEQ_NO";
+					
+					sqldbtype[0] = SqlDbType.VarChar;
                     sqldbtype[1] = SqlDbType.VarChar;
                     sqldbtype[2] = SqlDbType.VarChar;
                     sqldbtype[3] = SqlDbType.VarChar;
@@ -1595,9 +1598,10 @@ namespace CommonLib.DB
                     sqldbtype[7] = SqlDbType.VarChar;
                     sqldbtype[8] = SqlDbType.VarChar;
                     sqldbtype[9] = SqlDbType.VarChar;
-                    sqldbtype[10] = SqlDbType.Int;
-
-                    ds = command.ExecuteDataSetSecure("USP_ADMIN_3305_PROMT_NEWS_DETAIL_U", variable, m_value, sqldbtype, 11);
+					sqldbtype[10] = SqlDbType.VarChar;
+					sqldbtype[11] = SqlDbType.Int;
+					
+					ds = command.ExecuteDataSetSecure("USP_ADMIN_3305_PROMT_NEWS_DETAIL_U", variable, m_value, sqldbtype, 12);
                     break;
 
                 case 3306: // 뉴스 삭제
@@ -1674,8 +1678,9 @@ namespace CommonLib.DB
                     variable[7] = "@IMG4";
                     variable[8] = "@IMG5";
                     variable[9] = "@VIDEO_URL";
+					variable[10] = "@REG_DT";
 
-                    sqldbtype[0] = SqlDbType.VarChar;
+					sqldbtype[0] = SqlDbType.VarChar;
                     sqldbtype[1] = SqlDbType.VarChar;
                     sqldbtype[2] = SqlDbType.VarChar;
                     sqldbtype[3] = SqlDbType.VarChar;
@@ -1685,8 +1690,9 @@ namespace CommonLib.DB
                     sqldbtype[7] = SqlDbType.VarChar;
                     sqldbtype[8] = SqlDbType.VarChar;
                     sqldbtype[9] = SqlDbType.VarChar;
+					sqldbtype[10] = SqlDbType.VarChar;
 
-                    ds = command.ExecuteDataSetSecure("USP_ADMIN_3314_PROMT_FEG_INV_DETAIL_I", variable, m_value, sqldbtype, 10);
+					ds = command.ExecuteDataSetSecure("USP_ADMIN_3314_PROMT_FEG_INV_DETAIL_I", variable, m_value, sqldbtype, 11);
                     break;
 
                 case 3315: // 해외투자 수정
@@ -1700,9 +1706,10 @@ namespace CommonLib.DB
                     variable[7] = "@IMG4";
                     variable[8] = "@IMG5";
                     variable[9] = "@VIDEO_URL";
-                    variable[10] = "@SEQ_NO";
-
-                    sqldbtype[0] = SqlDbType.VarChar;
+					variable[10] = "@REG_DT";
+					variable[11] = "@SEQ_NO";
+					
+					sqldbtype[0] = SqlDbType.VarChar;
                     sqldbtype[1] = SqlDbType.VarChar;
                     sqldbtype[2] = SqlDbType.VarChar;
                     sqldbtype[3] = SqlDbType.VarChar;
@@ -1712,9 +1719,11 @@ namespace CommonLib.DB
                     sqldbtype[7] = SqlDbType.VarChar;
                     sqldbtype[8] = SqlDbType.VarChar;
                     sqldbtype[9] = SqlDbType.VarChar;
-                    sqldbtype[10] = SqlDbType.Int;
+					sqldbtype[10] = SqlDbType.VarChar;
+					sqldbtype[11] = SqlDbType.Int;
+					
 
-                    ds = command.ExecuteDataSetSecure("USP_ADMIN_3315_PROMT_FEG_INV_DETAIL_U", variable, m_value, sqldbtype, 11);
+					ds = command.ExecuteDataSetSecure("USP_ADMIN_3315_PROMT_FEG_INV_DETAIL_U", variable, m_value, sqldbtype, 12);
                     break;
 
                 case 3316: // 뉴스 삭제
@@ -1802,7 +1811,7 @@ namespace CommonLib.DB
                     variable[8] = "@IMG5";
                     variable[9] = "@LANG_CD";
 
-                    sqldbtype[0] = SqlDbType.VarChar;
+					sqldbtype[0] = SqlDbType.VarChar;
                     sqldbtype[1] = SqlDbType.VarChar;
                     sqldbtype[2] = SqlDbType.VarChar;
                     sqldbtype[3] = SqlDbType.VarChar;
@@ -1813,7 +1822,7 @@ namespace CommonLib.DB
                     sqldbtype[8] = SqlDbType.VarChar;
                     sqldbtype[9] = SqlDbType.VarChar;
 
-                    ds = command.ExecuteDataSetSecure("[USP_ADMIN_3414_INV_IR_DETAIL_I]", variable, m_value, sqldbtype, 10);
+					ds = command.ExecuteDataSetSecure("[USP_ADMIN_3414_INV_IR_DETAIL_I]", variable, m_value, sqldbtype, 10);
                     break;
 
                 case 3415: // IR자료 수정
@@ -1826,7 +1835,7 @@ namespace CommonLib.DB
                     variable[6] = "@IMG3";
                     variable[7] = "@IMG4";
                     variable[8] = "@IMG5";
-                    variable[9] = "@SEQ_NO";
+					variable[9] = "@SEQ_NO";
 
                     sqldbtype[0] = SqlDbType.VarChar;
                     sqldbtype[1] = SqlDbType.VarChar;
@@ -1837,7 +1846,7 @@ namespace CommonLib.DB
                     sqldbtype[6] = SqlDbType.VarChar;
                     sqldbtype[7] = SqlDbType.VarChar;
                     sqldbtype[8] = SqlDbType.VarChar;
-                    sqldbtype[9] = SqlDbType.Int;
+					sqldbtype[9] = SqlDbType.Int;
 
                     ds = command.ExecuteDataSetSecure("USP_ADMIN_3415_INV_IR_DETAIL_U", variable, m_value, sqldbtype, 10);
                     break;
@@ -2180,8 +2189,9 @@ namespace CommonLib.DB
                     variable[5] = "@IMG3";
                     variable[6] = "@IMG4";
                     variable[7] = "@IMG5";
+					variable[8] = "@REG_DT";
 
-                    sqldbtype[0] = SqlDbType.VarChar;
+					sqldbtype[0] = SqlDbType.VarChar;
                     sqldbtype[1] = SqlDbType.VarChar;
                     sqldbtype[2] = SqlDbType.VarChar;
                     sqldbtype[3] = SqlDbType.VarChar;
@@ -2189,8 +2199,9 @@ namespace CommonLib.DB
                     sqldbtype[5] = SqlDbType.VarChar;
                     sqldbtype[6] = SqlDbType.VarChar;
                     sqldbtype[7] = SqlDbType.VarChar;
+					sqldbtype[8] = SqlDbType.VarChar;
 
-                    ds = command.ExecuteDataSetSecure("[USP_ADMIN_3476_INV_NOTICE_DETAIL_I]", variable, m_value, sqldbtype, 8);
+					ds = command.ExecuteDataSetSecure("[USP_ADMIN_3476_INV_NOTICE_DETAIL_I]", variable, m_value, sqldbtype, 9);
                     break;
 
                 case 3477: // 채용공고 수정
@@ -2202,7 +2213,8 @@ namespace CommonLib.DB
                     variable[5] = "@IMG3";
                     variable[6] = "@IMG4";
                     variable[7] = "@IMG5";
-                    variable[8] = "@SEQ_NO";
+					variable[8] = "@REG_DT";
+					variable[9] = "@SEQ_NO";
 
                     sqldbtype[0] = SqlDbType.VarChar;
                     sqldbtype[1] = SqlDbType.VarChar;
@@ -2212,9 +2224,10 @@ namespace CommonLib.DB
                     sqldbtype[5] = SqlDbType.VarChar;
                     sqldbtype[6] = SqlDbType.VarChar;
                     sqldbtype[7] = SqlDbType.VarChar;
-                    sqldbtype[8] = SqlDbType.Int;
+					sqldbtype[8] = SqlDbType.VarChar;
+					sqldbtype[9] = SqlDbType.Int;
 
-                    ds = command.ExecuteDataSetSecure("USP_ADMIN_3477_INV_NOTICE_DETAIL_U", variable, m_value, sqldbtype, 9);
+                    ds = command.ExecuteDataSetSecure("USP_ADMIN_3477_INV_NOTICE_DETAIL_U", variable, m_value, sqldbtype, 10);
                     break;
 
                 case 3478: // IR자료 삭제

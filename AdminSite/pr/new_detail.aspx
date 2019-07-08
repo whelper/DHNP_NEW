@@ -18,6 +18,14 @@
 				<tbody>
 					<tr>
 						<th scope="row"> 
+							<label for="pdt_name01">등록일</label> 
+						</th>
+						<td class="alignleft" colspan="2">
+						 	<input type="text" id="reg_dt" class="span6 text" runat="server" onkeyup="assist();" onblur="assist();">      
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"> 
 							<label for="pdt_name01">작성자</label> 
 						</th>
 						<td class="alignleft" colspan="2">
