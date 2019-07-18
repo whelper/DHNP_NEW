@@ -436,7 +436,7 @@
 		<!-- // 06 자기소개서   -->
 
 		<!-- 07 가족사항   -->
-		<h2 class="sub_title_02"> 가족사항  </h2>
+		<!--<h2 class="sub_title_02"> 가족사항  </h2>
 		<table class="table_search height mB30">
 			<colgroup>
 				<col width="14.285%" />
@@ -482,6 +482,7 @@
                 }
             %>
 		</table>
+		-->
 		<!-- 07 가족사항   -->
 
         <!-- 08 첨부파일   -->

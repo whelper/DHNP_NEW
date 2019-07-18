@@ -778,7 +778,7 @@
 	<!-- // 자기소개서        -->
 			
 	<!--  가족 사항    -->	
-	<article>
+	<article style="display:none">
 		<h1 class="pageTitle_02 blue">가족사항</h1>
 		<div class="btn_plus">
 			<button type="button" id="family_add_btn" class="button next">추가</button>
