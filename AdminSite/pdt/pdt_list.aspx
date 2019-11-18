@@ -6,16 +6,24 @@
 <div id="content-outer">
 <div id="content">
 	
+	
 	<div id="page-heading">
+		<%if (! _category_name.Equals("")){ %>
 		<h1><%=_category_name %></h1>
+		<%}else{ %>
+		미분류
+		<%} %>
 	</div>
+	
 
 	<div class="wrap_box">
-        <ul class="list_tab  clearfix target" >
+        <%if (! _category_name.Equals("")){ %>
+		<ul class="list_tab  clearfix target" >
 		    <li class="tab_on"><a href="pdt_list.aspx?category=<%=_category %>"><%=_category_name %></a></li>
 		    <li><a href="pdt_cha_info_list.aspx?category=<%=_category %>">제품변경정보</a></li>
             <li><a href="pdt_catalog_list.aspx?category=<%=_category %>">대표카탈로그</a></li>
 	    </ul>    
+		<%} %>
 		<table class="table_search">
 			<colgroup>
 				<col width="10%">
@@ -128,6 +136,7 @@
 		function sch() {
 			var catg = ($("#<%=catg_no3.ClientID%>").val()) ? $("#<%=catg_no3.ClientID%>").val() : $("#<%=catg_no2.ClientID%>").val();
 			$("#<%=catg.ClientID%>").val(catg);
+			$("#<%= nowPageNo.ClientID%>").val(1);
 			document.forms[0].submit();
 		}
 

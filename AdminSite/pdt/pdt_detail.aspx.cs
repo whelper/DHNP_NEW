@@ -109,6 +109,7 @@ namespace AdminSite.pdt
 			dicInputItems.Add("06", new string[] { "rdo_exp", "ident_number", "catg_no", "compt", "pdt_info", "pdt_unit" }); //수출(기타)
 			dicInputItems.Add("07", new string[] { "ingredi", "ident_number", "catg_no", "insu_cd", "pdt_money", "temper", "pdt_unit" }); //건강기능식품
 			dicInputItems.Add("08", new string[] { "ingredi", "ident_number", "catg_no", "insu_cd", "pdt_money", "temper", "pdt_unit" }); //의료기기
+			dicInputItems.Add("17", new string[] { "ingredi", "ident_number", "catg_no", "insu_cd", "pdt_money", "temper", "pdt_unit" }); //기타
 
 			//영문
 			dicEngInputItems.Add("01", new string[] { "new_yn", "dosage", "ingredi","pdt_unit" }); //인체
@@ -119,6 +120,7 @@ namespace AdminSite.pdt
 			dicEngInputItems.Add("06", new string[] { "rdo_exp", "ingredi", "pdt_unit" }); //수출(기타)
 			dicEngInputItems.Add("07", new string[] { "ingredi", "pdt_unit" }); //건강기능식품
 			dicEngInputItems.Add("08", new string[] { "ingredi", "pdt_unit" }); //의료기기
+			dicEngInputItems.Add("17", new string[] { "ingredi", "pdt_unit" }); //기타
 
 			// 각 이미지 업로드 컨트롤에 javascript 이벤트를 등록한다. (페이지단 서버 컨트롤에 삽입 불가하여 CS단에서 삽입)
 			upload_01.Attributes.Add("onchange", "document.getElementById('" + upload_path_01.ClientID + "').value=document.getElementById('" + upload_01.ClientID + "').value;");

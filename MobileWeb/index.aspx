@@ -71,12 +71,12 @@
                                 // 이미지 존재
                                 for (int i = 0; i < GetDataTableCount(2); i++)
                                 {   
-                                    if (GetData(0, i, "LINK_URL").Equals("") == false)
+                                    if (GetData(2, i, "LINK_URL").Equals("") == false)
                                     {
                                         // 링크가 있는 경우
                         %>
                         <li>
-						    <a href="<%=GetData(2, i, "LINK_URL") %>">
+						    <a href="/pdt/pdt_view.aspx?<%=GetData(2, i, "LINK_URL") %>">
                                 <img src="<%=GetData(2, i, "FILE_PATH") %>" alt="" onerror="this.src='/common/images/products/new_no.jpg'" />
                             </a>
                         </li>
@@ -102,7 +102,7 @@
                             }
                         %>
  				</ul>
- 				<a href="/pdt/pdt_human_new_list.aspx"><span class="more_arrow">more</span></a>	                     
+ 				<a href="/pdt/pdt_new_list.aspx?category=01&menu=0102"><span class="more_arrow">more</span></a>	                     
 			</article>
 			<!-- // 제품소개  -->
 			<article class="news_info">
@@ -142,14 +142,14 @@
 			 <!-- // products_go  -->
 		</div> <!-- // content  -->
 		
-		<!--begin popup-->
+		<!--begin popup
 		<div class="pop_wrap" id="pop_wrap">
 			<div id="popupContainer_01">
 				<section class="popupContent_main1" style="width:100%;">
 				<h1 class="acc-hidden">special Event</h1>
 				<a href="#" target="_blank">
 				</a><p class="popup_auto"><a href="#" target="_blank">
-				</a><a href="http://webinar.keymedi.com/webinar/webinar_01.php?wb_id=8&#10;" target="_blank"><img src="/common/images/pop_20180628.jpg" alt=""></a>
+				</a><a href="http://goo.gl/rG3RUK" target="_blank"><img src="/common/images/pop_20180718.jpg" alt=""></a>
 				</p>
 		
 				<div class="mainPopup_btn">
@@ -167,7 +167,30 @@
 				</section>
 			</div>
 		</div>
-		<!--end popup-->
+		<!--end popup
+		<!--begin popup
+		<div class="pop_wrap" id="pop_wrap2">
+			<div id="popupContainer_01">
+				<section class="popupContent_main1" style="width:100%;">
+					<h1 class="acc-hidden">special Event</h1>				
+				<p class="popup_auto"><img src="/common/images/pop_20190624.jpg" alt=""></p>
+		
+				<div class="mainPopup_btn">
+					<span class="mainPopup_btn">
+					<span class="left">
+					<input type="checkbox" id="pBox2" value="Y">
+					<label onclick="dayClose2(1000); return false;">다시보지않기</label></span>
+					<span class="right">
+					<input type="checkbox" id="cBox2" value="Y">
+					<label onclick="dayClose2(1); return false;">오늘 하루닫기</label>
+					</span>
+					</span>
+				</div>
+				<button class="btn_close" onclick="mainPopupClose2(); return false;">닫기</button>
+				</section>
+			</div>
+		</div>
+		end popup-->
 		
 
 	  <script type="text/javascript">
@@ -180,11 +203,16 @@
 		  $("#cBox").click(function () {
 			  dayClose(1);
 		  });
+		  $("#pBox2").click(function () {
+			  dayClose2(1000);
+		  });
+		  $("#cBox2").click(function () {
+			  dayClose2(1);
+		  });
       });
 
 
-      // 페이지 로딩시 실행 
-      openPop("Notice");
+      
 
       // 팝업창 열기  
       function openPop(winName) {
@@ -196,6 +224,18 @@
           else 
           {
               $("#pop_wrap").hide();
+          }
+      }
+
+	  function openPop2(winName) {
+          var blnCookie2 = getCookie(winName);
+          var obj = eval("window." + winName);
+          if (!blnCookie2) {
+			  $("#pop_wrap2").fadeIn();    
+          }
+          else 
+          {
+              $("#pop_wrap2").hide();
           }
       }
 
@@ -213,6 +253,22 @@
           }
 
           $("#pop_wrap").hide();
+      }
+
+	  function dayClose2(day) {
+		  if (day == 1) {
+			  $("#cBox2").attr("checked", true);	
+		  } else {
+			  $("#pBox2").attr("checked", true);	
+		  }
+		  if ($("#cBox2").is(":checked") == true || $("#pBox2").is(":checked") == true) {
+
+            var todayDate = new Date();
+            todayDate.setDate(todayDate.getDate() + day);
+            document.cookie = "Notice2" + "=" + escape("done") + "; path=/; expires=" + todayDate.toGMTString() + ";"
+          }
+
+          $("#pop_wrap2").hide();
       }
 
       // 쿠키 가져오기  
@@ -237,6 +293,14 @@
       function mainPopupClose() {
           $("#pop_wrap").hide();
       }
+
+	  function mainPopupClose2() {
+          $("#pop_wrap2").hide();
+      }
+
+// 페이지 로딩시 실행 
+      openPop("Notice");
+	  openPop2("Notice2");
   </script>
 
 		
@@ -247,6 +311,7 @@
 				    <ul> 
 					    <li> <a href="/intro/location.aspx"> 오시는 길 </a> </li>  
 					    <li> <a href="#tos"> 이용약관  </a> </li>
+						<li> <a href="#tos2"> 개인정보취급방침  </a> </li>
 				    </ul>
 			    </nav>
 			    <p class="lnb"> 

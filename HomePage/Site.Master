@@ -88,6 +88,7 @@
 							<li><a href="/products/product_list.aspx?category=04&menu=0401">수출 의약품</a></li>
 							<li><a href="/products/product_list.aspx?category=07&menu=0501">건강기능식품</a></li>
 	                        <li><a href="/products/product_list.aspx?category=08&menu=0601">의료기기</a></li>
+							<li><a href="/products/product_list.aspx?category=17&menu=0701">기타</a></li>
 						</ul>
 					</li>
 					<li><a href="/pr/news_list.aspx" class="gnb_03<%=GetGnbIndicator("pr")%>">홍보</a>

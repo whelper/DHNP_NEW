@@ -235,7 +235,7 @@
 					<%for (int i = 0; i < GetDataCount(); i++){ %>
 					<li<%=GetLnbIndicator("pdt1_")%>><a href="<%=GetRoot()%>/pdt/pdt_list.aspx?category=<%=GetData(i, "CATE_CD")%>"><%=GetData(i, "CATE_NAME")%></a></li>
 					 <%} %>
-					 
+					<li><a href="<%=GetRoot()%>/pdt/pdt_list.aspx">전체</a></li> 
 				 </ul>
 			</li>
             <% 

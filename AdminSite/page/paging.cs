@@ -18,11 +18,12 @@ namespace AdminSite.page
         public static String getPageNo(int listTotalCount, int pageNo, int listCount)
         {
             int pageunit = 10; // 표현될 번호 임계치
-            int page_tcnt = (listTotalCount + listCount - 1) / listCount;
-            int startpage = (((pageNo - 1) / pageunit) * pageunit) + 1;
+			int page_tcnt = (listTotalCount + listCount - 1) / listCount;
+			
+			int startpage = (((pageNo - 1) / pageunit) * pageunit) + 1;
             int endpage = startpage + pageunit - 1;
 
-            if (endpage > page_tcnt)
+            if (endpage >= page_tcnt)
             {
                 endpage = page_tcnt;
             }
