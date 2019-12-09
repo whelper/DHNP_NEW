@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Products_Sub.Master" AutoEventWireup="true" CodeBehind="product_view.aspx.cs" Inherits="HomePage.products.human_new_view" %>
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceSubLayer" runat="server">
 <%
-	if(GetData(0,"PROD_CD") == String.Empty)
+	if (category == "")
 	{
 %>
 <script>history.back();</script>
