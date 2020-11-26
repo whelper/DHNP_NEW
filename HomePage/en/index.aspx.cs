@@ -79,7 +79,7 @@ namespace HomePage.en
 
 
 			XmlNodeList elemList = xmlDocument.GetElementsByTagName("TBL_StockInfo");
-			System.Diagnostics.Debug.WriteLine("[" + elemList[0].Attributes["JongName"].Value + "]");
+			//System.Diagnostics.Debug.WriteLine("[" + elemList[0].Attributes["JongName"].Value + "]");
 
 			float prevJuka = Int32.Parse(elemList[0].Attributes["PrevJuka"].Value.Replace(",", ""));
 			float debi = Int32.Parse(elemList[0].Attributes["Debi"].Value.Replace(",", ""));
@@ -87,12 +87,14 @@ namespace HomePage.en
 			int dungRak = Int32.Parse(elemList[0].Attributes["DungRak"].Value.Replace(",", ""));
 			float f = (debi / prevJuka) * 100;
 			//double f = (350f/12900f)*100;
-			String v = (f > 9) ? string.Format("{0:00.0}", f) : string.Format("{0:0.00}", f);
+			String v = (f >= 10) ? string.Format("{0:00.0}", f) : string.Format("{0:0.00}", f);
 
 
 			this.nv = string.Format("{0:#,##0}", elemList[0].Attributes["CurJuka"].Value);
 			this.cv = string.Format("{0:#,##0}", debi);
 			this.cr = v;
+			this.nv_css = "stand";
+			this.cv_css = "stand";
 
 			if (dungRak == 1 || dungRak == 2)
 			{
