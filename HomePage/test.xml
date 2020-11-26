@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<stockprice querytime="2020-11-25 17:45:55" >
+  <TBL_DailyStock>
+    <DailyStock day_Date="20/11/25" day_EndPrice="12,900" day_Dungrak="5" day_getDebi="200" day_Start="13,100" day_High="13,200" day_Low="12,600" day_Volume="257,693" day_getAmount="3,326,955,400"/>
+    <DailyStock day_Date="20/11/24" day_EndPrice="13,100" day_Dungrak="2" day_getDebi="50" day_Start="13,150" day_High="13,150" day_Low="12,850" day_Volume="156,782" day_getAmount="2,036,083,500"/>
+    <DailyStock day_Date="20/11/23" day_EndPrice="13,050" day_Dungrak="5" day_getDebi="200" day_Start="13,350" day_High="13,400" day_Low="13,000" day_Volume="210,530" day_getAmount="2,758,830,200"/>
+    <DailyStock day_Date="20/11/20" day_EndPrice="13,250" day_Dungrak="2" day_getDebi="500" day_Start="12,850" day_High="13,250" day_Low="12,650" day_Volume="327,691" day_getAmount="4,253,278,550"/>
+    <DailyStock day_Date="20/11/19" day_EndPrice="12,750" day_Dungrak="5" day_getDebi="350" day_Start="12,950" day_High="13,050" day_Low="12,650" day_Volume="244,265" day_getAmount="3,128,434,200"/>
+    <DailyStock day_Date="20/11/18" day_EndPrice="13,100" day_Dungrak="3" day_getDebi="0" day_Start="13,000" day_High="13,300" day_Low="12,650" day_Volume="531,341" day_getAmount="6,851,930,900"/>
+    <DailyStock day_Date="20/11/17" day_EndPrice="13,100" day_Dungrak="2" day_getDebi="250" day_Start="13,350" day_High="13,900" day_Low="13,000" day_Volume="1,981,562" day_getAmount="26,825,328,650"/>
+    <DailyStock day_Date="20/11/16" day_EndPrice="12,850" day_Dungrak="2" day_getDebi="200" day_Start="12,850" day_High="13,150" day_Low="12,750" day_Volume="290,711" day_getAmount="3,748,470,000"/>
+    <DailyStock day_Date="20/11/13" day_EndPrice="12,650" day_Dungrak="5" day_getDebi="250" day_Start="12,800" day_High="13,350" day_Low="12,400" day_Volume="1,002,623" day_getAmount="12,970,658,850"/>
+    <DailyStock day_Date="20/11/12" day_EndPrice="12,900" day_Dungrak="2" day_getDebi="250" day_Start="12,600" day_High="13,900" day_Low="12,400" day_Volume="1,585,927" day_getAmount="20,909,361,000"/>
+  </TBL_DailyStock>
+  <TBL_AskPrice>
+    <AskPrice member_memdoMem="키움증권" member_memdoVol="109,130" member_memsoMem="키움증권" member_mesuoVol="82,152"/>
+    <AskPrice member_memdoMem="미래에셋대우" member_memdoVol="36,557" member_memsoMem="미래에셋대우" member_mesuoVol="44,644"/>
+    <AskPrice member_memdoMem="NH투자증권" member_memdoVol="18,039" member_memsoMem="삼성증권" member_mesuoVol="27,105"/>
+    <AskPrice member_memdoMem="한국증권" member_memdoVol="16,467" member_memsoMem="NH투자증권" member_mesuoVol="15,369"/>
+    <AskPrice member_memdoMem="삼성증권" member_memdoVol="10,964" member_memsoMem="한국증권" member_mesuoVol="15,181"/>
+  </TBL_AskPrice>
+  <TBL_StockInfo JongName="대한뉴팜" CurJuka="12,900" DungRak="5" Debi="200" PrevJuka="13,100" Volume="257,693" Money="3,326,955,400" StartJuka="13,100" HighJuka="13,200" LowJuka="12,600" High52="14,750" Low52="5,350" UpJuka="17,000" DownJuka="9,200" Per="11.89" Amount="14,354,920" FaceJuka="500" />
+  <TBL_Hoga mesuJan0="2,579" mesuHoka0="12,850" mesuJan1="2,053" mesuHoka1="12,800" mesuJan2="1,993" mesuHoka2="12,750" mesuJan3="0" mesuHoka3="0" mesuJan4="0" mesuHoka4="0" medoJan0="0" medoHoka0="0" medoJan1="0" medoHoka1="0" medoJan2="2,176" medoHoka2="13,000" medoJan3="1,748" medoHoka3="12,950" medoJan4="795" medoHoka4="12,900"/>
+  <TBL_TimeConclude>
+    <TBL_TimeConclude time="17:40:40" negoprice="" Dungrak="" Debi="" sellprice="" buyprice="" amount="407"/>
+    <TBL_TimeConclude time="17:30:40" negoprice="" Dungrak="" Debi="" sellprice="" buyprice="" amount="2"/>
+    <TBL_TimeConclude time="17:20:40" negoprice="" Dungrak="" Debi="" sellprice="" buyprice="" amount="6"/>
+    <TBL_TimeConclude time="17:10:20" negoprice="" Dungrak="" Debi="" sellprice="" buyprice="" amount="38"/>
+    <TBL_TimeConclude time="17:00:40" negoprice="" Dungrak="" Debi="" sellprice="" buyprice="" amount="165"/>
+    <TBL_TimeConclude time="16:40:40" negoprice="" Dungrak="" Debi="" sellprice="" buyprice="" amount="30"/>
+    <TBL_TimeConclude time="16:30:40" negoprice="" Dungrak="" Debi="" sellprice="" buyprice="" amount="12"/>
+    <TBL_TimeConclude time="16:20:20" negoprice="" Dungrak="" Debi="" sellprice="" buyprice="" amount="158"/>
+    <TBL_TimeConclude time="15:48:10" negoprice="" Dungrak="" Debi="" sellprice="0" buyprice="0" amount="2"/>
+    <TBL_TimeConclude time="15:46:20" negoprice="" Dungrak="" Debi="" sellprice="0" buyprice="0" amount="2"/>
+  </TBL_TimeConclude>
+  <stockInfo kosdaqJisu="865.12" kosdaqJisuBuho="5" kosdaqJisuDebi="6.98" starJisu="1328.27" starJisuBuho="2" starJisuDebi="10.63" jisu50="" jisu50Buho="" jisu50Debi="" myNowTime="2020/11/25 17:46:05" myJangGubun="장마감" myPublicPrice="" krx100Jisu="5549.44" krx100buho="5" krx100Debi="17.71" kospiJisu="2601.54" kospiBuho="5" kospiDebi="16.22" kospi200Jisu="348.3" kospi200Buho="5" kospi200Debi="1.98"/>
+</stockprice>

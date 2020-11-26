@@ -39,7 +39,7 @@
 			<%}else if(menu.Substring(0, 2) == "07"){ %>
 			<li> <a href="pdt_list.aspx?category=15&menu=0501" class="<%if (menu == "0501"){ %>onhover<%} %>">Products</a></li>
 			<%}else if(menu.Substring(0, 2) == "08"){ %>
-			<li> <a href="pdt_list.aspx?category=16&menu=0601" class="<%if (menu == "0601"){ %>onhover<%} %>">Medical Devices</a></li>
+			<li> <a href="pdt_list.aspx?category=16&menu=0601" class="<%if (menu == "0601"){ %>onhover<%} %>">Aesthetic/Medical device</a></li>
 			<%}%>
 		</ul>
 		<!--   content -->
@@ -69,7 +69,7 @@
 						 {
 
 							 _category = CatgDs.Tables[0].Rows[i]["CATE_CD"].ToString();
-							 if (category.Substring(0, 2) == "02")
+							 if (category.Substring(0, 2) == "09" ||category.Substring(0, 2) == "02")
 							 {
 								if (_category.Length <= 4) continue;
 							 }
@@ -142,7 +142,7 @@
 		 var cate = "<%=category%>";
 		 var now_page = 0;
 		 $(document).ready(function () {
-			 if (cate.substr(0, 2) != "02") $("[name=catg_no3]").hide();
+			 if (cate.substr(0, 2) != "09" && cate.substr(0, 2) != "02") $("[name=catg_no3]").hide();
 			 
              more_list();
 
@@ -177,7 +177,7 @@
 
 					 var loc = $(this).val();
 					 $("[name=catg_no3]").find("option").remove();
-					 $("[name=catg_no3]").append("<option value=\"\">전체</option>");
+					 $("[name=catg_no3]").append("<option value=\"\">All</option>");
 					 $("[name=hide_cate] option").each(function () {
 						// console.log($(this).val())
 						 if ($(this).val()) {

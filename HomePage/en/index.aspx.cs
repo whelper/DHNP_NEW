@@ -4,7 +4,7 @@ using System.Net;
 using System.Net.Json;
 using System.Text;
 using HomePage.m_master;
-
+using System.Xml;
 
 namespace HomePage.en
 {
@@ -43,7 +43,8 @@ namespace HomePage.en
                 searchText = GetData(1, 0, "SRCH_TEXT");
             }
             name01.Attributes["placeholder"] = searchText;
-			GetStockForJson();
+			//GetStockForJson();
+			GetStockForXML();
 		}
 
 
@@ -65,21 +66,35 @@ namespace HomePage.en
 
 		#endregion
 
-		/// <summary>
-		///  Call Naver Stock Api
-		/// </summary>
-		private void GetStockForJson()
+		private void GetStockForXML()
 		{
-			JsonObjectCollection objectCollection = (JsonObjectCollection)((JsonCollection)((JsonObjectCollection)((JsonCollection)((JsonObjectCollection)((JsonObjectCollection)new JsonTextParser().Parse(this.getJsonFromHttp("http://polling.finance.naver.com/api/realtime.nhn?query=SERVICE_ITEM:054670&callback=?")))["result"])["areas"])[0])["datas"])[0];
-			int.Parse(objectCollection["nv"].GetValue().ToString());
-			int.Parse(objectCollection["cv"].GetValue().ToString());
-			int num = int.Parse(objectCollection["rf"].GetValue().ToString());
-			this.nv = string.Format("{0:#,##0}", objectCollection["nv"].GetValue());
-			this.cv = string.Format("{0:#,##0}", objectCollection["cv"].GetValue());
-			this.cr = string.Format("{0}", objectCollection["cr"].GetValue());
-			this.nv_css = "stand";
-			this.cv_css = "stand";
-			if (num == 1 || num == 2)
+			String URLString = "http://asp1.krx.co.kr/servlet/krx.asp.XMLSise?code=054670";
+			WebClient client = new WebClient();
+			Stream stream = client.OpenRead(URLString);
+			StreamReader reader = new StreamReader(stream);
+
+			String xmlcon = reader.ReadToEnd().Trim();
+			XmlDocument xmlDocument = new XmlDocument();
+			xmlDocument.LoadXml(xmlcon);
+
+
+			XmlNodeList elemList = xmlDocument.GetElementsByTagName("TBL_StockInfo");
+			System.Diagnostics.Debug.WriteLine("[" + elemList[0].Attributes["JongName"].Value + "]");
+
+			float prevJuka = Int32.Parse(elemList[0].Attributes["PrevJuka"].Value.Replace(",", ""));
+			float debi = Int32.Parse(elemList[0].Attributes["Debi"].Value.Replace(",", ""));
+			int curJuka = Int32.Parse(elemList[0].Attributes["CurJuka"].Value.Replace(",", ""));
+			int dungRak = Int32.Parse(elemList[0].Attributes["DungRak"].Value.Replace(",", ""));
+			float f = (debi / prevJuka) * 100;
+			//double f = (350f/12900f)*100;
+			String v = (f > 9) ? string.Format("{0:00.0}", f) : string.Format("{0:0.00}", f);
+
+
+			this.nv = string.Format("{0:#,##0}", elemList[0].Attributes["CurJuka"].Value);
+			this.cv = string.Format("{0:#,##0}", debi);
+			this.cr = v;
+
+			if (dungRak == 1 || dungRak == 2)
 			{
 				this.nv_css = "up";
 				this.cv_css = "up";
@@ -87,12 +102,50 @@ namespace HomePage.en
 			}
 			else
 			{
-				if (num != 4 && num != 5)
-					return;
+				if (dungRak == 3) return;
 				this.nv_css = "down";
 				this.cv_css = "down";
 				this.cr_sign = "-";
 			}
+			reader.Close();
+		}
+
+		/// <summary>
+		///  Call Naver Stock Api
+		/// </summary>
+		private void GetStockForJson()
+		{
+			try
+			{
+				JsonObjectCollection objectCollection = (JsonObjectCollection)((JsonCollection)((JsonObjectCollection)((JsonCollection)((JsonObjectCollection)((JsonObjectCollection)new JsonTextParser().Parse(this.getJsonFromHttp("http://polling.finance.naver.com/api/realtime.nhn?query=SERVICE_ITEM:054670&callback=?")))["result"])["areas"])[0])["datas"])[0];
+				int.Parse(objectCollection["nv"].GetValue().ToString());
+				int.Parse(objectCollection["cv"].GetValue().ToString());
+				int num = int.Parse(objectCollection["rf"].GetValue().ToString());
+				this.nv = string.Format("{0:#,##0}", objectCollection["nv"].GetValue());
+				this.cv = string.Format("{0:#,##0}", objectCollection["cv"].GetValue());
+				this.cr = string.Format("{0}", objectCollection["cr"].GetValue());
+				this.nv_css = "stand";
+				this.cv_css = "stand";
+				if (num == 1 || num == 2)
+				{
+					this.nv_css = "up";
+					this.cv_css = "up";
+					this.cr_sign = "+";
+				}
+				else
+				{
+					if (num != 4 && num != 5)
+						return;
+					this.nv_css = "down";
+					this.cv_css = "down";
+					this.cr_sign = "-";
+				}
+			}
+			catch (Exception e) 
+			{ 
+			
+			}
+			
 		}
 
 		/// <summary>

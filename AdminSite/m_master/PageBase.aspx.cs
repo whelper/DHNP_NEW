@@ -85,6 +85,7 @@ namespace AdminSite.m_master
                 {
                     dataTotalCount = Convert.ToInt32(ds.Tables[0].Select()[0][0]);
                 }
+				
             }
             catch (Exception e)
             {
@@ -104,7 +105,9 @@ namespace AdminSite.m_master
                 // 로그인 SP는 로그인 체크 제외 (경우가 하나만 있어 이 건만 예외처리)
                 if (procIndex != 3000) CheckLogin();
 
-                DataSet mds = WebSql.SelectSql(procIndex, CSecureUtil.CheckString(param));
+                string fparam = (procIndex == 3000) ? param : CSecureUtil.CheckString(param);
+
+                DataSet mds = WebSql.SelectSql(procIndex, fparam);
                 dataRow = mds.Tables[0].Select();
 
                 System.Diagnostics.Debug.WriteLine("dataRow=" + dataRow);

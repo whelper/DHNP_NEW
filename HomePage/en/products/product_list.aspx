@@ -88,8 +88,8 @@
 	</div>
 	<!--정렬 End-->
 	<!--정렬 End-->
-	<%if (category.Substring(0,2) == "10"){ %>
-	<div class="tab_typeA">
+	<%if (category.Substring(0,2) == "09" || category.Substring(0,2) == "10"){ %>
+	<div class="tab_typeA tab-<%=category.Substring(0,2)%>">
 		<ul>					
 			<%--<li class="first"><a href="?menu=<%=menu%>&category=02" class="<%=(category == "02") ? "on" : "" %>">전체</a></li>--%>
 			 <% 
@@ -111,7 +111,7 @@
 		</ul>
 	</div>	
 	<%} %>
-	<nav class="<%=(category.Substring(0,2) == "10") ? "tap_nav1" : "tap_nav" %>">
+	<nav class="<%=(category.Substring(0,2) == "09" || category.Substring(0,2) == "10") ? "tap_nav1" : "tap_nav" %>">
 		<h1 class="acc-hidden"> 제품소개 메뉴</h1>
 		<ul class="clear sub-tab">
             <% 
@@ -124,7 +124,7 @@
 					{
 
 						_category = CatgDs.Tables[0].Rows[i]["CATE_CD"].ToString();
-						if (category.Substring(0,2) == "10") {
+						if (category.Substring(0,2) == "09" || category.Substring(0,2) == "10") {
 							if (category.Length < 4 || _category.Length <= 4 || _category.Substring(0,cutLimit) != category.Substring(0,cutLimit)) continue;
 						}
 

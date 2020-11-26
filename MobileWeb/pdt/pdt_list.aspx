@@ -22,7 +22,7 @@
 		<ul class="tap_3depth">
 			<%if (menu.Substring(0, 2) == "01"){ %>
 			<li style="width:50%"> <a href="pdt_new_list.aspx?category=01&menu=0102">신제품</a></li>
-			<li style="width:50%"> <a href="pdt_list.aspx?category=01&menu=0103" class="onhover">제품소개</a></li>
+			<li style="width:50%"> <a href="pdt_list.aspx?category=0131&menu=0103" class="onhover">제품소개</a></li>
 			<%}else if(menu.Substring(0, 2) == "02"){ %>
 			<li> <a href="pdt_new_list.aspx?category=02&menu=0202">신제품</a></li>
 			<li> <a href="pdt_list.aspx?category=02&menu=0201" class="<%if (menu == "0201"){ %>onhover<%} %>">제품소개</a></li>
@@ -37,7 +37,7 @@
 			<%}else if(menu.Substring(0, 2) == "07"){ %>
 			<li> <a href="pdt_list.aspx?category=07&menu=0501" class="<%if (menu == "0501"){ %>onhover<%} %>">제품소개</a></li>
 			<%}else if(menu.Substring(0, 2) == "08"){ %>
-			<li> <a href="pdt_list.aspx?category=08&menu=0601" class="<%if (menu == "0601"){ %>onhover<%} %>">의료기기</a></li>
+			<li> <a href="pdt_list.aspx?category=08&menu=0601" class="<%if (menu == "0601"){ %>onhover<%} %>">미용ㆍ의료기기</a></li>
 			<%}%>
 		</ul>
 		<!--   content -->
@@ -67,7 +67,7 @@
 						 {
 
 							 _category = CatgDs.Tables[0].Rows[i]["CATE_CD"].ToString();
-							 if (category.Substring(0, 2) == "02")
+							 if (category.Substring(0, 2) == "01" || category.Substring(0, 2) == "02")
 							 {
 								if (_category.Length <= 4) continue;
 							 }
@@ -127,7 +127,7 @@
 		 var cate = "<%=category%>";
 		 var now_page = 0;
 		 $(document).ready(function () {
-			 if (cate.substr(0, 2) != "02") $("[name=catg_no3]").hide();
+			 if (cate.substr(0, 2) != "01" && cate.substr(0, 2) != "02") $("[name=catg_no3]").hide();
 			 
              more_list();
 

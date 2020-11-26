@@ -848,6 +848,7 @@
     <Content Include="recruit\result_list.aspx" />
     <Content Include="main\search.aspx" />
     <Content Include="sitemap.aspx" />
+    <Content Include="test.xml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

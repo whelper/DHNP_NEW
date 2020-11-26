@@ -327,6 +327,7 @@ border-bottom-left-radius: 0; border-top-left-radius: 0;}
 		float: left;
 		border-bottom: 2px solid #04b25a;
 		border-left: 1px solid #dadada;
+		box-sizing: border-box;
 	}
 
 		.tab_typeA li a {
@@ -348,3 +349,10 @@ border-bottom-left-radius: 0; border-top-left-radius: 0;}
 			color: #fff;
 			background: #04b25a;
 		}
+
+	.tab_typeA.tab-01 li {
+		width:50%;
+	}
+	.tab_typeA.tab-01 li > a {
+		width: 100%;
+	}

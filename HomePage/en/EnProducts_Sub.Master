@@ -77,7 +77,7 @@
 							<li><a href="/en/products/product_new_list.aspx?category=10&menu=0202">Animal Health & Nutrition</a></li>
 							<li><a href="/en/products/bio_rnd.aspx?category=11&&menu=0302"<%=GetLnbIndicator("0302")%>>Bio</a></li>
 							<li><a href="/en/products/product_list.aspx?category=13&menu=0501">Health Suppliments</a></li>
-	                        <li><a href="/en/products/product_list.aspx?category=14&menu=0601">Medical Devices</a></li>
+	                        <li><a href="/en/products/product_list.aspx?category=14&menu=0601">Aesthetic/Medical device</a></li>
 						</ul>
 					</li>
 					<%--<li><a href="/en/pr/news_list.aspx" class="gnb_03<%=GetGnbIndicator("pr")%>">홍보</a>
@@ -141,7 +141,7 @@
 				<li> <a href="/en/products/product_new_list.aspx?category=09&menu=0102"<%=GetLnbIndicatorGroup("01")%>>Pharmaceutical</a> 
 					<ul class="sy"<%=GetLnbIndicatorDisplay("01")%>>
 						<li><a href="/en/products/product_new_list.aspx?category=09&menu=0102"<%=GetLnbIndicator("0102")%>>New Products</a> </li>
-						<li><a href="/en/products/product_list.aspx?category=09&menu=0101"<%=GetLnbIndicator("0101")%>>Products</a></li>
+						<li><a href="/en/products/product_list.aspx?category=0924&menu=0101"<%=GetLnbIndicator("0101")%>>Products</a></li>
 						<%--<li><a href="/en/products/human_change_list.aspx"<%=GetLnbIndicator("prod_3")%>>제품변경정보</a></li>--%>
 					</ul> 
 				</li>
@@ -165,9 +165,9 @@
 						<li><a href="/en/products/product_list.aspx?category=15&menu=0501"<%=GetLnbIndicator("0501")%>>Products</a></li>
 					</ul> 
 				</li>
-				<li> <a href="/en/products/product_list.aspx?category=16&menu=0601"<%=GetLnbIndicatorGroup("06")%>>Medical Devices</a> 
+				<li> <a href="/en/products/product_list.aspx?category=16&menu=0601"<%=GetLnbIndicatorGroup("06")%>>Aesthetic/Medical device</a> 
 					<ul class="sy"<%=GetLnbIndicatorDisplay("06")%>>
-						<li><a href="/en/products/product_list.aspx?category=16&menu=0601"<%=GetLnbIndicator("0601")%>>Medical Devices</a></li>
+						<li><a href="/en/products/product_list.aspx?category=16&menu=0601"<%=GetLnbIndicator("0601")%>>Aesthetic/Medical device</a></li>
 					</ul> 
 				</li>
 			</ul>
@@ -316,7 +316,7 @@
 				</ul>
 			</nav>
 			<address class="address clear">
-				<span class="addr">66 Jeyakgongdan 1-gil Hyangnameup, Hwasung, Gyeonggi, Korea 445-937</span><br />
+				<span class="addr">66 Jeyakgongdan 1-gil Hyangnameup, Hwasung, Gyeonggi, Korea 18622</span><br />
 				<span class="ceo">Registration Number: 229-81-10729  </span>
 				<span class="tel">Tel: +82 2 3415-7808(English)</span>
 				<span class="fax">Fax: +82 2 581-1644</span>

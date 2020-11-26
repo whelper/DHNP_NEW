@@ -312,12 +312,12 @@ namespace CommonLib.DB
                     }
 
                     myAdapter.Fill(myDataSet, "Table");
-                    myConnection.Close();
+					myConnection.Close();
                 }
             }
             catch (Exception e)
             {
-                string error = string.Format("CSQLHelper.ExecuteDataSetSecure: exception={0}", "["+sqlQuery+ "]"+e.Message);
+				string error = string.Format("CSQLHelper.ExecuteDataSetSecure: exception={0}", "["+sqlQuery+ "]"+e.Message);
                 CLog.debug(logger, error);
             }
 

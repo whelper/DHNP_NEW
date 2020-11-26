@@ -89,7 +89,7 @@
 							<li><a href="/products/product_list.aspx?category=03&menu=0301">바이오 의약품</a></li>
 							<li><a href="/products/product_list.aspx?category=04&menu=0401">수출 의약품</a></li>
 							<li><a href="/products/product_list.aspx?category=07&menu=0501">건강기능식품</a></li>
-	                        <li><a href="/products/product_list.aspx?category=08&menu=0601">의료기기</a></li>
+	                        <li><a href="/products/product_list.aspx?category=08&menu=0601">미용ㆍ의료기기</a></li>
 							<li><a href="/products/product_list.aspx?category=17&menu=0701">기타</a></li>
 						</ul>
 					</li>
@@ -147,7 +147,7 @@
 				<li> <a href="/products/product_new_list.aspx?category=01&menu=0102"<%=GetLnbIndicatorGroup("01")%>>인체 의약품</a> 
 					<ul class="sy"<%=GetLnbIndicatorDisplay("01")%>>
 						<li><a href="/products/product_new_list.aspx?category=01&menu=0102"<%=GetLnbIndicator("0102")%>>신제품</a> </li>
-						<li><a href="/products/product_list.aspx?category=01&menu=0101"<%=GetLnbIndicator("0101")%>>제품소개</a></li>
+						<li><a href="/products/product_list.aspx?category=0131&menu=0101"<%=GetLnbIndicator("0101")%>>제품소개</a></li>
 						<li><a href="/products/human_change_list.aspx?category=01&menu=0103"<%=GetLnbIndicator("0103")%>>제품변경정보</a></li>
 					</ul> 
 				</li>
@@ -176,9 +176,9 @@
 						<li><a href="/products/product_list.aspx?category=07&menu=0501"<%=GetLnbIndicator("0501")%>>제품소개</a></li>
 					</ul> 
 				</li>
-				<li> <a href="/products/product_list.aspx?category=08&menu=0601"<%=GetLnbIndicatorGroup("06")%>>의료기기</a> 
+				<li> <a href="/products/product_list.aspx?category=08&menu=0601"<%=GetLnbIndicatorGroup("06")%>>미용ㆍ의료기기</a> 
 					<ul class="sy"<%=GetLnbIndicatorDisplay("06")%>>
-						<li><a href="/products/product_list.aspx?category=08&menu=0601"<%=GetLnbIndicator("0601")%>>의료기기</a></li>
+						<li><a href="/products/product_list.aspx?category=08&menu=0601"<%=GetLnbIndicator("0601")%>>미용ㆍ의료기기</a></li>
 					</ul> 
 				</li>
 				<li> <a href="/products/product_list.aspx?category=17&menu=0701"<%=GetLnbIndicatorGroup("07")%>>기타</a> 
@@ -330,7 +330,7 @@
 			<address class="address clear">
 				<span class="addr">경기도 화성시 향남읍 제약공단1길 66  </span>
 				<span class="num">사업자번호 : 229-81-10729</span> <br>
-				<span class="ceo">대표자명 : 이완진, 이영섭   </span>
+				<span class="ceo">대표자명 : 이완진 </span>
 				<span class="tel">대표전화 : (02)581-2333 </span>
 				<span class="fax">팩스 : (02)581-1644 </span>
 				<p class="copyright">Copyright &copy; Daehan New Pharm Co.,Ltd All right reserved.</p>

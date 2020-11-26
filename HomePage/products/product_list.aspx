@@ -11,15 +11,15 @@
         <img src="/common/images/common/btn_pdf.png" alt="카다로그 다운로드" />
     </a>
     <% 
-        }
-        else
-        {
+		}
+		else
+		{
     %>
     <a href="<%=rep_catg_url %>">
-        <img src="/common/images/common/btn_pdf_<%=category.Substring(0,2)%>.png" alt="카다로그 다운로드" />
+        <img src="/common/images/common/btn_pdf_<%=category.Substring(0, 2)%>.png" alt="카다로그 다운로드" />
     </a>
     <% 
-        }
+		}
     %>
 </p>
 </nav> <!-- // snb --> 
@@ -74,12 +74,11 @@
 		</asp:DropDownList>
 	</div>
 	<!--정렬 End-->
-	<%if (category.Substring(0,2) == "02"){ %>
-	<div class="tab_typeA">
+	<%if (category.Substring(0, 2) == "01" || category.Substring(0, 2) == "02") { %>
+	<div class="tab_typeA tab-<%=category.Substring(0, 2)%>">
 		<ul>					
 			<%--<li class="first"><a href="?menu=<%=menu%>&category=02" class="<%=(category == "02") ? "on" : "" %>">전체</a></li>--%>
 			 <% 
-				
 				 if (CatgDs != null)
 				 {
 					 string _category = String.Empty;
@@ -88,7 +87,7 @@
 						 _category = CatgDs.Tables[0].Rows[i]["CATE_CD"].ToString();
 						 if (_category.Length > 4) continue;
 			%>
-			<li><a href="?menu=<%=menu%>&category=<%=CatgDs.Tables[0].Rows[i]["CATE_CD"]%>" class="<%=(_category.Substring(0, 4) == category.Substring(0,cutLimit)) ? "on" : "" %>"><%=CatgDs.Tables[0].Rows[i]["CATE_NAME"]%></a></li>
+			<li><a href="?menu=<%=menu%>&category=<%=CatgDs.Tables[0].Rows[i]["CATE_CD"]%>" class="<%=(_category.Substring(0, 4) == category.Substring(0, cutLimit)) ? "on" : "" %>"><%=CatgDs.Tables[0].Rows[i]["CATE_NAME"]%></a></li>
 			<% 
 					}
 				}
@@ -97,7 +96,7 @@
 		</ul>
 	</div>	
 	<%} %>
-	<nav class="<%=(category.Substring(0,2) == "02") ? "tap_nav1" : "tap_nav" %>">
+	<nav class="<%=(category.Substring(0, 2) == "01" ||  category.Substring(0,2) == "02") ? "tap_nav1" : "tap_nav" %>">
 		<h1 class="acc-hidden"> 제품소개 메뉴</h1>
 		<ul class="clear">
             <% 
@@ -110,7 +109,7 @@
 					{
 
 						_category = CatgDs.Tables[0].Rows[i]["CATE_CD"].ToString();
-						if (category.Substring(0,2) == "02") {
+						if (category.Substring(0,2) == "01" || category.Substring(0,2) == "02") {
 							if (category.Length < 4 || _category.Length <= 4 || _category.Substring(0,cutLimit) != category.Substring(0,cutLimit)) continue;
 						}
 

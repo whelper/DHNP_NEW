@@ -156,7 +156,7 @@ namespace MobileWeb.cust
 				html += " 					<tr>";
 				html += " 						<td style=\"padding-top:20px;vertical-align:top;\"><img src=\"http://www.dhnp.co.kr/common/images/mail/b_logo.jpg\" ></a></td>";
 				html += " 						<td style=\"padding-top:20px;font-size:13px;\">경기도 화성시 향남읍 제약공단1길 66  사업자번호 : 229-81-10729 <br/>";
-				html += " 						대표자명 : 배건우  대표전화 : (02)581-2333  팩스 : (02)581-1644 <br/><br/>Copyright (c) Daehan New Pharm Co.,Ltd All right reserved.</td>";
+				html += " 						대표자명 : 이완진  대표전화 : (02)581-2333  팩스 : (02)581-1644 <br/><br/>Copyright (c) Daehan New Pharm Co.,Ltd All right reserved.</td>";
 				html += " 					</tr>";
 				html += " 				</table>";
 				html += " 			</td>";

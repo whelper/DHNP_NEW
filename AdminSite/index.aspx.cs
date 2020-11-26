@@ -39,14 +39,14 @@ namespace AdminSite
             {   
                 string password_enc = CSecureUtil.Encrypt(admin_pw.Value);
 
-                //System.Diagnostics.Trace.WriteLine(password_enc);
+                
 
                 StringBuilder param = new StringBuilder();
                 param.Append(admin_id.Value);
                 param.Append(CConst.DB_PARAM_DELIMITER).Append(admin_pw.Value);
                 param.Append(CConst.DB_PARAM_DELIMITER).Append(password_enc);
-
-                SetDataList(3000, param.ToString());
+				//System.Diagnostics.Trace.WriteLine(param.ToString());
+				SetDataList(3000, param.ToString());
 
                 if (CStringUtil.IsNullOrEmpty(GetData(0, 0)) == false)
                 {
